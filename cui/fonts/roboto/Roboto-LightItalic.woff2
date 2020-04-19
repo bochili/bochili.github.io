@@ -1,0 +1,977 @@
+κευές αναφέρονται ως συμβατές</string>
+    <string id="Devices_PassedOne">1 συσκευή αναφέρεται ως συμβατή</string>
+
+    <string id="Programs_PassedMultiple">%1 προγράμματα αναφέρονται ως συμβατά</string>
+    <string id="Programs_PassedOne">1 πρόγραμμα αναφέρεται ως συμβατό</string>
+    <string id="NoIssuesDetected">Δεν εντοπίστηκαν ζητήματα</string>
+
+    <string id="Hardware_SeeAll">Εμφάνιση όλων των απαιτήσεων συστήματος</string>
+    <string id="Devices_SeeAll">Εμφάνιση όλων των συσκευών</string>
+    <string id="Programs_SeeAll">Εμφάνιση όλων των προγραμμάτων</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Η ταχύτητα της CPU του υπολογιστή σας είναι μικρότερη από 1 GHz, επομένως, δεν θα είστε σε θέση να εγκαταστήσετε και να εκτελέσετε το στοιχείο %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Πρέπει να εγκαταστήσετε μνήμη RAM τουλάχιστον %1 GB, για να εγκαταστήσετε και να εκτελέσετε το στοιχείο %2. Επικοινωνήστε με τον κατασκευαστή του υπολογιστή σας, για να ενημερωθείτε σχετικά με τη δυνατότητα εγκατάστασης περισσότερης μνήμης RAM.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Επικοινωνήστε με τον κατασκευαστή του υπολογιστή σας, για να ενημερωθείτε σχετικά με τη δυνατότητα αναβάθμισης.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Ο επεξεργαστής αυτού του υπολογιστή δεν υποστηρίζει μια κρίσιμη λειτουργία (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Ο επεξεργαστής αυτού του υπολογιστή δεν υποστηρίζει μια κρίσιμη λειτουργία (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Ο επεξεργαστής αυτού του υπολογιστή δεν υποστηρίζει μια κρίσιμη λειτουργία (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Ο επεξεργαστής αυτού του υπολογιστή δεν υποστηρίζει μια κρίσιμη λειτουργία (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Ο επεξεργαστής αυτού του υπολογιστή δεν υποστηρίζει μια κρίσιμη λειτουργία (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Δεν μπορείτε να εγκαταστήσετε το %1 επειδή η κάρτα ασύρματου δικτύου δεν πληροί τις απαιτήσεις αναβάθμισης.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Πρέπει να εγκαταστήσετε μία ή περισσότερες ενημερώσεις για το υλικολογισμικό ή τα προγράμματα οδήγησης συσκευών που διαθέτετε. Ανοίξτε το Windows Update, εγκαταστήστε όλες τις διαθέσιμες ενημερώσεις και, στη συνέχεια, δοκιμάστε ξανά να εγκαταστήσετε το %1.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Η ανάλυση της οθόνης σας θα πρέπει να είναι τουλάχιστον 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Όνομα υπολογιστή:</string>
+    <string id="HeaderOperatingSystem">Λειτουργικό σύστημα:</string>
+    <string id="HeaderManufacturer">Κατασκευαστής:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Μοντέλο:</string>
+    <string id="HeaderMemory">Μνήμη:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Θα χρειαστεί να επανεγκαταστήσετε τις συμβατές εφαρμογές και συσκευές σας στα %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 από τις εφαρμογές και τις συσκευές σας είναι συμβατές</string>
+    <string id="Overview_ProgramDeviceWillWork">1 από τις εφαρμογές ή τις συσκευές σας είναι συμβατή</string>
+    <string id="Overview_IssueRequiresAttention">1 στοιχείο για εξέταση</string>
+    <string id="Overview_IssuesRequiresAttention">%1 στοιχεία για εξέταση</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 στοιχείο προς αναθεώρηση πριν από την αναβάθμιση</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 στοιχεία προς αναθεώρηση πριν από την αναβάθμιση</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Ένα ή περισσότερα στοιχεία δεν υποστηρίζονται και η αναβάθμιση δεν επιτρέπεται</string>
+    <string id="Overview_SeeFullReport">Εμφάνιση λεπτομερειών συμβατότητας</string>
+    <string id="Overview_NoCompatIssues">Κανένα γνωστό πρόβλημα συμβατότητας</string>
+    <string id="Overview_FeaturesLost">Σημαντικό: Ορισμένες δυνατότητες των Windows 7 ενδέχεται να μην είναι διαθέσιμες μετά την αναβάθμιση. Ανατρέξτε στις λεπτομέρειες συμβατότητας για περισσότερες πληροφορίες.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Ασύμβατη</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Μη συμβατό - αυτή η εφαρμογή δεν θα είναι διαθέσιμη στα %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Ασύμβατη</string>
+    <string id="Detial_PreventingUpgradeHeader">Η αναβάθμιση δεν επιτρέπεται</string>
+    <string id="Detail_NeedAttentionHeader">Για εξέταση</string>
+    <string id="Detail_WillWorkHeader">Συμβατή</string>
+    <string id="Detail_BuyVersionLink">Είναι διαθέσιμη μια ενημέρωση επί πληρωμή</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Είναι διαθέσιμη μια ενημέρωση</string>
+    <string id="Solution_WontWorkNoneLink">Ασύμβατη</string>
+    <string id="Solution_WontWorkUpdateLink">Είναι διαθέσιμη μια ενημέρωση</string>
+    <string id="Solution_RequireActionUpdateLink">Είναι διαθέσιμη μια ενημέρωση</string>
+    <string id="Solution_PaidUpdateLink">Είναι διαθέσιμη μια ενημέρωση επί πληρωμή</string>
+    <string id="Solution_WorkaroundLink">Είναι διαθέσιμη μια λύση</string>
+    <string id="Solution_KBArticleLink">Είναι διαθέσιμη μια λύση</string>
+    <string id="Solution_VendorLink">Μετάβαση στην τοποθεσία web της εφαρμογής για βοήθεια</string>
+    <string id="Solution_MoreInfoLink">Περισσότερες πληροφορίες</string>
+    <string id="Solution_ReinstallLink">Εγκαταστήστε ξανά αυτήν την εφαρμογή στα %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Είναι διαθέσιμη μια ενημέρωση</string>
+    <string id="Solution_InfoUpgrade">Κατάργηση εξουσιοδοτημένων υπολογιστών</string>
+    <string id="Solution_WarnUpgrade">Αποκρυπτογράφηση κρυπτογραφημένων μονάδων δίσκου</string>
+    <string id="Solution_DeviceLogo">Επικοινωνία με τον κατασκευαστή της συσκευής</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Καταργήστε την εγκατάσταση αυτής της εφαρμογής τώρα και επανεγκαταστήστε τη στο στοιχείο %1.</string>
+    <string id="UninstallActionSubHeader">Καταργήστε την εγκατάσταση αυτής της εφαρμογής τώρα, επειδή δεν είναι συμβατή με το στοιχείο %1.</string>
+    <string id="ProgramMoreInfoLink">Περισσότερες πληροφορίες</string>
+    <string id="DismissNotRunLink">Επιβεβαίωση</string>
+    <string id="AutoUninstallNotRunLink">Κατάργηση εγκατάστασης</string>
+    <string id="AutoUninstallFailedText">Μη αυτόματη κατάργηση εγκατάστασης</string>
+    <string id="ManualUninstallNotRunText">Μη αυτόματη κατάργηση εγκατάστασης</string>
+    <string id="HardBlockDevice">Αυτή η συσκευή δεν είναι συμβατή στο στοιχείο %1. Επικοινωνήστε με τον κατασκευαστή για περισσότερες πληροφορίες.</string>
+    <string id="HardBlockDevices">Αυτές οι συσκευές δεν είναι συμβατές στο στοιχείο %1. Επικοινωνήστε με τον κατασκευαστή για περισσότερες πληροφορίες.</string>
+</strings>
+PA<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1 Upgrade Assistant</string>
+    <string id="WicaReportTitle">%1 Upgrade Assistant Report</string>
+
+    <string id="OrCommaArgs2">%1 or %2</string>
+    <string id="OrCommaArgs3">%1, %2 or %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 or %4</string>
+
+    <string id="AndCommaArgs2">%1 and %2</string>
+    <string id="AndCommaArgs3">%1, %2 and %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 and %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">System</string>
+    <string id="Devices_Header">Devices</string>
+    <string id="Programs_Header">Programs</string>
+    <string id="WindowsXPMode_Header">Requirement</string>
+
+    <string id="Status_Header">Status</string>
+    <string id="Details_Header">Details</string>
+
+    <string id="Hardware_PassedMultiple">%1 system requirements passed</string>
+    <string id="Hardware_PassedOne">1 system requirement passed</string>
+
+    <string id="Devices_PassedMultiple">%1 devices listed as compatible</string>
+    <string id="Devices_PassedOne">1 device listed as compatible</string>
+
+    <string id="Programs_PassedMultiple">%1 programs listed as compatible</string>
+    <string id="Programs_PassedOne">1 program listed as compatible</string>
+    <string id="NoIssuesDetected">No issues detected</string>
+
+    <string id="Hardware_SeeAll">See all system requirements</string>
+    <string id="Devices_SeeAll">See all devices</string>
+    <string id="Programs_SeeAll">See all programs</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Your PC's CPU speed is less than 1 GHz so you won't be able to install and run %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">You need to install at least %1 GB of RAM before you can install and run %2.  Contact the PC manufacturer to see if you can install more RAM.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Contact your PC manufacturer to see if you can upgrade the system BIOS.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">This PC's processor doesn't support a critical feature (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">This PC's processor doesn't support a critical feature (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">This PC's processor doesn't support a critical feature (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">This PC's processor doesn't support a critical feature (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">This PC's processor doesn't support a critical feature (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">You can't install %1 because your wireless network card doesn't meet upgrade requirements.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">You need to install one or more updates to your firmware or device drivers. Open Windows Update, install all available updates, and then try installing %1 again.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Your screen resolution needs to be at least 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Computer name:</string>
+    <string id="HeaderOperatingSystem">Operating system:</string>
+    <string id="HeaderManufacturer">Manufacturer:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Model:</string>
+    <string id="HeaderMemory">Memory:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">You'll need to reinstall your compatible apps and devices in %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 of your apps and devices are compatible</string>
+    <string id="Overview_ProgramDeviceWillWork">1 of your apps or devices is compatible</string>
+    <string id="Overview_IssueRequiresAttention">1 item for you to review</string>
+    <string id="Overview_IssuesRequiresAttention">%1 items for you to review</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 item for you to review before upgrading</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 items for you to review before upgrading</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">One or more items isn't supported and preventing you from upgrading</string>
+    <string id="Overview_SeeFullReport">See compatibility details</string>
+    <string id="Overview_NoCompatIssues">No known compatibility issues</string>
+    <string id="Overview_FeaturesLost">Important: Some Windows 7 features might not be available after you upgrade. See compatibility details for more info.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Not compatible</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Not compatible - this app won't be available in %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Not compatible</string>
+    <string id="Detial_PreventingUpgradeHeader">Preventing you from upgrading</string>
+    <string id="Detail_NeedAttentionHeader">For you to review</string>
+    <string id="Detail_WillWorkHeader">Compatible</string>
+    <string id="Detail_BuyVersionLink">Paid update available</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Update available</string>
+    <string id="Solution_WontWorkNoneLink">Not compatible</string>
+    <string id="Solution_WontWorkUpdateLink">Update available</string>
+    <string id="Solution_RequireActionUpdateLink">Update available</string>
+    <string id="Solution_PaidUpdateLink">Paid update available</string>
+    <string id="Solution_WorkaroundLink">Solution available</string>
+    <string id="Solution_KBArticleLink">Solution available</string>
+    <string id="Solution_VendorLink">Go to the app website for help</string>
+    <string id="Solution_MoreInfoLink">More info</string>
+    <string id="Solution_ReinstallLink">Reinstall this app in %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Update available</string>
+    <string id="Solution_InfoUpgrade">Remove authorized PCs</string>
+    <string id="Solution_WarnUpgrade">Decrypt encrypted drives</string>
+    <string id="Solution_DeviceLogo">Contact the device manufacturer</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Uninstall this app now and reinstall it in %1.</string>
+    <string id="UninstallActionSubHeader">Uninstall this app now because it isn't compatible with %1.</string>
+    <string id="ProgramMoreInfoLink">More info</string>
+    <string id="DismissNotRunLink">Confirm</string>
+    <string id="AutoUninstallNotRunLink">Uninstall</string>
+    <string id="AutoUninstallFailedText">Manually uninstall</string>
+    <string id="ManualUninstallNotRunText">Manually uninstall</string>
+    <string id="HardBlockDevice">This device isn't compatible in %1. Contact the manufacturer for more info.</string>
+    <string id="HardBlockDevices">These devices aren't compatible in %1. Contact the manufacturer for more info.</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1:n päivitysavustaja</string>
+    <string id="WicaReportTitle">%1:n päivitysavustajan raportti</string>
+
+    <string id="OrCommaArgs2">%1 tai %2</string>
+    <string id="OrCommaArgs3">%1, %2 tai %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 tai %4</string>
+
+    <string id="AndCommaArgs2">%1 ja %2</string>
+    <string id="AndCommaArgs3">%1, %2 ja %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 ja %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Järjestelmä</string>
+    <string id="Devices_Header">Laitteet</string>
+    <string id="Programs_Header">Ohjelmat</string>
+    <string id="WindowsXPMode_Header">Vaatimus</string>
+
+    <string id="Status_Header">Tila</string>
+    <string id="Details_Header">Tiedot</string>
+
+    <string id="Hardware_PassedMultiple">%1 järjestelmävaatimusta täyttyi</string>
+    <string id="Hardware_PassedOne">1 järjestelmävaatimus täyttyi</string>
+
+    <string id="Devices_PassedMultiple">%1 laitetta ovat yhteensopivia</string>
+    <string id="Devices_PassedOne">1 laite on yhteensopiva</string>
+
+    <string id="Programs_PassedMultiple">%1 ohjelmaa ovat yhteensopivia</string>
+    <string id="Programs_PassedOne">1 ohjelma on yhteensopiva</string>
+    <string id="NoIssuesDetected">Ongelmia ei havaittu</string>
+
+    <string id="Hardware_SeeAll">Näytä kaikki järjestelmävaatimukset</string>
+    <string id="Devices_SeeAll">Näytä kaikki laitteet</string>
+    <string id="Programs_SeeAll">Näytä kaikki ohjelmat</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Tietokoneen suorittimen nopeus on alle 1 GHz, joten et pysty asentamaan ja suorittamaan käyttöjärjestelmää %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Tarvitset vähintään %1 Gt:n RAM-muistia, ennen kuin voit asentaa ja suorittaa käyttöjärjestelmän %2. Tiedustele tietokoneen valmistajalta, voitko asentaa lisää RAM-muistia.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Tiedustele tietokoneen valmistajalta, voitko päivittää järjestelmän BIOSin.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Tämän tietokoneen suoritin ei tue erittäin tärkeää ominaisuutta (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Tämän tietokoneen suoritin ei tue erittäin tärkeää ominaisuutta (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Tämän tietokoneen suoritin ei tue erittäin tärkeää ominaisuutta (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Tämän tietokoneen suoritin ei tue erittäin tärkeää ominaisuutta (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Tämän tietokoneen suoritin ei tue erittäin tärkeää ominaisuutta (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Et voi asentaa kohdetta %1, koska langaton verkkokorttisi ei täytä päivitysvaatimuksia.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Asenna yksi tai useampi päivitys laiteohjelmistoon tai laiteohjaimiin. Avaa Windows Update, asenna kaikki saatavilla olevat päivitykset ja yritä sitten asentaa %1 uudelleen.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Näytön tarkkuuden on oltava vähintään 1 024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Tietokoneen nimi:</string>
+    <string id="HeaderOperatingSystem">Käyttöjärjestelmä:</string>
+    <string id="HeaderManufacturer">Valmistaja:</string>
+    <string id="HeaderCPU">Suoritin:</string>
+    <string id="HeaderModel">Malli:</string>
+    <string id="HeaderMemory">Muisti:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Sinun on asennettava yhteensopivat sovelluksesi ja laitteesi uudelleen käyttöjärjestelmään %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">Yhteensopivia laitteita ja sovelluksia on %1</string>
+    <string id="Overview_ProgramDeviceWillWork">Yhteensopivia laitteita ja sovelluksia on 1</string>
+    <string id="Overview_IssueRequiresAttention">1 kohde edellyttää tarkastamista</string>
+    <string id="Overview_IssuesRequiresAttention">%1 kohdetta edellyttää tarkastamista</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 kohde pitää tarkistaa ennen päivitystä</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 kohdetta pitää tarkistaa ennen päivitystä</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Vähintään yksi kohde ei ole tuettu ja estää päivityksen</string>
+    <string id="Overview_SeeFullReport">Näytä yhteensopivuustiedot</string>
+    <string id="Overview_NoCompatIssues">Ei tunnettuja yhteensopivuusongelmia</string>
+    <string id="Overview_FeaturesLost">Tärkeää: Jotkin Windows 7:n ominaisuudet eivät ehkä ole käytettävissä päivityksen jälkeen. Saat lisätietoja yhteensopivuustiedoista.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Yhteensopimaton</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Ei yhteensopiva – tämä sovellus ei ole käytettävissä käyttöjärjestelmässä %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Yhteensopimaton</string>
+    <string id="Detial_PreventingUpgradeHeader">Estää päivityksen</string>
+    <string id="Detail_NeedAttentionHeader">Sinun tarkastettavanasi</string>
+    <string id="Detail_WillWorkHeader">Yhteensopiva</string>
+    <string id="Detail_BuyVersionLink">Maksullinen päivitys on saatavana</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Päivitys saatavilla</string>
+    <string id="Solution_WontWorkNoneLink">Yhteensopimaton</string>
+    <string id="Solution_WontWorkUpdateLink">Päivitys saatavilla</string>
+    <string id="Solution_RequireActionUpdateLink">Päivitys saatavilla</string>
+    <string id="Solution_PaidUpdateLink">Maksullinen päivitys on saatavana</string>
+    <string id="Solution_WorkaroundLink">Ratkaisu saatavilla</string>
+    <string id="Solution_KBArticleLink">Ratkaisu saatavilla</string>
+    <string id="Solution_VendorLink">Etsi ohjeita sovelluksen sivustosta</string>
+    <string id="Solution_MoreInfoLink">Lisätietoja</string>
+    <string id="Solution_ReinstallLink">Asenna sovellus uudelleen käyttöjärjestelmään %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Päivitys saatavilla</string>
+    <string id="Solution_InfoUpgrade">Poista valtuutetut tietokoneet</string>
+    <string id="Solution_WarnUpgrade">Pura salattujen asemien salaus</string>
+    <string id="Solution_DeviceLogo">Ota yhteyttä laitteen valmistajaan</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Poista tämän sovelluksen asennus nyt ja asenna se uudelleen käyttöjärjestelmään %1.</string>
+    <string id="UninstallActionSubHeader">Poista tämän sovelluksen asennus nyt, koska se ei ole yhteensopiva käyttöjärjestelmän %1 kanssa.</string>
+    <string id="ProgramMoreInfoLink">Lisätietoja</string>
+    <string id="DismissNotRunLink">Vahvista</string>
+    <string id="AutoUninstallNotRunLink">Poista</string>
+    <string id="AutoUninstallFailedText">Poista asennus manuaalisesti</string>
+    <string id="ManualUninstallNotRunText">Poista asennus manuaalisesti</string>
+    <string id="HardBlockDevice">Tämä laite ei ole yhteensopiva käyttöjärjestelmän %1 kanssa. Kysy lisätietoja valmistajalta.</string>
+    <string id="HardBlockDevices">Nämä laitteet eivät ole yhteensopivia käyttöjärjestelmän %1 kanssa. Kysy lisätietoja valmistajalta.</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Assistant Mise à niveau de %1</string>
+    <string id="WicaReportTitle">Rapport de l’Assistant Mise à niveau de %1</string>
+
+    <string id="OrCommaArgs2">%1 ou %2</string>
+    <string id="OrCommaArgs3">%1, %2 ou %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 ou %4</string>
+
+    <string id="AndCommaArgs2">%1 et %2</string>
+    <string id="AndCommaArgs3">%1, %2 et %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 et %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Système</string>
+    <string id="Devices_Header">Périphériques</string>
+    <string id="Programs_Header">Programmes</string>
+    <string id="WindowsXPMode_Header">Condition requise</string>
+
+    <string id="Status_Header">État</string>
+    <string id="Details_Header">Détails</string>
+
+    <string id="Hardware_PassedMultiple">%1 conditions requises réunies</string>
+    <string id="Hardware_PassedOne">1 condition requise réunie</string>
+
+    <string id="Devices_PassedMultiple">%1 périphériques répertoriés comme compatibles</string>
+    <string id="Devices_PassedOne">1 périphérique répertorié comme compatible</string>
+
+    <string id="Programs_PassedMultiple">%1 programmes répertoriés comme compatibles</string>
+    <string id="Programs_PassedOne">1 programme répertorié comme compatible</string>
+    <string id="NoIssuesDetected">Aucun problème détecté</string>
+
+    <string id="Hardware_SeeAll">Voir toutes les conditions requises</string>
+    <string id="Devices_SeeAll">Voir tous les périphériques</string>
+    <string id="Programs_SeeAll">Voir tous les programmes</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">La vitesse de l’unité centrale de votre PC est inférieure à 1 GHz et vous ne pourrez par conséquent pas installer et exécuter %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Vous devez installer au moins %1 Go de mémoire vive avant de pouvoir installer et exécuter %2. Contactez le fabricant de votre PC afin de voir si vous pouvez installer plus de mémoire vive.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Contactez le fabricant de votre PC afin de voir si vous pouvez mettre à niveau le BIOS système.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Le processeur de ce PC ne prend pas en charge une fonctionnalité critique (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Le processeur de ce PC ne prend pas en charge une fonctionnalité critique (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Le processeur de ce PC ne prend pas en charge une fonctionnalité critique (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Le processeur de ce PC ne prend pas en charge une fonctionnalité critique (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Le processeur de ce PC ne prend pas en charge une fonctionnalité critique (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Vous ne pouvez pas installer %1, car votre carte réseau sans fil ne remplit pas les conditions requises pour la mise à niveau.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Vous devez installer une ou plusieurs mises à jour de microprogramme ou pilotes de périphérique. Ouvrez Windows Update, installez les mises à jour disponibles, puis réessayez d’installer %1.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Votre résolution d’écran doit être d’au moins 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Nom de l’ordinateur :</string>
+    <string id="HeaderOperatingSystem">Système d’exploitation :</string>
+    <string id="HeaderManufacturer">Fabricant :</string>
+    <string id="HeaderCPU">Processeur :</string>
+    <string id="HeaderModel">Modèle :</string>
+    <string id="HeaderMemory">Mémoire :</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Vous devrez réinstaller vos applications et appareils compatibles dans %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 de vos applications et périphériques sont compatibles.</string>
+    <string id="Overview_ProgramDeviceWillWork">1 de vos applications ou périphériques est compatible.</string>
+    <string id="Overview_IssueRequiresAttention">Il y a 1 élément que vous devriez examiner.</string>
+    <string id="Overview_IssuesRequiresAttention">Il y a %1 éléments que vous devriez examiner.</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 élément à vérifier avant la mise à niveau</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 éléments à vérifier avant la mise à niveau</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Un ou plusieurs éléments ne sont pas pris en charge et vous empêchent d’effectuer la mise à niveau</string>
+    <string id="Overview_SeeFullReport">Voir les détails relatifs à la compatibilité</string>
+    <string id="Overview_NoCompatIssues">Aucun problème de compatibilité connu</string>
+    <string id="Overview_FeaturesLost">Important : certaines fonctionnalités Windows 7 peuvent ne plus être disponibles après la mise à niveau. Consultez les détails de compatibilité pour plus d’informations.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Non compatible</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Non compatible - Cette application ne sera pas disponible dans %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Non compatible</string>
+    <string id="Detial_PreventingUpgradeHeader">Mise à niveau bloquée</string>
+    <string id="Detail_NeedAttentionHeader">À examiner</string>
+    <string id="Detail_WillWorkHeader">Compatible</string>
+    <string id="Detail_BuyVersionLink">Mise à jour payante disponible</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Mise à jour disponible</string>
+    <string id="Solution_WontWorkNoneLink">Non compatible</string>
+    <string id="Solution_WontWorkUpdateLink">Mise à jour disponible</string>
+    <string id="Solution_RequireActionUpdateLink">Mise à jour disponible</string>
+    <string id="Solution_PaidUpdateLink">Mise à jour payante disponible</string>
+    <string id="Solution_WorkaroundLink">Solution disponible</string>
+    <string id="Solution_KBArticleLink">Solution disponible</string>
+    <string id="Solution_VendorLink">Accéder au site Web de l’application pour obtenir de l’aide</string>
+    <string id="Solution_MoreInfoLink">Informations</string>
+    <string id="Solution_ReinstallLink">Réinstaller cette application dans %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Mise à jour disponible</string>
+    <string id="Solution_InfoUpgrade">Supprimer les PC autorisés</string>
+    <string id="Solution_WarnUpgrade">Supprimer le chiffrement des lecteurs chiffrés</string>
+    <string id="Solution_DeviceLogo">Contacter le fabricant de l’appareil</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Désinstallez cette application maintenant et réinstallez-la dans %1.</string>
+    <string id="UninstallActionSubHeader">Désinstallez cette application maintenant, car elle n’est pas compatible avec %1.</string>
+    <string id="ProgramMoreInfoLink">Informations</string>
+    <string id="DismissNotRunLink">Confirmer</string>
+    <string id="AutoUninstallNotRunLink">Désinstaller</string>
+    <string id="AutoUninstallFailedText">Désinstaller manuellement</string>
+    <string id="ManualUninstallNotRunText">Désinstaller manuellement</string>
+    <string id="HardBlockDevice">Ce périphérique n’est pas compatible dans %1. Contactez le fabricant pour plus d’informations.</string>
+    <string id="HardBlockDevices">Ces périphériques ne sont pas compatibles dans %1. Contactez le fabricant pour plus d’informations.</string>
+</strings>
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">מסייע השדרוג של %1</string>
+    <string id="WicaReportTitle">דוח של מסייע השדרוג של %1</string>
+
+    <string id="OrCommaArgs2">%1 או %2</string>
+    <string id="OrCommaArgs3">%1,‏ %2 או %3</string>
+    <string id="OrCommaArgs4">%1,‏ %2,‏ %3 או %4</string>
+
+    <string id="AndCommaArgs2">%1 ו- %2</string>
+    <string id="AndCommaArgs3">%1,‏ %2 ו- %3</string>
+    <string id="AndCommaArgs4">%1,‏ %2,‏ %3 ו- %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">מערכת</string>
+    <string id="Devices_Header">התקנים</string>
+    <string id="Programs_Header">תוכניות</string>
+    <string id="WindowsXPMode_Header">דרישה</string>
+
+    <string id="Status_Header">מצב</string>
+    <string id="Details_Header">פרטים</string>
+
+    <string id="Hardware_PassedMultiple">%1 דרישות מערכת עברו</string>
+    <string id="Hardware_PassedOne">דרישת מערכת אחת עברה</string>
+
+    <string id="Devices_PassedMultiple">%1 מופיעים כתואמים</string>
+    <string id="Devices_PassedOne">התקן אחד מופיע כתואם</string>
+
+    <string id="Programs_PassedMultiple">%1 תוכניות מופיעות כתואמות</string>
+    <string id="Programs_PassedOne">תוכנית אחת מופיעה כתואמת</string>
+    <string id="NoIssuesDetected">לא זוהו בעיות</string>
+
+    <string id="Hardware_SeeAll">הצג את כל דרישות המערכת</string>
+    <string id="Devices_SeeAll">הצג את כל ההתקנים</string>
+    <string id="Programs_SeeAll">הצג את כל התוכניות</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">מהירות ה- CPU של המחשב שלך נמוכה מ- ‎1 GHz ולכן לא תוכל להתקין ולהפעיל את %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">עליך להתקין לפחות ‎%1 GB של RAM כדי שתוכל להתקין ולהפעיל את %2. פנה ליצרן המחשב כדי לברר אם באפשרותך להתקין זיכרון RAM נוסף.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">פנה ליצרן המחשב כדי לברר אם באפשרותך לשדרג את ה- BIOS של המערכת.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">המעבד של PC זה אינו תומך בתכונה קריטית (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">המעבד של PC זה אינו תומך בתכונה קריטית (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">המעבד של PC זה אינו תומך בתכונה קריטית (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">המעבד של PC זה אינו תומך בתכונה קריטית (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">המעבד של PC זה אינו תומך בתכונה קריטית (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">אין באפשרותך להתקין את %1 מאחר שכרטיס הרשת האלחוטית שלך אינו עומד בדרישות השדרוג.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">עליך להתקין עדכון אחד או יותר עבור הקושחה או מנהלי ההתקנים שלך. פתח את Windows Update, התקן את כל העדכונים הזמינים ולאחר מכן נסה שוב להתקין את %1.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">רזולוציית המסך צריכה להיות ‎1024 x 768 לפחות.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">שם מחשב:</string>
+    <string id="HeaderOperatingSystem">מערכת הפעלה:</string>
+    <string id="HeaderManufacturer">יצרן:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">דגם:</string>
+    <string id="HeaderMemory">זיכרון:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">תצטרך להתקין מחדש את האפליקציות וההתקנים התואמים שלך ב- %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 מהאפליקציות וההתקנים שלך תואמים</string>
+    <string id="Overview_ProgramDeviceWillWork">אחת מהאפליקציות או אחד מההתקנים שלך תואמים</string>
+    <string id="Overview_IssueRequiresAttention">פריט אחד לסקירתך</string>
+    <string id="Overview_IssuesRequiresAttention">%1 פריטים לסקירתך</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">פריט אחד לסקירתך לפני השדרוג</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 פריטים לסקירתך לפני השדרוג</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">פריט אחד או יותר אינו נתמך ומונע ממך לשדרג</string>
+    <string id="Overview_SeeFullReport">הצג את פרטי התאימות</string>
+    <string id="Overview_NoCompatIssues">אין בעיות תאימות ידועות</string>
+    <string id="Overview_FeaturesLost">חשוב: ייתכן שתכונות מסוימות של Windows 7 לא יהיו זמינות לאחר השדרוג. עיין בפרטי התאימות לקבלת מידע נוסף.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">לא תואם</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">לא תואם - אפליקציה זו לא תהיה זמינה ב- %1</string>
+    <string id="Detail_DeviceWontWorkFooter">לא תואם</string>
+    <string id="Detial_PreventingUpgradeHeader">מונע ממך לשדרג</string>
+    <string id="Detail_NeedAttentionHeader">לסקירתך</string>
+    <string id="Detail_WillWorkHeader">תואם</string>
+    <string id="Detail_BuyVersionLink">עדכון בתשלום זמין</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">עדכון זמין</string>
+    <string id="Solution_WontWorkNoneLink">לא תואם</string>
+    <string id="Solution_WontWorkUpdateLink">עדכון זמין</string>
+    <string id="Solution_RequireActionUpdateLink">עדכון זמין</string>
+    <string id="Solution_PaidUpdateLink">עדכון בתשלום זמין</string>
+    <string id="Solution_WorkaroundLink">פתרון זמין</string>
+    <string id="Solution_KBArticleLink">פתרון זמין</string>
+    <string id="Solution_VendorLink">עבור אל אתר האינטרנט של האפליקציה לקבלת עזרה</string>
+    <string id="Solution_MoreInfoLink">מידע נוסף</string>
+    <string id="Solution_ReinstallLink">התקן מחדש אפליקציה זו ב- %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">עדכון זמין</string>
+    <string id="Solution_InfoUpgrade">הסר מחשבים מורשים</string>
+    <string id="Solution_WarnUpgrade">פענח כוננים מוצפנים</string>
+    <string id="Solution_DeviceLogo">פנה ליצרן ההתקן</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">הסר את ההתקנה של אפליקציה זו כעת והתקן אותה מחדש ב- %1.</string>
+    <string id="UninstallActionSubHeader">הסר את ההתקנה של אפליקציה זו כעת מכיוון שהיא אינה תואמת ל- %1.</string>
+    <string id="ProgramMoreInfoLink">מידע נוסף</string>
+    <string id="DismissNotRunLink">אשר</string>
+    <string id="AutoUninstallNotRunLink">הסר התקנה</string>
+    <string id="AutoUninstallFailedText">הסר התקנה באופן ידני</string>
+    <string id="ManualUninstallNotRunText">הסר התקנה באופן ידני</string>
+    <string id="HardBlockDevice">התקן זה אינו תואם ל- %1. פנה ליצרן לקבלת מידע נוסף.</string>
+    <string id="HardBlockDevices">התקנים אלה אינם תואמים ל- %1. פנה ליצרן לקבלת מידע נוסף.</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1 frissítési segéd</string>
+    <string id="WicaReportTitle">%1 frissítési segéd – jelentés</string>
+
+    <string id="OrCommaArgs2">%1 vagy %2</string>
+    <string id="OrCommaArgs3">%1, %2 vagy %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 vagy %4</string>
+
+    <string id="AndCommaArgs2">%1 és %2</string>
+    <string id="AndCommaArgs3">%1 %2 és %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 és %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Rendszer</string>
+    <string id="Devices_Header">Eszközök</string>
+    <string id="Programs_Header">Programok</string>
+    <string id="WindowsXPMode_Header">Követelmény</string>
+
+    <string id="Status_Header">Állapot</string>
+    <string id="Details_Header">Részletek</string>
+
+    <string id="Hardware_PassedMultiple">%1 rendszerkövetelmény teljesült</string>
+    <string id="Hardware_PassedOne">1 rendszerkövetelmény teljesült</string>
+
+    <string id="Devices_PassedMultiple">%1 eszköz kompatibilis</string>
+    <string id="Devices_PassedOne">1 eszköz kompatibilis</string>
+
+    <string id="Programs_PassedMultiple">%1 program kompatibilis</string>
+    <string id="Programs_PassedOne">1 program kompatibilis</string>
+    <string id="NoIssuesDetected">Nincs probléma</string>
+
+    <string id="Hardware_SeeAll">Az összes rendszerkövetelmény megtekintése</string>
+    <string id="Devices_SeeAll">Az összes eszköz megtekintése</string>
+    <string id="Programs_SeeAll">Az összes program megtekintése</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">A számítógép processzorának sebessége nem éri el az 1 GHz-et, ezért a(z) %1 nem telepíthető és futtatható.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">A(z) %2 telepítéséhez és futtatásához legalább %1 GB memória szükséges. Érdeklődjön a számítógép gyártójánál, hogy bővíthető-e a memória.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Érdeklődjön a számítógép gyártójánál arról, hogy frissíthető-e a BIOS.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Ennek a gépnek a processzora nem támogat egy kritikus fontosságú funkciót (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Ennek a gépnek a processzora nem támogat egy kritikus fontosságú funkciót (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Ennek a gépnek a processzora nem támogat egy kritikus fontosságú funkciót (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Ennek a gépnek a processzora nem támogat egy kritikus fontosságú funkciót (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Ennek a gépnek a processzora nem támogat egy kritikus fontosságú funkciót (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">A(z) %1 nem telepíthető, mert a vezeték nélküli hálózati kártya nem felel meg a frissítési követelményeknek.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Egy vagy több frissítést kell telepítenie a belső vezérlőprogramhoz vagy az eszközillesztőkhöz. Nyissa meg a Windows Update ablakot, telepítse az összes rendelkezésre álló frissítést, majd próbálja meg ismét a(z) %1 telepítését.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Legalább 1024 x 768 képpontos képernyőfelbontás szükséges.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Számítógépnév:</string>
+    <string id="HeaderOperatingSystem">Operációs rendszer:</string>
+    <string id="HeaderManufacturer">Gyártó:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Típus:</string>
+    <string id="HeaderMemory">Memória:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Újra kell telepítenie a kompatibilis alkalmazásait és eszközeit a(z) %1 rendszerben</string>
+    <string id="Overview_ProgramsDevicesWillWork">Az alkalmazások és eszközök közül %1 kompatibilis</string>
+    <string id="Overview_ProgramDeviceWillWork">Az alkalmazások és eszközök közül 1 kompatibilis</string>
+    <string id="Overview_IssueRequiresAttention">1 elem ellenőrizendő</string>
+    <string id="Overview_IssuesRequiresAttention">%1 elem ellenőrizendő</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 elem ellenőrizendő a frissítés előtt</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 elem ellenőrizendő a frissítés előtt</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Vannak nem támogatott elemek, amelyek megakadályozzák a frissítést</string>
+    <string id="Overview_SeeFullReport">Kompatibilitási részletek megtekintése</string>
+    <string id="Overview_NoCompatIssues">Nincsenek ismert kompatibilitási problémák</string>
+    <string id="Overview_FeaturesLost">Fontos: Előfordulhat, hogy a Windows 7 bizonyos funkciói nem lesznek elérhetők a frissítés után. További információt a kompatibilitással kapcsolatos részletek között talál.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Nem kompatibilis</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Nem kompatibilis - ez az alkalmazás a(z) %1 rendszerben nem fog működni</string>
+    <string id="Detail_DeviceWontWorkFooter">Nem kompatibilis</string>
+    <string id="Detial_PreventingUpgradeHeader">A frissítés nem végezhető el</string>
+    <string id="Detail_NeedAttentionHeader">Ellenőrzést igényel</string>
+    <string id="Detail_WillWorkHeader">Kompatibilis</string>
+    <string id="Detail_BuyVersionLink">Megvásárolható frissítés jelent meg</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Frissítés jelent meg</string>
+    <string id="Solution_WontWorkNoneLink">Nem kompatibilis</string>
+    <string id="Solution_WontWorkUpdateLink">Frissítés jelent meg</string>
+    <string id="Solution_RequireActionUpdateLink">Frissítés jelent meg</string>
+    <string id="Solution_PaidUpdateLink">Megvásárolható frissítés jelent meg</string>
+    <string id="Solution_WorkaroundLink">Elérhető megoldás</string>
+    <string id="Solution_KBArticleLink">Elérhető megoldás</string>
+    <string id="Solution_VendorLink">Segítség az alkalmazás webhelyén</string>
+    <string id="Solution_MoreInfoLink">További információ</string>
+    <string id="Solution_ReinstallLink">Alkalmazás újratelepítése a(z) %1 rendszerben</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Frissítés jelent meg</string>
+    <string id="Solution_InfoUpgrade">Engedélyezett számítógépek eltávolítása</string>
+    <string id="Solution_WarnUpgrade">Titkosított meghajtók visszafejtése</string>
+    <string id="Solution_DeviceLogo">Forduljon az eszköz gyártójához</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Távolítsa el most az alkalmazást, és telepítse újra a(z) %1 rendszerben.</string>
+    <string id="UninstallActionSubHeader">Távolítsa el most ezt az alkalmazást, mert nem kompatibilis a(z) %1 rendszerrel.</string>
+    <string id="ProgramMoreInfoLink">További információ</string>
+    <string id="DismissNotRunLink">Jóváhagyás</string>
+    <string id="AutoUninstallNotRunLink">Eltávolítás</string>
+    <string id="AutoUninstallFailedText">Manuális eltávolítás</string>
+    <string id="ManualUninstallNotRunText">Manuális eltávolítás</string>
+    <string id="HardBlockDevice">Ez az eszköz nem kompatibilis a(z) %1 rendszerrel. Forduljon tájékoztatásért a gyártóhoz.</string>
+    <string id="HardBlockDevices">Ezek az eszközök nem kompatibilisek a(z) %1 rendszerrel. Forduljon tájékoztatásért a gyártóhoz.</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Uppfærsluaðstoð %1</string>
+    <string id="WicaReportTitle">Skýrsla frá Uppfærsluaðstoð %1</string>
+
+    <string id="OrCommaArgs2">%1 eða %2</string>
+    <string id="OrCommaArgs3">%1, %2 eða %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 eða %4</string>
+
+    <string id="AndCommaArgs2">%1 og %2</string>
+    <string id="AndCommaArgs3">%1, %2 og %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 og %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Kerfi</string>
+    <string id="Devices_Header">Tæki</string>
+    <string id="Programs_Header">Forrit</string>
+    <string id="WindowsXPMode_Header">Forkrafa</string>
+
+    <string id="Status_Header">Staða</string>
+    <string id="Details_Header">Upplýsingar</string>
+
+    <string id="Hardware_PassedMultiple">%1 kerfiskröfur uppfylltar</string>
+    <string id="Hardware_PassedOne">Ein kerfiskrafa uppfyllt</string>
+
+    <string id="Devices_PassedMultiple">%1 tæki skráð sem samhæf</string>
+    <string id="Devices_PassedOne">Eitt tæki skráð sem samhæft</string>
+
+    <string id="Programs_PassedMultiple">%1 forrit skráð sem samhæf</string>
+    <string id="Programs_PassedOne">Eitt forrit skráð sem samhæft</string>
+    <string id="NoIssuesDetected">Engin vandamál fundust</string>
+
+    <string id="Hardware_SeeAll">Sjá allar kerfiskröfur</string>
+    <string id="Devices_SeeAll">Sjá öll tæki</string>
+    <string id="Programs_SeeAll">Sjá öll forrit</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Þar sem örgjörvahraði tölvunnar þinnar er minni en 1 GHz geturðu ekki sett upp og keyrt %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Áður en þú getur sett upp og keyrt %2 þarftu að setja a.m.k. %1 GB af vinnsluminni í tölvuna.  Hafðu samband við framleiðanda tölvunnar til að komast að því hvort þú getur sett meira vinnsluminni í hana.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Hafðu samband við framleiðanda tölvunnar til að komast að því hvort þú getur uppfært BIOS kerfisins.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Örgjörvi tölvunnar styður ekki mikilvægan eiginleika (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Örgjörvi tölvunnar styður ekki mikilvægan eiginleika (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Örgjörvi tölvunnar styður ekki mikilvægan eiginleika (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Örgjörvi tölvunnar styður ekki mikilvægan eiginleika (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Örgjörvi tölvunnar styður ekki mikilvægan eiginleika (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Ekki er hægt að setja %1 upp vegna þess að þráðlausa netkortið uppfyllir ekki uppfærslukröfurnar.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Þú þarft að setja upp eina eða fleiri uppfærslur á fastbúnaði eða tækjareklum. Opnaðu Windows Update, settu upp tiltækar uppfærslur og reyndu síðan að setja %1 upp aftur.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Skjáupplausnin þarf að vera að minnsta kosti 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Heiti tölvu:</string>
+    <string id="HeaderOperatingSystem">Stýrikerfi:</string>
+    <string id="HeaderManufacturer">Framleiðandi:</string>
+    <string id="HeaderCPU">Örgjörvi:</string>
+    <string id="HeaderModel">Gerð:</string>
+    <string id="HeaderMemory">Minni:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Þú þarft að enduruppsetja samhæf forrit og tæki í %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 af forritunum þínum og tækjum eru samhæf</string>
+    <string id="Overview_ProgramDeviceWillWork">Eitt af forritunum þínum eða tækjum er samhæft</string>
+    <string id="Overview_IssueRequiresAttention">Eitt atriði sem þú þarft að fara yfir</string>
+    <string id="Overview_IssuesRequiresAttention">%1 atriði sem þú þarft að fara yfir</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">Eitt atriði sem þú þarft að skoða áður en þú uppfærir</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 atriði sem þú þarft að skoða áður en þú uppfærir</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Eitt eða fleiri atriði eru ekki studd og koma í veg fyrir að uppfærsla geti farið fram</string>
+    <string id="Overview_SeeFullReport">Sjá upplýsingar um samhæfi</string>
+    <string id="Overview_NoCompatIssues">Engin þekkt vandamál tengd samhæfi</string>
+    <string id="Overview_FeaturesLost">Mikilvægt: Sumir eiginleikar Windows 7 verða hugsanlega ekki í boði eftir uppfærsluna. Frekari upplýsingar er að finna í yfirliti yfir samhæfi.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Ekki samhæft</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Ekki samhæft - þetta forrit verður ekki í boði í %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Ekki samhæft</string>
+    <string id="Detial_PreventingUpgradeHeader">Kemur í veg fyrir að uppfærsla geti farið fram</string>
+    <string id="Detail_NeedAttentionHeader">Sem þú þarft að fara yfir</string>
+    <string id="Detail_WillWorkHeader">Samhæft</string>
+    <string id="Detail_BuyVersionLink">Gjaldskyld uppfærsla í boði</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Uppfærsla í boði</string>
+    <string id="Solution_WontWorkNoneLink">Ekki samhæft</string>
+    <string id="Solution_WontWorkUpdateLink">Uppfærsla í boði</string>
+    <string id="Solution_RequireActionUpdateLink">Uppfærsla í boði</string>
+    <string id="Solution_PaidUpdateLink">Gjaldskyld uppfærsla í boði</string>
+    <string id="Solution_WorkaroundLink">Lausn tiltæk</string>
+    <string id="Solution_KBArticleLink">Lausn tiltæk</string>
+    <string id="Solution_VendorLink">Farðu á vefsvæði forritsins til að fá aðstoð</string>
+    <string id="Solution_MoreInfoLink">Frekari upplýsingar</string>
+    <string id="Solution_ReinstallLink">Settu forritið upp aftur í %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Uppfærsla í boði</string>
+    <string id="Solution_InfoUpgrade">Fjarlægja leyfðar tölvur</string>
+    <string id="Solution_WarnUpgrade">Dulráða dulkóðuð drif</string>
+    <string id="Solution_DeviceLogo">Hafðu samband við framleiðanda tækisins</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Fjarlægðu þetta forrit núna og settu það upp aftur í %1.</string>
+    <string id="UninstallActionSubHeader">Fjarlægðu þetta forrit núna vegna þess að það er ekki samhæft %1.</string>
+    <string id="ProgramMoreInfoLink">Frekari upplýsingar</string>
+    <string id="DismissNotRunLink">Staðfesta</string>
+    <string id="AutoUninstallNotRunLink">Fjarlægja</string>
+    <string id="AutoUninstallFailedText">Fjarlægja handvirkt</string>
+    <string id="ManualUninstallNotRunText">Fjarlægja handvirkt</string>
+    <string id="HardBlockDevice">Þetta tæki er ekki samhæft í %1. Hafðu samband við framleiðandann til að fá nánari upplýsingar.</string>
+    <string id="HardBlockDevices">Þessi tæki eru ekki samhæf í %1. Hafðu samband við framleiðandann til að fá nánari upplýsingar.</string>
+</strings>
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Assistente aggiornamento Windows %1</string>
+    <string id="WicaReportTitle">Rapporto Assistente aggiornamento Windows %1</string>
+
+    <string id="OrCommaArgs2">%1 o %2</string>
+    <string id="OrCommaArgs3">%1, %2 o %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 o %4</string>
+
+    <string id="AndCommaArgs2">%1 e %2</string>
+    <string id="AndCommaArgs3">%1, %2 e %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 e %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Sistema</string>
+    <string id="Devices_Header">Dispositivi</string>
+    <string id="Programs_Header">Programmi</string>
+    <string id="WindowsXPMode_Header">Requisito</string>
+
+    <string id="Status_Header">Stato</string>
+    <string id="Details_Header">Dettagli</string>
+
+    <string id="Hardware_PassedMultiple">%1 requisiti di sistema verificati</string>
+    <string id="Hardware_PassedOne">1 requisito di sistema verificato</string>
+
+    <string id="Devices_PassedMultiple">%1 dispositivi compatibili</string>
+    <string id="Devices_PassedOne">1 dispositivo compatibile</string>
+
+    <string id="Programs_PassedMultiple">%1 programmi compatibili</string>
+    <string id="Programs_PassedOne">1 programma compatibile</string>
+    <string id="NoIssuesDetected">Nessun problema rilevato</string>
+
+    <string id="Hardware_SeeAll">Visualizza tutti i requisiti di sistema</string>
+    <string id="Devices_SeeAll">Visualizza tutti i dispositivi</string>
+    <string id="Programs_SeeAll">Visualizza tutti i programmi</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">La velocità della CPU del PC è inferiore a 1 GHz. Non sarà possibile installare ed eseguire %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">È necessario installare almeno %1 GB di RAM per poter installare ed eseguire %2. Contattare il produttore del PC per verificare se è possibile installare altra RAM.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Contattare il produttore del PC per verificare se è possibile aggiornare il BIOS di sistema.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Il processore di questo PC non supporta una funzionalità di importanza critica (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Il processore di questo PC non supporta una funzionalità di importanza critica (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Il processore di questo PC non supporta una funzionalità di importanza critica (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Il processore di questo PC non supporta una funzionalità di importanza critica (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Il processore di questo PC non supporta una funzionalità di importanza critica (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Impossibile installare %1 perché la scheda di rete wireless non soddisfa i requisiti per l'aggiornamento.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">È necessario installare uno o più aggiornamenti del firmware o driver per dispositivi. Aprire Windows Update, installare tutti gli aggiornamenti disponibili, quindi riprovare l'installazione di %1.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">La risoluzione dello schermo minima è 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Nome computer:</string>
+    <string id="HeaderOperatingSystem">Sistema operativo:</string>
+    <string id="HeaderManufacturer">Produttore:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Modello:</string>
+    <string id="HeaderMemory">Memoria:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Sarà necessario reinst

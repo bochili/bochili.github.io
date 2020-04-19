@@ -1,0 +1,885 @@
+uninstall ngayon ang app na ito at i-reinstall ito sa %1.</string>
+    <string id="UninstallActionSubHeader">I-uninstall ngayon ang app na ito dahil hindi ito akma sa %1.</string>
+    <string id="ProgramMoreInfoLink">Higit pang impormasyon</string>
+    <string id="DismissNotRunLink">Kumpirmahin</string>
+    <string id="AutoUninstallNotRunLink">I-uninstall</string>
+    <string id="AutoUninstallFailedText">Manu-manong i-uninstall</string>
+    <string id="ManualUninstallNotRunText">Manu-manong i-uninstall</string>
+    <string id="HardBlockDevice">Hindi akma ang device na ito sa %1. Makipag-ugnayan sa gumawa para sa higit pang impormasyon.</string>
+    <string id="HardBlockDevices">Hindi akma ang mga device na ito sa %1. Makipag-ugnayan sa gumawa para sa higit pang impormasyon.</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1 Mataimakon Sabuntawa</string>
+    <string id="WicaReportTitle">%1 Rahoton Mataimakon Sabuntawa</string>
+
+    <string id="OrCommaArgs2">%1 or %2</string>
+    <string id="OrCommaArgs3">%1, %2 or %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 or %4</string>
+
+    <string id="AndCommaArgs2">%1 and %2</string>
+    <string id="AndCommaArgs3">%1, %2 and %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 and %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Sistem</string>
+    <string id="Devices_Header">Na'urori</string>
+    <string id="Programs_Header">Shirye shirye</string>
+    <string id="WindowsXPMode_Header">Buƙata</string>
+
+    <string id="Status_Header">Matsayi</string>
+    <string id="Details_Header">Cikakkun bayanai</string>
+
+    <string id="Hardware_PassedMultiple">an yi fasin buƙatun sistem %1</string>
+    <string id="Hardware_PassedOne">an yi fasin buƙatar sistem 1</string>
+
+    <string id="Devices_PassedMultiple">An jeri na'urorin %1 da suka zauna daidai</string>
+    <string id="Devices_PassedOne">An jeri na'urar 1 da ya zauna daidai</string>
+
+    <string id="Programs_PassedMultiple">An jeri shirye-shirye %1 da suka zauna daidai</string>
+    <string id="Programs_PassedOne">An jeri shirya 1 da ya zauna daidai</string>
+    <string id="NoIssuesDetected">Ba a gano wani matsala ba</string>
+
+    <string id="Hardware_SeeAll">Duba duk buƙatun sistem</string>
+    <string id="Devices_SeeAll">Duba duk nau'rori</string>
+    <string id="Programs_SeeAll">Duba duk shirye-shirye</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Gudun CPU na PC ɗinka bai kai 1GH ba saboda haka ba zaka iya girka kuma gudanar da %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Ya kamata ka girka aƙalla GB %1 na RAM kafin ka iya girka kuma gudanar da %2. Tuntuɓa kamfanin ƙira na PC ɗin don gani idan zaka iya girka ƙarin RAM.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Tuntuɓa kamfanin ƙira na PC ɗinka don gani idan zaka iya sabunta sistem na BIOS.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Proseso na wannan Kwamfutar ka bai ya goyi bayan wata fuska mai tsamari (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Proseso na wannan Kwamfutar ka bai ya goyi bayan wata fuska mai tsamari (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Proseso na wannan Kwamfutar ka bai ya goyi bayan wata fuska mai tsamari (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Proseso na wannan Kwamfutar ka bai ya goyi bayan wata fuska mai tsamari (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Proseso na wannan Kwamfutar ka bai ya goyi bayan wata fuska mai tsamari (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">Ba za ka iya girka %1 ba saboda katin hanyar sadarwa mara waya ɗinka bai cimma buƙatun daga daraja ba.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Ya kamata ka girka ɗaya ko yawan sabuntawa zuwa famwaya ɗinka ko diraibs na na'urori. Buɗe Windows Update, girka duk sabuntawa da aka samu, sannan sake gwada girkawa %1 kuma.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Ya kamata kyawon tarkacen hoton allonka ya kasance a ƙalla 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Sunan kwamfuta:</string>
+    <string id="HeaderOperatingSystem">Sarrafa tsarin kwamfuta:</string>
+    <string id="HeaderManufacturer">Kamfanin ƙira:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Nau'i:</string>
+    <string id="HeaderMemory">Mahardatar kwamfuta:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Ya kamata ka sake girka ka'idodi da na'urori ɗinka da suka zauna daidai acikin %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 daga ka'idodi ko na'urarka ta zauna daidai ba</string>
+    <string id="Overview_ProgramDeviceWillWork">1 daga ka'idodi ko na'urarka bai zauna daidai ba</string>
+    <string id="Overview_IssueRequiresAttention">Abu daya domin ka tisa</string>
+    <string id="Overview_IssuesRequiresAttention">Abubuwa %1 domin ka tisa</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">abu 1 da za ka sake duba kafin ka ɗaukaka</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">abubuwa %1 da za ka sake duba kafin ka ɗaukaka</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Ba a goyi bayan ɗaya ko ƙarin abubuwa ba kuma suna hana ka ɗaukakawa</string>
+    <string id="Overview_SeeFullReport">Duba cikakkun bayani na zauna daidai</string>
+    <string id="Overview_NoCompatIssues">Babu sannanen matsalolin dacewa</string>
+    <string id="Overview_FeaturesLost">Muhimmi: Mai yiwuwa ba za a samu waɗansu sifoffin Windows 7 bayan ka ɗaukaka. Duba cikakkun bayanan dacewa don ƙarin bayani.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Bai zauna daidai ba</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Ba mai jituwa ba - wannan ka'ida ba za ta samu a cikin %1 ba</string>
+    <string id="Detail_DeviceWontWorkFooter">Bai zauna daidai ba</string>
+    <string id="Detial_PreventingUpgradeHeader">Hanawa kai ɗaukakawa</string>
+    <string id="Detail_NeedAttentionHeader">Domin ka tisa</string>
+    <string id="Detail_WillWorkHeader">Ya zauna daidai</string>
+    <string id="Detail_BuyVersionLink">Akwai sabunta na kuɗi</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Akwai sabunta</string>
+    <string id="Solution_WontWorkNoneLink">Bai zauna daidai ba</string>
+    <string id="Solution_WontWorkUpdateLink">Akwai sabunta</string>
+    <string id="Solution_RequireActionUpdateLink">Akwai sabunta</string>
+    <string id="Solution_PaidUpdateLink">Akwai sabunta na kuɗi</string>
+    <string id="Solution_WorkaroundLink">Akwai salisha</string>
+    <string id="Solution_KBArticleLink">Akwai salisha</string>
+    <string id="Solution_VendorLink">Jeka shafin yanargizo na ka'idar don taimako</string>
+    <string id="Solution_MoreInfoLink">Ƙarin bayani</string>
+    <string id="Solution_ReinstallLink">Sake girka wannan ka'ida a cikin %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Akwai sabunta</string>
+    <string id="Solution_InfoUpgrade">Cire PCs masu izini</string>
+    <string id="Solution_WarnUpgrade">Buɗe diraibs da aka ɓoye</string>
+    <string id="Solution_DeviceLogo">Tuntuɓa kamfanin ƙira na na'urar</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Kin girka wannan ka'ida yanzu sai a sake girka shi acikin %1.</string>
+    <string id="UninstallActionSubHeader">Kin girka wannan ka'ida yanzu saboda bai zauna daidai tare da %1.</string>
+    <string id="ProgramMoreInfoLink">Ƙarin bayani</string>
+    <string id="DismissNotRunLink">Tabbata</string>
+    <string id="AutoUninstallNotRunLink">Kin girka</string>
+    <string id="AutoUninstallFailedText">Kin girka da hannu</string>
+    <string id="ManualUninstallNotRunText">Kin girka da hannu</string>
+    <string id="HardBlockDevice">Wannan na'ura ba ta zauna daidai tare da %1 ba. Tuntuɓa kamfanin ƙira don ƙarin bayani.</string>
+    <string id="HardBlockDevices">Waɗannan na'urori ba su zauna daidai tare da %1 ba. Tuntuɓa kamfanin ƙira don ƙarin bayani.</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Aṣèrànwọ́ Ìṣàgbéga %1</string>
+    <string id="WicaReportTitle">Ìjábọ̀ Aṣèrànwọ́ Ìṣàgbéga %1</string>
+
+    <string id="OrCommaArgs2">%1 tàbí %2</string>
+    <string id="OrCommaArgs3">%1, %2 tàbí %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 tàbí %4</string>
+
+    <string id="AndCommaArgs2">%1 àti %2</string>
+    <string id="AndCommaArgs3">%1, %2 àti %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 àti %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Ẹ̀rọ</string>
+    <string id="Devices_Header">Àwọn ohun èlò</string>
+    <string id="Programs_Header">Àwọn ètò</string>
+    <string id="WindowsXPMode_Header">Ìnílò</string>
+
+    <string id="Status_Header">Ìdúrópàtó</string>
+    <string id="Details_Header">Lẹkúnrẹ́rẹ́</string>
+
+    <string id="Hardware_PassedMultiple">Àwọn ìnílò ẹ̀rọ %1 ti yege</string>
+    <string id="Hardware_PassedOne">Ìnílò ẹ̀rọ 1 ti yege</string>
+
+    <string id="Devices_PassedMultiple">Àwọn ohun èlò %1 ní a kọsílẹ̀ gẹ́gẹ́bíi èyí tí ó báramu</string>
+    <string id="Devices_PassedOne">Ohun èlò 1 ní a kọsílẹ̀ gẹ́gẹ́bíi èyí tí ó báramu</string>
+
+    <string id="Programs_PassedMultiple">Àwọn ètò %1 ní a kọsílẹ̀ gẹ́gẹ́bíi èyí tí ó báramu</string>
+    <string id="Programs_PassedOne">Ètò1 ní a kọsílẹ̀ gẹ́gẹ́bíi èyí tí ó báramu</string>
+    <string id="NoIssuesDetected">Kò sí ìṣòro kankan tí a kófìrí</string>
+
+    <string id="Hardware_SeeAll">Wo gbogbo ìnílò ẹ̀rọ</string>
+    <string id="Devices_SeeAll">Wo gbogbo ohun èlò</string>
+    <string id="Programs_SeeAll">Wo gbogbo ètò</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Ìyárasí CPU àwọn PC rẹ kéré sí 1GHZ kí o má baà le ṣàgbékalẹ̀ àti fi %1 ṣiṣẹ̀.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">O nílò láti ṣàgbékalẹ̀, ó kéré jù, %1 GB RAM kí o tó le ṣàgbékalẹ̀ àti fi %2 ṣiṣẹ́, Kán sí olùgbéjáde PC láti rí bí o bá le ṣàgbékalẹ̀ RAM síi.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Kàn sí olúgbéjáde PC rẹ láti wo bí o bá le ṣàgbéga BIOS ẹ̀rọ rẹ.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Odo ìṣirò kọ̀ǹpútà PC yìí kò ṣàtìlẹyìn fún àfidámọ̀ tó lágbára (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Odo ìṣirò kọ̀ǹpútà PC yìí kò ṣàtìlẹyìn fún àfidámọ̀ tó lágbára (CompareExchange 128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Odo ìṣirò kọ̀ǹpútà PC yìí kò ṣàtìlẹyìn fún àfidámọ̀ tó lágbára (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Odo ìṣirò kọ̀ǹpútà PC yìí kò ṣàtìlẹyìn fún àfidámọ̀ tó lágbára (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Odo ìṣirò kọ̀ǹpútà PC yìí kò ṣàtìlẹyìn fún àfidámọ̀ tó lágbára (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">O kò le ṣàgbékalẹ̀ %1 nítorí káàdì alásopọ̀ aláìlowáyà rẹ kò bá àwọn àmúyẹ àfikún mu.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">O níláti ṣàgbékalẹ̀ ọ̀kan tàbí ọ̀pọ̀ àfikún sí fámùwià tàbí àwọn aṣòkùnfà ìṣe ohun èlò. Ṣí Windows Update, Ṣàgbékalẹ̀ gbogbo àfikún tó wà nílẹ̀ kí o wá gbìyànjú ṣíṣàgbékalẹ̀ %1 lẹ́ẹ̀kan síi.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Ìmúsí àwòrán aaṣàfihàn rẹ níláti gbọ́dọ̀ jẹ́ ó kéré jù 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Orúkọ kọ̀ǹpútà:</string>
+    <string id="HeaderOperatingSystem">Ìlànà-ètò ìmú ṣiṣẹ́:</string>
+    <string id="HeaderManufacturer">Olùṣẹ̀dá:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Módẹ̀lì:</string>
+    <string id="HeaderMemory">Ìránti:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">O máa níláti ṣàtúngbékalẹ̀ àwọn ìṣàfilọ́lẹ̀ tó baramu rẹ àti àwọn ohun èlò ní %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">Àwọn ìṣàfilọ́lẹ̀ %1 rẹ àti ohun èlò báramu</string>
+    <string id="Overview_ProgramDeviceWillWork">1 nínú àwọn ìṣàfilọ́lẹ̀ tàbí ohun èlò rẹ báramu.</string>
+    <string id="Overview_IssueRequiresAttention">Wúnrẹ̀n 1 fún ọ láti ṣàtúnwò</string>
+    <string id="Overview_IssuesRequiresAttention">Wúnrẹ̀n %1 fún ọ láti ṣàtúnwò</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">Wúnrẹ̀n 1 fún ọ láti ṣàtúnyẹ̀wò kí o tó ṣàfikún</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">Wúnrẹ̀n %1 fún ọ láti ṣàtúnyẹ̀wò kí o tó ṣàfikún</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Ọ̀kan tàbí ọ̀pọ̀ wúnrẹ̀n kò látìlẹyìn ó sì ń dènà rẹ láti ṣàfikún</string>
+    <string id="Overview_SeeFullReport">Wo ẹ̀kúnrẹ́rẹ́ ìbámu</string>
+    <string id="Overview_NoCompatIssues">Kò sí ìṣòro ìbaramu mímọ̀</string>
+    <string id="Overview_FeaturesLost">Pàtàkì: Àwọn àfidámọ̀ Windows 7 kan le má wà nílẹ̀ lẹ́yìn tí o bá ṣàfikún. Wo ẹ̀kúnrẹ́rẹ́ ìbáramu fún ọ̀pọ̀ ìwífún.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Kò báramu</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Kò báramu - ìṣàfilọ́lẹ̀ yìí kò sí nílẹ̀ ní %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Kò báramu</string>
+    <string id="Detial_PreventingUpgradeHeader">Ń dènà rẹ láti ṣàfikún</string>
+    <string id="Detail_NeedAttentionHeader">Fún ọ láti ṣàtúnwò</string>
+    <string id="Detail_WillWorkHeader">Báramu</string>
+    <string id="Detail_BuyVersionLink">Àfikún alásanwófún wà nílẹ̀</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Àfikún wà nílẹ̀</string>
+    <string id="Solution_WontWorkNoneLink">Kò báramu</string>
+    <string id="Solution_WontWorkUpdateLink">Àfikún wà nílẹ̀</string>
+    <string id="Solution_RequireActionUpdateLink">Àfikún wà nílẹ̀</string>
+    <string id="Solution_PaidUpdateLink">Àfikún alásanwófún wà nílẹ̀</string>
+    <string id="Solution_WorkaroundLink">Ọnà àbáyọ wà nílẹ̀</string>
+    <string id="Solution_KBArticleLink">Ọnà àbáyọ wà nílẹ̀</string>
+    <string id="Solution_VendorLink">Lọ sí ojú òpó wẹ́ẹ̀bù fún ìrànwọ́</string>
+    <string id="Solution_MoreInfoLink">Ọ̀pọ̀ ìwífún</string>
+    <string id="Solution_ReinstallLink">Ṣàtúngbékalẹ̀ ìṣàfilọ́lẹ̀ yìí ní %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Àfikún wà nílẹ̀</string>
+    <string id="Solution_InfoUpgrade">Ṣàyọkúrò àwọn PC tí a ti fún láṣẹ́</string>
+    <string id="Solution_WarnUpgrade">Ṣàtúpalẹ̀ àwọn àwo àká ọ̀rọ̀ ti a ti pa lárokò</string>
+    <string id="Solution_DeviceLogo">Kàn sí olùṣẹ̀dá ohun èlò náà</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Ṣàgbékúrò ìṣàfilọ́lẹ̀ yìí kí o wá ṣàtúngbékalẹ̀ rẹ ní %1.</string>
+    <string id="UninstallActionSubHeader">Ṣàgbékúrò ìṣàfilọ́lẹ̀ yìí nísìnyí nítorípé kò báramu pẹ̀lú %1.</string>
+    <string id="ProgramMoreInfoLink">Ọ̀pọ̀ ìwífún</string>
+    <string id="DismissNotRunLink">Ṣàrídájú</string>
+    <string id="AutoUninstallNotRunLink">Ṣàgbékúrò</string>
+    <string id="AutoUninstallFailedText">Ṣàgbékúrò aláfọwọ́ṣe</string>
+    <string id="ManualUninstallNotRunText">Ṣàgbékúrò aláfọwọ́ṣe</string>
+    <string id="HardBlockDevice">Ohun èlò yìí kò báramu pẹ̀lú %1. Kànsí olùṣẹ̀dá fún ọ̀pọ̀ ìwífún.</string>
+    <string id="HardBlockDevices">Àwọn ohun èlò wọ̀nyìí kò báramu ní %1. Kàn sí olùṣẹ̀dá fún ọ̀pọ̀ ìwífún.</string>
+</strings>
+PA<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Sethušakaonafatšo sa %1</string>
+    <string id="WicaReportTitle">Pego ya Sethušakaonafatšo sa %1</string>
+
+    <string id="OrCommaArgs2">%1 goba %2</string>
+    <string id="OrCommaArgs3">%1, %2 goba %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 goba %4</string>
+
+    <string id="AndCommaArgs2">%1 le %2</string>
+    <string id="AndCommaArgs3">%1, %2 le %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 le %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Lenaneokhomphutha</string>
+    <string id="Devices_Header">Didirišwa</string>
+    <string id="Programs_Header">Mananeo</string>
+    <string id="WindowsXPMode_Header">Senyakwa</string>
+
+    <string id="Status_Header">Boemo</string>
+    <string id="Details_Header">Dintlha</string>
+
+    <string id="Hardware_PassedMultiple">Dinyakwa tša tshepedišo tša %1 di atlegile</string>
+    <string id="Hardware_PassedOne">Dinyakwa tša tshepedišo tša 1 di atlegile</string>
+
+    <string id="Devices_PassedMultiple">Didirišwa tše %1 di ngwadilwe bjalo ka tša tirišano</string>
+    <string id="Devices_PassedOne">Sedirišwa se 1 se ngwadilwe bjalo ka tša tirišano</string>
+
+    <string id="Programs_PassedMultiple">Mananeo a %1 a ngwadilwe bjalo ka a tirišano</string>
+    <string id="Programs_PassedOne">Lenaneo le 1 le ngwadilwe bjalo ka la tirišano</string>
+    <string id="NoIssuesDetected">Ga go bothata bjo hweditšwego</string>
+
+    <string id="Hardware_SeeAll">Bona dinyakwa ka moka tša tshepedišo</string>
+    <string id="Devices_SeeAll">Bona didirišwa ka moka</string>
+    <string id="Programs_SeeAll">Bona mananeo ka moka</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Lebelo la CPU ya khomphutha ya gago le ka fase ga 1 GHz ka fao o ka se kgone go hloma le go diragatša %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">O swanetše go hloma bonyane %1 GB ya RAM pele o ka hloma le go diragatša %2.  Ikgokaganye le motšweletši wa khomphutha go bona ge eba o ka kgona go hloma RAM ye nngwe.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Ikgokaganye le motšweletši wa khomphutha ya gago go bona ge o ka kgona go kaonafatša BIOS ya tshepedišo.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">Phrosesa ye ya khomphutha ga e thekge setlabelo se bohlokwa (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">Phrosesa ye ya khomphutha ga e thekge setlabelo se bohlokwa (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">Phrosesa ye ya khomphutha ga e thekge setlabelo se bohlokwa (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">Phrosesa ye ya khomphutha ga e thekge setlabelo se bohlokwa (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">Phrosesa ye ya khomphutha ga e thekge setlabelo se bohlokwa (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">O ka se hlome %1 ka gobane karata ya gago ya netweke ya go hloka mathale ga e fihlelele dinyakwa tša kaonafatšo.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">O swanetše go hloma mpshafatšo e tee goba tše ntši go femewere ya gago goba go diteraebe tša didirišwa. Bula Windows Update, hloma dimpshafatšo ka moka tše di hwetšagalago, o leke go hloma %1 gape.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Ponagatšo ya sekrini ya gago e swanetše go ba bonyane 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Leina la khomphutha:</string>
+    <string id="HeaderOperatingSystem">Lenaneotshepedišo:</string>
+    <string id="HeaderManufacturer">Motšweletši:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Mmotlolo:</string>
+    <string id="HeaderMemory">Memori:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">O tla swanelwa ke go hloma leswa ditirišo le didirišwa tše šomišanago tša %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 ya ditirišo le didirišwa tša gago di a šomišana</string>
+    <string id="Overview_ProgramDeviceWillWork">1 ya ditirišo goba didirišwa tša gago di a šomišana</string>
+    <string id="Overview_IssueRequiresAttention">Aetheme ye 1 ya gore o e lekodišiše</string>
+    <string id="Overview_IssuesRequiresAttention">Diaetheme tše %1 tša gore o di lekodišiše</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">Aetheme ye 1 ya gore o e lekodišiše pele o kaonafatša</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">Diaetheme tše %1 tša gore o di lekodišiše pele o kaonafatša</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Aetheme e tee goba tše ntši ga di thekgwe e bile e go thibela go kaonafatša</string>
+    <string id="Overview_SeeFullReport">Bona dintlha tša tšhomišego</string>
+    <string id="Overview_NoCompatIssues">Ga go mathata a tšhomišano</string>
+    <string id="Overview_FeaturesLost">Se bohlokwa: Ditlabelo tše dingwe tša Windows 7 di ka no se be gona ka morago ga go kaonafatša. Bona dintlha tša tirišano go hwetša tshedimošo ka botlalo.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Ga e šomišege</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Ga e šomišane - tirišo ye e ka se hwetšagale ka go %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Ga e šomišege</string>
+    <string id="Detial_PreventingUpgradeHeader">E go thibela go kaonafatša</string>
+    <string id="Detail_NeedAttentionHeader">Ya gore o e lekodišiše</string>
+    <string id="Detail_WillWorkHeader">Šomišega</string>
+    <string id="Detail_BuyVersionLink">Mpshafatšo ye lefilwego e a hwetšagala</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Mpshafatšo e a hwetšagala</string>
+    <string id="Solution_WontWorkNoneLink">Ga e šomišege</string>
+    <string id="Solution_WontWorkUpdateLink">Mpshafatšo e a hwetšagala</string>
+    <string id="Solution_RequireActionUpdateLink">Mpshafatšo e a hwetšagala</string>
+    <string id="Solution_PaidUpdateLink">Mpshafatšo ye lefilwego e a hwetšagala</string>
+    <string id="Solution_WorkaroundLink">Tharollo e a hwetšagala</string>
+    <string id="Solution_KBArticleLink">Tharollo e a hwetšagala</string>
+    <string id="Solution_VendorLink">Eya wepsaeteng ya tirišo go hwetša thušo</string>
+    <string id="Solution_MoreInfoLink">Tshedimošo e ntši</string>
+    <string id="Solution_ReinstallLink">Hloma tirišo ye ka go %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Mpshafatšo e a hwetšagala</string>
+    <string id="Solution_InfoUpgrade">Tloša dikhomphutha tše dumeletšwego</string>
+    <string id="Solution_WarnUpgrade">Pitlolla diteraebe tše pitletšwego</string>
+    <string id="Solution_DeviceLogo">Ikgokaganye le motšweletši wa sedirišwa</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Hlomolla tirišo ye gonabjale o e hlome leswa ka go %1.</string>
+    <string id="UninstallActionSubHeader">Hlomolla tirišo ye gonabjale ka gobane ga e šomišane le %1.</string>
+    <string id="ProgramMoreInfoLink">Tshedimošo e ntši</string>
+    <string id="DismissNotRunLink">Tiišetša</string>
+    <string id="AutoUninstallNotRunLink">Hlomolla</string>
+    <string id="AutoUninstallFailedText">Hlomolla ka sebele</string>
+    <string id="ManualUninstallNotRunText">Hlomolla ka sebele</string>
+    <string id="HardBlockDevice">Sedirišwa se ga se šomišege ka go %1. Ikgokaganye le motšweletši go hwetša tshedimošo ka botlalo.</string>
+    <string id="HardBlockDevices">Didirišwa tše ga di šomišege ka go %1. Ikgokaganye le motšweletši go hwetša tshedimošo ka botlalo.</string>
+</strings>
+PA<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1-Upgrade-Assistent</string>
+    <string id="WicaReportTitle">Rapport vum %1-Upgrade-Assistent</string>
+
+    <string id="OrCommaArgs2">%1 oder %2</string>
+    <string id="OrCommaArgs3">%1, %2 oder %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 oder %4</string>
+
+    <string id="AndCommaArgs2">%1 a(n) %2</string>
+    <string id="AndCommaArgs3">%1, %2 a(n) %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 a(n) %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">System</string>
+    <string id="Devices_Header">Apparater</string>
+    <string id="Programs_Header">Programmer</string>
+    <string id="WindowsXPMode_Header">Ufuerderungen</string>
+
+    <string id="Status_Header">Status</string>
+    <string id="Details_Header">Detailer</string>
+
+    <string id="Hardware_PassedMultiple">%1 Systemufuerderungen erfollegräich ofgeschloss</string>
+    <string id="Hardware_PassedOne">1 Systemufuerderung erfollegräich ofgeschloss</string>
+
+    <string id="Devices_PassedMultiple">%1 Apparater als kompatibel opgelëscht</string>
+    <string id="Devices_PassedOne">1 Apparat als kompatibel opgelëscht</string>
+
+    <string id="Programs_PassedMultiple">%1 Programmer als kompatibel opgelëscht</string>
+    <string id="Programs_PassedOne">1 Programm als kompatibel opgelëscht</string>
+    <string id="NoIssuesDetected">Keng Problemer detektéiert</string>
+
+    <string id="Hardware_SeeAll">All Systemufuerderungen affichéieren</string>
+    <string id="Devices_SeeAll">All Apparater affichéieren</string>
+    <string id="Programs_SeeAll">All Programmer affichéieren</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">D'CPU-Vitesse vun Ärem PC ass méi niddereg wéi 1 GHz, Dir kënnt %1 also net installéieren an ausféieren.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">Dir musst op d'Mannst %1 GB RAM installéieren, éier Dir %2 installéieren an ausféiere kënnt.  Kontaktéiert den Hiersteller vum PC, fir ze wëssen, ob Dir méi RAM installéiere kënnt.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Kontaktéiert den Hiersteller vun Ärem PC, fir ze wëssen, ob Dir en Upgrade vum System-BIOS maache kënnt.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">De Prozesser vun dësem PC ënnerstëtzt eng kritesch Funktioun net (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">De Prozesser vun dësem PC ënnerstëtzt eng kritesch Funktioun net (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">De Prozesser vun dësem PC ënnerstëtzt eng kritesch Funktioun net (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">De Prozesser vun dësem PC ënnerstëtzt eng kritesch Funktioun net (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">De Prozesser vun dësem PC ënnerstëtzt eng kritesch Funktioun net (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">%1 kann net installéiert ginn, well Är Wireless-Netzwierkkaart d'Ufuerderunge vum Upgrade net erfëllt.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">Dir musst een oder méi Updatë vun Ärer Firmware oder Ären Apparat-Driver installéieren. Maacht Windows Update op, installéiert all disponibel Updaten a probéiert dann %1 nach eng Kéier z'installéieren.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Är Bildschiermopléisung muss op d'mannst 1024 x 768 sinn.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Computernumm:</string>
+    <string id="HeaderOperatingSystem">Betribssystem:</string>
+    <string id="HeaderManufacturer">Hiersteller:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Modell:</string>
+    <string id="HeaderMemory">Späicher:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">Dir musst dann Är kompatibel Apps an Apparater op %1 nei installéieren</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 vun Ären Apps an Apparater si kompatibel</string>
+    <string id="Overview_ProgramDeviceWillWork">1 vun Ären Apps oder Apparater ass kompatibel</string>
+    <string id="Overview_IssueRequiresAttention">Dir musst 1 Element iwwerpréiwen</string>
+    <string id="Overview_IssuesRequiresAttention">Dir musst %1 Elementer iwwerpréiwen</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 Element muss vun Iech iwwerpréift ginn, éier Dir en Upgrade maacht</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">%1 Elementer musse vun Iech iwwerpréift ginn, éier Dir en Upgrade maacht</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">Een oder méi Elementer ginn net ënnerstëtzt an halen Iech dovun of, en Upgrade ze maachen</string>
+    <string id="Overview_SeeFullReport">Kompatibilitéitsinfoen affichéieren</string>
+    <string id="Overview_NoCompatIssues">Keng bekannt Kompatibilitéitsproblemer</string>
+    <string id="Overview_FeaturesLost">Wichteg: Verschidde Windows 7-Funktionalitéite sinn eventuell net méi disponibel, wann Dir en Upgrade maacht. Affichéiert d'Kompatibilitéitsdetailer fir méi Infoen.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Net kompatibel</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Net kompatibel - dës App ass net op %1 disponibel</string>
+    <string id="Detail_DeviceWontWorkFooter">Net kompatibel</string>
+    <string id="Detial_PreventingUpgradeHeader">Dir gitt dovun ofgehalen, en Upgrade ze maachen</string>
+    <string id="Detail_NeedAttentionHeader">Verlaangt Är Iwwerpréifung</string>
+    <string id="Detail_WillWorkHeader">Kompatibel</string>
+    <string id="Detail_BuyVersionLink">Bezuelten Update disponibel</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Update disponibel</string>
+    <string id="Solution_WontWorkNoneLink">Net kompatibel</string>
+    <string id="Solution_WontWorkUpdateLink">Update disponibel</string>
+    <string id="Solution_RequireActionUpdateLink">Update disponibel</string>
+    <string id="Solution_PaidUpdateLink">Bezuelten Update disponibel</string>
+    <string id="Solution_WorkaroundLink">Léisung disponibel</string>
+    <string id="Solution_KBArticleLink">Léisung disponibel</string>
+    <string id="Solution_VendorLink">Op der App-Websäit no Hëllef sichen</string>
+    <string id="Solution_MoreInfoLink">Méi Infoen</string>
+    <string id="Solution_ReinstallLink">Dës App op %1 nei installéieren</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Update disponibel</string>
+    <string id="Solution_InfoUpgrade">Zougelooss PCen ewechhuelen</string>
+    <string id="Solution_WarnUpgrade">Verschlësselt Lafwierker entschlësselen</string>
+    <string id="Solution_DeviceLogo">Hiersteller vum Apparat kontaktéieren</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Desinstalléiert dës App elo an installéiert se op %1 nei.</string>
+    <string id="UninstallActionSubHeader">Desinstalléiert dës App elo, well se net mat %1 kompatibel ass.</string>
+    <string id="ProgramMoreInfoLink">Méi Infoen</string>
+    <string id="DismissNotRunLink">Bestätegen</string>
+    <string id="AutoUninstallNotRunLink">Desinstalléieren</string>
+    <string id="AutoUninstallFailedText">Manuell desinstalléieren</string>
+    <string id="ManualUninstallNotRunText">Manuell desinstalléieren</string>
+    <string id="HardBlockDevice">Dësen Apparat ass net op %1 kompatibel. Kontaktéiert den Hiersteller fir méi Infoen.</string>
+    <string id="HardBlockDevices">Dës Apparater sinn net op %1 kompatibel. Kontaktéiert den Hiersteller fir méi Infoen.</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">Ihe Enyemàka Nkwàlite %1</string>
+    <string id="WicaReportTitle">Mkpesà Ihe Enyemàka Nkwàlite %1</string>
+
+    <string id="OrCommaArgs2">%1 maọbụ %2</string>
+    <string id="OrCommaArgs3">%1, %2 maọbụ %3</string>
+    <string id="OrCommaArgs4">%1, %2, %3 maọbụ %4</string>
+
+    <string id="AndCommaArgs2">%1 na %2</string>
+    <string id="AndCommaArgs3">%1, %2 na %3</string>
+    <string id="AndCommaArgs4">%1, %2, %3 na %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">Sịstèmụ</string>
+    <string id="Devices_Header">Ngwàọ̀rụ</string>
+    <string id="Programs_Header">Usòrònsìème gasị</string>
+    <string id="WindowsXPMode_Header">Ihe achọrọ</string>
+
+    <string id="Status_Header">Ọkwa</string>
+    <string id="Details_Header">Nkọwapụta</string>
+
+    <string id="Hardware_PassedMultiple">%1 ihe ndị achọrọ ka ị gafee na sistèmụ</string>
+    <string id="Hardware_PassedOne">1 sistèmụ achọrọ ka ị gafee</string>
+
+    <string id="Devices_PassedMultiple">%1 ụmụ ngwaọrụ edesịtara dịka nke nwere ndàkọrịta</string>
+    <string id="Devices_PassedOne">ụmụ ngwaọrụ 1 edesịtara dịka nke nwere ndàkọrịta</string>
+
+    <string id="Programs_PassedMultiple">%1 Programụ edesịtara dịka nke nwere ndàkọrịta</string>
+    <string id="Programs_PassedOne">1 Programụ edesịtara dịka nke nwere ndàkọrịta</string>
+    <string id="NoIssuesDetected">O nweghi ụmụ ihe achọpụtara</string>
+
+    <string id="Hardware_SeeAll">Lee ihe niile sistèmụ chọgasịrị</string>
+    <string id="Devices_SeeAll">Lee ngwaọrụ niile ga</string>
+    <string id="Programs_SeeAll">Lee programụ niile ga</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">Ọsọ PC's CPU dị nta karịa 1 GHz n'ihi ya i nweghi ike ịkwakọnye ma rụọ ọrụ %1.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">I kwesiri ịkwakọnye opekampe %1 GB nke RAM tupu ị kwakọnye ma rụọ ọrụ %2.  Kpọtụrụ ndị mmepụta PC iji hụ mara ma i nwere ike ịkwakọnye ọtụtụ RAM.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">Kpọtụrụ ndị mmepụta PC iji hụ mara ma i nwere ike imezilite sistèmụ BIOS.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">ihe nhàziọrụ PC's a akwadòghị njirimara dị mkpà nke (PAE/SSE2).</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">ihe nhàziọrụ PC's a akwadòghị njirimara dị mkpà nke (CompareExchange128).</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">ihe nhàziọrụ PC's a akwadòghị njirimara dị mkpà nke (LAHF/SAHF).</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">ihe nhàziọrụ PC's a akwadòghị njirimara dị mkpà nke (PrefetchW).</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">ihe nhàziọrụ PC's a akwadòghị njirimara dị mkpà nke (NX).</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">I nweghị ike ikwakọnye %1 makana kaadi netwọọk enweghị waya  enweteghị ndakọrịta mmezilite achọgasịrị.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">I kwesiri ịkwakọnye otù maọbụ ọtụtụ mmezilite na ọgbà mgbochi maọbụ ụmụ ngwaọrụ ǹnyà. Mèpee Mmezilite Windows, kwakọnye updates niile dị adị, ma nwaa n' ịkwakọnye ọzọ na %1.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">Nha ihuenyo gị kwesịrị ịbụ opekata mpe 1024 x 768.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">Aha kọmputà:</string>
+    <string id="HeaderOperatingSystem">Sistèm njìarụọrụ:</string>
+    <string id="HeaderManufacturer">Ọnye mmepụta:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">Ụdị:</string>
+    <string id="HeaderMemory">Memọrị:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">I kwesiri ịkwakọnyegharị ngwa gị nwere ndakọrịta na ngwaọrụ ga na %1</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 nke ngwa gị na ụmụ ngwaọrụ dakọrịtara</string>
+    <string id="Overview_ProgramDeviceWillWork">1 nke ngwa gị na ụmụ ngwaọrụ dakọrịtara</string>
+    <string id="Overview_IssueRequiresAttention">1 ihe maka gị iji degharịa</string>
+    <string id="Overview_IssuesRequiresAttention">%1 ụmụ ihe maka gị iji degharịa</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">1 ihe dịịrị gị inyocha tupu a na-emezilite</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">Ihe %1 dịịrị gị inyocha tupu nyocha</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">1 ihe ma ọ bụ karịa bu nke akwadoghị ma na-egbochi gị ịme mmezilite.</string>
+    <string id="Overview_SeeFullReport">Lee ụmụ nkọwapụta dakọrịtaranụ</string>
+    <string id="Overview_NoCompatIssues">O nweghị nsogbu ndakọta ama</string>
+    <string id="Overview_FeaturesLost">Ihe dị mkpa: Ụfọdụ atụmatụ Windows 7 nwere ike ha agaghị adị ka ị mechara nkwalite. Hụ nkọwapụta ndakọta maka ozi ndị ọzọ.</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">Enweghi ndakọrịta</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">Adakọtaghị - ngwa a agaghị adị na %1</string>
+    <string id="Detail_DeviceWontWorkFooter">Enweghi ndakọrịta</string>
+    <string id="Detial_PreventingUpgradeHeader">Na-egbochi gị ịme mmezilite</string>
+    <string id="Detail_NeedAttentionHeader">Maka gị iji degharịa</string>
+    <string id="Detail_WillWorkHeader">Ndakọrịta</string>
+    <string id="Detail_BuyVersionLink">Kwụrụ ụgwọ mmezilite dị adị</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">Mmezilite dị adị</string>
+    <string id="Solution_WontWorkNoneLink">Enweghi ndàkọrịta</string>
+    <string id="Solution_WontWorkUpdateLink">Mmezilite dị adị</string>
+    <string id="Solution_RequireActionUpdateLink">Mmezilite dị adị</string>
+    <string id="Solution_PaidUpdateLink">Kwụrụ ụgwọ mmezilite dị adị</string>
+    <string id="Solution_WorkaroundLink">Nchọpụta Dị adị</string>
+    <string id="Solution_KBArticleLink">Nchọpụta Dị adị</string>
+    <string id="Solution_VendorLink">Gàa na ngwa weebụsaịtị maka ènyèmaka</string>
+    <string id="Solution_MoreInfoLink">Ozì ndị̀ ọ̀zọ</string>
+    <string id="Solution_ReinstallLink">Rụnyegharịa ngwa a na %1</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">Mmezilite dị adị</string>
+    <string id="Solution_InfoUpgrade">Wepụ̀ ikikere PCs</string>
+    <string id="Solution_WarnUpgrade">Wepụ̀ ụmụ ǹnyà nzonye èdèrède</string>
+    <string id="Solution_DeviceLogo">Kpọtụrụ ndị mmepụ̀ta ngwaọrụ</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">Wepụ̀ nkwakọnye ngwa a ugbua ma kwakọnyegharịa ya na %1.</string>
+    <string id="UninstallActionSubHeader">Wepụ̀ nkwakọnye ngwa a ugbua makana ọdakọrịtaghi na %1.</string>
+    <string id="ProgramMoreInfoLink">Ozì ndị̀ ọ̀zọ</string>
+    <string id="DismissNotRunLink">Nkwenye</string>
+    <string id="AutoUninstallNotRunLink">Wepu</string>
+    <string id="AutoUninstallFailedText">Nkwakọnye eji aka wepụ</string>
+    <string id="ManualUninstallNotRunText">Nkwakọnye eji aka wepụ</string>
+    <string id="HardBlockDevice">Ngwa a adakọghị na %1. Kpọtụrụ ndị mmepụ̀ta maka ozi ndịọzọ.</string>
+    <string id="HardBlockDevices">Ngwa ndịa adakọghị na %1. Kpọtụrụ ndị mmepụ̀ta maka ozi ndịọzọ.</string>
+</strings>
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1 መመሓየሺ ሓጋዚ</string>
+    <string id="WicaReportTitle">%1 መማሐየሺ ሓጋዚ ጸብጻብ</string>
+
+    <string id="OrCommaArgs2">%1 ወይ %2</string>
+    <string id="OrCommaArgs3">%1፣ %2 ወይ %3</string>
+    <string id="OrCommaArgs4">%1፣ %2፣ %3 ወይ %4</string>
+
+    <string id="AndCommaArgs2">%1 ከምኡ'ውን %2</string>
+    <string id="AndCommaArgs3">%1፣ %2 ከምኡ'ውን %3</string>
+    <string id="AndCommaArgs4">%1፣ %2፣ %3 ከምኡ'ውን %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">ስርዓት</string>
+    <string id="Devices_Header">መሳርሒታት</string>
+    <string id="Programs_Header">ፕሮግራማት</string>
+    <string id="WindowsXPMode_Header">ጠለብ</string>
+
+    <string id="Status_Header">ደረጃ</string>
+    <string id="Details_Header">ዝርዝራት</string>
+
+    <string id="Hardware_PassedMultiple">%1 ጠለባት ስርዓት ሓሊፎም</string>
+    <string id="Hardware_PassedOne">1 ጠለብ ስርዓት ሓሊፉ</string>
+
+    <string id="Devices_PassedMultiple">%1 መሳርሒታት ከም ዝሰማምዑ ተዘርዚሮም</string>
+    <string id="Devices_PassedOne">1 መሳርሒ ከም ዝሰማማዕ ተዘርዚሩ</string>
+
+    <string id="Programs_PassedMultiple">%1 ፕሮግራማት ከም ዝሰማምዑ ተዘርዚሮም</string>
+    <string id="Programs_PassedOne">1 ፕሮግራም ከም ዝሰማማዕ ተዘርዚሩ</string>
+    <string id="NoIssuesDetected">ዋላ ሓደ ጉዳያት ኣይተረኽቡን</string>
+
+    <string id="Hardware_SeeAll">ኩሎም ጠለባት ስርዓት ረአ</string>
+    <string id="Devices_SeeAll">ኩሎም መሳርሒታት ረአ</string>
+    <string id="Programs_SeeAll">ኩሎም ፕሮግራማት ረአ</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">ናይ ፒሲኻ CPU ቅልጣፈ ካብ 1 GHz ይውሕድ ስለዚ %1 ክትጽዕንን ክተኺድን ኣይትኽእልን ኢኻ።</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">ቅድሚ %2 ምጽዓንካን ምኻድካን ብዉሑዱ %1 ጂቢ ናይ RAM ክትጽዕን ከድልየካ ኢዩ። ዝያዳ RAM እንተደኣ ክትጽዕን ትኽእል ኮይንካ ንምርኣይ ነቲ ኣፍራዪ ፒሲ ተራኸቦ።</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">ነቲ ስርዓት ናብ BIOS እንተደኣ ክተማሓይሾ ትኽእል ኮይንካ ንምርኣይ ናይ ፒሲኻ ኣፍራዪ ተራኸቦ።</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">እዚ ፕሮሰሰር ፒሲ ብጣዕሚ ኣገዳሲ ንዝኾነ ባህሪ (PAE/SSE2) ኣይድግፍን ኢዩ።</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">እዚ ፕሮሰሰር ፒሲ ብጣዕሚ ኣገዳሲ ንዝኮነ ባህሪ (CompareExchange128) ኣይድግፍን ኢዩ።</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">እዚ ፕሮሰሰር ፒሲ ብጣዕሚ ኣገዳሲ ንዝኮነ ባህሪ (LAHF/SAHF) ኣይድግፍን ኢዩ።</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">እዚ ፕሮሰሰር ፒሲ ብጣዕሚ ኣገዳሲ ንዝኮነ ባህሪ (PrefetchW) ኣይድግፍን ኢዩ።</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">እዚ ፕሮሰሰር ፒሲ ብጣዕሚ ኣገዳሲ ንዝኮነ ባህሪ (NX) ኣይድግፍን ኢዩ።</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">ገመድኣልቦ ናይ ኔትወርክ ካርድኻ ናይ ምምሕያሽ መለክዕታት ስለዘየማልእ ነዚ %1 ክትጽዕን ኣይትኽእልን።</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">ናብ ፈርምዌር ወይ መሳርሒ መቐመጢ ሰነዳትካ ሓደ ወይ ዝያዳ ምሕዳሳት ክትጽዕን ከድልየካ ኢዩ። Windows Update ክፈት፣ ኩሎም ዘለዉ ምሕዳሳት ጸዓን፣ ብድሕሪኡ %1 እንደገና ክትጽዕን ፈትን።</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">ናይ ምርኢትካ ንጹርነት እንተወሓደ 1024 x 768 ክኸውን የድሊ።</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">ሽም ኮምፒተር፥</string>
+    <string id="HeaderOperatingSystem">ስርዓት ስርሒት</string>
+    <string id="HeaderManufacturer">ኣፍራዪ፥</string>
+    <string id="HeaderCPU">CPU፥</string>
+    <string id="HeaderModel">ሞዴል፥</string>
+    <string id="HeaderMemory">ማህደር ዝኽረት፥</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">ዝሰማምዑ መተግበሪታትካን መሳርሒታትካን ኣብ %1 እንደገና ክትጽዕን ከድልየካ ኢዩ</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 ካብቶም መተግበሪታትካን መሳርሒታትካን ይሰማምዑ ኢዮም</string>
+    <string id="Overview_ProgramDeviceWillWork">1 ካብቶም መተግበሪታትካ ወይ መሳርሒታትካ ይሰማማዕ ኢዩ</string>
+    <string id="Overview_IssueRequiresAttention">1 ውልቀ ነገር ንገምጋምካ</string>
+    <string id="Overview_IssuesRequiresAttention">%1 ውልቀ ነገራት ንገምጋምካ</string>
+    <string id="Overview_IssueRequiresAttentionForUpgrade">ቅድሚ ምምሕያሽ 1 ውልቀነገር ንዓኻ ደጊምካ ንኽትሪኦ</string>
+    <string id="Overview_IssuesRequiresAttentionForUpgrade">ቅድሚ ምምሕያሽ %1 ውልቀነገራት ንዓኻ ደጊምካ ንኽትሪኦ</string>
+    <string id="Overview_OneOrMoreItemsPreventingUpgrade">ሓደ ወይ ዝያዳ ውልቀነገራት ኣይተደገፈን ኣሎ ስለዚ ካብ ምምሕያሽ ይኽልክለካ ኣሎ</string>
+    <string id="Overview_SeeFullReport">ዝርዝራት ምስምማዕ ረአ</string>
+    <string id="Overview_NoCompatIssues">ዝተፈለጠ ናይ ዘይምስምማዕ ነገራት የለን</string>
+    <string id="Overview_FeaturesLost">ኣገዳሲ፥ ድሕሪ ምሕዳስካ ገለ ባህርይታት ናይ Windows 7 ክርከብ ኣይክእልን ይኸውን። ንዝያዳ ሓበሬታ ናይ ምስምማዕ ዝርዝራት ርአ።</string>
+
+    <!-- Full Compat Report -->
+    <string id="Detail_AppWontWorkFooter">ዘይሰማማዕ</string>
+    <string id="Detail_AppWontWorkAndMigrateFooter">ዝሳማማዕ ኣይኮነን - እዚ መተግበሪ ኣብ %1 ኣይርከብን</string>
+    <string id="Detail_DeviceWontWorkFooter">ዘይሰማማዕ</string>
+    <string id="Detial_PreventingUpgradeHeader">ካብ ምምሕያሽ ይኽልክለካ ኣሎ</string>
+    <string id="Detail_NeedAttentionHeader">ንገምጋምካ</string>
+    <string id="Detail_WillWorkHeader">ዝሰማማዕ</string>
+    <string id="Detail_BuyVersionLink">ዝኽፈሎ መሐደሲ ይርከብ</string>
+    <string id="Detail_PreventingUpgradeMoreInfoUrl">https://go.microsoft.com/fwlink/p/?LinkId=392019</string>
+    <string id="Solution_WorksUpdateLink">መሐደሲ ይርከብ</string>
+    <string id="Solution_WontWorkNoneLink">ዘይሰማማዕ</string>
+    <string id="Solution_WontWorkUpdateLink">መሐደሲ ይርከብ</string>
+    <string id="Solution_RequireActionUpdateLink">መሐደሲ ይርከብ</string>
+    <string id="Solution_PaidUpdateLink">ዝኽፈሎ መሐደሲ ይርከብ</string>
+    <string id="Solution_WorkaroundLink">ዝርከቡ መልእኽትታት ኣለዉ</string>
+    <string id="Solution_KBArticleLink">ዝርከቡ መልእኽትታት ኣለዉ</string>
+    <string id="Solution_VendorLink">ንሓገዝ ናብቲ መርበብ መካን መተግበሪ ኪድ</string>
+    <string id="Solution_MoreInfoLink">ተወሳኺ ሓበሬታ</string>
+    <string id="Solution_ReinstallLink">ነዚ መተግበሪ ኣብ %1 እንደገና ጸዓን</string>
+    <string id="Solution_BlockUpgradeUntilUpdateLink">መሐደሲ ይርከብ</string>
+    <string id="Solution_InfoUpgrade">ፍቓድ ዘለወን ፒሲታት ኣልግስ</string>
+    <string id="Solution_WarnUpgrade">ናይ ዝተመስጠሩ መቐመጢ ሰነዳት ምስጢር ፍታሕ</string>
+    <string id="Solution_DeviceLogo">ንኣፍራዪ መሳርሒ ተራኸቦ</string>
+  
+    <!-- Action strings -->
+    <string id="UninstallReinstallActionSubHeader">ነዚ መተግበሪ ሕጂ ኣልዕሎ ኣብ %1 ድማ እንደገና ጸዓኖ።</string>
+    <string id="UninstallActionSubHeader">ነዚ መተግበሪ ሕጂ ኣልዕሎ ምኽንያቱ ምስ %1 ኣይሰማማዕን ኢዩ።</string>
+    <string id="ProgramMoreInfoLink">ተወሳኺ ሓበሬታ</string>
+    <string id="DismissNotRunLink">ኣረጋግጽ</string>
+    <string id="AutoUninstallNotRunLink">ኣልዕል</string>
+    <string id="AutoUninstallFailedText">ብኢድ ኣልዕል</string>
+    <string id="ManualUninstallNotRunText">ብኢድ ኣልዕል</string>
+    <string id="HardBlockDevice">እዚ መሳርሒ ኣብ %1 ኣይሰማማዕን ኢዩ። ንዝያዳ ሓበሬታ ነቲ ኣፍራዪ ተራኸቦ።</string>
+    <string id="HardBlockDevices">እዞም መሳርሒታት ኣብ %1 ኣይሰማምዑን ኢዮም። ንዝያዳ ሓበሬታ ነቲ ኣፍራዪ ተራኸቦ።</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ApplicationName">%1 دەرىجە ئۆستۈرۈش ياردەمچىسى</string>
+    <string id="WicaReportTitle">%1 دەرىجە ئۆستۈرۈش ياردەمچىسى دوكلاتى</string>
+
+    <string id="OrCommaArgs2">%1 ياكى %2</string>
+    <string id="OrCommaArgs3">%1، %2 ياكى %3</string>
+    <string id="OrCommaArgs4">%1، %2، %3 ياكى %4</string>
+
+    <string id="AndCommaArgs2">%1 ۋە %2</string>
+    <string id="AndCommaArgs3">%1، %2 ۋە %3</string>
+    <string id="AndCommaArgs4">%1، %2، %3 ۋە %4</string>
+
+    <!-- Section headers -->
+    <string id="Hardware_Header">سىستېما</string>
+    <string id="Devices_Header">ئۈسكۈنىلەر</string>
+    <string id="Programs_Header">پىروگراممىلار</string>
+    <string id="WindowsXPMode_Header">تەلەپ</string>
+
+    <string id="Status_Header">ھالەت</string>
+    <string id="Details_Header">تەپسىلاتلار</string>
+
+    <string id="Hardware_PassedMultiple">%1 سىستېما تەلىپى ئۆتتى</string>
+    <string id="Hardware_PassedOne">1 سىستېما تەلىپى ئۆتتى</string>
+
+    <string id="Devices_PassedMultiple">%1 ئۈسكۈنە ماسلاشما قىلىپ تىزىلدى</string>
+    <string id="Devices_PassedOne">ئۈسكۈنە ماسلاشما قىلىپ تىزىلدى</string>
+
+    <string id="Programs_PassedMultiple">%1 پىروگرامما ماسلاشما قىلىپ تىزىلدى</string>
+    <string id="Programs_PassedOne">1 پىروگرامما ماسلاشما قىلىپ تىزىلدى</string>
+    <string id="NoIssuesDetected">مەسىلە بايقالمىدى</string>
+
+    <string id="Hardware_SeeAll">بارلىق سىستېما تەلەپلىرىنى كۆرۈش</string>
+    <string id="Devices_SeeAll">بارلىق ئۈسكۈنىلەرنى كۆرۈش</string>
+    <string id="Programs_SeeAll">بارلىق پىروگراممىلارنى كۆرۈش</string>
+
+    <!-- == PROCESSOR/CPU SPEED == -->
+    <string id="ProcessorSpeedHardText">كومپيۇتېرىڭىزنىڭ CPU تېزلىكى 1GHz دىن كىچىك بولغانلىقتىن %1 نى قاچىلاپ ئىجرا قىلالمايسىز.</string>
+
+    <!-- == MEMORY/RAM == -->
+    <string id="MemoryHardText">%2 نى قاچىلاپ ئىجرا قىلىشتىن ئىلگىرى كەم دېگەندە %1GB RAM قاچىلاڭ. كومپيۇتېر ئىشلەپچىقارغۇچى بىلەن ئالاقىلىشىپ يەنە RAM قاچىلاشقا بولىدىغان ياكى بولمايدىغانلىقىنى بىلىۋېلىڭ.</string>
+
+    <!-- == SYSTEM BIOS == -->
+    <string id="SystemBiosHardText">كومپيۇتېرىڭىزنىڭ ئىشلەپچىقارغۇچىسى بىلەن ئالاقىلىشىپ سىستېما BIOS نى دەرىجە ئۆستۈرۈشكە بولىدىغان ياكى بولمايدىغانلىقىنى بىلىۋېلىڭ.</string>
+
+    <!-- == SSE2 Support == -->
+    <string id="SSE2SupportHardText">بۇ كومپيۇتېرنىڭ بىر تەرەپ قىلغۇچىسى مۇھىم بىر ئىقتىدار (PAE/SSE2) نى قوللىمايدۇ.</string>
+
+    <!-- == CompareExchange128 Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the InterlockedCompareExchange128 API and won't be able to install Windows (see MSDN) -->
+    <string id="CompareExchange128SupportHardText">بۇ كومپيۇتېرنىڭ بىر تەرەپ قىلغۇچىسى مۇھىم بىر ئىقتىدار (CompareExchange128) نى قوللىمايدۇ.</string>
+  
+    <!-- == LahfSahf Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the LAHF and SAHF CPU instructions and won't be able to install Windows -->
+    <string id="LahfSahfSupportHardText">بۇ كومپيۇتېرنىڭ بىر تەرەپ قىلغۇچىسى مۇھىم بىر ئىقتىدار (LAHF/SAHF) نى قوللىمايدۇ.</string>
+  
+    <!-- == PrefetchW Support == -->
+    <!-- %1 is the OS trying to be installed. This message is displayed during Windows Setup to indicate a processor -->
+    <!-- does not support the PrefetchW CPU instructions and won't be able to install Windows -->
+    <string id="PrefetchWSupportHardText">بۇ كومپيۇتېرنىڭ بىر تەرەپ قىلغۇچىسى مۇھىم بىر ئىقتىدار (PrefetchW) نى قوللىمايدۇ.</string>
+
+    <!-- == NX Support = -->
+    <string id="NXSupportHardText">بۇ كومپيۇتېرنىڭ بىر تەرەپ قىلغۇچىسى مۇھىم بىر ئىقتىدارنى (NX) قوللىمايدۇ.</string>
+
+    <!-- == WLAN FAT Driver -->
+    <string id="WlanHardText">%1 نى قاچىلىيالمايمىز، سەۋەبى سىمسىز تور كارتىڭىز دەرىجە ئۆستۈرۈشنىڭ تەلىپىگە چۈشمەيدۇ.</string>
+    
+    <!-- == SOC Block == -->
+    <string id="SOCBlockText">قاتۇرما دېتالىڭىز ياكى ئۈسكۈنە قوزغاتقۇچىڭىز ئۈچۈن تېخىمۇ كۆپ يېڭىلانما قاچىلاڭ. Windows Update نى ئېچىپ، بارلىق ئىشلەتكىلى بولىدىغان يېڭىلانمىنى قاچىلاپ، %1 نى قاچىلاشنى قايتا سىناپ بېقىڭ.</string>
+
+    <!-- == Display Resolution = -->
+    <string id="DisplayResolutionHardText">ئېكران ئېنىقلىقىڭىز كامىدا 1024x768 بولسۇن.</string>
+
+    <!-- Saved Report Header -->
+    <string id="HeaderComputerName">كومپيۇتېر نامى:</string>
+    <string id="HeaderOperatingSystem">مەشغۇلات سىستېمىسى:</string>
+    <string id="HeaderManufacturer">ئىشلەپچىقارغۇچى:</string>
+    <string id="HeaderCPU">CPU:</string>
+    <string id="HeaderModel">تىپ نومۇرى:</string>
+    <string id="HeaderMemory">ساقلىغۇچ:</string>
+  
+    <!-- Overview Report -->
+    <string id="Overview_WarnAppsReinstall">%1 دىكى ماسلاشما ئەپ ۋە ئۈسكۈنىلىرىڭىزنى قايتا قاچىلايسىز.</string>
+    <string id="Overview_ProgramsDevicesWillWork">%1 ئەپ ۋە ئۈسكۈنىلىرىڭىز ماسلىشىدۇ</string>
+    <string id="Overview_ProgramDeviceWillWork">1 دانە ئەپ ياكى ئۈسكۈنىڭىز ماسلىشىدۇ</string>
+    <string id="Overview_IssueRequiresAttention">1 ئەزانى كۆرۈپ بېقىڭ</string>
+    <string id="Overview_IssuesRequiresAttention">%1 ئەزانى 

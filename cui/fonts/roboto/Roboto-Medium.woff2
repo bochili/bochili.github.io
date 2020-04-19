@@ -1,0 +1,445 @@
+reatestHardText">توهان جو PC اڳ ۾ Windows جي هن جلد جو مڪمل ڇاپو هلائي رهيو آهي.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Windows جي نصب ٿيڻ کي جاري رکڻ سان توهان ڏيکارڻ واري ٻولي تبديل ٿي ويندي. ان کي واپس تبديل ڪرڻ لاءِ، توهان کي ٻولي واري پئڪ کي نصب ڪرڻ جي ضرورت پوندي.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">ٺيڪ</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">توهان جي Windows جو موجوده ورزن فعال ٿيل ڪونهي. اسان اهو مشورو ڏينداسين ته اپگريڊ ڪرڻ کان اڳ ۾ توهان Windows کي فعال بڻيايو.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">ٺيڪ</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">توهان جو ڪمپيوٽر بند نه ٿي وڃي، ان جي پڪ ڪرڻ لاءِ پنهنجو ڪمپيوٽر بجلي ۾ لڳايو.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">ٺيڪ</string>
+    <string id="Setup_HostIsDomainJoinedHeader">هيءِ PC هڪ ڊومين سان جڙيل آهي</string>
+    <string id="Setup_HostIsDomainJoinedHardText">Windows جي جنهن ايڊيشن تائين توهان اپگريڊ ڪرڻ چاهيو پيا اهو ڊومين سان نٿو جڙي سگهي، تنهنڪري اسان هن PC کي اپگريڊ نٿا ڪري سگهون.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">اهم: توهان جي اپگريڊ ڪرڻ کانپوءِ ڪجهه Windows 7 فيچر شايد دستياب نه هجن</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Windows اپ گريڊ نٿي ٿي سگهي</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Windows نصب نٿي ڪري سگهجي ڇاڪاڻ ته هن PC کي UEFI فرم ويئر لاءِ هڪ اڻ هٿي ڏنل ڊسڪ واري ترتيب آهي.</string>
+    <string id="Setup_FlightSigningEnabledHeader">بلڊ جيڪو توهان تنصيب ڪرڻ جي ڪوشش ڪري رهيا آهيو اهو فلائيٽ سائن ٿيل آهي. تنصيب ڪرڻ جاري رکڻ لاءِ، فلائيٽ سائيننگ فعال ڪريو.</string>
+    <string id="Setup_FlightSigningEnabledHardText">بلڊ جيڪو توهان تنصيب ڪرڻ جي ڪوشش ڪري رهيا آهيو اهو فلائيٽ سائن ٿيل آهي. تنصيب ڪرڻ جاري رکڻ لاءِ، فلائيٽ سائيننگ فعال ڪريو.</string>
+    <string id="Setup_EnableFlightSigningNotRunText">بلڊ جيڪو توهان تنصيب ڪرڻ جي ڪوشش ڪري رهيا آهيو اهو فلائيٽ سائن ٿيل آهي. تنصيب ڪرڻ جاري رکڻ لاءِ، فلائيٽ سائيننگ فعال ڪريو.</string>
+    <string id="Setup_EnableFlightSigningResolvedText">فلائيٽ سائيننگ فعال ڪرڻ ناڪام ويو</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">فعال ڪريو</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Windows جي تنصيب جاري رکڻ ڪجهه اختياري فيچرز کي هٽائيندو. تنصيب مڪمل ٿيڻ کان پوءِ توهانکي انهن کي واپس سيٽنگن ۾ اضافو ڪرڻ جي ضرورت پئجي سگهي ٿي.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">ٺيڪ</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Ahora tenemos que desinstalar estos programas, pero puedes reinstalarlos después de realizar la actualización.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Hay que desinstalar estos programas porque no son compatibles con la actualización.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Hay que desinstalar 1 aplicación para iniciar la actualización. Te ayudaremos a hacerlo más tarde.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">Hay que desinstalar %1 aplicaciones para iniciar la actualización. Te ayudaremos a hacerlo más tarde.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">Esta compilación no se puede actualizar</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">No se puede instalar una compilación no preconfigurada de Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">Esta compilación no preconfigurada no se puede actualizar</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">No se puede instalar una compilación preconfigurada en una compilación no preconfigurada desde el programa de instalación.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">No hay suficiente espacio</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">No se pudo actualizar la partición reservada del sistema.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Windows no se puede actualizar</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">No se puede instalar Windows en una unidad virtual.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Windows no se puede actualizar</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">No se puede instalar Windows en una unidad flash USB desde el programa de instalación.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Windows no se puede actualizar</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">No se puede instalar Windows mientras se ejecuta el Modo auditoría.</string>
+    <string id="Setup_HostIsNewerHeader">No se puede instalar una versión anterior</string>
+    <string id="Setup_HostIsNewerHardText">Ya se está ejecutando una versión de Windows más reciente en este equipo.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">No se pudo instalar la actualización</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">No se puede actualizar a una versión preliminar de Windows. Para ver cómo instalar esta versión de Windows, vea <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Realizar una instalación personalizada de Windows</link> en el sitio web de Windows.</string>
+    <string id="Setup_UpgradeDisabledHeader">Windows no puede actualizarse a esta compilación</string>
+    <string id="Setup_UpgradeDisabledHardText">Windows no puede actualizarse a esta compilación. Intente instalar una compilación más reciente.</string>
+    <string id="Setup_SecureBootHeader">Reinicie el equipo y apague el arranque seguro</string>
+    <string id="Setup_SecureBootHardText">Reinicie el equipo y apague el arranque seguro</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Necesita al menos %2 GB de espacio libre en la unidad %1 para la instalación. Intente mover algunos archivos grandes como fotos, música o películas a una unidad extraíble.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Liberar espacio</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Para continuar, necesita liberar al menos %2 GB de espacio en la unidad %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Liberar espacio</string>
+    <string id="Setup_SafeModeHeader">Windows no se puede actualizar</string>
+    <string id="Setup_SafeModeHardText">No se puede instalar Windows mientras se ejecuta el Modo seguro.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Es necesaria una actualización del firmware</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Hemos detectado una actualización de firmware errónea. Póngase en contacto con el fabricante para obtener ayuda.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Reinicie el equipo</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Es necesario reiniciar el equipo para finalizar la instalación de una actualización de firmware. Conecta el equipo a la corriente, asegúrate de que la batería esté completamente cargada, reinícialo y, después, vuelve a intentar la instalación.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Desactive BitLocker porque no es compatible con la edición de Windows que desea instalar.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Desactivar</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Ya dispones de esta versión de Windows pero puedes agregar otras características.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Agregar características</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Ya tiene todas las características de Windows</string>
+    <string id="Setup_AlreadyOnGreatestHardText">El PC ya está ejecutando la edición más completa de esta versión de Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Continuar con la instalación de Windows cambiará el idioma de visualización. Para volverlo a cambiar, debes reinstalar el paquete de idioma.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">Aceptar</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Su versión actual de Windows no está activada. Es recomendable activar Windows para iniciar la actualización.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">Aceptar</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">Conecte su equipo para asegurarse de que la batería no se agota durante la instalación.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">Aceptar</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Este PC se ha unido a un dominio</string>
+    <string id="Setup_HostIsDomainJoinedHardText">La edición de Windows que intenta actualizar no puede unirse a un dominio, de modo que no podemos actualizar este PC.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Importante: Es posible que algunas funcionalidades de Windows 7 no estén disponibles tras realizar la actualización</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">No se puede actualizar Windows</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Windows no se puede instalar porque su PC dispone de un diseño de disco no compatible con el firmware UEFI.</string>
+    <string id="Setup_FlightSigningEnabledHeader">La compilación que está intentando instalar es piloto firmado. Para continuar instalando, habilitar flightsigning.</string>
+    <string id="Setup_FlightSigningEnabledHardText">La compilación que está intentando instalar es piloto firmado. Para continuar instalando, habilitar flightsigning.</string>
+    <string id="Setup_EnableFlightSigningNotRunText">La compilación que está intentando instalar es piloto firmado. Para continuar instalando, habilitar flightsigning.</string>
+    <string id="Setup_EnableFlightSigningResolvedText">No se pudo habilitar la firma de piloto</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Habilitar</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Si continúas con la instalación de Windows, se eliminarán algunas características opcionales. Es posible que tengas que volver a agregarlas en Configuración una vez que finalice la instalación.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">Aceptar</string>
+</strings>
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Nous avons besoin de désinstaller ces programmes pour le moment, mais vous pourrez les réinstaller dès que la mise à niveau est terminée.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Ces programmes doivent être désinstallés, car ils ne sont pas compatibles avec la mise à niveau.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Une application doit être désinstallée pour que nous puissions démarrer la mise à niveau. Nous vous aiderons à le faire plus tard.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">%1 applications doivent être désinstallées pour que nous puissions démarrer la mise à niveau. Nous vous aiderons à le faire plus tard.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">Impossible de mettre à niveau cette version</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">Vous ne pouvez pas installer une version non intermédiaire de Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">Impossible de mettre à niveau cette version non intermédiaire</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">Impossible d’installer une version intermédiaire sur une version non intermédiaire à l’aide du programme d’installation.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Espace disque insuffisant</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Impossible de mettre à jour la partition réservée du système.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Impossible de mettre Windows à niveau</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Impossible d’installer Windows sur un disque virtuel.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Impossible de mettre à niveau Windows</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Impossible d'installer Windows sur une clé USB à mémoire flash à l’aide du programme d’installation.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Impossible de mettre à niveau Windows</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Vous ne pouvez installer Windows lors de l'exécution en Mode Audit.</string>
+    <string id="Setup_HostIsNewerHeader">Impossible d’installer une version précédente</string>
+    <string id="Setup_HostIsNewerHardText">Une version plus récente de Windows s’exécute déjà sur ce PC.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Impossible d’installer la mise à jour</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Vous ne pouvez pas mettre à jour vers une version préliminaire de Windows. Pour savoir comment installer cette version de Windows, consultez <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Installation personnalisée de Windows</link> sur le site Web de Windows. </string>
+    <string id="Setup_UpgradeDisabledHeader">Impossible de mettre Windows à niveau vers cette version</string>
+    <string id="Setup_UpgradeDisabledHardText">Impossible de mettre Windows à niveau vers cette version. Essayez d’effectuer une mise à niveau vers une version plus récente.</string>
+    <string id="Setup_SecureBootHeader">Redémarrer votre PC et désactiver le démarrage sécurisé</string>
+    <string id="Setup_SecureBootHardText">Redémarrer votre PC et désactiver le démarrage sécurisé</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Vous devez disposer d’au moins %2 Go d’espace libre sur le lecteur %1 pour l’installation. Placez les fichiers volumineux tels que des photos, de la musique ou des films sur un lecteur amovible.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Libérer de l’espace</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Pour continuer, vous devez libérer de l’espace afin de disposer d’au moins %2 Go d’espace sur le lecteur %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Libérer de l’espace</string>
+    <string id="Setup_SafeModeHeader">Impossible de mettre à niveau Windows</string>
+    <string id="Setup_SafeModeHardText">Vous ne pouvez installer Windows lors de l'exécution en Mode sans échec.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Mise à jour de microprogramme nécessaire</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Échec de mise à jour de microprogramme détectée. Contactez le fabricant de votre PC pour obtenir de l’aide.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Redémarrez le PC.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Vous devez redémarrer votre ordinateur pour terminer l'installation d'une mise à jour d'un microprogramme. Branchez votre ordinateur, assurez-vous que la batterie est complètement chargée et tentez à nouveau de procéder à l'installation.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Désactivez BitLocker, car il n’est pas pris en charge par l’édition de Windows que vous voulez installer.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Désactiver</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Vous avez déjà cette version de Windows, mais vous pouvez ajouter d’autres fonctionnalités.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Ajouter des fonctionnalités</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Vous disposez déjà de toutes les fonctionnalités Windows.</string>
+    <string id="Setup_AlreadyOnGreatestHardText">Votre PC exécute déjà l’édition la plus complète de cette version de Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Poursuivre l'installation de Windows peut modifier la langue d'affichage. Pour la remodifier, vous devrez réinstaller le module linguistique.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">OK</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Votre version actuelle de Windows n'est pas activée. Nous vous conseillons d'activer Windows avant de lancer la mise à niveau.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">OK</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">Branchez votre PC afin que la pile ne s’épuise pas pendant l’installation.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">OK</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Ce ordinateur est joint à un domaine</string>
+    <string id="Setup_HostIsDomainJoinedHardText">L’édition de Windows vers laquelle vous essayez d’effectuer la mise à niveau ne peut pas se joindre à un domaine. Il est donc impossible d'effectuer cette mise à niveau.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Important : certaines fonctionnalités Windows 7 peuvent ne plus être disponibles après la mise à niveau.</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Windows ne peut pas être mis à niveau.</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Windows ne peut pas être installé, car la configuration des disques de ce PC n’est pas prise en charge par le microprogramme UEFI.</string>
+    <string id="Setup_FlightSigningEnabledHeader">La version que vous tentez d’installer est à connexion en vol, Pour continuer l’installation, activez la connexion en vol.</string>
+    <string id="Setup_FlightSigningEnabledHardText">La version que vous tentez d’installer est à connexion en vol, Pour continuer l’installation, activez la connexion en vol.</string>
+    <string id="Setup_EnableFlightSigningNotRunText">La version que vous tentez d’installer est à connexion en vol, Pour continuer l’installation, activez la connexion en vol.</string>
+    <string id="Setup_EnableFlightSigningResolvedText">Échec de l’activation de la connexion en vol</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Activer</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Continuer l’installation de Windows supprimera certaines fonctionnalités facultatives. Il se peut que vous deviez les rajouter dans Paramètres une fois l’installation terminée.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">OK</string>
+</strings>
+P<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Kunanqa kay programakunata urqunanchik, ichaqa musuqmanta churawaq kunanyachiruspayki.</string>
+    <string id="Setup_SubtitleCanNotReinstall">kay programakunata urquna kunaychiykunawan mana tupaptin.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">1 llamkana urqunata mañakun manaraq kunanyachichkaspa. Chaymantaña kay ruwayta yanapasqaykiku.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">%1 llamkanam urquyta mañakun kunanyachiy manaraq qallarichkaptin. Chaymantaña kay ruwayta yanapasqaykiku.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">This build can't be upgraded</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">You can't install a non-staged build of Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">This non-staged build can't be upgraded</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">A staged build can't be installed on a non-staged build from Setup.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Mana kitiyuq</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Llamkanakuna sapaqchasqaqa manam kunanyachiyta atikunchu.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Windows kunanyachiyta mana atikunchu</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Windowsta manam virtual nisqa sapakamapi churayta atikunchu.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Windows kunanyachiyta mana atikunchu</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Windows nisqata manam flash USB nisqa sapakamapi churayta atikunchu Churay nisqata hapispa.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Windows kunanyachiyta mana atikunchu</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Windows churay mana atikunchu Chiqa hinapi kaptin.</string>
+    <string id="Setup_HostIsNewerHeader">Ñawpaq niraqta manam churayta atikunchu</string>
+    <string id="Setup_HostIsNewerHardText">Kay PCpi ñam musuq Windows niraqta hapikuchkanña.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Kunanyachiy mana churayta atikunchu</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Qawanalla Windows niraqman manam kunanyachiyta atikunchu. Kay niraq Windows imayna churaymanta qawanapaq, qaway <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Chullachasqa churayta Windowspi ruway</link> Windows web kitipi.</string>
+    <string id="Setup_UpgradeDisabledHeader">Windows kay ruwayman kunanyachiyta mana atikunchu</string>
+    <string id="Setup_UpgradeDisabledHardText">Windows kay ruwayman kunanyachiyta mana atikunchu. Aswan musuq ruwayta musuqmanta churay.</string>
+    <string id="Setup_SecureBootHeader">PCta musuqmanta qallarichiy chaymanta chiqa niraqta wañuchiy</string>
+    <string id="Setup_SecureBootHardText">PCta musuqmanta qallarichiy chaymanta chiqa niraqta wañuchiy</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Kay %2 GB kitillapas kananmi churanapaq %1 sapakamapi. Wakin hatun fotokunata kuyuchiy fotokunata, takikunata utaq peliculakunata hina huk urqunalla sapakamaman.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Kiti tariy</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Qatinapaq, ichapas %2 GB sayay kitillatapas tarinayki %1 sapakamapi.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Kiti tariy</string>
+    <string id="Setup_SafeModeHeader">Windows kunanyachiyta mana atikunchu</string>
+    <string id="Setup_SafeModeHardText">Windows churay mana atikunchu Patachay hinapi kaptin.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Firmware kunanyachiyta mañakun</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Pantasqa firmware kunanyachiyta tariruniku. Paqarichiqwan tupanakuy yanapay hatallinapaq.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">PCniykita musuqmanta qallarichiy</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">PC kaqniyki kawsarichiy munanki tukukuypaq huk firmware kunanchayta churachkan. Tupaqnin PC kaqniykipi, chiqaqchay sichus kallpa waqaychaq manalla q¡'ipichisqa, watiqmanta qawsarichiy chanta watiqmanta churachkan ruway.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">BitLocker nisqata wañuchiy mana tupariq kaptin Windows niraq churay munasqaykiwan.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Wañuchiy</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Ñam kay niraq Windows kapusunkiña, ichaqa huk kaqkunata yapawaq.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Kaqninkuna yapay</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Ñam Windows llapan kaqninkuna kapusunkiña</string>
+    <string id="Setup_AlreadyOnGreatestHardText">PCniykiqa aswan hunta llapan Windows niraqtam ruwachichkan.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Windows churayqa qawanapi simita tikranqa. Musuqmanta tikrapanapaq, musuqmantam simi qipita churanayki.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">Uyakuy</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Kunan Windows niraq mana kawsarichisqam. Kunakusqam Windows kawsarichiy kunanyachiy qallarinapaq.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">Uyakuy</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">PCniykita tinkichiy churakuypi kallpa waqaychaq mana pisiyananpaq.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">Uyakuy</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Kay PCqa kamachinanmanmi taqrukurun</string>
+    <string id="Setup_HostIsDomainJoinedHardText">Kay Windows niraqman kunanyachiy munasqaykiqa manakamachinanman taqrukunchu, chaymi kay PC kunanyachiyta mana atinikuchu.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Aswan allin: Ichapas Windows 7 wakin kaqninkuna manapas hapirinallachu kanman kunanyachikuruptin</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Windows kunanyachiyta mana atikunchu</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Windows churayta mana atikunchu PC UEFI firmware nisqamanta huk niraq muyuq ruyruyuq kaptin.</string>
+    <string id="Setup_FlightSigningEnabledHeader">Huñusqa Qillqasqa Phawayta churayta munachkanki. Qatiypaq churachkan, flightsigning kaqta kawsarichiy.</string>
+    <string id="Setup_FlightSigningEnabledHardText">Huñusqa Qillqasqa Phawayta churayta munachkanki. Qatiypaq churachkan, flightsigning kaqta kawsarichiy.</string>
+    <string id="Setup_EnableFlightSigningNotRunText">Huñusqa Qillqasqa Phawayta churayta munachkanki. Qatiypaq churachkan, flightsigning kaqta kawsarichiy.</string>
+    <string id="Setup_EnableFlightSigningResolvedText">Pantasqa phaway qillqata kawsarichiypaq</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Kawsarichiy</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Qawasqa Windows churayninwan wakin kaqninkuna akllanapaq qichun. Kaykuna watiqmanta Tupachiyninpi  munanki chantapas churayninta hunt'an.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">Uyakuy</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Za sada trebamo deinstalirati te programe, ali ih možete ponovo instalirati kasnije kad se završi nadogradnja.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Sljedeće programe je potrebno deinstalirati jer nisu kompatibilne s nadogradnjom.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Potrebno je deinstalirati 1 aplikaciju kako bismo mogli pokrenuti nadogradnju. Pomoći ćemo vam da to učinite kasnije.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">Potrebno je deinstalirati sljedeći broj aplikacija kako bismo mogli pokrenuti nadogradnju: %1. Pomoći ćemo vam da to učinite kasnije.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">This build can't be upgraded</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">You can't install a non-staged build of Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">This non-staged build can't be upgraded</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">A staged build can't be installed on a non-staged build from Setup.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Nema dovoljno prostora</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Nismo mogli ažurirati sistemsku rezerviranu particiju.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Windows se ne može nadograditi</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Ne možete instalirati Windows na virtuelni pogonski uređaj.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Windows se ne može nadograditi</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Pomoću instalacijskog programa ne možete instalirati Windows na USB fleš memorijski pogon.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Windows se ne može nadograditi</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Ne možete instalirati Windows dok je aktivan Audit Mode.</string>
+    <string id="Setup_HostIsNewerHeader">Ne može se instalirati starija verzija</string>
+    <string id="Setup_HostIsNewerHardText">Novija verzija operativnog sistema Windows se već koristi na ovom računaru.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Nije bilo moguće instalirati ažuriranje</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Ne možete izvršiti ažuriranje na predizdanje operativnog sistema Windows. Da biste saznali kako instalirati ovu verziju operativnog sistema Windows, pogledajte <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Izvršavanje prilagođenog instaliranja operativnog sistema Windows</link> na web lokaciji operativnog sistema Windows.</string>
+    <string id="Setup_UpgradeDisabledHeader">Windows se ne može nadograditi na ovu verziju</string>
+    <string id="Setup_UpgradeDisabledHardText">Windows se ne može nadograditi na ovu verziju. Pokušajte instalirati noviju verziju.</string>
+    <string id="Setup_SecureBootHeader">Ponovo pokrenite računar i isključite Sigurno pokretanje</string>
+    <string id="Setup_SecureBootHardText">Ponovo pokrenite računar i isključite Sigurno pokretanje</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Treba vam najmanje %2 GB slobodnog prostora na pogonskom uređaju %1 za instaliranje. Pokušajte premjestiti neke veće fajlove kao što su fotografije, muzika ili filmovi na uklonjivi pogon.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Oslobodi prostor</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Da biste nastavili, trebate osloboditi prostor kako biste imali najmanje %2 GB prostora na pogonskom uređaju %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Oslobodi prostor</string>
+    <string id="Setup_SafeModeHeader">Windows se ne može nadograditi</string>
+    <string id="Setup_SafeModeHardText">Ne možete instalirati Windows dok je aktivan Safe Mode.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Potrebno je ažuriranje ugrađenih programa</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Otkrili smo neuspješno ažuriranje ugrađenih programa. Obratite se proizvođaču računara za podršku.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Ponovo pokrenite računar</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Trebate ponovo pokrenuti računar kako biste dovršili instaliranje ažuriranja ugrađenih programa. Priključite računar na napajanje, provjerite da li je baterija sasvim napunjena, ponovo ga pokrenite, a zatim pokušajte ponovo instalirati.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Isključite BitLocker jer on nije podržan u izdanju operativnog sistema Windows kojeg želite instalirati.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Isključi</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Već imate tu verziju operativnog sistema Windows, ali možete dodati druge osobine.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Dodaj osobine</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Već imate sve Windows osobine</string>
+    <string id="Setup_AlreadyOnGreatestHardText">Vaš računar već ima najpotpunije izdanje ove verzije operativnog sistema Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Dalje instaliranje operativnog sistema Windows će promijeniti jezik prikaza. Da biste vratili stari jezik prikaza, trebat ćete ponovo instalirati jezički paket.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">U redu</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Vaša trenutna verzija operativnog sistema Windows nije aktivirana. Preporučujemo da aktivirate Windows prije početka nadogradnje.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">U redu</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">Priključite računar na napajanje kako biste bili sigurni da se baterija neće isprazniti za vrijeme instaliranja.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">U redu</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Ovaj računar se ne može pridružiti domeni</string>
+    <string id="Setup_HostIsDomainJoinedHardText">Izdanje operativnog sistema Windows na koje pokušavate izvršiti nadogradnju se ne može pridružiti domeni i zato ne možemo nadograditi ovaj računar.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Važno: moguće je da neke funkcije operativnog sistema Windows 7 neće biti dostupne nakon što izvršite nadogradnju</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Windows se ne može nadograditi</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Windows se ne može instalirati jer računar ima raspored diska koji nije podržan za ugrađeni softver UEFI.</string>
+    <string id="Setup_FlightSigningEnabledHeader">Verzija koju pokušavate instalirati ima oznaku Potpisano za let. Za nastavak instalacije omogućite potpisivanje za let.</string>
+    <string id="Setup_FlightSigningEnabledHardText">Verzija koju pokušavate instalirati ima oznaku Potpisano za let. Za nastavak instalacije omogućite potpisivanje za let.</string>
+    <string id="Setup_EnableFlightSigningNotRunText">Verzija koju pokušavate instalirati ima oznaku Potpisano za let. Za nastavak instalacije omogućite potpisivanje za let.</string>
+    <string id="Setup_EnableFlightSigningResolvedText">Omogućavanje potpisivanja za let nije uspjelo</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Omogući</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Dalje instaliranje operativnog sistema Windows će ukloniti neke neobavezne osobine. Možda ćete ih morati ponovo dodati u opciji Postavke kada se instalacija dovrši.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">U redu</string>
+</strings>
+PA<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Морамо да деинсталирамо ове програме, али можете поново да их инсталирате по завршетку надоградње.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Ови програми морају да буду деинсталирани јер нису компатибилни са надоградњом.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Да бисмо покренули надоградњу, потребно је да деинсталирате 1 апликацију. Касније ћемо вам помоћи да то урадите.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">Да бисмо покренули надоградњу, потребно је да деинсталирате апликације (%1). Касније ћемо вам помоћи да то урадите.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">This build can't be upgraded</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">You can't install a non-staged build of Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">This non-staged build can't be upgraded</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">A staged build can't be installed on a non-staged build from Setup.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Нема довољно простора</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Нисмо могли да ажурирамо системску резервисану партицију.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Windows не може да се надогради</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Не можете да инсталирате Windows на виртуелни погонски уређај.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Windows не може да се надогради</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Не можете да инсталирате Windows на USB флеш меморијски погон из програма за постављање.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Windows не може да се надогради</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Windows не може да се инсталира док је покренут режим надзора.</string>
+    <string id="Setup_HostIsNewerHeader">Не може да се инсталира старија верзија</string>
+    <string id="Setup_HostIsNewerHardText">Новија верзија оперативног система Windows се већ користи на овом рачунару.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Није било могуће инсталирати ажурирање</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Не можете да извршите ажурирање на предиздање оперативног система Windows. Да бисте сазнали како да инсталирате ову верзију оперативног система Windows, погледајте <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Извршавање прилагођене инсталације оперативног система Windows</link> на веб сајту оперативног система Windows.</string>
+    <string id="Setup_UpgradeDisabledHeader">Windows не може да се надогради на ову верзију</string>
+    <string id="Setup_UpgradeDisabledHardText">Windows не може да се надогради на ову верзију. Покушајте да инсталирате новију верзију.</string>
+    <string id="Setup_SecureBootHeader">Поново покрените рачунар и искључите Безбједно покретање</string>
+    <string id="Setup_SecureBootHardText">Поново покрените рачунар и искључите Безбједно покретање</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Треба вам најмање %2 GB слободног простора на погонском уређају %1 за инсталирање. Покушајте да премјестите неке веће фајлове као што су фотографије, музика или филмови на уклоњиви погон.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Ослободи простор</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Да бисте наставили, требате да ослободите простора како бисте имали најмање %2 GB простора на погонском уређају %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Ослободи простор</string>
+    <string id="Setup_SafeModeHeader">Windows не може да се надогради</string>
+    <string id="Setup_SafeModeHardText">Windows не може да се инсталира док је покренут безбједни режим.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Потребно је ажурирање уграђених програма</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Открили смо неуспјешно ажурирање уграђених програма. Обратите се произвођачу рачунара за подршку.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Поново покрените рачунар</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Морате поново покренути рачунар да бисте завршили инсталирање исправке фирмвера. Укључите рачунар, провјерите да ли је батерија потпуно напуњена, а затим пробајте поново да инсталирате исправку из продавнице.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Искључите BitLocker јер он није подржан у издању оперативног система Windows које желите да инсталирате.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Искључи</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Већ имате ову верзију оперативног система Windows, али можете да додате друге особине.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Додај особине</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Већ имате све Windows особине</string>
+    <string id="Setup_AlreadyOnGreatestHardText">Ваш рачунар већ има најпотпуније издање ове верзије оперативног система Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Ако наставите са инсталирањем оперативног система Windows, може доћи до промијене језика приказа. Да бисте вратили стари језик, морате поново да инсталирате језички пакет.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">У реду</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Тренутна верзија оперативног система Windows није активирана. Препоручујемо вам да активирате Windows прије почетка надоградње.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">У реду</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">Прикључите рачунар на напајање како бисте били сигурни да батерија неће да се испразни за вријеме инсталирања.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">У реду</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Овај рачунар не може да се придружи домени</string>
+    <string id="Setup_HostIsDomainJoinedHardText">Издање оперативног система Windows на које покушавате да извршите надоградњу не може да се придружи домени и зато не можемо да надоградимо овај рачунар.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Важно: могуће је да неке функције оперативног система Windows 7 неће да буду доступне након што извршите надоградњу</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Windows не може да се надогради</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Није могуће инсталирати Windows јер овај рачунар има неподржан распоред на диску за UEFI фирмвер.</string>
+    <string id="Setup_FlightSigningEnabledHeader">Верзија коју покушавате да инсталирате садржи цертификат за потпис кода. Да бисте наставили инсталирање, омогућите потписивање кода (flightsigning).</string>
+    <string id="Setup_FlightSigningEnabledHardText">Верзија коју покушавате да инсталирате садржи цертификат за потпис кода. Да бисте наставили инсталирање, омогућите потписивање кода (flightsigning).</string>
+    <string id="Setup_EnableFlightSigningNotRunText">Верзија коју покушавате да инсталирате садржи цертификат за потпис кода. Да бисте наставили инсталирање, омогућите потписивање кода (flightsigning).</string>
+    <string id="Setup_EnableFlightSigningResolvedText">Омогућавање потписивања кода није успело</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Омогући</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Даље инсталирање оперативног система Windows, ће уклонити неке опционалне особине. Можда ћете их морати поново додати у опцији Поставке када се инсталација доврши.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">У реду</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Moramo da deinstaliramo ove programe, ali možete ponovo da ih instalirate po završetku nadogradnje.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Ovi programi moraju da budu deinstalirani jer nisu kompatibilni sa nadogradnjom.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Da bismo pokrenuli nadogradnju, potrebno je da deinstalirate 1 aplikaciju. Kasnije ćemo vam pomoći da to uradite.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">Da bismo pokrenuli nadogradnju, potrebno je da deinstalirate aplikacije (%1). Kasnije ćemo vam pomoći da to uradite.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">Nije moguće nadograditi ovu verziju</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">Nije moguće instalirati verziju operativnog sistema Windows koja nema osobinu slojevitosti.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">Ovu verziju koja nema osobinu slojevitosti nije moguće nadograditi</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">Nije moguće iz podešavanja instalirati verziju koja ima osobinu slojevitosti preko verzije koja nema osobinu slojevitosti.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Nema dovoljno prostora</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Nismo mogli da ažuriramo particiju koju je rezervisao sistem.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Nije moguće nadograditi Windows</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Nije moguće instalirati operativni sistem Windows na virtuelnoj disk jedinici.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Nije moguće nadograditi Windows</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Pomoću instalacionog programa ne možete instalirati Windows na USB fleš disku.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Nije moguće nadograditi Windows</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Nije moguće instalirati Windows dok je pokrenut režim nadzora.</string>
+    <string id="Setup_HostIsNewerHeader">Nije moguće instalirati stariju verziju</string>
+    <string id="Setup_HostIsNewerHardText">Na ovom računaru je već pokrenuta novija verzija operativnog sistema Windows.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Nije moguće instalirati ispravku</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Nije moguće izvršiti nadogradnju na preliminarnu verziju operativnog sistema Windows. Da biste saznali kako da instalirate ovu verziju operativnog sistema Windows, pogledajte <link href="https://go.microsoft.com/fwlink/?LinkID=142337">Izvršavanje prilagođene instalacije operativnog sistema Windows</link> na Windows Veb lokaciji. </string>
+    <string id="Setup_UpgradeDisabledHeader">Nije moguće nadograditi Windows na ovu verziju</string>
+    <string id="Setup_UpgradeDisabledHardText">Nije moguće nadograditi Windows na ovu verziju. Pokušajte da instalirate noviju verziju.</string>
+    <string id="Setup_SecureBootHeader">Ponovo pokrenite računar i isključite bezbedno pokretanje</string>
+    <string id="Setup_SecureBootHardText">Ponovo pokrenite računar i isključite bezbedno pokretanje</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">Za instalaciju vam je potrebno barem %2 GB slobodnog prostora na disku %1. Probajte da premestite neke veće datoteke kao što su fotografije, muzika ili filmovi na prenosivi disk.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Oslobađanje prostora</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Da biste nastavili, potrebno je da oslobodite prostor da biste imali barem %2 GB slobodnog prostora na disk jedinici %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Oslobađanje prostora</string>
+    <string id="Setup_SafeModeHeader">Nije moguće nadograditi Windows</string>
+    <string id="Setup_SafeModeHardText">Nije moguće instalirati Windows dok je pokrenut bezbedni režim.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Potrebno je ažurirati firmver</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Otkriveno je neuspelo ažuriranje firmvera. Obratite se proizvođaču računara za podršku.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Ponovo pokrenite računar</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Morate ponovo pokrenuti računar da biste završili instaliranje ispravke firmvera. Uključite računar, proverite da li je baterija potpuno napunjena, ponovo ga pokrenite, a zatim probajte ponovo da instalirate ispravku.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Isključite BitLocker zato što nije podržan u izdanju operativnog sistema Windows koje želite da instalirate.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Isključi</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Već imate ovu verziju operativnog sistema Windows, ali možete da dodate druge funkcije.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Dodavanje funkcija</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Već imate sve Windows funkcije</string>
+    <string id="Setup_AlreadyOnGreatestHardText">Vaš računar već radi pod najpotpunijim izdanjem ove verzije operativnog sistema Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Ako nastavite sa instaliranjem operativnog sistema Windows, može doći do promene jezika prikaza. Da biste vratili stari jezik, morate ponovo da instalirate jezički paket.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">U redu</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Trenutna verzija operativnog sistema Windows nije aktivirana. Preporučujemo vam da aktivirate Windows pre početka nadogradnje.</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunLink">U redu</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunText">Priključite računar da biste se postarali da vam se baterija ne isprazni tokom instalacije.</string>
+    <string id="Setup_DismissBatteryPowerBlockNotRunLink">U redu</string>
+    <string id="Setup_HostIsDomainJoinedHeader">Ovaj računar nije pridružen domenu</string>
+    <string id="Setup_HostIsDomainJoinedHardText">Izdanje operativnog sistema Windows na koje pokušavate da izvršite nadogradnju nije moguće pridružiti domenu, pa ne možemo da nadogradimo ovaj računar.</string>
+    <string id="Setup_HostIsDomainJoinedHardLink">https://go.microsoft.com/fwlink/?LinkID=390519</string>
+    <string id="Setup_EditionDowngradeHeader">Važno: Neke funkcije operativnog sistema Windows 7 možda neće biti dostupne nakon nadogradnje</string>
+    <string id="Setup_EditionDowngradeSoftLink">https://go.microsoft.com/fwlink/?LinkID=390639</string>
+    <string id="Setup_HostIsUEFICompliantHeader">Nije moguće nadograditi Windows</string>
+    <string id="Setup_HostIsUEFICompliantHardText">Nije moguće instalirati Windows jer ovaj računar ima nepodržan raspored na disku za UEFI firmver.</string>
+    <string id="Setup_FlightSigningEnabledHeader">Verzija koju pokušavate da instalirate sadrži certifikat za potpis koda. Da biste nastavili instaliranje, omogućite potpisivanje koda (flightsigning).</string>
+    <string id="Setup_FlightSigningEnabledHardText">Verzija koju pokušavate da instalirate sadrži certifikat za potpis koda. Da biste nastavili instaliranje, omogućite potpisivanje koda (flightsigning).</string>
+    <string id="Setup_EnableFlightSigningNotRunText">Verzija koju pokušavate da instalirate sadrži certifikat za potpis koda. Da biste nastavili instaliranje, omogućite potpisivanje koda (flightsigning).</string>
+    <string id="Setup_EnableFlightSigningResolvedText">Omogućavanje potpisivanja koda nije uspelo</string>
+    <string id="Setup_EnableFlightSigningNotRunLink">Omogući</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunText">Ako nastavite instalaciju sistema Windows, neke opcionalne funkcije biće uklonjene. Možda ćete morati ponovo da ih dodate u postavkama nakon dovršetka instalacije.</string>
+    <string id="Setup_DismissFeaturesOnDemandBlockNotRunLink">U redu</string>
+</strings>
+PAD<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="Setup_SubtitleCanReinstall">Морамо да деинсталирамо ове програме, али можете поново да их инсталирате по завршетку надоградње.</string>
+    <string id="Setup_SubtitleCanNotReinstall">Ови програми морају да буду деинсталирани јер нису компатибилни са надоградњом.</string>
+    <string id="Setup_SubtitleAppNeedsUninstall">Да бисмо покренули надоградњу, потребно је да деинсталирате 1 апликацију. Касније ћемо вам помоћи да то урадите.</string>
+    <string id="Setup_SubtitleAppsNeedUninstall">Да бисмо покренули надоградњу, потребно је да деинсталирате апликације (%1). Касније ћемо вам помоћи да то урадите.</string>
+    <string id="Setup_TargetIsNonStagedBuildHeader">This build can't be upgraded</string>
+    <string id="Setup_TargetIsNonStagedBuildHardText">You can't install a non-staged build of Windows.</string>
+    <string id="Setup_HostIsNonStagedBuildHeader">This non-staged build can't be upgraded</string>
+    <string id="Setup_HostIsNonStagedBuildHardText">A staged build can't be installed on a non-staged build from Setup.</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHeader">Нема довољно простора</string>
+    <string id="Setup_InsufficientSystemPartitionDiskSpaceHardText">Нисмо могли да ажурирамо партицију коју је резервисао систем.</string>
+    <string id="Setup_HostIsBootedFromVHDHeader">Није могуће надоградити Windows</string>
+    <string id="Setup_HostIsBootedFromVHDHardText">Не можемо да инсталирамо Windows на виртуелном диску.</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHeader">Није могуће надоградити Windows</string>
+    <string id="Setup_HostIsBootedFromPortableWorkspaceHardText">Помоћу инсталационог програма не можете инсталирати Windows на USB флеш диску.</string>
+    <string id="Setup_HostIsBootedFromAuditModeHeader">Није могуће надоградити Windows</string>
+    <string id="Setup_HostIsBootedFromAuditModeHardText">Није могуће инсталирати Windows док је покренут режим надзора.</string>
+    <string id="Setup_HostIsNewerHeader">Није могуће инсталирати старију верзију</string>
+    <string id="Setup_HostIsNewerHardText">На овом рачунару је већ покренута новија верзија оперативног система Windows.</string>
+    <string id="Setup_HostIsOldPrereleaseHeader">Није могуће инсталирати исправку</string>
+    <string id="Setup_HostIsOldPrereleaseHardText">Не можете извршити ажурирање на прелиминарну верзију оперативног система Windows.  Да бисте сазнали како да инсталирате ову верзију оперативног система Windows, погледајте<link href="https://go.microsoft.com/fwlink/?LinkID=142337">Извршавање прилагођене инсталације оперативног система Windows</link> на Windows веб локацији.</string>
+    <string id="Setup_UpgradeDisabledHeader">Није могуће надоградити Windows на ову верзију</string>
+    <string id="Setup_UpgradeDisabledHardText">Није могуће надоградити Windows на ову верзију. Покушајте да инсталирате новију верзију.</string>
+    <string id="Setup_SecureBootHeader">Поново покрените рачунар и искључите безбедно покретање система</string>
+    <string id="Setup_SecureBootHardText">Поново покрените рачунар и искључите безбедно покретање система</string>
+    <string id="Setup_CleanupDiskForInstallNotRunText">За инсталацију вам је потребно барем %2 GB слободног простора на диску %1. Пробајте да преместите неке веће датотеке као што су фотографије, музика или филмови на преносиви диск.</string>
+    <string id="Setup_CleanupDiskForInstallNotRunLink">Ослобађање простора</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunText">Да бисте наставили, потребно је да ослободите простор да бисте имали барем %2 GB слободног простора на диск јединици %1.</string>
+    <string id="Setup_CleanupDiskForDownloadNotRunLink">Ослобађање простора</string>
+    <string id="Setup_SafeModeHeader">Није могуће надоградити Windows на ову верзију</string>
+    <string id="Setup_SafeModeHardText">Није могуће инсталирати Windows док је покренут безбедни режим.</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHeader">Потребно је ажурирање фирмвера</string>
+    <string id="Setup_PendingFirmwareUpdateWithErrorHardText">Открили смо неуспело ажурирање фирмвера. Обратите се произвођачу рачунара за подршку.</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHeader">Поново покрените рачунар</string>
+    <string id="Setup_PendingFirmwareUpdateWithPowerHardText">Морате поново покренути рачунар да бисте завршили инсталирање исправке фирмвера. Укључите рачунар, проверите да ли је батерија потпуно напуњена, а затим пробајте поново да инсталирате исправку из продавнице.</string>
+    <string id="Setup_DecryptBitlockerNotRunText">Искључите BitLocker шифровање зато што није подржано у издању оперативног система Windows који желите да инсталирате.</string>
+    <string id="Setup_DecryptBitlockerNotRunLink">Искључи</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunText">Већ имате ову верзију оперативног система Windows, али можете да додате друге функције.</string>
+    <string id="Setup_WindowsAnytimeUpgradeNotRunLink">Додавање функција</string>
+    <string id="Setup_AlreadyOnGreatestHeader">Већ имате све Windows функције</string>
+    <string id="Setup_AlreadyOnGreatestHardText">Ваш рачунар већ ради под најпотпунијим издањем ове верзије оперативног система Windows.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunText">Ако наставите са инсталирањем оперативног система Windows, може доћи до промене језика приказа. Да бисте вратили стари језик, морате поново да инсталирате језички пакет.</string>
+    <string id="Setup_DismissLanguagePackBlockNotRunLink">У реду</string>
+    <string id="Setup_DismissLicenseActivationBlockNotRunText">Тренут
