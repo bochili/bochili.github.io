@@ -1,765 +1,0 @@
-s="left" contentalign="wrapleft" content="" />
-
-                    <!-- Apply the program template for each type of Program block. -->
-                    <xsl:apply-templates select="wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlockCanReinstall']" />
-                    <xsl:apply-templates select="wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlockUntilUpdate']" />
-                    <xsl:apply-templates select="wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlock']" />
-                    
-                    <!-- Media Center is the only WarnUpgrade (Dismissible) block we want to show -->
-                    <xsl:apply-templates select="wica:Programs/wica:Program[@Id='MediaCenterNotApplicable____________________' and wica:CompatibilityInfo/@BlockingType='Hard']" />
-
-                    <!-- Add some padding to the bottom in case there is something below this set of items -->
-                    <element padding="rect(0rp,0rp,0rp,20rp)" layoutpos="left" contentalign="wrapleft" content="" />
-                    
-                </element>
-            </xsl:if>
-        </duixml>
-    </xsl:template>
-    
-    
-    <!-- Programs template -->
-    <xsl:template match="wica:Program" >
-        <xsl:variable name="program_name">
-            <xsl:value-of select="@Name"/>
-        </xsl:variable>
-
-        <!-- Program entry with a bullet character followed by the program name-->
-        <element  layoutpos="top" layout="borderlayout()" >
-            <element layoutpos="left" contentalign="wrapleft" content="&#x2022;" />
-            <element layoutpos="top" contentalign="wrapleft" accessible="true" accrole="statictext" content="{$program_name}" />
-        </element>
-    </xsl:template>
-    
-</xsl:stylesheet>
-PAÔªø<?xml version="1.0" encoding="utf-8" ?>
-<DeviceFilters ver="0004">
-
-    <!-- =========================================================== -->
-    <!-- == Include any of the following devices before they get  == -->
-    <!-- == excluded by the exclude rules:                        == -->
-    <!-- ==                                                       == -->
-    <!-- == HwId starts with "HDAUDIO\FUNC_01"                    == -->
-    <!-- == HwId starts with "HDAUDIO\FUNC_02"                    == -->
-    <!-- ==                                                       == -->
-    <!-- =========================================================== -->
-    <filter exclude="Never">
-        <expression name="HwId" match="HDAUDIO\\FUNC_01.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="HDAUDIO\\FUNC_02.*" />
-    </filter>
-    
-    <!-- =========================================================== -->
-    <!-- == Exclude any of the following devices:                 == -->
-    <!-- ==                                                       == -->
-    <!-- == Provider="Microsoft" and Class="System"               == -->
-    <!-- == Provider="Microsoft" and Model starts with "Generic"  == -->
-    <!-- == Provider="Microsoft" and Class="Battery"              == -->
-    <!-- == Manufacturer="Microsoft" and Model contains "LifeCam" and ends with "." == -->
-    <!-- == Manufacturer="Microsoft" and HwId starts with "microsoftmicrosoft"      == -->
-    <!-- == Manufacturer starts with "(Standard"                  == -->
-    <!-- == HwId contains "Genuine"                               == -->
-    <!-- == HwId contains "Authen"                                == -->
-    <!-- == HwId contains "Virtual_CPU"                           == -->
-    <!-- == HwId starts with "PCI\" and Class="USB"               == -->
-    <!-- == HwId starts with "PCI\" and Class="1394"              == -->
-    <!-- == Class="SCSIAdapter"                                   == -->
-    <!-- == Class="hdc"                                           == -->
-    <!-- == Class="fdc"                                           == -->
-    <!-- == Class="sdhost"                                        == -->
-    <!-- == Class="hidclass"                                      == -->
-    <!-- == HwId starts with "USB\ROOT_HUB"                       == -->
-    <!-- == Class="ports" and Manufacturer="Microsoft"            == -->
-    <!-- == HwId="usb\class_07" and Manufacturer="Microsoft"      == -->
-    <!-- == HwId="usbprint\unknownprinter"                        == -->
-    <!-- ==                                                       == -->
-    <!-- =========================================================== -->
-    
-    <filter exclude="Always">
-        <expression name="Class" match="System"/>
-    </filter>
-    <!-- en-us -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="Generic.*"/>
-    </filter>
-    <!-- de-de -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="Generisch.*"/>
-    </filter>
-    <!-- fr-fr -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="G√©n√©rique.*"/>
-    </filter>
-    <!-- ja-jp -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="Ê±éÁî®.*"/>
-    </filter>
-    <!-- ko-kr -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="ÏùºÎ∞ò.*"/>
-    </filter>
-    <!-- ar-sa -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="ÿπÿßŸÖ.*"/>
-    </filter>
-    <!-- hi-in -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="‡§∏‡§æ‡§Æ‡§æ‡§®‡•ç‡§Ø.*"/>
-    </filter>
-    <!-- zh-cn -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="ÈÄöÁî®.*"/>
-    </filter>
-    <!-- pt-br -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="gen√©rico.*"/>
-    </filter>
-    <!-- zh-tw -->
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Model" match="Ê≥õÂûã.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Provider" match="Microsoft"/>
-        <expression name="Class" match="Battery"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="Microsoft"/>
-        <expression name="Model" match=".*LifeCam.*\."/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="Microsoft"/>
-        <expression name="HwId" match="microsoftmicrosoft.*"/>
-    </filter>
-    <!-- en-us, de-de, fr-fr -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*standard.*)"/>
-    </filter>
-    <!-- es-es -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*est√°ndar.*)"/>
-    </filter>
-    <!-- hu-hu -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*szabv√°ny.*)"/>
-    </filter>
-    <!-- nl-nl -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*standaard.*)"/>
-    </filter>
-    <!-- pt-br -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*padr√£o.*)"/>
-    </filter>
-    <!-- tr-tr -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*standart.*)"/>
-    </filter>
-    <!-- ko-kr -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*ÌëúÏ§Ä.*)"/>
-    </filter>
-    <!-- zh-cn -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*Ê†áÂáÜ.*)"/>
-    </filter>
-    <!-- ja-jp, zh-tw -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*Ê®ôÊ∫ñ.*)"/>
-    </filter>
-    <!-- ar-sa -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*ŸÇŸäÿßÿ≥Ÿä.*)"/>
-    </filter>
-    <!-- hi-il -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*◊™◊ß◊ü.*)"/>
-    </filter>
-    <!-- ru-ru -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.*—Å—Ç–∞–Ω–¥–∞—Ä—Ç.*)"/>
-    </filter>
-    <!-- hi-in -->
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="(.‡§Æ‡§æ‡§®‡§ï.*)"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="HwId" match=".*Genuine.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="HwId" match=".*Authen.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="HwId" match=".*Virtual_CPU.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="USB"/>
-        <expression name="HwId" match="PCI\\.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="1394" />
-        <expression name="HwId" match="PCI\\.*"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="SCSIAdapter" />
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="hdc" />
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="fdc"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="sdhost"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Class" match="hidclass"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="HwId" match=".*USB.*\\ROOT_HUB.*" />
-    </filter>
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="Microsoft"/>
-        <expression name="Class" match="ports"/>
-    </filter>
-    <filter exclude="Always">
-        <expression name="Manufacturer" match="Microsoft" />
-        <expression name="HwId" match="usb\\class_07" />
-    </filter>
-    <filter exclude="Always">
-        <expression name="HwId" match="usbprint\\unknownprinter" />
-    </filter>
-
-    <!-- =========================================================== -->
-    <!-- == Conditionally exclude the following special cases:    == -->
-    <!-- ==                                                       == -->
-    <!-- == Generic Apple USB Device Driver                       == -->
-    <!-- == eHome keyboard components                             == -->
-    <!-- == Video cards                                           == -->
-    <!-- == Xerox Office PS Color Class Driver                    == -->
-    <!-- == Generic PS/2 compatible mouse                         == -->
-    <!-- =========================================================== -->
-
-    <filter exclude="Sometimes">
-        <expression name="Manufacturer" match="Apple, Inc" />
-        <expression name="Class" match="usb"/>
-    </filter>
-    <filter exclude="Sometimes">
-      <expression name="Model" match=".*eHome.*" />
-      <expression name="Manufacturer" match="Microsoft" />
-      <expression name="Class" match="keyboard" />
-    </filter>
-    <filter exclude="Sometimes">
-      <expression name="HwId" match="xeroxworkcentre_.*" />
-    </filter>
-    <filter exclude="Sometimes">
-      <expression name="Manufacturer" match="Microsoft" />
-      <expression name="Model" match="PS/2.*" />
-    </filter>
-
-
-    <!-- =========================================================== -->
-    <!-- == Include any of the following devices:                 == -->
-    <!-- ==                                                       == -->
-    <!-- == No matching driver id present (for Win7 devices only) == -->
-    <!-- == Belongs to printer class                              == -->
-    <!-- == Belongs to multifunction class                        == -->
-    <!-- == HwId starts with "ACPI\"                              == -->
-    <!-- == HwId starts with "PCI\"                               == -->
-    <!-- == HwId starts with "USB\"                               == -->
-    <!-- == HwId starts with "lptenum\"                           == -->
-    <!-- == HwId starts with "USBPRINT\"                          == -->
-    <!-- == HwId starts with "DOT4PRT\"                           == -->
-    <!-- == HwId starts with "HDAUDIO\"                           == -->
-    <!-- == HwId starts with "DOT4\"                              == -->
-    <!-- == HwId starts with "WSDPRINT\"                          == -->
-    <!-- == HwId starts with "BTHPRINT\"                          == -->
-    <!-- == HwId starts with "Bluetooth\"                         == -->
-    <!-- == HwId starts with "PCMCIA\"                            == -->
-    <!-- == HwId starts with "HID\"                               == -->
-    <!-- == HwId starts with "VMBUS\" (virtual bus for VMs)       == -->
-    <!-- == HwId starts with "MONITOR\"                           == -->
-    <!-- ==                                                       == -->
-    <!-- == Exclude devices with other HwIds                      == -->
-    <!-- ==                                                       == -->
-    <!-- =========================================================== -->
-    <filter exclude="Never">
-        <expression name="HwId" match="noMatchingId.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="Class" match="printer" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="Class" match="multifunction" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="Class" match="ComputerHardwareId" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="ACPI\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="PCI\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="USB\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="lptenum\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="USBPRINT\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="DOT4PRT\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="HDAUDIO\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="DOT4\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="BTHPRINT\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="WSDPRINT\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="Bluetooth\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="PCMCIA\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="HID\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="VMBUS\\.*" />
-    </filter>
-    <filter exclude="Never">
-        <expression name="HwId" match="MONITOR\\.*" />
-    </filter>
-
-    
-    <filter exclude="Always">
-        <expression name="HwId" match=".*"/>
-    </filter>
-
-</DeviceFilters>
-PA<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:msxsl="urn:schemas-microsoft-com:xslt"
-    xmlns:wica="http://www.microsoft.com/ApplicationExperience/UpgradeAdvisor/01012009"
-    exclude-result-prefixes="msxsl wica #default">
-
-  <xsl:template match="node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="wica:System">
-    <xsl:variable name="ComplianceIssuesCount" select="count(//wica:Hardware/wica:HardwareItem[wica:CompatibilityInfo/@BlockingType='Hard'])" />
-    <xsl:variable name="KnownWorkingCount" select="count(//wica:Devices/wica:Device[wica:CompatibilityInfo/@BlockingType='None']) + count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@BlockingType='None'])" />
-    <xsl:variable name="WontWorkIssueCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@Status='WontWork']) + count(//wica:Devices/wica:Device[wica:CompatibilityInfo/@Status='WontWork']) + count(//wica:HardwareItems/wica:HardwareItem[wica:CompatibilityInfo/@BlockingType='Soft'])" />
-    <xsl:variable name="RequireActionIssueCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@Status='RequireAction'])" />
-    <xsl:variable name="BlockUpgradeIssueCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlock'])" />
-    <xsl:variable name="BlockUpgradeCanReinstallCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlockCanReinstall'])" />
-    <xsl:variable name="BlockUpgradeUntilUpdateCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='UpgradeBlockUntilUpdate'])" />
-    <xsl:variable name="DismissableIssueCount" select="count(//wica:Programs/wica:Program[wica:CompatibilityInfo/@StatusDetail='WarnUpgrade'])" />
-    <xsl:variable name="SOCBlockCount" select="count(//wica:Devices/wica:Device[@Class='ComputerHardwareId'][wica:CompatibilityInfo/@BlockingType='Hard'])" />
-    <xsl:variable name="HardBlockedDevicesCount" select="count(//wica:Devices/wica:Device[wica:CompatibilityInfo/@BlockingType='Hard'])" />
-    <xsl:variable name="TotalIssueCount" select="$WontWorkIssueCount+$RequireActionIssueCount" />
-    <xsl:variable name="TotalAppCount" select="count(//wica:Programs/wica:Program)" />
-    <xsl:variable name="TotalDeviceCount" select="count(//wica:Devices/wica:Device)" />
-
-    <xsl:copy>
-      <xsl:attribute name="KnownWorkingCount">
-        <xsl:value-of select="$KnownWorkingCount"/>
-      </xsl:attribute>
-      <xsl:attribute name="WontWorkIssueCount">
-        <xsl:value-of select="$WontWorkIssueCount"/>
-      </xsl:attribute>
-      <xsl:attribute name="RequireActionIssueCount">
-        <xsl:value-of select="$RequireActionIssueCount"/>
-      </xsl:attribute>
-      <xsl:attribute name="ComplianceIssuesCount">
-        <xsl:value-of select="$ComplianceIssuesCount" />
-      </xsl:attribute>
-      <xsl:attribute name="BlockUpgradeIssueCount">
-        <xsl:value-of select="$BlockUpgradeIssueCount" />
-      </xsl:attribute>
-      <xsl:attribute name="BlockUpgradeCanReinstallCount">
-        <xsl:value-of select="$BlockUpgradeCanReinstallCount" />
-      </xsl:attribute>
-      <xsl:attribute name="BlockUpgradeUntilUpdateCount">
-        <xsl:value-of select="$BlockUpgradeUntilUpdateCount" />
-      </xsl:attribute>
-      <xsl:attribute name="DismissableIssueCount">
-        <xsl:value-of select="$DismissableIssueCount" />
-      </xsl:attribute>
-      <xsl:attribute name="HardBlockedDevicesCount">
-        <xsl:value-of select="$HardBlockedDevicesCount" />
-      </xsl:attribute>
-      <xsl:attribute name="TotalIssueCount">
-        <xsl:value-of select="$TotalIssueCount" />
-      </xsl:attribute>
-      <xsl:attribute name="TotalAppCount">
-        <xsl:value-of select="$TotalAppCount" />
-      </xsl:attribute>
-      <xsl:attribute name="TotalDeviceCount">
-        <xsl:value-of select="$TotalDeviceCount" />
-      </xsl:attribute>
-      <xsl:choose>
-        <xsl:when test="$SOCBlockCount = 1">
-          <xsl:attribute name="SocBlock">
-            <xsl:value-of select="true()" />
-          </xsl:attribute>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:attribute name="SocBlock">
-            <xsl:value-of select="false()" />
-          </xsl:attribute>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="wica:Device">
-    <xsl:copy>
-
-      <!-- Create a DeviceId if there isn't one -->
-      <xsl:if test="not(@DeviceId)">
-        <xsl:attribute name="DeviceId">
-          <xsl:choose>
-            <xsl:when test="count(HardwareIds/HwId) > 0">
-              <xsl:value-of select="HardwareIds/child::node()[1]/@Id"/>
-            </xsl:when>
-            <xsl:when test="count(CompatibleIds/CompId) > 0">
-              <xsl:value-of select="CompatibleIds/child::node()[1]/@Id"/>
-            </xsl:when>
-            <xsl:otherwise>NoId</xsl:otherwise>
-          </xsl:choose>
-        </xsl:attribute>
-      </xsl:if>
-
-      <!-- Create a Class if there isn't one -->
-      <xsl:if test="not(@Class)">
-        <xsl:attribute name="Class">
-          <xsl:value-of select="'Unknown'" />
-        </xsl:attribute>
-      </xsl:if>
-
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="wica:Program">
-    <xsl:copy>
-      <xsl:if test="not(@Name)">
-        <xsl:attribute name="Name">
-          <xsl:value-of select="'Unknown'"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="not(@Version)">
-        <xsl:attribute name="Version">
-          <xsl:value-of select="'Unknown'"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="not(@Publisher)">
-        <xsl:attribute name="Publisher">
-          <xsl:value-of select="'Unknown'"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates select="@*"/>
-      <xsl:element name="CompatibilityInfo" namespace="http://www.microsoft.com/ApplicationExperience/UpgradeAdvisor/01012009">
-        <xsl:apply-templates select="wica:CompatibilityInfo/@*"/>
-      </xsl:element>
-      <xsl:apply-templates select="wica:Action"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="@Name[parent::wica:Program] | @Version[parent::wica:Program] | @Publisher[parent::wica:Program] | @Class[parent::wica:Device] | @DeviceId[parent::wica:Device]">  
-    <xsl:variable name="AttrValue">
-      <xsl:choose>
-        <xsl:when test=".=''">
-          <xsl:value-of select="'Unknown'" />
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="." />
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:attribute name="{local-name()}">
-      <xsl:value-of select="$AttrValue" />
-    </xsl:attribute>
-  </xsl:template>
-
-  <xsl:template match="DeviceContainers | Drivers | Driver | Container">
-    <!-- Correct namespace for DeviceContainers and Drivers elements -->
-    <xsl:element name="{local-name()}" namespace="http://www.microsoft.com/ApplicationExperience/UpgradeAdvisor/01012009">
-      <xsl:apply-templates select="node() | @*" />
-      <xsl:if test="local-name()='Container' and (not(@DeviceModelId) or @DeviceModelId='')">
-        <xsl:choose>
-          <xsl:when test="@ContainerId=''">
-            <xsl:attribute name="DeviceModelId">{00000000-0000-0000-0000-000000000000}</xsl:attribute>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:attribute name="DeviceModelId">
-              <xsl:value-of select="@ContainerId" />
-            </xsl:attribute>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:if>
-    </xsl:element>
-  </xsl:template>
-
-  <xsl:template match="@*">
-    <xsl:choose>
-      <!-- Remove "ModelInstanceId", "Icon", "FriendlyName", and "DeviceDataId" attributes from Container -->
-      <xsl:when test="name()='ModelInstanceId' or name()='Icon' or name()='FriendlyName' or name()='MetaData' or name()='DeviceDataId'" />
-      <!-- Remove "LinkCategory" from CompatibilityInfo and "DefaultIcon" and "IconId" from Program -->
-      <xsl:when test="name()='LinkCategory' or name()='DefaultIcon' or name()='IconId' or name()='Message' or name()='DriverTimestamp'" />
-      <xsl:when test="name()='Link' and local-name(..)='Action'" />
-      <xsl:when test="name()='xmlns'" />
-      <xsl:otherwise>
-        <xsl:copy-of select="." />
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <xsl:template match="@ContainerId">
-    <xsl:attribute name="ModelInstanceId">
-      <xsl:value-of select="."/>
-    </xsl:attribute>
-  </xsl:template>
-
-</xsl:stylesheet>PAD<?xml version="1.0" encoding="utf-8" ?>
-<DeviceGroupingRules>
-  <!-- Multi-function USB printers -->
-  <MFDevice informalName="MF printer">
-    <Components>
-      <Component priority="primary" class="printer"/>
-      <Component priority="secondary" class="image" />
-      <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="component" attribute="model"/>
-    <Manufacturer type="component" attribute="manufacturer"/>
-    <Icon type="container" attribute="Icon"/>
-  </MFDevice>
-
-  <!-- Multi-function USB devices include usb memory sticks, Ipods, eReaders, etc -->
-  <MFDevice informalName="MF USB">
-    <Components>
-	<Component priority="primary" class="wpd" />
-        <Component priority="secondary" class="diskdrive" />
-        <Component priority="secondary" class="volume" />
-        <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="container" attribute="ModelName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="component" attribute="class" />
-  </MFDevice>
-
-  <!-- USB Mass storage -->
-  <MFDevice informalName="Mass Storage USB">
-    <Components>
-	<Component priority="primary" class="wpd" />
-        <Component priority="secondary" class="diskdrive" />
-        <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="container" attribute="ModelName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="container" attribute="Icon" />
-  </MFDevice>
-
-  <!-- USB Storage that may masquerade as other types of media -->
-  <!-- (e.g. Sandisk includes a cdrom driver)                  -->
-  <MFDevice informalName="USB false CDRom">
-    <Components>
-      <Component priority="primary" class="diskdrive" />
-      <Component priority="secondary" class="volume" />
-      <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="component" attribute="model" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="component" attribute="class" />
-  </MFDevice>
-
-  <!-- Windows phones 7 -->
-  <MFDevice informalName="Windows Phone 7">
-    <Components>
-      <Component priority="primary" class="wpd" />
-      <Component priority="secondary" class="wmzuneusbser" />
-      <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="container" attribute="FriendlyName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="component" attribute="class" />
-  </MFDevice>
-
-  <!-- Windows phones 8 -->
-  <MFDevice informalName="Windows Phone 8">
-    <Components>
-      <Component priority="primary" class="wpd" />
-      <Component priority="secondary" class="usbdevice" />
-      <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="container" attribute="FriendlyName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="component" attribute="class" />
-  </MFDevice>
-
-  <!-- Kinect (there are several components all with the same class) -->
-  <MFDevice informalName="Microsoft Kinect">
-    <Components>
-      <Component priority="primary" class="microsoft kinect" />
-    </Components>
-    <Model type="container" attribute="ModelName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="container" attribute="Icon" />
-  </MFDevice>
-  
-  <!-- Android phones -->
-  <MFDevice informalName="Android Phone">
-    <Components>
-      <Component priority="primary" class="wpd" />
-      <Component priority="secondary" class="usb" />
-      <Component priority="secondary" class="diskdrive" />
-      <Component priority="secondary" class="androidusbdeviceclass" />
-    </Components>
-    <Model type="container" attribute="ModelName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="component" attribute="class" />
-  </MFDevice>
-
-  <!-- USB keyboards -->
-  <MFDevice informalName="USB Keyboard">
-    <Components>
-      <Component priority="primary" class="keyboard" />
-      <Component priority="secondary" class="usb" />
-      <Component priority="secondary" class="hidclass" />
-    </Components>
-    <Model type="container" attribute="ModelName" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="container" attribute="Icon" />
-  </MFDevice>
-
-  <!-- Webcams - use the image component name because the container -->
-  <!-- may not have a name                                          -->
-  <MFDevice informalName="Webcam">
-    <Components>
-      <Component priority="primary" class="image" />
-      <Component priority="secondary" class="media" />
-      <Component priority="secondary" class="usb" />
-    </Components>
-    <Model type="component" attribute="model" />
-    <Manufacturer type="component" attribute="manufacturer" />
-    <Icon type="container" attribute="Icon" />
-  </MFDevice>
-</DeviceGroupingRules>âPNG
-
-   IHDR           szzÙ   sRGB ÆŒÈ   gAMA  ±è¸a   	pHYs  √  √«o®d  ‘IDATXGÌVwP‘È÷Cùú:ñ#ûHï¢b	 †RtÅ]öÇJPT(6@)*≤†Ùnâ«sŒãXê≤ÄÙæ»¬,,∞HYñ^lúû%πsí‹˙‰˝ñªÑ‰–òKÚGfÚŒ<Û€˘}ø}üÁ{€˜M˘ø˝œX`@¿?__szÜÖáÒ1—Q]q±1/„	±—Q≤aaπÅ'ˆ¯¯p<‹›Á”_¶éˇÛﬂ¥Cáfv!¬öÙÎ◊pOXπ¨√£OhÏ˜x¯¯z˚Ü!mï(÷≤2“Aﬂ÷˚8∞À……ÈrÒ”Öx~Ê©ô^Xêã˛æ<{°‰)Œ^ì"¸¨˚¢E´ÄOxBp-≥	-Rzem®,/Axxxñ”¶M‰Ji‹„ø`Ó;w$''ã‰]R<˚˙)JDèô6ÄΩß«‡uÍ∂«=«∆ß∞Áá–«¯Ââa÷√q_‚œ°≠Ω}=]HNJjqpp∞$ó”	/ooF>< Gﬂ‡(ŒﬂË«ﬁìcÿïÙÓâœ‡û\c∆p>Á\/Mk¡ÓÖKƒ éˆ¿|O\¸æDAqFÜëíú‹lkkkLÆôà˜õüüﬂÃ»®®õÚÓ˚êıå *Mé±O∞#éƒ?ÜG‚¨ÇFp£Í[¸`ÚÜ„9,˝:ËŸ	€¿q÷ª?G^a≠"a··wUâ‚˝È˜;∏µ¨§ÌËË‚/µ¡5Ú!\£¡-ˆ!‹¢`{ÃCòÏÔÖ§ÁOﬂ”ﬂº˛€¬§XÌ%Ö}p6ÏóÄ„◊c˜JÿÌæ IsÑ5o›‹‹|âb&aÚT¯ùì+îÀ§∏ñ›
-ó09∂°¸b+¡Ö‡9Î†^¯üÜlû=Ö‘ﬂµ¡tw∏ª¿ık≈˙˝Õ∞ÿ◊ÀΩ,›tGcoQÁ¥!.6™˘´VÈ’‰© Êôw“ﬂt ˙∞ã_Á∞8Öˆ¬ôﬂgz:Ò{±ÈX∂Ñ˜¬ÿ´¶;õ∞ﬁ£˙€ƒ∞Óá›!⁄˝^"˜c≠W=÷z÷¡ÿ£+~çö∫‰fﬂy≥q£„v¢öE¯qÇÉÇ¬k©óoÂIa„_á9U7ét√·∞åB,£À∞Âò!©#˘’\C€±bK!ÙúJ∞ƒπ ∫éy–qÃÖ∂c>Ù7ó@ŸÏ2œﬂE}]5ˆ¯xßõ?ÆÖà„«“ñFä Ç’¡Ôÿì–AƒÌÿxD}∑6öÌ¯˙˘(^2s†§âπf®Ÿd`·Ü®Xe`AÕ* ∑¡€q
-bq=¯°!’Dµà0CA:—bcb∫∫dÊΩW¡9‘	kˇVp¸•TPR o;ıy'÷|VáYF9¯¸f=‰ù"‹óäP^!∆GÍ±¯ƒ"‹,®ZeèL‘¨–Z√G£‰>‚„bÜàJì±Çt¢%%ƒæÏÌK∑+XÔ€FE4^Hú≠0˜ë`Ÿñ2®Zgb˙ä€HK°±Æuµï(,AI3ÛÕ†aìUŒ un>ÊÈÛ—,Ì√©îÑoâJá¿Í‡Ô-ë»˚`›∂4òÌìR!âaA"L=D–r»SÏFÉõÉ´≤pÈz=Ñï˘®™,FA	êÑ˘E$@@§ëCÓb.	ê¸M ÎÑŸ
-“â-ÎËÏ∆∑T{6¬Ã´F;Ö–¥#rõlhrYéô 	hDyq6* ã(ı
- •–¥)Ä'ˇØXƒ…Ö:Ω”0	É∏âµbÙQM. ‚xxnã§n˛ó±¬≠F;™â<WAÆ¡À•›Á*Ú9c• Ø7†™L0ûÇr&‡$	®ÑñM1‘9„P„PD¨
-±`ù óìhh¨CË±ê¢ö<AÅÅÃ·πÀe–‚›ÄÆs)‘h◊∂y
-ruÜ<êáã_6†˛^)Zõ≈()cö˙i,∞Bõ[u´2B9ëóBáWÖü-K√âƒl4à™‡ÌÌ}Å®&/BoØ9Y∑ﬁàZ†À9Uﬁ]hQ¯5®¬m∆1cy>uÅm":¶e(Øn&g©Ö:\!¥¨™†…`]EB™°bêå“ ‰	2ﬂÚ∏\/¢öº∑o€6?)1Æ^ﬁ-Ö/ˇ
-Êô\Ü∂C4y?êS.≠0mi>æ»l«ìG=x˝á®Æm≈4µ3P1oÇè
-÷∫ã≠Ñ¥˚zÃ3∏ü†´êw≥¸«¥ijjÆ!™…ŸT∫RÌ÷Tæmlí¿»6üöﬂ∆b˚b"øK(¢ó‡#ÚJáÄ∑ﬂ)£zq;¢”XhﬁÇ%<1¥≠E$Dïue0‡û•ıf™ï
-lvr>¶§§§M<ìèbfˆˆˆÛ"""≤˚ze»»*ÅÆeîÕ3±ÿéÍÇ[L 0MØÆµ5;íˇàA%¶kûÉäEÙÌö∞‘Æ™fï–5KEzF)∫ -[∏p°	Q, º˜^0ïÓr´ËB“¸`d∑HÑ/sØB›∫∫vBÍÌ:¶√„¿ÏˆΩŒñ4hX
-±Ãæz‹V(
-`Ã;èõw Ò`tÄ.$IÌN‰[ÉÓ›O0%G∫F•§$7≥"kll¬æ#W†bîåŸÀøÄ⁄Ü¸|›=|ºº≥Ùã†lRN+ÊÆ§±ª˙7ÿ¯:ƒç-ËÔFrrRáâ±…Ú…B?ó˘fb”my<S~XXû∞™=TD’bDüÃÉçÀ9,6MÅÚÚ≥ÑThØ9ÆÎED¶–7çËëﬂá∞∫!!!•Üõ…#gWı~%õ`,L”MMM’w{x¯FGE6ÂÊdPÔWQ?ﬂS,-“%Ì7‘)˙<OêÅò®»Vó555VÒ,ÏlÁ~)˝c!õπ⁄hıg'ßÌtûücGj|\Ù–IöÎt”Ê;Z„ÌÈ˘[;[[/mmÌµ”∆´ùÀ˘á˝]¶àÅ9c=Ã	õfl§≤πŒ¿~≥wlç}√æ˝…ª~ó1gl7lä±Q Hÿ°¬¿~≥wlç}Û%˛/Ÿî)óºï8%Hxr    IENDÆB`ÇPâPNG
-
-   IHDR           ¸Ì£   sRGB ÆŒÈ   gAMA  ±è¸a   	pHYs  √  √«o®d  	ÍIDATHKïñyTSW«9sf¶ßs∫åÌXg‘∂Jeﬂ$!0ÇlAYE†EE@T‹FÖ
-‘jŸŸ$ñld%Ñ$≤Çí∞êM-a'Û4ô—ôc{Œ|ˇ∏Áæwﬁ˝|ÓΩøwﬁª⁄w“≈'ˆÀöf«dÛS™Öπ°Â˘g´K/◊◊4õõõõ˙á˛œº 	≥Ï|LAb|ni~)ì\’∆¨Tu‡ß»öiÓ eF∫2€Ω6?∫æ<∑µ∫∏µ±™˘ªy+X[Y≥Jë_‚A§}ƒΩ§mÁw}òoeDıu$û∆PíN‰§VRÒT1õ<(%?Ì!œ–üÚ6g;µØ‘ZÕ®vyBª˙Bª±†›X—CﬂhµÀBZbWï≈◊uvÜ$€=ıFH¥Ÿ]˛≤’f[ãÕ_€v\m+∑Ò ˚÷t?„∏=!Üñü’‘TOÌsûıÒ¥/E⁄≈ÜF›/°Î†oœ«»’UÊ∆ZÇ=$À›ˇrﬁﬁêÈ∞∑Ÿ¡ò„`Ã›˚—e‹∂j…r¥`9X0ÌMX6{Xf€Y&ü≤@ü2@ü”æ⁄N…L#i∑∫q˘I´´Ø˜≠`~JYíQm¸«JÎ=uˆ_ì-vñ}rŸ‘r–àÌ`‘r–êfÙ·EGS™ìfMÉÅp(c¡°,ò=fÕÑ˜≠ÿfªÅ⁄q∑edÏ]ˆ¡Ñ8ı"Ó¿.ºı?ˆÜ‰À5˛Ë™àkoDõ∞≠ç*çˇî≥e9Aÿ..mnﬁd@˚°#|W·…uvfCmÄ√v/K“,‘ås9‰
-ˆù-öh;±"YÓƒŸ~C‹ø-}ﬂ')é˚9M®P˚P—˛n¡-•èN‰≈Fœ≤‘•zÙ˜2èh¡° ÅÎaæîµ¶‹ÀR¥	gï>ì†√˛G∞ı|òçF`QŒd∞i≠’ﬂçÆôÓ»–ÀŸ]d∫˝æÈÆLTRy Í/3@S}sk˝oÙ˙&ãºŒ›#4Í¿Dò2«z⁄zX1ØI«’6◊«{©÷ =›àpk"4∏»‹ˆå˘ér''!‘^GÀ√Ô`ËPïqÄ‰3üFˇ#π√!•°ÿ¡†¢øîntúƒ√á@öΩ ¥√mfâB“™#Î+Ø¶∫Z	†›nD7'ÍÂ°´'∏«Ã∂7π¯sΩÓÂD®Q'g-C∆^t;ØSë—>Céù9wÂ»µü1Iæ◊â^ÁZëa'QÜª>Ÿ÷N+y2ÿ´#ÎöóO[àX„ùQäg!}˛\“ÛSáÔﬁãW7„5`⁄ı’·˙‡√©LÙ	1:ÜtËh.~’Ê¿+SÑ≈∑vf`K;Ñ°±€w·È[S"µtjbTG˛∑`n∞8ªÙ€Øk`⁄1Ïùüµß”^≈ßm∆å£¬˚aæ+∫®–/y<‡ßæêEp±2§†?(cì4‰s∂ﬂ=XG“¿‡¸Ω_&&ú∫π>)`7˝˙rVG÷üu_øRf™ÖŸ5]zr˛ßÕ∏‰ôòÿQÃqïKû˙ 8YX§¬Ü‚FB´GÇã˚èfˆ¯ˇ ˜Ω Ò:!Òì†º≈v˚;nßû0Ëu˜_ÕÎ»z¡Ñös2∫¬b_É{\qé6,m>˛ÏX–wCá¸»Œ¡æ©ßcb¬é|p,"28Ê‹—Û)©’ò[lÃ±ﬂUÖwlØÁÒ.w_±Ÿ7\"û1£"≥âÂÎÎ˙O°^†j'b≠Ã0˘i77BnºäàùGèõwÓvL∏
-Ap°>xÍqsrp[ò€[õŸ⁄YŸ;y8x\Ñ†Ô9π◊Ï7d yÏqEc{K£D/`’Ê°ë’÷vı∂¢µKÕAoÙTÆÛıÎ®‚`Á{!pÔVó@ñKà¿˘h2Rä9#ÛéÊxÑëúPÈˆéëñSìoçA;>˚b«Ë#˙cq]ØåØ√—p˘)âR"£ÔDDÂ`Ç∫zëM`$ånÖa8N!LÁ∞&óPöK0ÕÌ”'éÁ+Ù;Ÿ·-ıâê{ÖJP˛-0ó‚˝f…øt7)∏˚{≈:,ê7Ç≠’¬[â˜íJ≥ndﬂ∫r51ÊB|ÃÈSq'Oû	åJˆéÃ8˝¿#öp(öÌ≈uã‚°cËœ(*¥yîâÙc#}Z‹‹;`.¢IE@*RæÅøŒk¡”aUÓçlÊµ≤Ús5˜”*nV§Áﬁπû}:Íx∞ø?“ÖpE;πá!}êGt/Òà$zDq<éÀP¡ùÓ˛R7/Å£#ÌMõÌk‰≤ûœLÍË@^VWV∆Ü’]"õÙÄXë…¿e7r¯ıπú⁄¨¶™ªue∑Ó\KHΩz≥≥27?`ÌÅL@f3ª[Ë∞sñçuCB,u¶Øª±π°£—◊@óµµµππôë«˝è§Bfc%ª±úQùE)M#•äR	≈iÿú∑Ø‰ﬂæú˜}X†ø´≥`˙ÙÛÌˆ≈û=ù8≠¢Ò(%z‹õ¸ó‡›¨oljVVÁÁT*ü√$VVd]√Ê%◊˛ÿPz[H.Íj~®‡‚‰ú*"6ª<Ôˆâ»∞“ú‘a)Iƒ∆ÎoÚøÇ≠7Y__◊]∂∏,
-ûÑ+§‡rÀsíÓ&«g§úÕKøXô˜£&[D e=Ï·◊ˆÒè%ƒﬁ∂◊ZÌ}›XÄ¥øπÇ©…1ZM°êR,†qâÖ¨∫|Fm.©*„AvÚœ©Á.≈Ü«E¸3><7˝ãê◊ŸR%fW©:˙⁄Î§Ì\çfY£—lº9MΩ_∞∂∫,†≥´ê7Wv∂T+ZÒ¿4ïmu=ÇZ)ªíO)•VgT‰ﬁ∏ù{˜á†C© †◊ï∞TëÄ≠R)GGGßßßóññÄùxø`§W$ …ö+<ÄGQ'z„=t†ØnoËÊ◊vqq\b•:≥2?õü¬¨…&*$RπH$R*ïOû<yÒ‚≈ÚÚÚ˚jyãòÒ @ ≥Ó5å*ö¶’Ï_áZüpF:©É‚†î¨¶ì[Õ'3y¯ítZuæ<ü¡dqπ\ÖB122VVVﬁ/òö¸•ãÉU
-	*a˝êåL|ÆüÛÚ1wnÄ3⁄EíëFx*a]_GÉ≤ç ¨C@-fÓ„qï4:] ®’Ígœûe¯Õ y¨í=j©Î"èv∆lÛã¡†˝EAíìF¯ìΩåvZPU9ªÇRï©Ëí˜ııÀÂr‡µûôô——Œo
-Ä,,,ıuÒ‰ÙπæÊi%cNÕöQ3ü*öÜÂ§ânÍh'©ãW”Œ¬ı+•K˝a®*p†”Ω†∫¸û@Õ“‚‚Øs”O∫Ö# é•∞[“,≤Åﬂ˙ÀÁ≥ö•%˝sÔçV˚/ÜK“€K    IENDÆB`ÇPADƒ4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        "   S t r i n g F i l e I n f o   ˛   0 4 0 1 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   n #  F i l e D e s c r i p t i o n     EH'1/  *B1J1  'D*H'AB  D%9/'/  W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        z   S t r i n g F i l e I n f o   V   0 4 0 2 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   æ K  F i l e D e s c r i p t i o n      5AC@A8  70  >BG8B0=5  =0  AJ2<5AB8<>ABB0  =0  8=AB0;8@0I0B0  ?@>3@0<0  =0  W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ñ 0  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A8G:8  ?@020  70?075=8.   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   p (  P r o d u c t N a m e     ?5@0F8>==0  A8AB5<0  M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞ 4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ~   S t r i n g F i l e I n f o   Z   0 4 0 3 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   æ K  F i l e D e s c r i p t i o n     R e c u r s o s   d ' i n f o r m e s   p e r   a   l a   c o m p a t i b i l i t a t   d e   l a   i n s t a l ∑ l a c i Û   d e l   W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   ä 3  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T o t s   e l s   d r e t s   r e s e r v a t s .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞§4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                           S t r i n g F i l e I n f o   ﬁ   0 4 0 4 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   P   F i l e D e s c r i p t i o n     W i n d o w s   â[›àz_¯vπ['`1XJT«åên  h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞‡4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        >   S t r i n g F i l e I n f o      0 4 0 5 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   à 0  F i l e D e s c r i p t i o n     W i n d o w s   s e t u p   c o m p a t i b i l i t y   r e p o r t i n g   r e s o u r c e s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   à 2  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   V ae c h n a   p r · v a   v y h r a z e n a .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   h $  P r o d u c t N a m e     O p e r a n Ì   s y s t È m   M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        v   S t r i n g F i l e I n f o   R   0 4 0 6 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ¥ F  F i l e D e s c r i p t i o n     R e s s o u r c e r   t i l   r a p p o r t e r i n g   a f   k o m p a t i b i l i t e t   a f   W i n d o w s - i n s t a l l a t i o n   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   í 7  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l e   r e t t i g h e d e r   f o r b e h o l d e s .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   f #  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i v s y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        N   S t r i n g F i l e I n f o   *   0 4 0 7 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ò 8  F i l e D e s c r i p t i o n     B e r i c h t s r e s s o u r c e n   f ¸ r   d i e   W i n d o w s   S e t u p - K o m p a t i b i l i t ‰ t   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   à 2  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l e   R e c h t e   v o r b e h a l t e n .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   f #  P r o d u c t N a m e     B e t r i e b s s y s t e m   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        n   S t r i n g F i l e I n f o   J   0 4 0 8 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   í 5  F i l e D e s c r i p t i o n     †Ã¡øπ  ±Ω±∆ø¡ŒΩ  √≈º≤±ƒÃƒ∑ƒ±¬  µ≥∫±ƒ¨√ƒ±√∑¬  ƒ…Ω  W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   § @  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   úµ  µ¿π∆Õª±æ∑  ∫¨∏µ  ΩÃºπºø≈  ¥π∫±πŒº±ƒø¬.   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   p (  P r o d u c t N a m e     õµπƒø≈¡≥π∫Ã  √Õ√ƒ∑º±  M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞‹4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        :   S t r i n g F i l e I n f o      0 4 0 9 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   à 0  F i l e D e s c r i p t i o n     W i n d o w s   s e t u p   c o m p a t i b i l i t y   r e p o r t i n g   r e s o u r c e s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     	∞                 4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ^   S t r i n g F i l e I n f o   :   0 4 0 B 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ò 8  F i l e D e s c r i p t i o n     W i n d o w s - a s e n n u k s e n   y h t e e n s o p i v u u s r a p o r t o i n n i n   r e s u r s s i t   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   é 5  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   K a i k k i   o i k e u d e t   p i d ‰ t e t ‰ ‰ n .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   n '  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   - k ‰ y t t ˆ j ‰ r j e s t e l m ‰     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞,4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ä   S t r i n g F i l e I n f o   f   0 4 0 C 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   » P  F i l e D e s c r i p t i o n     R e s s o u r c e s   d e   c r È a t i o n   d e   r a p p o r t s   d e   c o m p a t i b i l i t È   ‡   l ' i n s t a l l a t i o n   d e   W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ç /  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T o u s   d r o i t s   r È s e r v È s .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   v +  P r o d u c t N a m e     S y s t Ë m e   d ' e x p l o i t a t i o n   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞»4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        &   S t r i n g F i l e I n f o      0 4 0 D 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   t &  F i l e D e s c r i p t i o n     ﬁÈ–—Ÿ  ”Ÿ’’◊  ‚‹  Í–Ÿﬁ’Í  ‹‘“”Ë’Í  W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        N   S t r i n g F i l e I n f o   *   0 4 0 E 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   í 5  F i l e D e s c r i p t i o n     W i n d o w s   t e l e p Ì t Q  k o m p a t i b i l i t · s j e l e n t È s i   e r Qf o r r · s a i     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ñ 0  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   M i n d e n   j o g   f e n n t a r t v a .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   n '  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   o p e r · c i Û s   r e n d s z e r     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞Ë4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        F   S t r i n g F i l e I n f o   "   0 4 0 F 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ê 4  F i l e D e s c r i p t i o n     T i l f ˆ n g   f y r i r   s a m h Ê f i s s k ˝ r s l u r   W i n d o w s - u p p s e t n i n g a r   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ñ 0  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l u r   r È t t u r   · s k i l i n n .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞44   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        í   S t r i n g F i l e I n f o   n   0 4 1 0 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   » P  F i l e D e s c r i p t i o n     R i s o r s e   c r e a z i o n e   r e p o r t   d i   c o m p a t i b i l i t ‡   p r o g r a m m a   d i   i n s t a l l a z i o n e   d i   W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   ñ 9  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T u t t i   i   d i r i t t i   s o n o   r i s e r v a t i .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   l &  P r o d u c t N a m e     S i s t e m a   o p e r a t i v o   M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞¥4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                           S t r i n g F i l e I n f o   Ó   0 4 1 1 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ^   F i l e D e s c r i p t i o n     W i n d o w s   ª0√0»0¢0√0◊0íN€c'`Ï0›0¸0»0  Í0Ω0¸0π0    h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞®4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                           S t r i n g F i l e I n f o   ‚   0 4 1 2 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   T   F i l e D e s c r i p t i o n     W i n d o w s   $¡XŒ  8÷X÷1¡  Ùº‡¨  ¨πå¡§¬  h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞Ù4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        R   S t r i n g F i l e I n f o   .   0 4 1 3 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   î 6  F i l e D e s c r i p t i o n     B r o n n e n   v o o r   W i n d o w s   S e t u p - c o m p a t i b i l i t e i t s r a p p o r t a g e   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   å 4  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l e   r e c h t e n   v o o r b e h o u d e n .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   l &  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ - b e s t u r i n g s s y s t e e m   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        f   S t r i n g F i l e I n f o   B   0 4 1 4 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ƒ N  F i l e D e s c r i p t i o n     R e s s u r s e r   f o r   k o m p a t i b i l i t e t s r a p p o r t e r i n g   f o r   W i n d o w s - i n s t a l l a s j o n s p r o g r a m m e t   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   p &  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   M e d   e n e r e t t .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     O p e r a t i v s y s t e m e t   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞ 4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ^   S t r i n g F i l e I n f o   :   0 4 1 5 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ö 9  F i l e D e s c r i p t i o n     Z a s o b y   r a p o r t o w a n i a   z g o d n o [c i   i n s t a l a c j i   s y s t e m u   W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   é 5  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   W s z e l k i e   p r a w a   z a s t r z e |o n e .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   l &  P r o d u c t N a m e     S y s t e m   o p e r a c y j n y   M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        v   S t r i n g F i l e I n f o   R   0 4 1 6 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ¨ B  F i l e D e s c r i p t i o n     R e c u r s o s   d e   r e l a t Û r i o   d e   c o m p a t i b i l i d a d e   d a   i n s t a l a Á „ o   d o   W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   í 7  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T o d o s   o s   d i r e i t o s   r e s e r v a d o s .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   p (  P r o d u c t N a m e     S i s t e m a   O p e r a c i o n a l   M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        n   S t r i n g F i l e I n f o   J   0 4 1 8 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ™ A  F i l e D e s c r i p t i o n     R e s u r s e   p r i v i n d   r a p o r t a r e a   c o m p a t i b i l i t i i   d e   i n s t a l a r e   W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   é 5  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T o a t e   d r e p t u r i l e   r e z e r v a t e .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   l &  P r o d u c t N a m e     S i s t e m   d e   o p e r a r e   M i c r o s o f t Æ   W i n d o w s Æ   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞@4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        û   S t r i n g F i l e I n f o   z   0 4 1 9 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ¥ F  F i l e D e s c r i p t i o n     AB>G=8:8  >BG5B=>AB8  A;C61K  A>2<5AB8<>AB8  ?@>3@0<<K  CAB0=>2:8  W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Æ E  L e g a l C o p y r i g h t   ©   >@?>@0F8O  09:@>A>DB  ( M i c r o s o f t   C o r p o r a t i o n ) .   A5  ?@020  70I8I5=K.     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   r )  P r o d u c t N a m e     ?5@0F8>==0O  A8AB5<0  M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞ 4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ~   S t r i n g F i l e I n f o   Z   0 4 1 A 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   » P  F i l e D e s c r i p t i o n     R e s u r s i   z a   i z v j e ai v a n j e   o   k o m p a t i b i l n o s t i   u   s k l o p u   i n s t a l a c i j e   s u s t a v a   W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   S v a   p r a v a   p r i d r ~a n a .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   n '  P r o d u c t N a m e     O p e r a c i j s k i   s u s t a v   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        b   S t r i n g F i l e I n f o   >   0 4 1 B 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ¶ ?  F i l e D e s c r i p t i o n     Z d r o j e   n a   v y t v · r a n i e   s p r · v   o   k o m p a t i b i l i t e   i n at a l · c i e   W i n d o w s u     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ü 1  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   V ae t k y   p r · v a   v y h r a d e n È .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞(4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        Ü   S t r i n g F i l e I n f o   b   0 4 1 C 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ≤ E  F i l e D e s c r i p t i o n     B u r i m e t   e   r a p o r t i m i t   t Î   p Î r p u t h s h m Î r i s Î   t Î   p a r a m e t r i z i m i t   t Î   W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   û =  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T Î   g j i t h a   t Î   d r e j t a t   t Î   r e z e r v u a r a .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞Ù4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        R   S t r i n g F i l e I n f o   .   0 4 1 D 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ¨ B  F i l e D e s c r i p t i o n     R e s u r s e r   f ˆ r   k o m p a t i b i l i t e t s r a p p o r t e r i n g   i   W i n d o w s - i n s t a l l a t i o n e n   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   t (  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   M e d   e n s a m r ‰ t t .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     O p e r a t i v s y s t e m e t   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞‘4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        2   S t r i n g F i l e I n f o      0 4 1 E 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   í 5  F i l e D e s c r i p t i o n     #1"2#2##2"2'2!@I21DI-2#1IH2  W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   p &  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n   *'%4*44L  P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   f #  P r o d u c t N a m e     #04142#  M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞‹4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        :   S t r i n g F i l e I n f o      0 4 1 F 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   à 0  F i l e D e s c r i p t i o n     W i n d o w s   k u r u l u m   u y u m l u l u u   r a p o r l a m a   k a y n a k l a r 1  h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ç /  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T ¸ m   h a k l a r 1  s a k l 1d 1r .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   h $  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   0_l e t i m   S i s t e m i   >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞Ã4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        *   S t r i n g F i l e I n f o      0 4 2 0 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   x (  F i l e D e s c r i p t i o n     W i n d o w s   3Ãy  '~  EH'2F*  '7D'9  13'FÃ  H3'&D  h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n      ∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        b   S t r i n g F i l e I n f o   >   0 4 2 1 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ê 4  F i l e D e s c r i p t i o n     S u m b e r   d a y a   p e l a p o r a n   k o m p a t i b i l i t a s   t a t a a n   W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   û =  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   H a k   c i p t a   d i l i n d u n g i   u n d a n g - u n d a n g .     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     !∞,4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        ä   S t r i n g F i l e I n f o   f   0 4 2 2 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   § >  F i l e D e s c r i p t i o n      5AC@A8  72VBC20==O  ?@>  AC<VA=VABL  ?@>3@0<8  V=AB0;OFVW  W i n d o w s   h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Æ E  L e g a l C o p y r i g h t   ©   >@?>@0FVO  09:@>A>DB  ( M i c r o s o f t   C o r p o r a t i o n ) .   #AV  ?@020  70E8I5=>.     P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   n '  P r o d u c t N a m e     ?5@0FV9=0  A8AB5<0  M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     "∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        b   S t r i n g F i l e I n f o   >   0 4 2 3 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   Æ C  F i l e D e s c r i p t i o n      MAC@AK  04?@0^:V  A?@020740G  ?@0  AC<OHG0;L=0AFL  4;O  =0;04:V  W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ä .  L e g a l C o p y r i g h t   ©   0@?0@0FKO  M i c r o s o f t .   #A5  ?@02K  010@>=5=KO.   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     #∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?                        n   S t r i n g F i l e I n f o   J   0 4 2 4 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   ≤ E  F i l e D e s c r i p t i o n     S r e d s t v a   z a   p o r o a n j e   o   z d r u ~l j i v o s t i   p r i   n a s t a v i t v i   s i s t e m a   W i n d o w s     h $  F i l e V e r s i o n     1 0 . 0 . 1 8 3 6 2 . 1   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   H   I n t e r n a l N a m e   c o m p a t R e s o u r c e s . d l l   Ñ 0  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   V s e   p r a v i c e   p r i d r ~a n e .   P   O r i g i n a l F i l e n a m e   c o m p a t R e s o u r c e s . d l l   n '  P r o d u c t N a m e     O p e r a c i j s k i   s i s t e m   M i c r o s o f t Æ   W i n d o w s Æ     >   P r o d u c t V e r s i o n   1 0 . 0 . 1 8 3 6 2 . 1     D    V a r F i l e I n f o     $    T r a n s l a t i o n     $∞4   V S _ V E R S I O N _ I N F O     ΩÔ˛     
-  ∫G  
-  ∫G?   
