@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>黑苹果安装Big Sur过程中遇到的问题总结 | Lee&#39;s World</title>
+  <meta name="description" content="我曾经发誓不装Beta版系统，我承认我后来被雷劈了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑苹果安装Big Sur过程中遇到的问题总结">
+<meta property="og:url" content="https://wanan.run/ckpwt6jg7000gia3wdkq295kw/index.html">
+<meta property="og:site_name" content="Lee&#39;s World">
+<meta property="og:description" content="我曾经发誓不装Beta版系统，我承认我后来被雷劈了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/AECFC6E6-1954-4636-8FF7-2D13119FDA2D.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/10C8A998-5007-4549-90E2-014C4E97D281.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/C36A3E51-0863-4F6B-8B2E-9F309A23B850.png">
+<meta property="article:published_time" content="2020-06-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-26T15:55:35.000Z">
+<meta property="article:author" content="Thomas Lee">
+<meta property="article:tag" content="Mac">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/AECFC6E6-1954-4636-8FF7-2D13119FDA2D.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://wanan.run/ckpwt6jg7000gia3wdkq295kw/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Lee&#39;s World" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/bochili" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Thomas Lee</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Worker.</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Xingtai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/friends">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/bochili" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://twitter.com/longtengyun" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Halo!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/" rel="tag">ESP8266</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/ESP8266/" style="font-size: 13px;">ESP8266</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Mac/" style="font-size: 14px;">Mac</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 13px;">设计</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/ckpwsrqyy000dia3w19aw4x3f/" class="title">Python爬虫学习 - RE模块</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-13T16:00:00.000Z" itemprop="datePublished">2021-06-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/ckpwt6jg8000hia3wde8y1f4r/" class="title">OpenCore U盘全新直装BigSur</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-06T16:00:00.000Z" itemprop="datePublished">2020-07-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/ckpwt6jg8000jia3w723r1u7y/" class="title">Discuz!恢复数据库报Table &#39;xxxxx&#39; is marked as crashed and should be repaired</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-01T16:00:00.000Z" itemprop="datePublished">2020-07-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/ckpwt6jg7000gia3wdkq295kw/" class="title">黑苹果安装Big Sur过程中遇到的问题总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/ckpwt6jga000nia3w0ma6ens1/" class="title">ColorfulUI V3设计中的一些思想</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-15T16:00:00.000Z" itemprop="datePublished">2020-06-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-黑苹果安装Big Sur过程中遇到的问题总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      黑苹果安装Big Sur过程中遇到的问题总结
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/ckpwt6jg7000gia3wdkq295kw/" class="article-date">
+	  <time datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Mac/" rel="tag">Mac</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/ckpwt6jg7000gia3wdkq295kw/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3"><a href="#Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3" class="headerlink" title="Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3"></a>Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3</h2><p>这是因为在macOS下，VMWare直接读取系统的smbios信息，而在Windows中无法读取，所以要在虚拟机目录下的vmx文件中添加smbios信息：</p>
+<p>示例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smbios.reflectHost = <span class="string">&quot;TRUE&quot;</span></span><br><span class="line">hw.model = <span class="string">&quot;iMac15,1&quot;</span></span><br><span class="line">board-id = <span class="string">&quot;Mac-42FD25EABCABB274&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>该思路来自于<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fOekfmgMM00">https://www.youtube.com/watch?v=fOekfmgMM00</a></em></p>
+<p><em>Board-ID机型对照表：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1718853-1-1.html">http://bbs.pcbeta.com/viewthread-1718853-1-1.html</a></em></p>
+<h2 id="macOS-11中开启HiDPI的问题"><a href="#macOS-11中开启HiDPI的问题" class="headerlink" title="macOS 11中开启HiDPI的问题"></a>macOS 11中开启HiDPI的问题</h2><p>由于macOS11对于安全性更强的要求，macOS Catalina中解锁sle的命令已经失效了。</p>
+<p>参考此篇文章：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1862148-1-1.html">http://bbs.pcbeta.com/viewthread-1862148-1-1.html</a></p>
+<p>将15中<strong>System/Library</strong>下的Displays目录拷贝至11系统中的<strong>Library</strong>目录下，重启，使用软件“RDM”调整分辨率即可。</p>
+<blockquote>
+<p>但是在我的电脑上，开启HIDPI之后，登录界面出现了一些比例问题，不影响使用但是很难受。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/AECFC6E6-1954-4636-8FF7-2D13119FDA2D.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/10C8A998-5007-4549-90E2-014C4E97D281.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/C36A3E51-0863-4F6B-8B2E-9F309A23B850.png" alt="image"></p>
+<h2 id="菜单栏上系统的一些图标卡顿"><a href="#菜单栏上系统的一些图标卡顿" class="headerlink" title="菜单栏上系统的一些图标卡顿"></a>菜单栏上系统的一些图标卡顿</h2><p>这个问题初步推断是无线的问题。因为没有开启wifi，所以系统一直在尝试开启，导致卡顿。</p>
+<p>而配备了无线网卡的Hackintosh就没有出现卡顿的情况。</p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>本来以为上BigSur会困难重重，然后出现一堆问题，但是我是真的没想到用bat大佬的vm大法竟然一次成功了，没有遇到什么问题，但是目前来讲BigSur问题是挺多的，包括应用的适配、系统自身的bug等等等等，还是不推荐日用。</p>
+<p>然后就是也不要想一口吃成个胖次，可能我只是运气比较好，撞上了。几位朋友使用我的EFI依然会出现卡EB各种问题。</p>
+<p>总而言之，BigSur相比于之前的OS X系列，变化还是挺大的，尝鲜有风险，切勿盲目更新。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://wanan.run/ckpwt6jg7000gia3wdkq295kw/" title="黑苹果安装Big Sur过程中遇到的问题总结" target="_blank" rel="external">https://wanan.run/ckpwt6jg7000gia3wdkq295kw/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/bochili" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/bochili" target="_blank"><span class="text-dark">Thomas Lee</span><small class="ml-1x">Worker.</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/ckpwt6jg8000jia3w723r1u7y/" title="Discuz!恢复数据库报Table &#39;xxxxx&#39; is marked as crashed and should be repaired"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/ckpwt6jga000nia3w0ma6ens1/" title="ColorfulUI V3设计中的一些思想"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/bochili" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://twitter.com/longtengyun" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
