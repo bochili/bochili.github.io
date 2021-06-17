@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>黑苹果安装Big Sur过程中遇到的问题总结 | Lee&#39;s World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="alternate" href="/atom.xml" title="Lee's World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div class="loading"></div>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <aside id="sidebar">
+  <div style="padding: 20px;margin-top: 50px;">
+  <a><img class="avatar shadow" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <div style="margin-top: 10px;"></div>
+  <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
+  <br/>
+  
+      <a href="/" id="subtitle" style="color: #8f919d;line-height: 30px;">餐饮工作者。</a>
+  
+  <div style="margin-top: 50px;"></div>
+    <!-- 
+      <li><a class="main-nav-link" href="/Home">0</a></li>
+    
+      <li><a class="main-nav-link" href="/Archives">1</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">2</a></li>
+     -->
+    
+      <li><a class="main-nav-link" href="/">Home</a></li>
+    
+      <li><a class="main-nav-link" href="/archives/">Archives</a></li>
+    
+      <li><a class="main-nav-link" href="/friends/">Friends</a></li>
+    
+</div>
+</aside>
+        <section id="main"><article id="post-黑苹果安装Big Sur过程中遇到的问题总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/ckq0nefre000ghg3w9l0x1xsl/" class="article-date">
+  <time class="dt-published" datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      黑苹果安装Big Sur过程中遇到的问题总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3"><a href="#Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3" class="headerlink" title="Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3"></a>Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3</h2><p>这是因为在macOS下，VMWare直接读取系统的smbios信息，而在Windows中无法读取，所以要在虚拟机目录下的vmx文件中添加smbios信息：</p>
+<p>示例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smbios.reflectHost = <span class="string">&quot;TRUE&quot;</span></span><br><span class="line">hw.model = <span class="string">&quot;iMac15,1&quot;</span></span><br><span class="line">board-id = <span class="string">&quot;Mac-42FD25EABCABB274&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>该思路来自于<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fOekfmgMM00">https://www.youtube.com/watch?v=fOekfmgMM00</a></em></p>
+<p><em>Board-ID机型对照表：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1718853-1-1.html">http://bbs.pcbeta.com/viewthread-1718853-1-1.html</a></em></p>
+<h2 id="macOS-11中开启HiDPI的问题"><a href="#macOS-11中开启HiDPI的问题" class="headerlink" title="macOS 11中开启HiDPI的问题"></a>macOS 11中开启HiDPI的问题</h2><p>由于macOS11对于安全性更强的要求，macOS Catalina中解锁sle的命令已经失效了。</p>
+<p>参考此篇文章：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1862148-1-1.html">http://bbs.pcbeta.com/viewthread-1862148-1-1.html</a></p>
+<p>将15中<strong>System/Library</strong>下的Displays目录拷贝至11系统中的<strong>Library</strong>目录下，重启，使用软件“RDM”调整分辨率即可。</p>
+<blockquote>
+<p>但是在我的电脑上，开启HIDPI之后，登录界面出现了一些比例问题，不影响使用但是很难受。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/AECFC6E6-1954-4636-8FF7-2D13119FDA2D.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/10C8A998-5007-4549-90E2-014C4E97D281.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/C36A3E51-0863-4F6B-8B2E-9F309A23B850.png" alt="image"></p>
+<h2 id="菜单栏上系统的一些图标卡顿"><a href="#菜单栏上系统的一些图标卡顿" class="headerlink" title="菜单栏上系统的一些图标卡顿"></a>菜单栏上系统的一些图标卡顿</h2><p>这个问题初步推断是无线的问题。因为没有开启wifi，所以系统一直在尝试开启，导致卡顿。</p>
+<p>而配备了无线网卡的Hackintosh就没有出现卡顿的情况。</p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>本来以为上BigSur会困难重重，然后出现一堆问题，但是我是真的没想到用bat大佬的vm大法竟然一次成功了，没有遇到什么问题，但是目前来讲BigSur问题是挺多的，包括应用的适配、系统自身的bug等等等等，还是不推荐日用。</p>
+<p>然后就是也不要想一口吃成个胖次，可能我只是运气比较好，撞上了。几位朋友使用我的EFI依然会出现卡EB各种问题。</p>
+<p>总而言之，BigSur相比于之前的OS X系列，变化还是挺大的，尝鲜有风险，切勿盲目更新。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wanan.run/ckq0nefre000ghg3w9l0x1xsl/" data-id="ckq0nefre000ghg3w9l0x1xsl" data-title="黑苹果安装Big Sur过程中遇到的问题总结" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/ckq0nefr30003hg3wguwyevtc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Discuz!恢复数据库报Table &#39;xxxxx&#39; is marked as crashed and should be repaired
+        
+      </div>
+    </a>
+  
+  
+    <a href="/ckq0nefr00001hg3wf6rf9in9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">ColorfulUI V3设计中的一些思想</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      </div>
+    </div>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.pjax.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+<link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" type="text/css">
+<style>
+  /*pjax 动画*/
+.loading{display:none}
+.loading{height:100%;width:100%;position:fixed;top:0;left:0;z-index:999999;background-color:rgba(250,250,250,.9)}
+.loading img{width: 280px;height:210px;position: relative;top: 45%;left: 50%;margin-left:-140px;margin-top: -105px;}
+#loader{display: block; position: relative; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; border: 3px solid transparent; border-top-color: #ff5a5a; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite;}
+#loader:before{content: ""; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border-radius: 50%; border: 3px solid transparent; border-top-color: #5af33f; -webkit-animation: spin 3s linear infinite; animation: spin 3s linear infinite;}
+#loader:after{content: ""; position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border-radius: 50%; border: 3px solid transparent; border-top-color: #6dc9ff; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite;}
+@-webkit-keyframes spin{0%{-webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);} 100%{-webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg);}}
+@keyframes spin{0%{-webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);} 100%{-webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg);}}
+</style>
+<script>
+  jQuery(document).ready(function($) {
+$(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+});
+document.addEventListener('pjax:send', function (){
+     $(".loading").css("display", "block");
+});
+
+document.addEventListener('pjax:complete', function (){
+    $(".loading").css("display", "none");
+});
+</script>
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
