@@ -30,6 +30,68 @@
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
   <div id="container">
     <div id="wrap">
       <div class="outer">
@@ -49,22 +111,26 @@
     
       <li><a class="main-nav-link" href="/Archives">1</a></li>
     
-      <li><a class="main-nav-link" href="/Friends">2</a></li>
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
      -->
     <ul id="#ul">
 
       
-        <li><a class="main-nav-link" href="/"><span style="font-size:22px">􀎟</span> &nbsp;Home</a></li>
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
       
-        <li><a class="main-nav-link" href="/archives/"><span style="font-size:22px">􀈭</span> &nbsp;Archives</a></li>
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
       
-        <li><a class="main-nav-link" href="/friends/"><span style="font-size:22px">􀉣</span> &nbsp;Friends</a></li>
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
       
     </ul>
 </div>
 </aside>
         <section id="main">
-          <div style="padding-left: 40px;padding-right: 40px;"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <div class="main-body"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="article-inner">
     
@@ -81,6 +147,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <div class="article-meta">
+          <a href="/about/index.html" class="article-date">
+  <time class="dt-published" datetime="2021-06-16T17:05:05.832Z" itemprop="datePublished">2021-06-17</time>
+</a>
+          
+        </div>
         <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Hi，欢迎来访。</p>
 <p>我是李博驰，</p>
 <p>一名学生。</p>
@@ -131,8 +203,16 @@
 
 <script>
   jQuery(document).ready(function($) {
-$(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
-});
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
 </script>
 
 <script src="/js/script.js"></script>

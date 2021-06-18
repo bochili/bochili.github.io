@@ -30,6 +30,68 @@
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
   <div id="container">
     <div id="wrap">
       <div class="outer">
@@ -49,22 +111,26 @@
     
       <li><a class="main-nav-link" href="/Archives">1</a></li>
     
-      <li><a class="main-nav-link" href="/Friends">2</a></li>
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
      -->
     <ul id="#ul">
 
       
-        <li><a class="main-nav-link" href="/"><span style="font-size:22px">􀎟</span> &nbsp;Home</a></li>
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
       
-        <li><a class="main-nav-link" href="/archives/"><span style="font-size:22px">􀈭</span> &nbsp;Archives</a></li>
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
       
-        <li><a class="main-nav-link" href="/friends/"><span style="font-size:22px">􀉣</span> &nbsp;Friends</a></li>
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
       
     </ul>
 </div>
 </aside>
         <section id="main">
-          <div style="padding-left: 40px;padding-right: 40px;"><article id="post-ColorfulUI V3 设计中的一些思想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <div class="main-body"><article id="post-ColorfulUI V3 设计中的一些思想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="article-inner">
     
@@ -81,6 +147,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <div class="article-meta">
+          <a href="/ckq13rosn0001qm3w6fvp1h6m/" class="article-date">
+  <time class="dt-published" datetime="2020-06-15T16:00:00.000Z" itemprop="datePublished">2020-06-16</time>
+</a>
+          
+        </div>
         <h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="弹窗"><a href="#弹窗" class="headerlink" title="弹窗"></a>弹窗</h3><p>我认为应减少页面间跳转的操作。因为这样会增加用户查看相关信息的难度。<br>在关联度较高的两个页面中，我认为可直接以弹窗、气泡等形式悬浮于原页面上方。例如macOS中的“快速查看”，如果用户想在目标页面进行进一步操作，也可以很方便地在新标签页中打开。</p>
 <p><strong>其主要意思就是：将页面跳转的下一个页面做为弹窗形式直接展示在原页面上。</strong></p>
 <p><strong>注：</strong> <em>应该是关联度比较高的页面（如词条的注释等等）。</em></p>
@@ -168,8 +240,16 @@
 
 <script>
   jQuery(document).ready(function($) {
-$(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
-});
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
 </script>
 
 <script src="/js/script.js"></script>

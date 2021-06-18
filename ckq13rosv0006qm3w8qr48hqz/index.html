@@ -30,6 +30,68 @@
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
   <div id="container">
     <div id="wrap">
       <div class="outer">
@@ -49,22 +111,26 @@
     
       <li><a class="main-nav-link" href="/Archives">1</a></li>
     
-      <li><a class="main-nav-link" href="/Friends">2</a></li>
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
      -->
     <ul id="#ul">
 
       
-        <li><a class="main-nav-link" href="/"><span style="font-size:22px">􀎟</span> &nbsp;Home</a></li>
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
       
-        <li><a class="main-nav-link" href="/archives/"><span style="font-size:22px">􀈭</span> &nbsp;Archives</a></li>
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
       
-        <li><a class="main-nav-link" href="/friends/"><span style="font-size:22px">􀉣</span> &nbsp;Friends</a></li>
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
       
     </ul>
 </div>
 </aside>
         <section id="main">
-          <div style="padding-left: 40px;padding-right: 40px;"><article id="post-Kali Linux使用前的设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <div class="main-body"><article id="post-Kali Linux使用前的设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="article-inner">
     
@@ -81,6 +147,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <div class="article-meta">
+          <a href="/ckq13rosv0006qm3w8qr48hqz/" class="article-date">
+  <time class="dt-published" datetime="2018-02-06T16:00:00.000Z" itemprop="datePublished">2018-02-07</time>
+</a>
+          
+        </div>
         <h2 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a><strong>更新源</strong></h2><p>我这里使用了清华大学的更新源<br><code>#清华大学 deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</code><br>你们也可以设置成其他的<br><code>#中科大 deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib #浙大 deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free #东软大学 deb http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib #重庆大学 deb http://http.kali.org/kali kali-rolling main non-free contrib deb-src http://http.kali.org/kali kali-rolling main non-free contrib</code></p>
 <p>设置更新源:<br>在终端中执行命令:<br><code>cd nano /etc/apt/sources.list</code></p>
 <p>然后将一个更新源粘贴进去即可。</p>
@@ -149,8 +221,16 @@
 
 <script>
   jQuery(document).ready(function($) {
-$(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
-});
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
 </script>
 
 <script src="/js/script.js"></script>
