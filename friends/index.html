@@ -96,9 +96,9 @@
     <div id="wrap">
       <div class="outer">
         <aside id="sidebar">
-  <a style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #2f3749;color: #FFF;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
   <div style="padding: 25px;margin-top: 25px;">
-  <a><img class="avatar" style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
   <div style="margin-top: 10px;"></div>
   <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
   <br/>
@@ -129,9 +129,23 @@
     </ul>
 </div>
 </aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
         <section id="main">
           <div class="main-body"><article id="links-" class="h-entry article article-type-links" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
+    
+      <style>
+
+      .article-title{
+        font-size: 30px;
+      }
+      </style>
+    
   <div class="article-inner">
     
     
@@ -147,12 +161,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <footer class="article-fmeta">
+        
         <div class="article-meta">
-          <a href="/friends/index.html" class="article-date">
+          <span href="/friends/index.html" class="article-date">
   <time class="dt-published" datetime="2021-06-16T17:05:05.835Z" itemprop="datePublished">2021-06-17</time>
-</a>
+</span>
           
-        </div>
+        </div></footer>
         <p>这些都是我的朋友们。</p>
 <p><a target="_blank" rel="noopener" href="https://rui.plus/">锐</a><br><a target="_blank" rel="noopener" href="http://hexo.zhangaming.com/">阿明の博客</a><br><a target="_blank" rel="noopener" href="https://verbg.com/">动G Blog</a><br><a target="_blank" rel="noopener" href="https://blog.nmslwsnd.com/">InitCool</a><br><a target="_blank" rel="noopener" href="http://uulu.net/">咕噜小站</a><br><a target="_blank" rel="noopener" href="http://www.andyccr.com/e">Andy’s blog</a><br><a target="_blank" rel="noopener" href="http://limohan.cn/">Limohan</a><br><a target="_blank" rel="noopener" href="http://go.sour.ink">源起</a><br><a target="_blank" rel="noopener" href="https://www.hack-er.cn/">CtrlCV博客</a><br><a target="_blank" rel="noopener" href="https://www.itxy.tech">XingYu ‘blog</a><br><a target="_blank" rel="noopener" href="https://sewe.cc/">我们博客</a></p>
 <span id="more"></span>
@@ -167,9 +183,9 @@
       
       
       <div class="article-meta">
-        <a href="/friends/index.html" class="article-date">
+        <span href="/friends/index.html" class="article-date">
   <time class="dt-published" datetime="2021-06-16T17:05:05.835Z" itemprop="datePublished">2021-06-17</time>
-</a>
+</span>
         
       </div>
     </footer>

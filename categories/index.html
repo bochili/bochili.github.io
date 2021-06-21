@@ -96,9 +96,9 @@
     <div id="wrap">
       <div class="outer">
         <aside id="sidebar">
-  <a style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #2f3749;color: #FFF;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
   <div style="padding: 25px;margin-top: 25px;">
-  <a><img class="avatar" style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
   <div style="margin-top: 10px;"></div>
   <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
   <br/>
@@ -129,26 +129,92 @@
     </ul>
 </div>
 </aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
         <section id="main">
           <div class="main-body">
+  <article class="article">
       
-            <h2>分类页</h2>
-            <div class="all-cats">
+            <header class="article-header">
+              <h1 class="p-name article-title">分类页</h1>
+            </header>
+            <div class="e-content article-entry">
               
                 
-                  <a class="" href="/categories/Hackintosh/">
-                    <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;Hackintosh</span>
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/Hackintosh/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;Hackintosh</span>
+                    <span class="title">
+                      (2)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/Linux/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;Linux</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/Test/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;Test</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/UI%E8%AE%BE%E8%AE%A1/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;UI设计</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;数据库</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/%E7%89%A9%E8%81%94%E7%BD%91/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;物联网</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class="" href="/categories/%E7%BC%96%E7%A8%8B/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;编程</span>
+                    <span class="title">
+                      (2)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class=" child" href="/categories/%E7%BC%96%E7%A8%8B/Python/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;Python</span>
+                    <span class="title">
+                      (1)
+                    </span>
+                  </a>
+                
+                  <a style="display: block;line-height: 40px;" class=" child" href="/categories/%E7%BC%96%E7%A8%8B/Python/TEst/">
+                    <span><span>􀈕</span>&nbsp;&nbsp;TEst</span>
                     <span class="title">
                       (1)
                     </span>
                   </a>
                 
               
-            </div>
-            <br>
-            <p>分类页面测试</p>
+              <br>
+              <p>分类页面测试</p>
 
+            </div>
       
+    </article>
     </div>
         </section>
       </div>

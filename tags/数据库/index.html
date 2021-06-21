@@ -96,9 +96,9 @@
     <div id="wrap">
       <div class="outer">
         <aside id="sidebar">
-  <a style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #2f3749;color: #FFF;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
   <div style="padding: 25px;margin-top: 25px;">
-  <a><img class="avatar" style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
   <div style="margin-top: 10px;"></div>
   <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
   <br/>
@@ -129,6 +129,12 @@
     </ul>
 </div>
 </aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
         <section id="main">
           <div class="main-body"><div style="margin-top:50px;"></div>
 
@@ -147,9 +153,9 @@
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
-      <a href="/ckq13rosr0003qm3w60pkec87/" class="archive-article-date">
+      <span href="/ckq13rosr0003qm3w60pkec87/" class="archive-article-date">
   <time class="dt-published" datetime="2020-07-01T16:00:00.000Z" itemprop="datePublished">7月 2</time>
-</a>
+</span>
       
   
     <h1 itemprop="name">

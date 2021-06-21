@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python爬虫学习 - 初识Bs4 | Lee&#39;s World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="alternate" href="/atom.xml" title="Lee's World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <aside id="sidebar">
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <div style="padding: 25px;margin-top: 25px;">
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <div style="margin-top: 10px;"></div>
+  <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
+  <br/>
+  
+      <a href="/" id="subtitle" style="color: #8f919d;line-height: 30px;">餐饮工作者。</a>
+  
+  <div style="margin-top: 30px;"></div>
+    <!-- 
+      <li><a class="main-nav-link" href="/Home">0</a></li>
+    
+      <li><a class="main-nav-link" href="/Archives">1</a></li>
+    
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
+     -->
+    <ul id="#ul">
+
+      
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
+      
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
+      
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
+      
+    </ul>
+</div>
+</aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
+        <section id="main">
+          <div class="main-body"><article id="post-Python爬虫学习 - 初识Bs4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+      <style>
+
+      .article-title{
+        font-size: 30px;
+      }
+      </style>
+    
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python爬虫学习 - 初识Bs4
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <footer class="article-fmeta">
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+        <div class="article-meta">
+          <span href="/ckq6tpoj30000hj3w4t054a9t/" class="article-date">
+  <time class="dt-published" datetime="2021-06-21T16:00:00.000Z" itemprop="datePublished">2021-06-22</time>
+</span>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+        </div></footer>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>BeautifulSoup用于定位元素。</p>
+<p>有两种查找方式：</p>
+<p>1.<code>find</code>：查找到第一个匹配元素便结束</p>
+<p>2.<code>find_all</code>：查找当前内容中所有匹配的元素</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install bs4</span><br></pre></td></tr></table></figure>
+
+<h3 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
+
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><h4 id="Step1：将代码交给BeautifulSoup"><a href="#Step1：将代码交给BeautifulSoup" class="headerlink" title="Step1：将代码交给BeautifulSoup"></a>Step1：将代码交给BeautifulSoup</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main_page = BeautifulSoup(resp.text,<span class="string">&quot;html.parser&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：</strong> <em>这里<code>&quot;html.parser&quot;</code></em> <em>的作用是指定为html解析器，不加可以正常出结果，但是会报一个<code>warn</code>。</em></p>
+<h4 id="Step2：查找内容"><a href="#Step2：查找内容" class="headerlink" title="Step2：查找内容"></a>Step2：查找内容</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alist = main_page.find(<span class="string">&quot;div&quot;</span>, class_ = <span class="string">&quot;TypeList&quot;</span>).find_all(<span class="string">&quot;a&quot;</span>, class_ = <span class="string">&quot;TypeBigPics&quot;</span>)  </span><br></pre></td></tr></table></figure>
+
+<p><strong>注：</strong> <em>这里就一次用到了<code>find</code>和<code>find_all</code> 这两个功能，第一次的<code>find </code>代表查找class为“TypeList”的div标签，缩小了查找范围；第二次的<code>find_all</code>代表查找所有class为“TypeBigPics”的a标签，做为结果保存于alist变量中。</em></p>
+<h4 id="Step3：输出内容"><a href="#Step3：输出内容" class="headerlink" title="Step3：输出内容"></a>Step3：输出内容</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> alist:</span><br><span class="line">    href = a.get(<span class="string">&quot;href&quot;</span>).strip(<span class="string">&quot;/weimeitupian&quot;</span>)  <span class="comment">#获取到a标签href里的内容</span></span><br><span class="line">    href = url + href <span class="comment">#拼接字符串</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注：</strong> *这里我需要的结果是a标签中href里的URL，所以直接使用<code>[var].get(&quot;property&quot;)</code>*这种get形式获取即可</p>
+<h2 id="爬取-优美图库-gt-唯美图片-中的高清大图源代码"><a href="#爬取-优美图库-gt-唯美图片-中的高清大图源代码" class="headerlink" title="爬取 优美图库 &gt; 唯美图片 中的高清大图源代码"></a>爬取 优美图库 &gt; 唯美图片 中的高清大图源代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">domain = <span class="string">&quot;https://www.youmeitu.com&quot;</span></span><br><span class="line">url = <span class="string">&quot;https://www.youmeitu.com/weimeitupian/&quot;</span></span><br><span class="line">resp = requests.get(url)</span><br><span class="line">main_page = BeautifulSoup(resp.text,<span class="string">&quot;html.parser&quot;</span>)  <span class="comment">#将Index源码交给bs，使用HTML解析器</span></span><br><span class="line">alist = main_page.find(<span class="string">&quot;div&quot;</span>, class_ = <span class="string">&quot;TypeList&quot;</span>).find_all(<span class="string">&quot;a&quot;</span>, class_ = <span class="string">&quot;TypeBigPics&quot;</span>)  </span><br><span class="line"><span class="comment"># 第一次缩小范围：查找class为TypeList的div标签</span></span><br><span class="line"><span class="comment"># 第二次缩小范围：在这个div里查找所有class为TypeBigPics的a标签</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> alist:</span><br><span class="line">    href = a.get(<span class="string">&quot;href&quot;</span>).strip(<span class="string">&quot;/weimeitupian&quot;</span>)  <span class="comment">#获取到a标签href里的内容</span></span><br><span class="line">    href = url + href  <span class="comment">#拼接为正常网址</span></span><br><span class="line">    child_resp = requests.get(href) <span class="comment">#请求href</span></span><br><span class="line">    child_page = BeautifulSoup(child_resp.text,<span class="string">&quot;html.parser&quot;</span>) <span class="comment">#将子页面源码交给bs，使用HTML解析器</span></span><br><span class="line">    imgli = child_page.find(<span class="string">&quot;div&quot;</span>,class_ = <span class="string">&quot;ImageBody&quot;</span>).find_all(<span class="string">&quot;img&quot;</span>)</span><br><span class="line">    <span class="comment">#第一次缩小范围：查找class为ImageBody的div</span></span><br><span class="line">    <span class="comment">#第二次缩小范围：查找所有img标签</span></span><br><span class="line">    <span class="keyword">for</span> imgsrc <span class="keyword">in</span> imgli:</span><br><span class="line">        imgsrc = domain + imgsrc.get(<span class="string">&quot;src&quot;</span>)  <span class="comment">#获取到img标签src里的内容，并拼接为网址</span></span><br><span class="line">        img_resp = requests.get(imgsrc)  <span class="comment">#请求图片网址</span></span><br><span class="line">        filename = imgsrc.split(<span class="string">&quot;/&quot;</span>)[-<span class="number">1</span>]  <span class="comment">#分割图片网址做为文件名：以“/”分割开，取最后者</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;Youmeiimg/&quot;</span> + filename, mode=<span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:  <span class="comment">#以图片模式写入到Youmeiimg文件夹中，以filename变量作文件名</span></span><br><span class="line">            f.write(img_resp.content)  <span class="comment">#将请求到的图片的字节写入到文件</span></span><br><span class="line">        <span class="built_in">print</span>(filename + <span class="string">&quot; over!&quot;</span>) <span class="comment">#输出结果：1595309242280236.jpg over!</span></span><br><span class="line">        time.sleep(<span class="number">1</span>) <span class="comment">#每循环一次休息1s，防止被服务器封禁</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Completed!&quot;</span>) <span class="comment">#全部完成输出Completed！</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      <div class="article-meta">
+        <span href="/ckq6tpoj30000hj3w4t054a9t/" class="article-date">
+  <time class="dt-published" datetime="2021-06-21T16:00:00.000Z" itemprop="datePublished">2021-06-22</time>
+</span>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+      </div>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/ckq13rosy000aqm3w4ns08xrj/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Python爬虫学习 - RE模块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</div>
+        </section>
+      </div>
+    </div>
+    
+
+
+<script src="/js/jquery.pjax.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+<link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" type="text/css">
+
+<script>
+  jQuery(document).ready(function($) {
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
+</script>
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

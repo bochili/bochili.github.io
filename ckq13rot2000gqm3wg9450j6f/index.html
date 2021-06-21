@@ -96,9 +96,9 @@
     <div id="wrap">
       <div class="outer">
         <aside id="sidebar">
-  <a style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #2f3749;color: #FFF;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
   <div style="padding: 25px;margin-top: 25px;">
-  <a><img class="avatar" style="box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
   <div style="margin-top: 10px;"></div>
   <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
   <br/>
@@ -129,9 +129,23 @@
     </ul>
 </div>
 </aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
         <section id="main">
           <div class="main-body"><article id="post-黑苹果安装Big Sur过程中遇到的问题总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
+    
+      <style>
+
+      .article-title{
+        font-size: 30px;
+      }
+      </style>
+    
   <div class="article-inner">
     
     
@@ -147,16 +161,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <footer class="article-fmeta">
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
+
         <div class="article-meta">
-          <a href="/ckq13rot2000gqm3wg9450j6f/" class="article-date">
+          <span href="/ckq13rot2000gqm3wg9450j6f/" class="article-date">
   <time class="dt-published" datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
-</a>
+</span>
           
   <div class="article-category">
     <a class="article-category-link" href="/categories/Hackintosh/">Hackintosh</a>
   </div>
 
-        </div>
+        </div></footer>
         <h2 id="Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3"><a href="#Windows下VMWare-WorkStation-Pro中安装程序报BIErrorDomain错误3" class="headerlink" title="Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3"></a>Windows下VMWare WorkStation Pro中安装程序报BIErrorDomain错误3</h2><p>这是因为在macOS下，VMWare直接读取系统的smbios信息，而在Windows中无法读取，所以要在虚拟机目录下的vmx文件中添加smbios信息：</p>
 <p>示例如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smbios.reflectHost = <span class="string">&quot;TRUE&quot;</span></span><br><span class="line">hw.model = <span class="string">&quot;iMac15,1&quot;</span></span><br><span class="line">board-id = <span class="string">&quot;Mac-42FD25EABCABB274&quot;</span></span><br></pre></td></tr></table></figure>
@@ -187,9 +205,9 @@
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
 
       <div class="article-meta">
-        <a href="/ckq13rot2000gqm3wg9450j6f/" class="article-date">
+        <span href="/ckq13rot2000gqm3wg9450j6f/" class="article-date">
   <time class="dt-published" datetime="2020-06-30T16:00:00.000Z" itemprop="datePublished">2020-07-01</time>
-</a>
+</span>
         
   <div class="article-category">
     <a class="article-category-link" href="/categories/Hackintosh/">Hackintosh</a>
