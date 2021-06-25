@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python爬虫学习 - Requests进阶 | Lee&#39;s World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="alternate" href="/atom.xml" title="Lee's World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <aside id="sidebar">
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <div style="padding: 25px;margin-top: 25px;">
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <div style="margin-top: 10px;"></div>
+  <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
+  <br/>
+  
+      <a href="/" id="subtitle" style="color: #8f919d;line-height: 30px;">餐饮工作者。</a>
+  
+  <div style="margin-top: 30px;"></div>
+    <!-- 
+      <li><a class="main-nav-link" href="/Home">0</a></li>
+    
+      <li><a class="main-nav-link" href="/Archives">1</a></li>
+    
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
+     -->
+    <ul id="#ul">
+
+      
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
+      
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
+      
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
+      
+    </ul>
+</div>
+</aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
+        <section id="main">
+          <div class="main-body"><article id="post-Python爬虫学习 - Requests进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+      <style>
+
+      .article-title{
+        font-size: 30px;
+      }
+      </style>
+    
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python爬虫学习 - Requests进阶
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <footer class="article-fmeta">
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+        <div class="article-meta">
+          <span href="/ckqco880e0000zt3w6i747kph/" class="article-date">
+  <time class="dt-published" datetime="2021-06-22T16:00:00.000Z" itemprop="datePublished">2021-06-23</time>
+</span>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+        </div></footer>
+        <h2 id="Session概念"><a href="#Session概念" class="headerlink" title="Session概念"></a>Session概念</h2><p>session为会话的意思，普通的<code>requests.get</code>请求方式只适用于单次请求，而无法多次来回请求数据。</p>
+<h3 id="用法介绍"><a href="#用法介绍" class="headerlink" title="用法介绍"></a>用法介绍</h3><p>如下，是一个用于登录的例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">session = requests.session() <span class="comment"># 设置一个会话</span></span><br><span class="line">resp = session.post(url, data=data) <span class="comment">#通过这个会话来发送post请求，包含一个数据</span></span><br><span class="line"><span class="built_in">print</span>(resp.cookie) <span class="comment"># 打印得到的Cookie数据</span></span><br><span class="line"><span class="built_in">print</span>(resp.text) <span class="comment"># 打印请求到的代码数据</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Cookie登录17K小说网"><a href="#Cookie登录17K小说网" class="headerlink" title="Cookie登录17K小说网"></a>Cookie登录17K小说网</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;https://passport.17k.com/ck/user/login&quot;</span> <span class="comment">#发送Post请求登录的url</span></span><br><span class="line">bookshelf = <span class="string">&quot;https://user.17k.com/ck/author/shelf?page=1&amp;appKey=2406394919&quot;</span> <span class="comment">#目标数据地址，实为书架数据</span></span><br><span class="line">session = requests.session() <span class="comment">#打开一个会话</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&quot;loginName&quot;</span>: <span class="string">&quot;13473197850&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span>: <span class="string">&quot;dong0305&quot;</span>  <span class="comment">#设置用户名密码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#方法一：通过上面data里面的用户名和密码发送请求，然后再通过这个会话去请求书架的地址</span></span><br><span class="line"><span class="comment">#resp = session.post(url, data=data) #实现登录</span></span><br><span class="line"><span class="comment">#resp_books = session.get(bookshelf)</span></span><br><span class="line"><span class="comment">#print(resp_books.json()) #以json形式输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二：直接通过headers设置cookie实现获取该用户的数据，省去了登录过程但是需要Cookie</span></span><br><span class="line">resp_books = session.get(bookshelf, headers=&#123;</span><br><span class="line">    <span class="string">&quot;Cookie&quot;</span>: <span class="string">&quot;GUID=f6d369f7-5e48-4028-ad42-85afcda4bafd; c_referer_17k=https://www.google.com/; Hm_lvt_9793f42b498361373512340937deb2a0=1624549433; c_channel=0; c_csc=web; accessToken=avatarUrl%3Dhttps%253A%252F%252Fcdn.static.17k.com%252Fuser%252Favatar%252F02%252F62%252F96%252F77819662.jpg-88x88%253Fv%253D1624549512000%26id%3D77819662%26nickname%3D%25E8%25BE%25A3%25E7%2599%25BD%25E8%258F%259CLee%26e%3D1640103111%26s%3D498c6b1ec235472a; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2277819662%22%2C%22%24device_id%22%3A%2217a3eb0cf5f7a6-0bfbff5fe7e464-34647600-2073600-17a3eb0cf60b28%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22https%3A%2F%2Fwww.google.com%2F%22%2C%22%24latest_referrer_host%22%3A%22www.google.com%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC%22%7D%2C%22first_id%22%3A%22f6d369f7-5e48-4028-ad42-85afcda4bafd%22%7D; Hm_lpvt_9793f42b498361373512340937deb2a0=1624551118&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">print</span>(resp_books.json())</span><br></pre></td></tr></table></figure>
+
+<h2 id="抓取梨视频，解决防盗链问题"><a href="#抓取梨视频，解决防盗链问题" class="headerlink" title="抓取梨视频，解决防盗链问题"></a>抓取梨视频，解决防盗链问题</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>防盗链包含在页面的请求头中，关键字为 <code>Referer</code></p>
+<p>原理是溯源，即校验此页面的上一个页面是否为预设值。</p>
+<p>处理时只需要将 <code>&quot;Referer&quot;: url</code> 放入headers即可。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>本例子为抓取梨视频的视频文件，比较复杂，视频播放页源代码中未直接包含视频url，用到了二次请求，视频文件的url也与通过网页获取到的视频文件url不符，需要做一些处理，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/QQ20210626-realurl.png" alt="Real Url"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/20210626fakeurl.png" alt="Fake Url"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> write</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;https://www.pearvideo.com/video_1733239&quot;</span> <span class="comment">#视频播放页面</span></span><br><span class="line">contid = url.split(<span class="string">&quot;_&quot;</span>)[<span class="number">1</span>] <span class="comment">#取到视频的contId</span></span><br><span class="line">videoState = <span class="string">f&quot;https://www.pearvideo.com/videoStatus.jsp?contId=<span class="subst">&#123;contid&#125;</span>&amp;mrd=0.791747833440223&quot;</span> <span class="comment">#将contId插入到二次请求的url地址中</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36&quot;</span>,</span><br><span class="line">    <span class="string">&quot;Referer&quot;</span>: url <span class="comment">#防盗链处理</span></span><br><span class="line">&#125;</span><br><span class="line">resp = requests.get(videoState, headers=headers) <span class="comment">#请求二次请求的url</span></span><br><span class="line">dic = resp.json() <span class="comment">#设置一个字典</span></span><br><span class="line">srcurl = dic[<span class="string">&#x27;videoInfo&#x27;</span>][<span class="string">&#x27;videos&#x27;</span>][<span class="string">&#x27;srcUrl&#x27;</span>] <span class="comment">#这个是假的视频url</span></span><br><span class="line">systemtime = dic[<span class="string">&#x27;systemTime&#x27;</span>] <span class="comment">#另外一个校验的参数</span></span><br><span class="line">srcurl = srcurl.replace(systemtime, <span class="string">f&quot;cont-<span class="subst">&#123;contid&#125;</span>&quot;</span>) <span class="comment">#将contId替换掉假的url中假的部分，得到真正的url</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;<span class="subst">&#123;contid&#125;</span>.mp4&quot;</span>, mode=<span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f: <span class="comment">#保存文件</span></span><br><span class="line">    f.write(requests.get(srcurl).content)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      <div class="article-meta">
+        <span href="/ckqco880e0000zt3w6i747kph/" class="article-date">
+  <time class="dt-published" datetime="2021-06-22T16:00:00.000Z" itemprop="datePublished">2021-06-23</time>
+</span>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+      </div>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/ckq96tafy0000y03w04n11c9g/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Python爬虫学习 - Xpath
+        
+      </div>
+    </a>
+  
+  
+    <a href="/ckq7q6o1e000g1n3wb54uffnk/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Python爬虫学习 - 初识Bs4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</div>
+        </section>
+      </div>
+    </div>
+    
+
+
+<script src="/js/jquery.pjax.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+<link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" type="text/css">
+
+<script>
+  jQuery(document).ready(function($) {
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
+</script>
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
