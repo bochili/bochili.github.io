@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python - OpenCV入门 | Lee&#39;s World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="alternate" href="/atom.xml" title="Lee's World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <style>
+    .loadbartop-mom{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:6px;
+    background:#f1f2f9;
+    }
+    .lobt-son{
+    position: relative;
+    animation:slideiugfcn 1.5s infinite;
+    background:#0A73FF;
+    width: 100px;
+    height:6px;
+    }
+    @keyframes slideiugfcn {
+     from { 
+      left:0%; 
+     }
+     to { 
+      left:100%;
+     } 
+    }
+    #bonfire-pageloader {
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+#bonfire-pageloader svg {
+	fill:#fff;
+}
+#bonfire-pageloader {
+	position:fixed;
+	z-index:99999999999999;
+	width:100%;
+	height:1000%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.bonfire-pageloader-fade {
+	opacity:0 !important;
+	-webkit-transition: all .75s ease;
+	-moz-transition: all .75s ease;
+	-o-transition: all .75s ease;
+	-ms-transition: all .75s ease;
+	transition: all .75s ease;
+}
+.bonfire-pageloader-hide {
+	display:none;
+}
+.bonfire-html-onload {	
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+    </style>
+  <div class="loadbartop-mom"id="bonfire-pageloaderr">
+    <div class="lobt-son"></div>
+    </div>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <aside id="sidebar">
+  <a onclick="changeTheme()" style="cursor:;box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);text-align:center;line-height:40px;-webkit-box-shadow: 0px 5px 9px 0px rgba(180, 180, 180, 0.42);display: block;background: #fff;color: #000;border-radius: 1000px;position: absolute;top:30px;right: 30px;width: 40px;height: 40px;">􀆹</a>
+  <div style="padding: 25px;margin-top: 25px;">
+  <a><img class="avatar" style="" width="55px" src="https://avatars.githubusercontent.com/u/53205314?v=4" /></a>
+  <div style="margin-top: 10px;"></div>
+  <a href="/" style="font-weight: bold;font-size: 18px;">Thomas Lee</a>
+  <br/>
+  
+      <a href="/" id="subtitle" style="color: #8f919d;line-height: 30px;">餐饮工作者。</a>
+  
+  <div style="margin-top: 30px;"></div>
+    <!-- 
+      <li><a class="main-nav-link" href="/Home">0</a></li>
+    
+      <li><a class="main-nav-link" href="/Archives">1</a></li>
+    
+      <li><a class="main-nav-link" href="/Categories">2</a></li>
+    
+      <li><a class="main-nav-link" href="/Friends">3</a></li>
+     -->
+    <ul id="#ul">
+
+      
+        <li><a class="main-nav-link" href="/"><span style="font-size:20px">􀎟</span> &nbsp;Home</a></li>
+      
+        <li><a class="main-nav-link" href="/archives/"><span style="font-size:20px">􀈭</span> &nbsp;Archives</a></li>
+      
+        <li><a class="main-nav-link" href="/categories/"><span style="font-size:20px">􀋱</span> &nbsp;Categories</a></li>
+      
+        <li><a class="main-nav-link" href="/friends/"><span style="font-size:20px">􀉣</span> &nbsp;Friends</a></li>
+      
+    </ul>
+</div>
+</aside>
+<script>
+  function changeTheme(){
+    $("body").toggleClass("theme-dark")
+  }
+</script>
+<!-- background: #2f3749; -->
+        <section id="main">
+          <div class="main-body"><article id="post-OpenCV入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+      <style>
+
+      .article-title{
+        font-size: 30px;
+      }
+      </style>
+    
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python - OpenCV入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <footer class="article-fmeta">
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+        <div class="article-meta">
+          <span href="/ckqkngid10000f03w9si2c7my/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T16:00:00.000Z" itemprop="datePublished">2021-07-01</time>
+</span>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+        </div></footer>
+        <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade setuptools</span><br><span class="line">pip install numpy Matplotlib</span><br><span class="line">pip install opencv-python</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="comment">#读取图像，支持 bmp、jpg、png、tiff 等常用格式</span></span><br><span class="line">img = cv.imread(<span class="string">&quot;python学习/OpenCV/test.jpg&quot;</span>)</span><br><span class="line"><span class="comment">#创建窗口并显示图像</span></span><br><span class="line">cv.namedWindow(<span class="string">&quot;Image&quot;</span>)</span><br><span class="line">cv.imshow(<span class="string">&quot;Image&quot;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#释放窗口</span></span><br><span class="line">cv2.destroyAllWindows() </span><br></pre></td></tr></table></figure>
+
+<h2 id="模板匹配"><a href="#模板匹配" class="headerlink" title="模板匹配"></a>模板匹配</h2><p>图片的每一个像素点都是一个数字，一张灰度图上的像素点的颜色从0~255为由黑到白。</p>
+<p>模板匹配的概念就是两张图片每个相同位置像素点的对比。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.matchTemplate(img, img_Temp, cv2.TM_SQDIFF) <span class="comment">#三个属性分别为：目标图片，模板图片，对比方法</span></span><br></pre></td></tr></table></figure>
+
+<p>模板匹配的缺点在于如果目标图片发生旋转或大小变化则无法正确对比。</p>
+<h3 id="图像预处理"><a href="#图像预处理" class="headerlink" title="图像预处理"></a>图像预处理</h3><p>以识别银行卡号为例，一张彩色的包含银行卡号的图片，是无法直接与模板图片进行匹配的，所以要将这个彩色图片处理为与模板相似的黑白图片。</p>
+<h4 id="图像预处理方法："><a href="#图像预处理方法：" class="headerlink" title="图像预处理方法："></a>图像预处理方法：</h4><ol>
+<li>二值化<ul>
+<li>全局阈值</li>
+<li>自适应阈值</li>
+</ul>
+</li>
+<li>轮廓筛选<ul>
+<li>轮廓面积</li>
+<li>轮廓外接矩形</li>
+</ul>
+</li>
+<li>形态学变化<ul>
+<li>膨胀、腐蚀</li>
+<li>开运算、闭运算</li>
+<li>礼帽、黑帽、……</li>
+</ul>
+</li>
+</ol>
+<h3 id="图像二值化"><a href="#图像二值化" class="headerlink" title="图像二值化"></a>图像二值化</h3><p>如下图，为图片在不同阈值下的不同状态。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/tuxiangerzhihua.png"></p>
+<h4 id="全局阈值"><a href="#全局阈值" class="headerlink" title="全局阈值"></a>全局阈值</h4><p>全局阈值是一个给定值。</p>
+<p>某像素点的灰度小于这个值，则会设置为一个颜色；</p>
+<p>某像素点的灰度大于这个值，则会设置为另一个颜色。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">thresh, dst = cv2.threshold(src, thresh, maxVal, <span class="built_in">type</span>) <span class="comment">#四个属性分别为：图片路径，阈值，最大值，二值化类型。返回的两个参数分别为：阈值，二值化处理后的图片。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自适应阈值"><a href="#自适应阈值" class="headerlink" title="自适应阈值"></a>自适应阈值</h4><p>在某个区域设置一个阈值，决定显示哪种颜色。</p>
+<p>自适应阈值可以更容易地凸显图像的轮廓。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv2.adaptiveThreshold(src, maxVal, adaptiveMethod, <span class="built_in">type</span>, blocksize, C)</span><br><span class="line"><span class="comment">#六个属性分别为：图片路径，最大值，自适应方法，二值化类型，像素邻域尺寸，常数。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="像素邻域大小"><a href="#像素邻域大小" class="headerlink" title="像素邻域大小"></a>像素邻域大小</h5><p>值是给定的：3，5，7……</p>
+<p>用于阈值计算时，考虑某像素周围像素点灰度的范围。</p>
+<h5 id="常数C"><a href="#常数C" class="headerlink" title="常数C"></a>常数C</h5><h5 id="阈值计算"><a href="#阈值计算" class="headerlink" title="阈值计算"></a>阈值计算</h5><p>假设blocksize=3，C=10<br>$$<br>thresh = blocksize^2个平均灰度 - C = 9个平均灰度 - 10<br>$$<br>注：“9个平均灰度”的意思是以目标像素点为中心的九宫格区域的这九个像素点的平均灰度</p>
+<h4 id="二值化类型"><a href="#二值化类型" class="headerlink" title="二值化类型"></a>二值化类型</h4><p>如下图，<code>cv2.THRESH_BINARY</code> 方法的解释为：</p>
+<p>当图片的某一像素点灰度值大于阈值时，将此像素点的灰度设为最大值，反之则设为0。</p>
+<p><code>cv2.THRESH_BINARY_INV</code> 方法则与之相反（inv意为inverse）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/20210701160954.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      <div class="article-meta">
+        <span href="/ckqkngid10000f03w9si2c7my/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T16:00:00.000Z" itemprop="datePublished">2021-07-01</time>
+</span>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+      </div>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/ckqco880e0000zt3w6i747kph/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Python爬虫学习 - Requests进阶</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</div>
+        </section>
+      </div>
+    </div>
+    
+
+
+<script src="/js/jquery.pjax.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+<link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" type="text/css">
+
+<script>
+  jQuery(document).ready(function($) {
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#main', {fragment:'#main', timeout:6000});
+  });
+  $(document).on('pjax:send', function() {
+      jQuery(document.body).unbind('touchmove');
+		  jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-fade');
+		  jQuery("html").removeClass('bonfire-html-onload');
+    });
+    $(document).on('pjax:complete', function() {
+      jQuery("#bonfire-pageloaderr").addClass('bonfire-pageloader-hide');
+    });
+</script>
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
