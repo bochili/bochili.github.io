@@ -221,6 +221,24 @@
 <p>当图片的某一像素点灰度值大于阈值时，将此像素点的灰度设为最大值，反之则设为0。</p>
 <p><code>cv2.THRESH_BINARY_INV</code> 方法则与之相反（inv意为inverse）。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/20210701160954.png"></p>
+<h3 id="轮廓筛选"><a href="#轮廓筛选" class="headerlink" title="轮廓筛选"></a>轮廓筛选</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">contours, hierarchy = cv2.findCountours(img, mode, method) <span class="comment">#img为灰度图或二值图</span></span><br><span class="line"><span class="comment">#contours返回的是轮廓列表</span></span><br></pre></td></tr></table></figure>
+
+<p>轮廓检索模式（mode）有两种：</p>
+<ul>
+<li><code>cv2.RETR_EXTERNAL</code> : 检测外轮廓</li>
+<li><code>cv2.RETR_TREE</code> : 等级树结构的轮廓。会将内轮廓、外轮廓都检索出来，也会告诉我们它们之间的关系。</li>
+</ul>
+<p>轮廓近似方法（method）同样也是两种：</p>
+<ul>
+<li><code>cv2.CHAIN_APPROX_NONE</code> : 所有像素点</li>
+<li><code>cv2.CHAIN_APPROX_SIMPLE</code> : 直线两端的点（如果是一条线，那么只取两个端点坐标并记录）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/20210702155456.png"></p>
+<p>如图所示，contours返回出来的结果</p>
+<p><code>len(list)</code> 可以用于输出轮廓的个数</p>
+<p><code>contours[1]</code> 输出的是数组。</p>
+<h4 id="绘制轮廓"><a href="#绘制轮廓" class="headerlink" title="绘制轮廓"></a>绘制轮廓</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.drawContours(image, contours, i, color, thickness)</span><br><span class="line">#contours为轮廓列表 </span><br></pre></td></tr></table></figure>
+
 
       
     </div>
