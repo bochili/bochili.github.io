@@ -1,5 +1,7 @@
-@import url("https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css");
+/* @import url("https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css"); */
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
 @font-face {
   font-family: "Inter";
   src: url(../fonts/Inter-Regular.otf);
@@ -102,18 +104,25 @@
 html,
 body,
 span,
-p,
+p {
+  font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC",
+    "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+  color: #2e405b;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont,
+  font-family: "Inter", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC",
     "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
   color: #2e405b;
+  font-weight: 200;
 }
+
 html {
   background: #fff;
 }
@@ -226,14 +235,41 @@ body {
   text-align: left;
   font-size: 0.5em;
   padding: 0 0 50px 0;
-  border-left: solid #2e405b 2px;
   transition: padding 0.8s ease 0s, background 0.8s ease 0s;
 }
-.site-title:hover {
+.site-title {
   padding: 15px 0 35px 0;
   color: #fff !important;
-  background: #2e405b !important;
-  border-left: solid #2e405b 2px;
+  background: linear-gradient(
+    75deg,
+    rgb(55, 59, 68) 0%,
+    rgb(66, 134, 244) 50%,
+    rgb(160, 181, 255) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0 0;
+  border-radius: 15px;
+  animation: bgback 0.3s forwards linear alternate;
+  /* background: linear-gradient(to left top, rgb(55, 59, 68), rgb(66, 134, 244)); */
+}
+@keyframes bgposition {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes bgback {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.site-title:hover {
+  animation: bgposition 0.3s forwards linear alternate;
 }
 .site-title:hover * {
   color: #fff !important;
@@ -293,23 +329,39 @@ body {
 }
 a {
   color: #2e405b;
-  transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  -moz-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  -o-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: color 0.3s ease 0s, background 0.3s ease 0s;
+  -moz-transition: color 0.3s ease 0s, background 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s, background 0.3s ease 0s;
+  -webkit-transition: color 0.3s ease 0s, background 0.3s ease 0s;
   border-bottom: solid #2e405b 2px;
   padding: 0;
   cursor: pointer;
   cursor: hand;
+}
+.site-title a {
+  color: #fff;
 }
 a:hover,
 a:focus {
   text-decoration: none;
 }
 a:hover {
-  color: #fff !important;
-  background-color: #2e405b;
+  background: none;
   border-bottom: solid transparent 2px;
+  position: relative;
+}
+a:hover::after {
+  transition: 0.3s all;
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  z-index: -1;
+  height: 15px;
+  display: block;
+  border-radius: 20px;
+  background-color: #c4ddff;
 }
 a:focus {
   color: #000;
@@ -328,8 +380,26 @@ a:focus {
 .a-title:focus {
   background-color: transparent;
 }
+.current:hover {
+  background: none !important;
+  color: #2e405b !important;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  z-index: -1;
+  left: 0;
+  height: 15px;
+  display: block;
+  border-radius: 20px;
+  background-color: #c4ddff;
+}
 .current {
-  border-bottom: solid #2e405b 3px !important;
+  position: relative;
+  border-bottom: none !important;
+  /* border-bottom: solid #2e405b 3px !important; */
 }
 .a-mute {
   background-color: transparent;
@@ -380,25 +450,61 @@ footer * {
 .post-container {
   margin: 0 0 20px 0;
   font-weight: normal;
+  /* box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 20px 0px;
+  background-color: #fff;
+  border-radius: 20px; */
+}
+.post-cover {
+  margin-bottom: 10px;
+  width: 100%;
+  max-height: 350px;
+  margin-top: 20px;
+  object-fit: contain;
+  /* background-color: #fff; */
+  border-radius: 20px;
 }
 .post-title {
-  font-size: 30px;
+  /* padding: 0 20px; */
+  font-size: 28px;
   font-weight: 200;
   line-height: 40px;
   margin: 3px 0;
-  font-family: "Noto Serif SC", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Inter", "Source Sans Pro", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 .post-title a {
   border-bottom: none !important;
 }
 .post-meta {
+  /* padding: 0 20px; */
   font-size: 16px;
   margin: 10px 0;
 }
 .post-abstract {
+  /* padding: 0 20px 20px 20px; */
   font-size: 18px;
+}
+table {
+  width: 100%; /*表格宽度*/
+  max-width: 65em; /*表格最大宽度，避免表格过宽*/
+  border: 1px solid #dedede; /*表格外边框设置*/
+  margin: 15px auto; /*外边距*/
+  border-collapse: collapse; /*使用单一线条的边框*/
+  empty-cells: show; /*单元格无内容依旧绘制边框*/
+}
+table th,
+table td {
+  height: 35px; /*统一每一行的默认高度*/
+  font-size: 16px; /*行内字符大小*/
+  border: 1px solid #dedede; /*内部边框样式*/
+  padding: 0 10px; /*内边距*/
+}
+table th {
+  font-size: 16px; /*表头字符大小*/
+  font-weight: bold; /*加粗*/
+  text-align: center; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  background: rgba(158, 188, 226, 0.2); /*背景色*/
 }
 li {
   margin: 5px 0;
@@ -465,13 +571,25 @@ figure .code pre {
     -ms-writing-mode: lr-tb;
     writing-mode: horizontal-tb;
   }
+  .side-avatar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .site-title a {
+    color: #2e405b;
+  }
   .site-title {
     margin: 0;
+    position: relative;
     font-weight: bolder;
     font-style: normal;
     width: auto;
     height: auto;
     font-size: 0.5em;
+    color: #2e405b !important;
+    /* padding: 20px 10px 15px 10px; */
+    background: none;
     padding: 0;
     border-left: none;
     text-align: center;
@@ -525,7 +643,8 @@ figure .code pre {
   }
   .post-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
+    line-height: 33px;
     margin: 3px 0;
   }
   .post-meta {
@@ -547,6 +666,11 @@ figure .code pre {
   li.soc {
     margin-top: 5px !important;
   }
+}
+pre {
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
 }
 @media only screen and (max-height: 860px) {
   .site-title-large {
