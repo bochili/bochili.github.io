@@ -6,7 +6,7 @@
   <link href="https://blog.bochi.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.bochi.ink/"/>
-  <updated>2024-02-13T07:52:42.193Z</updated>
+  <updated>2024-02-13T07:56:39.641Z</updated>
   <id>https://blog.bochi.ink/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Visual Studio使用SolidWorks API模板开发SolidWorks插件</title>
-    <link href="https://blog.bochi.ink/2024/02/13/C#%E8%B0%83%E7%94%A8SolidWorks%20API%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/"/>
-    <id>https://blog.bochi.ink/2024/02/13/C#%E8%B0%83%E7%94%A8SolidWorks%20API%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/</id>
+    <title>(C#)使用SolidWorks API模板开发SolidWorks插件</title>
+    <link href="https://blog.bochi.ink/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/"/>
+    <id>https://blog.bochi.ink/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/</id>
     <published>2024-02-13T06:20:16.030Z</published>
-    <updated>2024-02-13T07:52:42.193Z</updated>
+    <updated>2024-02-13T07:56:39.641Z</updated>
     
     
     <summary type="html">通过SolidWorks官方提供的Visual Studio模板开发，生成DLL文件，注册到SolidWorks工具栏。</summary>
