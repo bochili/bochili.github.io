@@ -6,7 +6,7 @@
   <link href="https://blog.bochi.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.bochi.ink/"/>
-  <updated>2024-02-13T07:56:39.641Z</updated>
+  <updated>2024-03-09T17:35:18.570Z</updated>
   <id>https://blog.bochi.ink/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(JS)NodeJS+微信小程序接入支付宝支付沙箱</title>
+    <link href="https://blog.bochi.ink/2024/03/09/NodeJS+%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%85%A5%E6%94%AF%E4%BB%98%E5%AE%9D%E6%A8%A1%E6%8B%9F%E6%94%AF%E4%BB%98%E6%B2%99%E7%AE%B1/"/>
+    <id>https://blog.bochi.ink/2024/03/09/NodeJS+%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%85%A5%E6%94%AF%E4%BB%98%E5%AE%9D%E6%A8%A1%E6%8B%9F%E6%94%AF%E4%BB%98%E6%B2%99%E7%AE%B1/</id>
+    <published>2024-03-09T15:33:29.887Z</published>
+    <updated>2024-03-09T17:35:18.570Z</updated>
+    
+    
+    <summary type="html">Express后端+微信小程序接入支付宝沙箱，模拟订单支付</summary>
+    
+    
+    
+    <category term="Coding" scheme="https://blog.bochi.ink/categories/Coding/"/>
+    
+    
+    <category term="NodeJS" scheme="https://blog.bochi.ink/tags/NodeJS/"/>
+    
+    <category term="小程序" scheme="https://blog.bochi.ink/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(C#)使用SolidWorks API模板开发SolidWorks插件</title>
     <link href="https://blog.bochi.ink/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/"/>
     <id>https://blog.bochi.ink/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/</id>
     <published>2024-02-13T06:20:16.030Z</published>
-    <updated>2024-02-13T07:56:39.641Z</updated>
+    <updated>2024-03-03T04:11:25.008Z</updated>
     
     
     <summary type="html">通过SolidWorks官方提供的Visual Studio模板开发，生成DLL文件，注册到SolidWorks工具栏。</summary>
@@ -390,25 +411,6 @@
     
     
     <category term="Mac" scheme="https://blog.bochi.ink/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Discuz!恢复数据库报Table &#39;xxxxx&#39; is marked as crashed and should be repaired</title>
-    <link href="https://blog.bochi.ink/2020/07/02/Discuz!%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5Table%20&#39;xxxxx&#39;%20is%20marked%20as%20crashed%20and%20should%20be%20repaired/"/>
-    <id>https://blog.bochi.ink/2020/07/02/Discuz!%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5Table%20&#39;xxxxx&#39;%20is%20marked%20as%20crashed%20and%20should%20be%20repaired/</id>
-    <published>2020-07-01T16:00:00.000Z</published>
-    <updated>2024-02-10T11:24:37.306Z</updated>
-    
-    
-    <summary type="html">恢复数据库是建站过程中经常需要做的事情。</summary>
-    
-    
-    
-    <category term="解决问题" scheme="https://blog.bochi.ink/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="数据库" scheme="https://blog.bochi.ink/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
