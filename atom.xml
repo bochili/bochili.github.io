@@ -6,7 +6,7 @@
   <link href="https://blog.bochi.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.bochi.ink/"/>
-  <updated>2024-03-14T05:55:03.137Z</updated>
+  <updated>2024-03-14T06:03:33.481Z</updated>
   <id>https://blog.bochi.ink/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://blog.bochi.ink/2024/03/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91MQTT%E7%9A%84%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B/"/>
     <id>https://blog.bochi.ink/2024/03/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91MQTT%E7%9A%84%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B/</id>
     <published>2024-03-13T16:45:47.732Z</published>
-    <updated>2024-03-14T05:55:03.137Z</updated>
+    <updated>2024-03-14T06:03:33.481Z</updated>
     
     
-    <summary type="html">设备端和小程序端直接通讯，设备端上报的数据经小程序上传至后端服务，设备端拉取数据经小程序转发到设备端。</summary>
+    <summary type="html">客户不想再搭建服务器来接收设备端消息和下发数据，只要在小程序端时刻接收；而小程序端和设备端都属于“设备”，他们之间是不能互通消息的，所以需要把设备端上报的数据流转到小程序端，小程序端从后端拉取数据需要流转到设备端。</summary>
     
     
     
