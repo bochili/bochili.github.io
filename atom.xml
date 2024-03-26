@@ -6,7 +6,7 @@
   <link href="https://blog.bochi.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.bochi.ink/"/>
-  <updated>2024-03-26T11:38:19.924Z</updated>
+  <updated>2024-03-26T11:45:56.060Z</updated>
   <id>https://blog.bochi.ink/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>(vue)前端face-api.js人脸识别小记</title>
+    <title>(Vue)前端face-api.js人脸识别小记</title>
     <link href="https://blog.bochi.ink/2024/03/26/(Vue)%E5%89%8D%E7%AB%AFface-api.js%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%8F%E8%AE%B0/"/>
     <id>https://blog.bochi.ink/2024/03/26/(Vue)%E5%89%8D%E7%AB%AFface-api.js%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%8F%E8%AE%B0/</id>
     <published>2024-03-26T10:24:27.204Z</published>
-    <updated>2024-03-26T11:38:19.924Z</updated>
+    <updated>2024-03-26T11:45:56.060Z</updated>
     
     
     <summary type="html">最近接到一个需求，需要在登录时调用用户端摄像头进行人脸识别，由于仅要求功能上实现即可，所以在前端直接进行比对比较方便直观，最后决定采用face-api.js库进行开发。</summary>
