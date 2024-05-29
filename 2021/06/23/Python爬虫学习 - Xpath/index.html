@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Python爬虫学习 - Xpath · 辣白菜的部落格</title><meta name="description" content="简介这里用到了 lxml-etree，同样是一个用于定位、获取内容的工具，解析 xpath。
+安装pip install lxml
+
+导入from lxml import etree
+
+调用Step1：将数据交给 etreeresp = requests.get(url)
+html = etree."><meta name="og:description" content="简介这里用到了 lxml-etree，同样是一个用于定位、获取内容的工具，解析 xpath。
+安装pip install lxml
+
+导入from lxml import etree
+
+调用Step1：将数据交给 etreeresp = requests.get(url)
+html = etree."><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="Python爬虫学习 - Xpath"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Python爬虫学习 - Xpath</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-06-23</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/学习笔记/" title="学习笔记">学习笔记</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/Python/" title="Python">Python</a><span>&nbsp;</span></span></p><p class="post-abstract"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这里用到了 lxml-etree，同样是一个用于定位、获取内容的工具，解析 xpath。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code class="bash">pip install lxml
+</code></pre>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><pre><code class="python">from lxml import etree
+</code></pre>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><h3 id="Step1：将数据交给-etree"><a href="#Step1：将数据交给-etree" class="headerlink" title="Step1：将数据交给 etree"></a>Step1：将数据交给 etree</h3><pre><code class="python">resp = requests.get(url)
+html = etree.HTML(resp.text)
+</code></pre>
+<p>这里的 <code>etree.HTML</code> 代表解析从服务器获得的 html 数据</p>
+<blockquote>
+<p>etree.[xxx]有很多种用法：</p>
+<p>etree.HTML 代表解析从服务器获得的 html 数据</p>
+<p>etree.parse 是从本地文件解析</p>
+<p>etree.XML 可以解析 XML 文件</p>
+</blockquote>
+<h3 id="Step2：使用-Xpath"><a href="#Step2：使用-Xpath" class="headerlink" title="Step2：使用 Xpath"></a>Step2：使用 Xpath</h3><h4 id="提取标签内的内容"><a href="#提取标签内的内容" class="headerlink" title="提取标签内的内容"></a>提取标签内的内容</h4><p>在普通 xpath 后添加<code>/text()</code></p>
+<pre><code class="python">result = html.xpath(&quot;/html/body/ul/li/a/text()&quot;)
+</code></pre>
+<h4 id="限制于第-N-个标签里提取内容"><a href="#限制于第-N-个标签里提取内容" class="headerlink" title="限制于第 N 个标签里提取内容"></a>限制于第 N 个标签里提取内容</h4><p>在需要索引第 n 个的标签后加上 <code>[num]</code> ,num&#x3D;1 则是限制为第一个 xx 标签</p>
+<pre><code class="python">result = html.xpath(&quot;/html/body/ul/li[1]/a/text()&quot;)
+</code></pre>
+<h4 id="通过标签属性筛选内容"><a href="#通过标签属性筛选内容" class="headerlink" title="通过标签属性筛选内容"></a>通过标签属性筛选内容</h4><p>如下，与限制第 n 个标签的用法类似，筛选 href 属性为 xxx 的 a 标签，格式：<code>[@property=&#39;xxx&#39;]</code></p>
+<pre><code class="python">result = html.xpath(&#39;/html/body/ul/li/a[@href=&quot;http://google.com&quot;]/text()&#39;)
+</code></pre>
+<h4 id="提取标签属性的值"><a href="#提取标签属性的值" class="headerlink" title="提取标签属性的值"></a>提取标签属性的值</h4><pre><code class="python">result = html.xpath(&#39;/html/body/ul/li/a/@href&#39;)
+</code></pre>
+<h4 id="使用相对查找"><a href="#使用相对查找" class="headerlink" title="使用相对查找"></a>使用相对查找</h4><pre><code class="python">li_list = html.xpath(&quot;/html/body/ul/li&quot;)
+for li in li_list:
+    li_a_content = li.xpath(&quot;./a/text()&quot;)
+    li_a_href = li.xpath(&quot;./a/@href&quot;)
+    print(li_a_content + li_a_href)
+</code></pre>
+<p>如这个例子，<code>li_a_content = li.xpath(&quot;./a/text()&quot;)</code>的意思就是在 <code>li</code>标签中查找 <code>/a/text()</code> ,而不是从全局的 html 代码中查找。</p>
+<h2 id="利用-Xpath-爬取猪八戒网的搜索结果页"><a href="#利用-Xpath-爬取猪八戒网的搜索结果页" class="headerlink" title="利用 Xpath 爬取猪八戒网的搜索结果页"></a>利用 Xpath 爬取猪八戒网的搜索结果页</h2><pre><code class="python">import requests
+from lxml import etree
+url = &quot;https://xingtai.zbj.com/search/f/?type=new&amp;kw=ui&quot;
+keyword = url.split(&quot;=&quot;)[-1] #将搜索关键字提取出来，以“=”为分割，取最后一个
+resp = requests.get(url)
+html = etree.HTML(resp.text) #将页面代码交给etree
+divs = html.xpath(&quot;/html/body/div[6]/div/div/div[2]/div[5]/div[1]/div&quot;) #将搜索结果的div列表存为divs
+for div in divs:
+    title = keyword.join(div.xpath(&#39;./div/div/a[1]/div[2]/div[2]/p/text()&#39;))
+    #提取搜索到的标题，因为标题将关键字做了高亮显示，所以xpath获取到的内容为“xxx,xxx”，利用join将关键字插入到被分割的地方，即可获得完整的标题
+    price = div.xpath(&#39;.//*[@id=&quot;utopia_widget_70&quot;]/a[1]/div[2]/div[1]/span[1]/text()&#39;)[0].strip(&quot;¥&quot;)
+    #提取价格，需要用到列表，所以添加[0]，并去掉前面的￥
+    print(title + &quot; &quot; + price)
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2021/06/23/Python爬虫学习 - Xpath/%20辣白菜的部落格%20Python爬虫学习 - Xpath"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2021/06/26/Python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%20-%20Requests%E8%BF%9B%E9%98%B6/" title="Python爬虫学习 - Requests进阶"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Python爬虫学习 - Requests进阶</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2021/06/22/Python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%20-%20%E5%88%9D%E8%AF%86Bs4/" title="Python爬虫学习 - 初识Bs4">Next post: Python爬虫学习 - 初识Bs4&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

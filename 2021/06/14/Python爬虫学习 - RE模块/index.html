@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Python爬虫学习 - RE模块 · 辣白菜的部落格</title><meta name="description" content="import requests
+import re
+
+Step2 · 写1.请求网页源代码url = &amp;quot;http://www.baidu.com&amp;quot;
+resp=requests.get(url)
+print(resp.text)
+
+2.获取内容1.初始形态obj = re.comp"><meta name="og:description" content="import requests
+import re
+
+Step2 · 写1.请求网页源代码url = &amp;quot;http://www.baidu.com&amp;quot;
+resp=requests.get(url)
+print(resp.text)
+
+2.获取内容1.初始形态obj = re.comp"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="Python爬虫学习 - RE模块"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Python爬虫学习 - RE模块</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-06-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/学习笔记/" title="学习笔记">学习笔记</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/Python/" title="Python">Python</a><span>&nbsp;</span></span></p><p class="post-abstract"><pre><code class="python">import requests
+import re
+</code></pre>
+<h2 id="Step2-·-写"><a href="#Step2-·-写" class="headerlink" title="Step2 · 写"></a>Step2 · 写</h2><h3 id="1-请求网页源代码"><a href="#1-请求网页源代码" class="headerlink" title="1.请求网页源代码"></a>1.请求网页源代码</h3><pre><code class="python">url = &quot;http://www.baidu.com&quot;
+resp=requests.get(url)
+print(resp.text)
+</code></pre>
+<h3 id="2-获取内容"><a href="#2-获取内容" class="headerlink" title="2.获取内容"></a>2.获取内容</h3><h4 id="1-初始形态"><a href="#1-初始形态" class="headerlink" title="1.初始形态"></a>1.初始形态</h4><pre><code class="python">obj = re.compile(r&quot;XXXXXX&quot;, re.S) #用时调用obj即可（正则预加载）
+result = obj.finditer(resp.text) #从请求网页的代码中匹配
+for it in result:
+  print(it.group())
+</code></pre>
+<h4 id="2-设定匹配内容"><a href="#2-设定匹配内容" class="headerlink" title="2.设定匹配内容"></a>2.设定匹配内容</h4><pre><code class="python">obj = re.compile(r&quot;2021必看热片.*?&lt;ul&gt;(?P&lt;ul&gt;.*?)&lt;/ul&gt;&quot;, re.S) #(?P&lt;name&gt;.*?)可认为是声明了name这个量
+result = obj.finditer(resp.text) #从请求网页的源代码中匹配
+for it in result:
+  print(it.group(&#39;ul&#39;)) #输出设定的内容
+</code></pre>
+<h4 id="3-将匹配到的内容编为一个列表"><a href="#3-将匹配到的内容编为一个列表" class="headerlink" title="3.将匹配到的内容编为一个列表"></a>3.将匹配到的内容编为一个列表</h4><pre><code class="python">obj = re.compile(r&quot;&lt;a href=&#39;(?P&lt;url&gt;.*?)&#39;&quot;, re.S) #(?P&lt;name&gt;.*?)可认为是声明了name这个量
+url_list = [] #声明一个列表
+result = obj.finditer(resp.text) #从请求网页的源代码中匹配
+for it in result:
+  url = it.group(&#39;url&#39;)
+  url_list.append(url) #存储到列表里
+</code></pre>
+<h4 id="4-从存储的列表中匹配内容"><a href="#4-从存储的列表中匹配内容" class="headerlink" title="4.从存储的列表中匹配内容"></a>4.从存储的列表中匹配内容</h4><pre><code class="python">obj_child = re.compile(r&quot;◎片　　名(?P&lt;mname&gt;.*?)&lt;br /&gt;&quot;, re.S) #从子页面中匹配所用的表达式
+for url in url_list:
+  child_resp = requests.get(url,verify=False) #请求url_list中的url，设置不验证
+  child_resp.encoding = &#39;gb2312&#39; #设置请求的编码为gb2312
+  result_name = obj.finditer(child_resp) #从child_resp中查找内容
+  for name in result_name:
+    print(it.group(&quot;mname&quot;)) #输出片名
+</code></pre>
+<h4 id="eg-电影天堂爬-2021-必看热片中的片名和下载链接"><a href="#eg-电影天堂爬-2021-必看热片中的片名和下载链接" class="headerlink" title="eg.电影天堂爬 2021 必看热片中的片名和下载链接"></a>eg.电影天堂爬 2021 必看热片中的片名和下载链接</h4><pre><code class="python">import requests
+import re          #导包
+domain = &quot;https://www.dy2018.com/&quot;   #设置url
+resp = requests.get(domain , verify=False) #从设置的url请求，并设置不验证
+resp.encoding = &quot;gb2312&quot; #设置编码为gb2312
+
+obj1 = re.compile(r&quot;2021必看热片.*?&lt;ul&gt;(?P&lt;ul&gt;.*?)&lt;/ul&gt;&quot;,re.S) #将这个版块中的每一个&lt;li&gt;筛出来（ul）
+objhref = re.compile(r&quot;&lt;a href=&#39;(?P&lt;url&gt;.*?)&#39;&quot;, re.S) #将&lt;li&gt;中的&lt;a&gt;上的链接筛出来（url）
+objmoviename = re.compile(r&quot;◎片　　名(?P&lt;mname&gt;.*?)&lt;br /&gt;&quot;,re.S) #将子页面中的片名筛出来（mname）
+objdown = re.compile(r&#39;&lt;!--xunleiDownList Start--&gt;.*?&lt;td.*?&lt;a href=&quot;(?P&lt;downurl&gt;.*?)&quot;&#39;,re.S) #将子页面中的下载地址筛出来（downurl）
+
+result1 = obj1.finditer(resp.text) #从首页源码中查找
+child_url_list = [] #声明列表
+for it in result1:
+    ul = it.group(&#39;ul&#39;) #将查找结果设置为ul
+    result2 = objhref.finditer(ul) #跟随上一行，从ul中查找url
+    for itt in result2:
+        url = itt.group(&#39;url&#39;).strip(&quot;/&quot;) #将查找url的结果设置为url，并去掉开头的“/”
+        child_url = domain + url #将域名和查找到的url（相对路径）拼接到一起
+        child_url_list.append(child_url) #所有结果列成表 存到child_url_list中
+
+for url in child_url_list: #从child_url_list这个表中循环
+    child_resp = requests.get(url, verify=False) #请求子页面
+    child_resp.encoding = &#39;gbk&#39; #设置编码
+    resultname = objmoviename.finditer(child_resp.text) #调用查找片名的表达式，从子页面请求
+    resultdownurl = objdown.finditer(child_resp.text) #调用查找下载地址的表达式，从子页面请求
+    for child_it in resultname:
+        mname = child_it.group(&#39;mname&#39;).strip(&#39;&#39;) #将片名存为mname，并去掉前面的空格
+        for child_itt in resultdownurl:
+            downurl = child_itt.group(&#39;downurl&#39;) #将下载地址存为downurl
+            print(mname + &#39;：&#39; + downurl) #输出格式：“片名：下载地址”
+</code></pre>
+<h2 id="附录-1：一些问题"><a href="#附录-1：一些问题" class="headerlink" title="附录 1：一些问题"></a>附录 1：一些问题</h2><h3 id="设置-user-agent："><a href="#设置-user-agent：" class="headerlink" title="设置 user-agent："></a>设置 user-agent：</h3><pre><code class="python">headers= &#123;
+  &quot;User-Agent&quot; : &quot;xxxxxx&quot;
+&#125;
+...
+resp = requests.get(url,headers=headers)
+</code></pre>
+<h3 id="SSL-证书验证问题："><a href="#SSL-证书验证问题：" class="headerlink" title="SSL 证书验证问题："></a>SSL 证书验证问题：</h3><pre><code class="python">resp = requests.get(url,verify=False)
+</code></pre>
+<h3 id="编码乱码问题："><a href="#编码乱码问题：" class="headerlink" title="编码乱码问题："></a>编码乱码问题：</h3><pre><code class="python">resp.encoding = &quot;utf-8&quot;
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2021/06/14/Python爬虫学习 - RE模块/%20辣白菜的部落格%20Python爬虫学习 - RE模块"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2021/06/22/Python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%20-%20%E5%88%9D%E8%AF%86Bs4/" title="Python爬虫学习 - 初识Bs4"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Python爬虫学习 - 初识Bs4</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2020/07/07/OpenCoreU%E7%9B%98%E5%85%A8%E6%96%B0%E7%9B%B4%E8%A3%85BigSur/" title="OpenCore U盘全新直装BigSur">Next post: OpenCore U盘全新直装BigSur&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

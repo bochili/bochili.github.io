@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>记录iPhone5S降级iOS10.3.3 · 辣白菜的部落格</title><meta name="description" content="配置环境基础环境：
+macOS
+Python3
+Homebrew
+
+下载 Vieux访问 https://github.com/MatthewPierson/Vieux ，下载 ZIP 包
+
+
+解压，进入所在目录
+cd /Users/lee/Desktop/Vieux-master
+
+下载 IPSW"><meta name="og:description" content="配置环境基础环境：
+macOS
+Python3
+Homebrew
+
+下载 Vieux访问 https://github.com/MatthewPierson/Vieux ，下载 ZIP 包
+
+
+解压，进入所在目录
+cd /Users/lee/Desktop/Vieux-master
+
+下载 IPSW"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="记录iPhone5S降级iOS10.3.3"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>记录iPhone5S降级iOS10.3.3</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-09-22</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/瞎折腾/" title="瞎折腾">瞎折腾</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/刷机/" title="刷机">刷机</a><span>&nbsp;</span></span></p><p class="post-abstract"><h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>基础环境：</p>
+<pre><code>macOS
+Python3
+Homebrew
+</code></pre>
+<h3 id="下载-Vieux"><a href="#下载-Vieux" class="headerlink" title="下载 Vieux"></a>下载 Vieux</h3><p>访问 <a target="_blank" rel="noopener" href="https://github.com/MatthewPierson/Vieux">https://github.com/MatthewPierson/Vieux</a> ，下载 ZIP 包</p>
+<img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/E3682BE2-D09E-4DC0-BA7C-99D6E36A8B3D.png" style="zoom:50%;" />
+
+<p>解压，进入所在目录</p>
+<pre><code class="shell">cd /Users/lee/Desktop/Vieux-master
+</code></pre>
+<h2 id="下载-IPSW-固件包"><a href="#下载-IPSW-固件包" class="headerlink" title="下载 IPSW 固件包"></a>下载 IPSW 固件包</h2><p>打开爱思助手，下载一个你想要的版本的固件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/image-20210922001545488.png" alt="image-20210922001545488"></p>
+<h3 id="将设备进入-DFU-模式"><a href="#将设备进入-DFU-模式" class="headerlink" title="将设备进入 DFU 模式"></a>将设备进入 DFU 模式</h3><p>下载完成后，在开机状态下连接 Lighting 数据线至电脑，同时按住 Home 键和电源键不松，几秒，到屏幕完全变黑，松开电源键，仍按住 Home 键。进入成功后手机屏幕仍是黑屏，爱思助手可以看到设备已进入 DFU 模式。</p>
+<h3 id="一键刷入"><a href="#一键刷入" class="headerlink" title="一键刷入"></a>一键刷入</h3><p>找到该文件的位置，回到刚才的终端界面，输入</p>
+<pre><code class="shell">python3 vieux -i &lt;IPSW File Path&gt;
+</code></pre>
+<p><strong>注：</strong> IPSW File Path 即为固件文件的路径，可以从 Finder 中拖拽进终端。</p>
+<p>回车，开始降级。</p>
+<h2 id="Trouble-Shooting"><a href="#Trouble-Shooting" class="headerlink" title="Trouble Shooting"></a>Trouble Shooting</h2><p>在降级时，我遇到了 Unsupported Model 的问题</p>
+<p>在作者的 Github 仓库发现了同样问题的 issue，解决办法如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/image-20210922002559479.png" alt="image-20210922002559479"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/image-20210922002623540.png" alt="image-20210922002623540"></p>
+<h3 id="First-Step"><a href="#First-Step" class="headerlink" title="First-Step"></a>First-Step</h3><p>在 Vieux 的目录下，运行 <code>./CatalinaFix.sh</code></p>
+<p>如果没有报错，尝试刷机降级。</p>
+<h3 id="Second-Step"><a href="#Second-Step" class="headerlink" title="Second-Step"></a>Second-Step</h3><p>如果执行完上一条命令，在降级过程中报错内容为 <code>usb.core.NoBackendError: No backend available</code> ，运行<code>brew install libusb</code>指令，安装 libusb 这个包。</p>
+<p>然后继续尝试降级。笔者到此便完成了降级。</p>
+<p><strong>期间可能会报这样的错误（如下图），忽略即可。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/77D38A0B-CAF4-4AD8-9CA6-B8F4063F81CD.png"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code class="shell">Download IPSW Firmware
+Put your device in DFU mode
+
+cd Vieux-master
+./CatalinaFix.sh
+brew install libusb
+python3 vieux -i &lt;IPSW File Path&gt;
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2021/09/22/记录iPhone5S降级iOS10.3.3/%20辣白菜的部落格%20记录iPhone5S降级iOS10.3.3"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2021/09/22/ESP8266%E7%9A%84Web%E9%85%8D%E7%BD%91%E5%92%8C%E5%BC%BA%E5%88%B6%E9%97%A8%E6%88%B7/" title="ESP8266的Web配网和强制门户"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: ESP8266的Web配网和强制门户</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2021/09/02/Telnet%E6%8F%90%E7%A4%BANo%20route%20to%20host/" title="frps启动后无法连接，telnet提示No route to host">Next post: frps启动后无法连接，telnet提示No route to host&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

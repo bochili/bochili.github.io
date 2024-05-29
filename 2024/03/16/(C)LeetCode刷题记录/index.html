@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>(C)LeetCode刷题记录 · 辣白菜的部落格</title><meta name="description" content="数据结构相关83. 删除排序链表中的重复元素（2024&amp;#x2F;3&amp;#x2F;16）https://leetcode.cn/problems/remove-duplicates-from-sorted-list/
+/**
+ * Definition for singly-linked list.
+"><meta name="og:description" content="数据结构相关83. 删除排序链表中的重复元素（2024&amp;#x2F;3&amp;#x2F;16）https://leetcode.cn/problems/remove-duplicates-from-sorted-list/
+/**
+ * Definition for singly-linked list.
+"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="(C)LeetCode刷题记录"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>(C)LeetCode刷题记录</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-03-16</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/Coding/" title="Coding">Coding</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/算法/" title="算法">算法</a><span>&nbsp;</span><a class="a-tag" href="/tags/数据结构/" title="数据结构">数据结构</a><span>&nbsp;</span><a class="a-tag" href="/tags/C/" title="C">C</a><span>&nbsp;</span></span></p><p class="post-abstract"><h1 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h1><h2 id="83-删除排序链表中的重复元素（2024-3-16）"><a href="#83-删除排序链表中的重复元素（2024-3-16）" class="headerlink" title="83. 删除排序链表中的重复元素（2024&#x2F;3&#x2F;16）"></a>83. 删除排序链表中的重复元素（2024&#x2F;3&#x2F;16）</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/">https://leetcode.cn/problems/remove-duplicates-from-sorted-list/</a></p>
+<pre><code class="c">/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     struct ListNode *next;
+ * &#125;;
+ */
+struct ListNode* deleteDuplicates(struct ListNode* head) &#123;
+    typedef struct ListNode * Node;
+    Node node = head;   // 不能直接对head指针进行操作，否则无法返回头结点。
+    while(node &amp;&amp; node-&gt;next)&#123;
+        if(node-&gt;val == node-&gt;next-&gt;val)&#123;
+            Node tmp = node-&gt;next;
+            node-&gt;next = tmp-&gt;next;
+            free(tmp);
+        &#125;else&#123;
+            node = node-&gt;next;  // 这里加else的原因是重复的元素可能不止两个，比如1,1,1，在对比当前结点和后面一个结点完毕后，如果有重复，删除后再对比当前节点和后继节点，这样可以保证无论有多少个重复都可以被删除。
+        &#125;
+        if(node == NULL) break;
+    &#125;
+    return head;
+&#125;
+</code></pre>
+<h2 id="206-反转链表（2024-3-16）"><a href="#206-反转链表（2024-3-16）" class="headerlink" title="206. 反转链表（2024&#x2F;3&#x2F;16）"></a>206. 反转链表（2024&#x2F;3&#x2F;16）</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/">https://leetcode.cn/problems/reverse-linked-list/</a></p>
+<pre><code class="c">/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     struct ListNode *next;
+ * &#125;;
+ */
+struct ListNode* reverseList(struct ListNode* head) &#123;
+    // 核心问题就是把前趋节点存起来
+    struct ListNode * newHead = NULL; // 需要返回的链表头结点
+    while(head)&#123; // 从头结点一直到最后一个
+        struct ListNode * tmp = head; // 将当前结点暂存
+        head = head-&gt;next;  // 必须在此刻移动指针，因为下面需要操作当前结点的next结点
+        tmp-&gt;next = newHead; // 当前结点的后继结点指向前一个节点（使用newHead存储，第一次为NULL，第二次为第一个结点）
+        newHead = tmp;   // 存储当前结点，下次循环 作为前一个结点的指针
+    &#125;
+    return newHead;
+&#125;
+</code></pre>
+<h2 id="61-旋转链表（2024-3-16）"><a href="#61-旋转链表（2024-3-16）" class="headerlink" title="61. 旋转链表（2024&#x2F;3&#x2F;16）"></a>61. 旋转链表（2024&#x2F;3&#x2F;16）</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/rotate-list/">https://leetcode.cn/problems/rotate-list/</a></p>
+<pre><code class="c">/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     struct ListNode *next;
+ * &#125;;
+ */
+struct ListNode* rotateRight(struct ListNode* head, int k) &#123;
+    if(k == 0 || head == NULL) return head;   // 如果空表、无需移动的情况直接返回
+    int count = 1; // 计算表长
+    struct ListNode * node = head; // 不能直接操作head
+    while(node-&gt;next)&#123;
+        count++;
+        node = node-&gt;next;
+    &#125;
+    if(k%count == 0) return head; // 如果k刚好是表长，那么也无需移动
+    node-&gt;next = head;   // 将链表头尾相连起来，变成循环链表
+    int c = count - (k%count);   // 拿到旋转之后的头结点 在当前链表中 前面的元素个数
+    node = head;   // 从头结点开始遍历
+    while(--c) node = node-&gt;next; // 移动到 新链表的尾结点，也就是新链表头结点的前一个结点
+    head = node-&gt;next; // 头结点指向 尾结点的后继结点也就是新的头结点
+    node-&gt;next = NULL; // 将其循环从这里切断
+    return head;
+&#125;
+</code></pre>
+<h2 id="20-有效的括号（2024-3-17）"><a href="#20-有效的括号（2024-3-17）" class="headerlink" title="20. 有效的括号（2024&#x2F;3&#x2F;17）"></a>20. 有效的括号（2024&#x2F;3&#x2F;17）</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parentheses/">https://leetcode.cn/problems/valid-parentheses/</a></p>
+<p>使用栈结构实现。</p>
+<pre><code class="c">typedef char E;
+struct Stack&#123;
+    E element;
+    struct Stack* next;
+&#125;;
+typedef struct Stack * Node;
+void initStack(Node head)&#123;
+    head-&gt;next = NULL;
+&#125;
+int pushStack(Node head,E element)&#123;
+    Node node = malloc(sizeof(struct Stack));
+    if(node == NULL) return 0;
+    node-&gt;element = element;
+    node-&gt;next = head-&gt;next;
+    head-&gt;next = node;
+    return 1;
+&#125;
+E popStack(Node head)&#123;
+    Node tmp = head-&gt;next;
+    E element = tmp-&gt;element;
+    head-&gt;next = tmp-&gt;next;
+    free(tmp);
+    return element;
+&#125;
+bool isEmpty(Node head)&#123;
+    return head-&gt;next == NULL;
+&#125;
+bool isValid(char* s) &#123;
+    unsigned long length = strlen(s);
+    if(length % 2 !=0) return false; // 奇数一定不匹配
+    struct Stack head;
+    initStack(&amp;head);
+    while(*s)&#123;
+        if(*s == &#39;(&#39; || *s == &#39;&#123;&#39; || *s == &#39;[&#39;)&#123;
+            pushStack(&amp;head,*s);
+        &#125;else&#123;
+            if(isEmpty(&amp;head)) return false; // 如果为空栈，第一个元素就是右括号，那么也无法匹配 直接返回
+            if(*s == &#39;)&#39; &amp;&amp; popStack(&amp;head) != &#39;(&#39;) return false;
+            else if(*s == &#39;&#125;&#39; &amp;&amp; popStack(&amp;head) != &#39;&#123;&#39;) return false;
+            else if(*s == &#39;]&#39; &amp;&amp; popStack(&amp;head) != &#39;[&#39;) return false;
+        &#125;
+        *s++;
+    &#125;
+    return isEmpty(&amp;head); // 如果表内还有元素，则没有完全匹配。
+&#125;
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/03/16/(C)LeetCode刷题记录/%20辣白菜的部落格%20(C)LeetCode刷题记录"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/03/26/(Vue)%E5%89%8D%E7%AB%AFface-api.js%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%8F%E8%AE%B0/" title="(Vue)前端face-api.js人脸识别小记"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: (Vue)前端face-api.js人脸识别小记</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/03/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91MQTT%E7%9A%84%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B/" title="记一次阿里云物联网MQTT的调试过程">Next post: 记一次阿里云物联网MQTT的调试过程&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

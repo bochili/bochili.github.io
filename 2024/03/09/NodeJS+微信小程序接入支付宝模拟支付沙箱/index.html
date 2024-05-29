@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>(JS)NodeJS+微信小程序接入支付宝支付沙箱 · 辣白菜的部落格</title><meta name="description" content="前言支付宝和微信现在都有提供沙箱支付系统，供开发人员测试支付功能使用；但微信的沙箱需要商家资质，对于个人开发者很不友好。鉴于在微信小程序中只是单纯为了实现支付流程，决定采用支付宝的沙箱系统。缺点是用户必须复制支付链接后在浏览器打开进行支付，再返回小程序确认支付状态。
+订单支付的工作流程
+用户从购物车"><meta name="og:description" content="前言支付宝和微信现在都有提供沙箱支付系统，供开发人员测试支付功能使用；但微信的沙箱需要商家资质，对于个人开发者很不友好。鉴于在微信小程序中只是单纯为了实现支付流程，决定采用支付宝的沙箱系统。缺点是用户必须复制支付链接后在浏览器打开进行支付，再返回小程序确认支付状态。
+订单支付的工作流程
+用户从购物车"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="(JS)NodeJS+微信小程序接入支付宝支付沙箱"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>(JS)NodeJS+微信小程序接入支付宝支付沙箱</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-03-09</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/Coding/" title="Coding">Coding</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/NodeJS/" title="NodeJS">NodeJS</a><span>&nbsp;</span><a class="a-tag" href="/tags/小程序/" title="小程序">小程序</a><span>&nbsp;</span></span></p><p class="post-abstract"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>支付宝和微信现在都有提供沙箱支付系统，供开发人员测试支付功能使用；但微信的沙箱需要商家资质，对于个人开发者很不友好。鉴于在微信小程序中只是单纯为了实现支付流程，决定采用支付宝的沙箱系统。缺点是用户必须复制支付链接后在浏览器打开进行支付，再返回小程序确认支付状态。</p>
+<h1 id="订单支付的工作流程"><a href="#订单支付的工作流程" class="headerlink" title="订单支付的工作流程"></a>订单支付的工作流程</h1><p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403100100264.png" alt="image-20240310010026110"></p>
+<p>用户从购物车选好物品后，点击 去结算 按钮，小程序请求服务端创建订单，此时会服务端生成一个订单号（本例中使用毫秒级时间戳代替）作为该订单的标识，并将订单信息返回给小程序。</p>
+<p>然后用户在结算页面，点击确认支付后，小程序携带订单号和总金额请求服务端 <code>/api/pre/set/order/state</code>  接口，服务端调用AlipaySDK 的 <code>alipay.trade.page.pay</code> 接口，生成一个订单支付链接，如：</p>
+<pre><code>https://openapi-sandbox.dl.alipaydev.com/gateway.do?method=alipay.trade.page.pay&amp;app_id=XXXXXXX&amp;charset=utf-8&amp;version=1.0&amp;sign_type=RSA2&amp;timestamp=2024-03-09%2022%3A03%3A12&amp;return_url=XXX&amp;sign=XXXXXXXXXXXXXXXXXymqag%3D%3D&amp;alipay_sdk=alipay-sdk-nodejs-3.6.1&amp;biz_content=%7B%22out_trade_no%22%3A%XXXX%22%2C%22product_code%22%3A%22FAST_INSTANT_TRADE_PAY%22%2C%22total_amount%22%3A1088%2C%22subject%22%22%7D
+</code></pre>
+<p>此时服务端将此链接返回给小程序，提示用户复制链接到浏览器打开并支付即可。</p>
+<p>当用户点击复制按钮后，程序自动将该链接复制到用户手机的剪贴板上，此时界面停留在 “确认我已支付” 界面，待用户在浏览器支付完成并返回小程序，点击 “我已支付” 按钮时，小程序携带订单号请求服务端 <code>/api/pre/get/pay/state</code> 接口，服务端调用 AlipaySDK 的 <code>alipay.trade.query</code> 接口，同样会返回一个查询订单状态的链接，我们在服务端直接使用 GET 请求该链接，返回内容即为目标订单状态。</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10001</td>
+<td>WAIT_BUYER_PAY</td>
+<td>支付宝有交易记录，没付款</td>
+</tr>
+<tr>
+<td>10002</td>
+<td>TRADE_FINISHED</td>
+<td>交易完成(交易结束，不可退款)</td>
+</tr>
+<tr>
+<td>10002</td>
+<td>TRADE_SUCCESS</td>
+<td>交易完成</td>
+</tr>
+<tr>
+<td>10003</td>
+<td>TRADE_CLOSED</td>
+<td>交易关闭</td>
+</tr>
+</tbody></table>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>首先需要登录 <a target="_blank" rel="noopener" href="https://open.alipay.com/develop/sandbox/app">https://open.alipay.com/develop/sandbox/app</a> 注册一个沙箱应用，并拿到沙箱的AppID、支付宝公钥、应用私钥：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403100126525.png" alt="image-20240310012620490"></p>
+<p>然后在后端项目安装 <code>alipay-sdk</code> 和 <code>axios</code></p>
+<pre><code class="shell">npm install alipay-sdk -S
+npm install axios -S
+</code></pre>
+<h1 id="后端接入"><a href="#后端接入" class="headerlink" title="后端接入"></a>后端接入</h1><h2 id="封装alipay-js"><a href="#封装alipay-js" class="headerlink" title="封装alipay.js"></a>封装alipay.js</h2><pre><code class="js">const AlipaySdk = require(&quot;alipay-sdk&quot;).default;
+const alipaySdk = new AlipaySdk(&#123;
+    // AppId
+    appId: &quot;XXXXXXX&quot;,
+    // 签名算法
+    signType: &quot;RSA2&quot;,
+    // 支付宝网关
+    gateway: &quot;https://openapi-sandbox.dl.alipaydev.com/gateway.do&quot;,
+    // 支付宝公钥
+    alipayPublicKey: &quot;XXXXXXXXXXXXXXXXXXXX&quot;,
+    // 应用私钥
+    privateKey: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,
+&#125;);
+module.exports = alipaySdk;
+</code></pre>
+<h2 id="生成支付链接"><a href="#生成支付链接" class="headerlink" title="生成支付链接"></a>生成支付链接</h2><pre><code class="js">const goodsName = req.body.goodsName   // 订单标题
+const totalPrice = req.body.price      // 订单总价
+const formData = new AlipayFormData();
+formData.addField(&quot;bizContent&quot;, &#123;
+  outTradeNo: orderNumber, // 订单号
+  productCode: &quot;FAST_INSTANT_TRADE_PAY&quot;,
+  totalAmount: totalPrice, // 订单总价
+  subject: goodsName,      // 订单名称
+  body: goodsName,         // 订单描述
+&#125;);
+formData.addField(&quot;returnUrl&quot;, &quot;http://localhost:3303/api/back/payment&quot;);
+formData.setMethod(&quot;get&quot;);
+// 返回promise
+const result = await alipaySdk.exec(&#39;alipay.trade.page.pay&#39;, // alipay.trade.wap.pay 为手机端接口
+  &#123;&#125;, // api 请求的参数（包含“公共请求参数”和“业务参数”）
+  &#123; formData: formData &#125;,
+);
+res.send(&#123;
+  code: 200,
+  success: true,
+  msg: &quot;支付中&quot;,
+  paymentUrl: result, // result为用户需要打开的支付链接
+&#125;);
+</code></pre>
+<h2 id="查询支付结果"><a href="#查询支付结果" class="headerlink" title="查询支付结果"></a>查询支付结果</h2><pre><code class="js">const &#123; orderNumber &#125; = req.body
+const formData = new AlipayFormData();
+formData.setMethod(&quot;get&quot;);
+formData.addField(&quot;bizContent&quot;, &#123; outTradeNo: orderNumber &#125;);
+const result = alipaySdk.exec(&quot;alipay.trade.query&quot;,&#123;&#125;,&#123; formData: formData &#125;).catch(error=&gt;console.error(&#39;caught error!&#39;, error));
+result.then(resData =&gt; &#123;
+axios(&#123;
+  method: &quot;GET&quot;,
+  url: resData
+&#125;).then(e =&gt; &#123;
+  let code = e.data.alipay_trade_query_response;
+  if (code.code == 10000) &#123;
+    switch (code.trade_status) &#123;
+      case &#39;WAIT_BUYER_PAY&#39;:
+        res.send(&#123;
+          code: 10001,
+          message: &quot;支付宝有交易记录，没付款&quot;
+        &#125;)
+        break;
+      case &#39;TRADE_FINISHED&#39;:
+        // 完成交易的逻辑
+        res.send(&#123;
+          code: 10002,
+          message: &quot;交易完成(交易结束，不可退款)&quot;
+        &#125;)
+        break;
+      case &#39;TRADE_SUCCESS&#39;:
+        // 完成交易的逻辑
+        res.send(&#123;
+          code: 10002,
+          message: &quot;交易完成&quot;
+        &#125;)
+        break;
+      case &#39;TRADE_CLOSED&#39;:
+        // 交易关闭的逻辑
+        res.send(&#123;
+          code: 10003,
+          message: &quot;交易关闭&quot;
+        &#125;)
+        break;
+    &#125;
+    // 订单已支付 更新订单状态
+    if (code.trade_status === &quot;TRADE_FINISHED&quot; || code.trade_status === &quot;TRADE_SUCCESS&quot;) &#123;
+      // 更新订单状态（执行SQL）
+    &#125;
+  &#125; else if (code.code == 40004) &#123;
+    return res.send(&#123;
+      code: 40004,
+      message: &quot;交易不存在&quot;
+    &#125;)
+  &#125;
+&#125;).catch(err =&gt; &#123;
+  console.log(err);
+  return res.send(&#123;
+    code: 50000,
+    msg: &quot;交易失败&quot;,
+    data: err
+  &#125;)
+&#125;)
+&#125;)
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/03/09/NodeJS+微信小程序接入支付宝模拟支付沙箱/%20辣白菜的部落格%20(JS)NodeJS+微信小程序接入支付宝支付沙箱"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/03/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E7%89%A9%E8%81%94%E7%BD%91MQTT%E7%9A%84%E8%B0%83%E8%AF%95%E8%BF%87%E7%A8%8B/" title="记一次阿里云物联网MQTT的调试过程"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 记一次阿里云物联网MQTT的调试过程</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/" title="(C#)使用SolidWorks API模板开发SolidWorks插件">Next post: (C#)使用SolidWorks API模板开发SolidWorks插件&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

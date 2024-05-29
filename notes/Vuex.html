@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title> · 辣白菜的部落格</title><meta name="description" content="Vuex 中有5个核心概念，分别是 State、Getters、Mutations、Actions、Modules。
+import Vue from &amp;quot;vue&amp;quot;;
+import App from &amp;quot;./App.vue&amp;quot;;
+import Vuex from &amp;q"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a></a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2023-04-17</span></p><p class="post-abstract"><p>Vuex 中有5个核心概念，分别是 State、Getters、Mutations、Actions、Modules。</p>
+<pre><code class="javascript">import Vue from &quot;vue&quot;;
+import App from &quot;./App.vue&quot;;
+import Vuex from &quot;vuex&quot;; // 导入 Vuex
+
+Vue.use(Vuex); // 使用 Vuex，让 Vuex 可以访问到 Vue
+Vue.config.productionTip = false;
+
+// 创建 Store 实例
+const store = new Vuex.Store(&#123;
+  state: &#123;
+    count: 0, // 计数器的初始值
+  &#125;,
+&#125;);
+
+new Vue(&#123;
+  store, // 注入 Store
+  render: (h) =&gt; h(App),
+&#125;).$mount(&quot;#app&quot;);
+</code></pre>
+<p>可以通过计算属性访问 State：</p>
+<pre><code class="javascript">computed: &#123;
+    count() &#123;
+        return this.$store.state.count;
+    &#125;,
+&#125;,
+</code></pre>
+<p>可以在 Vue 中通过 <code>this.$store.commit(&#39;FunctionName&#39;)</code> 来执行在 store 中定义的 Mutation：</p>
+<pre><code class="javascript">&lt;!--绑定一个点击事件，用 increment 来执行 count++ 的逻辑--&gt; 
+&lt;button @click=&quot;$store.commit(&#39;increment&#39;)&quot;&gt;PLUS&lt;/button&gt;
+
+// main.js
+const store = new Vuex.Store(&#123;
+  // 此处省略 ...
+  mutations: &#123;
+    increment(state) &#123;
+      state.count++; // 执行 count++ 的操作
+    &#125;,
+  &#125;,
+&#125;);
+</code></pre>
+<p>在 <code>actions</code> 中可以定义一步操作，通过 <code>this.$store.dispatch(&#39;decrement&#39;)</code> 触发 actions 中的方法：</p>
+<p>下面的代码中，单击按钮会触发 actions 中的 decrement 方法，再在 decrement 方法内部执行 Mutations 中的 decrement 方法：</p>
+<pre><code class="javascript">&lt;button @click=&quot;$store.dispatch(&#39;decrement&#39;)&quot;&gt;--&lt;/button&gt;
+
+const store = new Vuex.Store(&#123;
+  mutations: &#123;
+    decrement(state) &#123;
+      state.count--;
+    &#125;,
+  &#125;,
+  actions: &#123;
+    decrement(&#123; commit &#125;) &#123;
+      setTimeout(() =&gt; &#123;
+        // 通过 commit 交给 mutations 去处理
+        commit(&quot;decrement&quot;);
+      &#125;, 500);
+    &#125;,
+  &#125;,
+&#125;);
+</code></pre>
+<p>Getters 可以缓存数据，类似于 vue 中的 computed 计算属性：</p>
+<pre><code class="javascript">getters:&#123;
+    double:function(state)&#123;
+        return state.count * 2;
+    &#125;
+&#125;
+
+&#123;&#123; $store.getters.double &#125;&#125;
+</code></pre>
+<p>可以使用 Module 将 store 分为多个 module，使得结构更加清晰：</p>
+<pre><code class="javascript">const moduleA = &#123;
+  state: () =&gt; (&#123; ... &#125;),
+  mutations: &#123; ... &#125;,
+  actions: &#123; ... &#125;,
+  getters: &#123; ... &#125;
+&#125;
+
+const moduleB = &#123;
+  state: () =&gt; (&#123; ... &#125;),
+  mutations: &#123; ... &#125;,
+  actions: &#123; ... &#125;
+&#125;
+
+const store = new Vuex.Store(&#123;
+  modules: &#123;
+    a: moduleA,
+    b: moduleB
+  &#125;
+&#125;)
+
+store.state.a // -&gt; moduleA 的状态
+store.state.b // -&gt; moduleB 的状态
+</code></pre>
+</p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

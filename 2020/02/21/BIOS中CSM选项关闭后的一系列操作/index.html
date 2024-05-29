@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>BIOS中CSM选项关闭后的一系列操作 · 辣白菜的部落格</title><meta name="description" content="我的主板：技嘉 B150M
+以下是正文：
+
+
+问题复现1.无法使用 UEFI 启动话说那天我心血来潮，想体验 MacOS 的乐趣，下载镜像写入 u 盘重启进 BootMenu 一套操作做完，我又进入了我的 Windows10。
+此刻我的心里是忐忑的。
+2.尝试修复于是我以先百度后 QQ 群的原则找了"><meta name="og:description" content="我的主板：技嘉 B150M
+以下是正文：
+
+
+问题复现1.无法使用 UEFI 启动话说那天我心血来潮，想体验 MacOS 的乐趣，下载镜像写入 u 盘重启进 BootMenu 一套操作做完，我又进入了我的 Windows10。
+此刻我的心里是忐忑的。
+2.尝试修复于是我以先百度后 QQ 群的原则找了"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="BIOS中CSM选项关闭后的一系列操作"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>BIOS中CSM选项关闭后的一系列操作</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-02-21</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/引导/" title="引导">引导</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>我的主板：技嘉 B150M</p>
+<p>以下是正文：</p>
+<!-- more-->
+
+<h3 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a><a href="#%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0" title="问题复现"></a>问题复现</h3><h4 id="1-无法使用-UEFI-启动"><a href="#1-无法使用-UEFI-启动" class="headerlink" title="1.无法使用 UEFI 启动"></a><a href="#1-%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8UEFI%E5%90%AF%E5%8A%A8" title="1.无法使用UEFI启动"></a>1.无法使用 UEFI 启动</h4><p>话说那天我心血来潮，想体验 MacOS 的乐趣，下载镜像写入 u 盘重启进 BootMenu 一套操作做完，我又进入了我的 Windows10。</p>
+<p>此刻我的心里是忐忑的。</p>
+<h4 id="2-尝试修复"><a href="#2-尝试修复" class="headerlink" title="2.尝试修复"></a><a href="#2-%E5%B0%9D%E8%AF%95%E4%BF%AE%E5%A4%8D" title="2.尝试修复"></a>2.尝试修复</h4><p>于是我以先百度后 QQ 群的原则找了很多教程、很多人。<br>一位大佬是这么说的：<br><img src="https://i.loli.net/2020/02/21/aHrfULpOuChXdTB.jpg" alt="image"></p>
+<blockquote>
+<p><em>大佬给出的解决办法，纠正下：是 CSM</em></p>
+</blockquote>
+<p>于是我进入了 bios 找到了 CSM 并关闭，保存退出进入 BootMenu，它是这样的：<br><img src="https://i.loli.net/2020/02/21/b9AjqULQDx1YESO.jpg" alt="image"></p>
+<blockquote>
+<p><em>一片空白的 BootMenu</em></p>
+</blockquote>
+<p>其实此刻我内心是崩溃的，于是又进入 bios 把 CSM 开启，又见到了被我嫌弃的的 Windows10。</p>
+<p>再次利用搜索引擎，我找到了解决办法。</p>
+<p>原文我已经找不到了，这里我详细地说一遍。<br>&#x3D;&#x3D;划重点！&#x3D;&#x3D;</p>
+<blockquote>
+<p>CSM 开启使得可以支持 UEFI 启动和非 UEFI 启动。若是需要启动传统 MBR 设备，则需开启 CSM。关闭 CSM 则变成纯 UEFI 启动，且完全支持安全启动。<br>——来自：百度百科</p>
+</blockquote>
+<p>其实就是说，关闭 CSM 就只能用 UEFI 启动，其他的启动方式都不能用了。<br>但是我有一点疑问就是：既然 CSM 开启是兼容 UEFI 和非 UEFI，那么我开启了 CSM，为什么我的 BootMenu 中没有 UEFI 启动项呢？</p>
+<blockquote>
+<p><em>此问题仍待解决</em></p>
+</blockquote>
+<p>我根据我的记忆讲一下：</p>
+<p>先进 windows 制作一个 UEFI 启动的 pe 的启动 U 盘，然后进 bios 关闭 CSM，然后在 BootMenu 应该只能找到一个 U 盘，大概是[UEFI]XXXXXXXXX<br>这样的。</p>
+<p>进入 PE，用 DiskGenius 把硬盘格式转换成 GPT（GUID），创建一个 ESP 分区（200MB-300MB）分配一个盘符，保存退出</p>
+<p>然后打开 CMD，输入命令：</p>
+<pre><code>bcdboot c:\windows /s E: /f uefi /l zh-CN
+*注意：C盘在这里是系统盘，E盘是我的ESP分区
+      没有明确ESP分区建立在哪个硬盘，应该是都可以，我没有尝试，我的ESP分区建立在了另一块硬盘上
+</code></pre>
+<p>这时如果提示是什么创建文件成功就 ok 了，重启应该就可以进 Windows 了，这时已经是 UEFI 引导了。<br>如果要添加 UEFI 启动项，可以在 Windows 下载 EasyUEFI 修改。</p>
+<blockquote>
+<p>&#x3D;&#x3D;注意：&#x3D;&#x3D; 现在你的 efi 文件应该在新创建的 ESP 分区里，修改也应该在这里。<br>&#x3D;&#x3D;注意：&#x3D;&#x3D; ESP 分区中 EFI&#x2F;Microsoft 这个文件夹一定不要动，动了就出事。</p>
+</blockquote>
+<p>我的公众号是 <strong>bochi-li</strong> 欢迎关注</p>
+<p><img src="https://i.loli.net/2020/02/20/oG4btAX7pVzjlxK.jpg" alt="image"></p>
+<hr>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2020/02/21/BIOS中CSM选项关闭后的一系列操作/%20辣白菜的部落格%20BIOS中CSM选项关闭后的一系列操作"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2020/05/19/Tarawa%E4%B8%BB%E9%A2%98Markdown%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="Markdown Test"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Markdown Test</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2018/06/01/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDKali%20Linux/" title="如何卸载Kali Linux">Next post: 如何卸载Kali Linux&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

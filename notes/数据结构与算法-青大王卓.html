@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title> · 辣白菜的部落格</title><meta name="description" content="绪论数据 是能输入计算机且能被计算机处理的各种符号集合，是信息的载体，是对客观事物的符号化表示。包括数值型和非数值型
+数据元素（Data Element） 是数据的基本单位，也简称为元素、记录、结点、顶点。比如一行数据。
+数据元素由若干个数据项组成（Data Item）。
+数据项是构成数据元素的不可"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a></a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2023-07-14</span></p><p class="post-abstract"><h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>数据</strong> 是能输入计算机且能被计算机处理的各种符号集合，是信息的载体，是对客观事物的符号化表示。包括数值型和非数值型</p>
+<p><strong>数据元素（Data Element）</strong> 是数据的基本单位，也简称为元素、记录、结点、顶点。比如一行数据。</p>
+<p>数据元素由若干个数据项组成（Data Item）。</p>
+<p>数据项是构成数据元素的不可分割的最小单位。</p>
+<p>数据 &gt; 数据元素 &gt; 数据项</p>
+<p>例如：学生表由个人记录组成；个人记录由学号、姓名….组成。</p>
+<p>数据对象（Data Object）是性质相同的数据元素的集合，是数据的一个子集。</p>
+<p>比如整数数据对象就是 N &#x3D; { 0, +-1, +-2}</p>
+<p>学籍表也可以看做是多条学生记录组成的数据对象。</p>
+<p>数据元素相互之间的关系叫做结构（Structure）</p>
+<p><strong>数据元素是集合的个体，数据对象是集合的子集</strong></p>
+<p>数据结构是指相互之间存在一种或多种特定关系的数据元素集合</p>
+<p>数据元素及其关系在计算机内存中的表示（也称为映像）称为数据的<strong>存储结构</strong>。</p>
+<p>数据元素之间的逻辑关系称为<strong>逻辑结构</strong>。</p>
+<p><strong>逻辑结构与存储结构的关系：</strong> </p>
+<pre><code>存储结构是逻辑关系的映像与元素本身的映像
+逻辑结构是数据结构的抽象，存储结构是数据结构的实现
+二者结合则建立了数据元素之间的结构关系。
+</code></pre>
+<h2 id="逻辑结构的分类"><a href="#逻辑结构的分类" class="headerlink" title="逻辑结构的分类"></a>逻辑结构的分类</h2><h3 id="划分方法1"><a href="#划分方法1" class="headerlink" title="划分方法1"></a>划分方法1</h3><h4 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h4><p>​	有且仅有一个开始和终端结点，所有结点最多只有一个直接前趋和一个直接后继结点。</p>
+<p>​	线性表、栈、队列、串 属于线性结构 </p>
+<h4 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h4><p>​	一个结点可能有多个直接前趋和直接后继结点。</p>
+<p>​	树、图 属于非线性结构</p>
+<h3 id="划分方法2"><a href="#划分方法2" class="headerlink" title="划分方法2"></a>划分方法2</h3><h4 id="集合结构"><a href="#集合结构" class="headerlink" title="集合结构"></a>集合结构</h4><p>结构中的数据元素之间除了同属于一个集合的关系外，没有其他任何关系</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202304181546729.png" alt="image-20230418154641648"></p>
+<h4 id="线性结构-1"><a href="#线性结构-1" class="headerlink" title="线性结构"></a>线性结构</h4><p>结构中的数据元素之间存在着一对一的线性关系：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202304181547388.png" alt="image-20230418154721337"></p>
+<h4 id="树形结构"><a href="#树形结构" class="headerlink" title="树形结构"></a>树形结构</h4><p>结构中的数据元素之间存在一对多的层次关系：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202304181548023.png" alt="image-20230418154820969"></p>
+<h4 id="图状结构"><a href="#图状结构" class="headerlink" title="图状结构"></a>图状结构</h4><p>结构中的数据元素之间存在着多对多的任意关系</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202304181548554.png" alt="image-20230418154846506"></p>
+<h2 id="存储结构的分类"><a href="#存储结构的分类" class="headerlink" title="存储结构的分类"></a>存储结构的分类</h2><h3 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h3><p>用一组<strong>连续</strong>的存储单元依次存储数据元素，数据元素之间的逻辑关系由元素的<strong>存储位置</strong>来表示。（C语言数组）</p>
+<h3 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h3><p>用一组 <strong>任意</strong> 的存储单元来存储数据元素，数据元素之间的逻辑关系用 <strong>指针</strong> 来表示（C语言指针）。</p>
+<h3 id="索引存储结构"><a href="#索引存储结构" class="headerlink" title="索引存储结构"></a>索引存储结构</h3><p>在存储结点信息的同时还建立附加的 <strong>索引表</strong>。</p>
+<p>索引表中的每一项称为一个 <strong>索引项</strong>。 </p>
+<p>索引项的一般形式是：（关键字，地址）</p>
+<p>关键字是能唯一标识一个结点的那些数据项。</p>
+<p>若每个结点在索引表中都有一个索引项，则该索引表称之为 **稠密索引 (Dense Index)**，若一组结点在索引表中只对应一个索引项 则该索引表称为 **稀疏索引(Sparse Index)**。</p>
+<h3 id="散列存储结构"><a href="#散列存储结构" class="headerlink" title="散列存储结构"></a>散列存储结构</h3><p>根据结点关键字直接计算出该结点的存储地址（Hash表）</p>
+<h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><p>Abstract Data Type,ADT </p>
+<p>抽象数据类型可以用 （D，S，P）三元组表示，其中：</p>
+<p>D是数据对象；</p>
+<p>S是D上的关系集；</p>
+<p>P是对D的基本操作集。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202304181651059.png" alt="image-20230418165051137"></p>
+<h2 id="算法与算法分析"><a href="#算法与算法分析" class="headerlink" title="算法与算法分析"></a>算法与算法分析</h2><p>数据结构通过算法实现操作；算法根据数据结构设计程序。 </p>
+<h3 id="算法的五种特性"><a href="#算法的五种特性" class="headerlink" title="算法的五种特性"></a>算法的五种特性</h3><p><strong>有穷性</strong>：一个算法必须总是在执行又穷步之后结束，并且每一步都在有穷时间内完成。</p>
+<p><strong>确定性</strong>：算法中的每一条指令必须有确切的含义，没有二义性，在任何条件下，只有唯一的一条执行路径，即对于相同输入只能得到相同输出。</p>
+<p><strong>可行性</strong>：算法是可执行的，算法描述的操作可以通过已经实现的基本操作执行有限次来实现。</p>
+<p><strong>输入</strong>：一个算法有零个或多个输入。</p>
+<p><strong>输出</strong>：一个算法有一个或多个输出。</p>
+<h3 id="算法的设计要求"><a href="#算法的设计要求" class="headerlink" title="算法的设计要求"></a>算法的设计要求</h3><ol>
+<li>正确性（Correctness）：不包含语法错误；对于几组输入数据能够得出满足要求的结果；对于精心选择的、典型、苛刻且带有刁难性的几组输入数据能够得出满足要求的结果；对于一切合法的输入数据都能得出满足要求的结果；通常以 <strong>对于精心选择的、典型、苛刻且带有刁难性的几组输入数据能够得出满足要求的结果</strong> 的正确性来做为衡量一个算法是否合格的标准。</li>
+<li>可读性（Readability）：应该易于人的理解；晦涩难懂的算法容易隐藏较多错误，难以调试。</li>
+<li>健壮性（Robustness，音译”鲁棒性”）：当输入非法数据时，算法应恰当的做出反应或进行相应的处理，而不是产生莫名其妙的输出结果；处理出错的方法不应该中断程序的执行，而是返回一个表示错误或错误性质的值，以便在更高的抽象层次上进行处理。</li>
+<li>高效性（Efficiency）：花费尽量少的时间和尽量低的存储需求。</li>
+</ol>
+<h3 id="算法的效率"><a href="#算法的效率" class="headerlink" title="算法的效率"></a>算法的效率</h3><ol>
+<li>时间效率：算法所耗费的时间</li>
+<li>空间效率：算法执行过程中所耗费的存储空间</li>
+</ol>
+<p><strong>时间效率和空间效率有时候是矛盾的</strong>。</p>
+<h4 id="算法时间效率的度量"><a href="#算法时间效率的度量" class="headerlink" title="算法时间效率的度量"></a>算法时间效率的度量</h4><p>根据该算法所编制的程序在计算机上执行所消耗的时间来度量算法的时间效率。</p>
+<p><strong>事后统计：</strong>将算法实现，测算其时间和空间开销。</p>
+<p><strong>事前分析：</strong>对算法所消耗资源的一种估算方法。一个算法的运行时间大致可以等于计算机执行一种简单操作（赋值、比较、移动）所需的时间与算法中进行的简单操作次数的乘积。</p>
+<p>即算法中每条语句的执行时间之和：<br>$$<br>算法运行时间 &#x3D; \sum 每条语句的执行次数 \times 该语句执行一次所需时间<br>$$<br>每条语句的执行次数也可以称为 <strong>每条语句的频度</strong> 。</p>
+<p>但是每条语句执行一次所需的时间是随机器而异的。取决于机器的指令性能、速度和编译的代码质量，与算法无关。</p>
+<p>所以，我们假设执行每条语句的所需时间均为 <strong>单位时间</strong> 。此时对算法运行时间的讨论就可以转化为讨论该算法中所有语句的执行次数，也就是频度之和了。</p>
+<p>如下例子：两个 n*n 矩阵相乘的算法描述为：</p>
+<pre><code class="c">for(i = 1;i &lt;= n;i++)&#123;             // 执行N+1次(多一次是因为判断不符合条件，退出循环)
+    for(j = 1;j &lt;= n;j++)&#123;         // 内层循环执行了N(N+1)次
+        c[i][j] = 0;               // 执行N*N次
+        for(k = 0;k &lt; n;k++)&#123;      // 该循环执行N+1次，再算上嵌套循环的N*N次，所以是N*N*(N+1)次
+            c[i][j] = c[i][j] + a[i][k] * b[k][j]; // N*N*N次
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>所以该算法的时间消耗 <code>T(n)</code> 为：<br>$$<br>T(n) &#x3D; 2n^3 + 3n^2 + 2n + 1<br>$$</p>
+<h4 id="算法时间复杂度的渐进表示法"><a href="#算法时间复杂度的渐进表示法" class="headerlink" title="算法时间复杂度的渐进表示法"></a>算法时间复杂度的渐进表示法</h4><p>上面的计算方法比较起来是比较麻烦的，所以可以仅比较两个不同算法的数量级：</p>
+<p>若有某个辅助函数 <code>f(n)</code> ，当 n 趋近于无穷大时， <code>T(n) / f(n)</code> 的极限值为不等于零的常数，则称 f(n) 是 T(n) 的同数量级函数。记作 T(n) &#x3D; O(f(n))，称 O(f(n)) 为算法的渐进时间复杂度 (O是数量级的符号)，简称时间复杂度。</p>
+<p>回到上面的矩阵乘法算法问题，令 <code>n -&gt; ∞</code> ，<code>T(n)/n^3 -&gt; 2</code> 这表示当 n 充分大时，T(n)与 n^3 是同阶或同数量级，引入大“O”记号，则 T(n) 可以记作：<br>$$<br>T(n) &#x3D; O(n^3)<br>$$<br>算法中基本语句重复执行的次数 是问题规模n的某个函数f(n)，算法的时间量度记作：T(n) &#x3D; O(f(n))。</p>
+<p>它表示随着 n 的增大，算法执行的时间的增长率和 f(n) 的增长率相同，称为渐进时间复杂度。</p>
+<p><strong>f(n) 对应的语句，应该是：</strong></p>
+<ol>
+<li>算法中重复执行次数和算法的执行时间成正比的语句</li>
+<li>对算法运行时间的贡献最大</li>
+<li>执行次数最多</li>
+</ol>
+<p>n越大，算法执行的时间就越长：</p>
+<ul>
+<li>排序：N为记录数</li>
+<li>矩阵：N为矩阵的阶数</li>
+<li>多项式：N为多项式项数</li>
+<li>集合：N为元素个数</li>
+<li>树：N为树的结点个数</li>
+<li>图：N为图的顶点数或边数</li>
+</ul>
+</p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>(JS)基于协同过滤算法的商品推荐系统设计与实现(UserCF) · 辣白菜的部落格</title><meta name="description" content="前言最近接了一个本科毕业设计，题目是“基于个性化推荐的购物商城小程序设计与开发”。导师要求使用NodeJS做后端，使用协同过滤算法实现个性化推荐，鉴于第一次接触并且也实现了效果，特此记录一下。
+这里我使用的相似度计算方法是Pearson相关系数，基于用户进行协同过滤（即UserCF）。
+每个商品都会"><meta name="og:description" content="前言最近接了一个本科毕业设计，题目是“基于个性化推荐的购物商城小程序设计与开发”。导师要求使用NodeJS做后端，使用协同过滤算法实现个性化推荐，鉴于第一次接触并且也实现了效果，特此记录一下。
+这里我使用的相似度计算方法是Pearson相关系数，基于用户进行协同过滤（即UserCF）。
+每个商品都会"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="(JS)基于协同过滤算法的商品推荐系统设计与实现(UserCF)"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>(JS)基于协同过滤算法的商品推荐系统设计与实现(UserCF)</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-02-10</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/Coding/" title="Coding">Coding</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/NodeJS/" title="NodeJS">NodeJS</a><span>&nbsp;</span><a class="a-tag" href="/tags/数据库/" title="数据库">数据库</a><span>&nbsp;</span><a class="a-tag" href="/tags/算法/" title="算法">算法</a><span>&nbsp;</span></span></p><p class="post-abstract"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近接了一个本科毕业设计，题目是“基于个性化推荐的购物商城小程序设计与开发”。导师要求使用NodeJS做后端，使用协同过滤算法实现个性化推荐，鉴于第一次接触并且也实现了效果，特此记录一下。</p>
+<p>这里我使用的相似度计算方法是Pearson相关系数，基于用户进行协同过滤（即UserCF）。</p>
+<p>每个商品都会手工贴上很多标签，也就是这个商品的属性，在得到用户可能感兴趣的标签列表之后从这些标签下随机筛选商品做为推荐列表返回给前端。</p>
+<h1 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h1><ol>
+<li>用户点击商品详情页</li>
+<li>点击行为记录到数据库（tag_count表该对应的标签count+1）</li>
+<li>系统检索该用户点击过的所有标签，获取每个用户对这些标签的点击数据，得到每个用户在该用户点击过的标签下的兴趣向量，分别对其应用Pearson相关系数进行相似度的计算</li>
+<li>用户相似度从高到低排列，给出N个用户未点击过的新标签</li>
+<li>从这些标签中筛选N个商品，同时从该用户点击量比较高的标签中筛选一些商品作为推荐列表返回给用户（比例2:1）；如果是新用户，没有点击标签数据和用户相似度数据则从商品库中随机筛选商品。</li>
+</ol>
+<h1 id="算法详细流程"><a href="#算法详细流程" class="headerlink" title="算法详细流程"></a>算法详细流程</h1><p>现假设用户A为被推荐用户，用户B为对比用户。</p>
+<p>用户A点击了某商品的详情页，该商品的标签为：华为、5G、手机，此时系统先把tag_count表中，userId为<strong>用户A、</strong>tagName是华为或5G或手机的count+1<strong>（记录用户行为）</strong>。</p>
+<p>然后需要<strong>更新用户相似度。</strong></p>
+<p>首先系统从tag_count表中去检索<strong>用户A点击过的所有标签</strong>，得到用户A对他访问过的所有标签的原始兴趣向量，数据如下：</p>
+<pre><code class="json">[
+  &#123;
+    name: &quot;华为&quot;, // 标签的名称
+    count: 30    // 该用户访问该标签下商品的次数
+  &#125;,&#123;
+    name: &quot;5G&quot;,
+    count: 15
+  &#125;,
+  ...
+]
+</code></pre>
+<p>然后需要对该兴趣向量数组进行零均值化（Zero-centered，就是每个标签的count减去count的平均值），得到最终用于相似度计算的兴趣向量。</p>
+<p>此时，系统再从tag_count表中检索其他用户点击过的所有标签和这些标签的点击次数，得到与上面数据结构一样的其他用户的兴趣向量并将其零均值化（与计算用户A兴趣向量的操作一致）。</p>
+<p>然后就可以<strong>分别</strong>开始计算用户A与其他用户的相似度了，此时相似度计算方法就是Cosine余弦相似度（Pearson相关系数就是对向量零均值化后应用余弦相似度）。</p>
+<p>计算步骤如下：</p>
+<ol>
+<li><p>对用户A与用户B各自的兴趣向量取交集（重合部分），得到如下两个数组：</p>
+<img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202402102150801.png" alt="img" style="zoom:67%;" />
+</li>
+<li><p>求用户A与用户B的兴趣向量的内积作为分子（点乘，就是a1<em>b1+a2</em>b2+…+an*bn）：<br><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202402102150325.jpeg" alt="img"></p>
+</li>
+<li><p>求用户A与用户B的兴趣向量各自的模数的乘积作为分母：<br>$$<br>\sqrt{ a_1^2+a_2^2+…+a_n^2} \times \sqrt{ b_1^2+b_2^2+…+b_n^2}<br>$$</p>
+</li>
+<li><p>最后让内积&#x2F;各自的模数的乘积得出结果即为用户A与用户B的相似度。<br><strong>用户B点击过的其他标签，就是用户A可能也比较感兴趣的标签，与用户A相似度最高的用户点击过的标签，就是最值得推荐给用户A的标签。</strong><br>计算公式如下：</p>
+<img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202402102150860.jpeg" alt="img" style="zoom:75%;" />
+</li>
+<li><p>得到用户A与用户B的相似度数值，以及用户B点击过的其他标签，作为一条记录更新或插入到user_similarity表中：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_a</th>
+<th>user_b</th>
+<th>similarity</th>
+<th>taglist</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>00001</td>
+<td>00002</td>
+<td>0.67616</td>
+<td>生鲜,牛仔裤,三星</td>
+</tr>
+</tbody></table>
+<h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202402102004875.png" alt="数据库相关表结构"></p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><pre><code class="js">// 相似度算法部分：
+
+async function updateUserSimilarity(uid) &#123;
+  const targetUserVector = await getInterestVectorByUser(uid) //目标用户平均后的兴趣向量
+  const relateTagList = targetUserVector.map(el =&gt; el.name)   //相关标签列表
+  const otherUserVectors = &#123;&#125; // 其他用户的兴趣向量
+  let userSimilarityList = []
+  // 获取其他用户在该用户向量的相关标签下的兴趣向量
+  query(`select * from tag_count where user_id != &quot;$&#123;uid&#125;&quot;`, async (res) =&gt; &#123;
+    if (!res.length) return
+    for (let el of res) &#123;
+      // 构建其他用户的兴趣向量列表，存储为对象形式，键就是用户的OPENID，值为该用户兴趣向量
+      // 如果对应用户下没有数组，则将其初始化为数组形式
+      if (typeof otherUserVectors[el.user_id] !== &quot;object&quot;) otherUserVectors[el.user_id] = []
+      // 将点击量数据追加进对应用户的兴趣向量数组
+      otherUserVectors[el.user_id].push(&#123; tag_name: el.tag_name, count: el.count &#125;)
+    &#125;
+    // 开始计算每一个用户对于目标用户的相似度
+    for (let user in otherUserVectors) &#123;
+      // 将用户的原始兴趣向量数组转换为零均值化后的兴趣向量数组
+      otherUserVectors[user] = calculateAverageVector(otherUserVectors[user])
+      // 计算相似度，并获取到目标用户可能感兴趣的新标签列表，最后构建成相似度列表userSimilarityList
+      userSimilarityList.push(&#123;
+        user,
+        similarity: calculateSimilarity(uid, user, targetUserVector, otherUserVectors[user], relateTagList), // 用户相似度
+        tagList: getRecommendTag(relateTagList, otherUserVectors[user]) // 推荐标签
+      &#125;)
+    &#125;
+    // 将用户相似度数据写入数据库，用于生成推荐商品列表
+    updateSimilarityDB(userSimilarityList, uid)
+  &#125;)
+&#125;
+/**
+ * 获取指定用户的兴趣向量
+ *
+ * @param &#123;uid&#125; String    指定用户ID
+ */
+async function getInterestVectorByUser(uid) &#123;
+  // 获取该用户对所有标签的点击次数
+  let tagCount = [];
+  await query(`select * from tag_count where user_id=&quot;$&#123;uid&#125;&quot;`, async (res) =&gt; &#123;
+    if (!res.length) return
+    tagCount = calculateAverageVector(res)
+  &#125;)
+  return tagCount
+&#125;
+/**
+ * 给定一个向量数组，计算平均值，然后令向量-平均值得到新数组后返回
+ *
+ * @param &#123;origin&#125; Object[]    原始向量数组
+ */
+function calculateAverageVector(origin) &#123;
+  let tagCountSum = 0, tagCountAvg = 0;
+  const tagCount = []
+  for (let el of origin) &#123;
+    tagCountSum += el.count
+    tagCount.push(&#123; name: el.tag_name, count: el.count &#125;)
+  &#125;
+  tagCountAvg = tagCountSum / tagCount.length
+  for (let el of tagCount) &#123;
+    el.count -= tagCountAvg
+  &#125;
+  return tagCount
+&#125;
+/**
+ * 计算两个用户的余弦相似度
+ *
+ * @param &#123;user_a&#125; String  用户A的Open-ID
+ * @param &#123;user_b&#125; String  用户B的Open-ID
+ * @param &#123;a_vector&#125; Object[]  用户A的兴趣向量
+ * @param &#123;b_vector&#125; Object[]  用户A的兴趣向量
+ * @param &#123;relateTagList&#125; String[]  相关标签列表
+ */
+function calculateSimilarity(user_a, user_b, a_vector, b_vector, relateTagList) &#123;
+  // vectorInnerProduct:向量AB的内积
+  // vectorProductA,vectorProductB为向量AB的模数
+  let vectorInnerProduct = 0, vectorProductA = 0, vectorProductB = 0
+  for (let tag of relateTagList) &#123;
+    const a_select = a_vector.find(el =&gt; el.name === tag), // 取交集
+      b_select = b_vector.find(el =&gt; el.name === tag)
+    if (a_select &amp;&amp; b_select) &#123;
+      vectorInnerProduct += a_select.count * b_select.count; // 内积累加
+      vectorProductA += a_select.count * a_select.count; // 模数累加
+      vectorProductB += b_select.count * b_select.count;
+    &#125;
+  &#125;
+  vectorProductA = Math.sqrt(vectorProductA) // 开根号
+  vectorProductB = Math.sqrt(vectorProductB)
+  return vectorInnerProduct / (vectorProductA * vectorProductB) // 余弦相似度计算的最后一步：内积/向量模数乘积
+&#125;
+// 根据原有的标签列表 和 其他用户的兴趣向量，获取用户可能感兴趣的新标签列表
+function getRecommendTag(relateTagList, userVector) &#123;
+  const vectorList = userVector.filter(el =&gt; &#123;
+    return !relateTagList.includes(el.name)
+  &#125;)
+  return vectorList.map(el =&gt; el.name)
+&#125;
+// 更新用户相似度数据库
+function updateSimilarityDB(list, uid) &#123;
+  console.log(list);
+  for (let el of list) &#123;
+    if (el.similarity === NaN || el.user === &#39;undefined&#39;) continue // 存在错误数据，跳过写入
+    query(`select * from user_similarity where user_a=&quot;$&#123;uid&#125;&quot; and user_b=&quot;$&#123;el.user&#125;&quot;`, (e) =&gt; &#123;
+      if (e.length) &#123;
+        // 如果已经存在记录则对其记录进行更新，将标签列表以逗号进行拼接存入varchar类型的taglist字段
+        query(`update user_similarity set similarity=$&#123;el.similarity.toFixed(5)&#125;,taglist=&quot;$&#123;el.tagList.join(&quot;,&quot;)&#125;&quot; where user_a=&quot;$&#123;uid&#125;&quot; and user_b=&quot;$&#123;el.user&#125;&quot;`
+          , (res) =&gt; &#123; &#125;)
+      &#125; else &#123;
+        // 如果不存在记录就插入一条新记录
+        query(`insert into user_similarity(user_a,user_b,similarity,taglist) values(&quot;$&#123;uid&#125;&quot;,&quot;$&#123;el.user&#125;&quot;,$&#123;el.similarity.toFixed(5)&#125;,&quot;$&#123;el.tagList.join(&quot;,&quot;)&#125;&quot;)`
+          , (res) =&gt; &#123; &#125;)
+      &#125;
+    &#125;)
+  &#125;
+&#125;
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/02/10/基于协同过滤算法的NodeJS商品推荐系统设计与实现/%20辣白菜的部落格%20(JS)基于协同过滤算法的商品推荐系统设计与实现(UserCF)"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/02/13/%E4%BD%BF%E7%94%A8SolidWorksAPI%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91SolidWorks%E6%8F%92%E4%BB%B6/" title="(C#)使用SolidWorks API模板开发SolidWorks插件"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: (C#)使用SolidWorks API模板开发SolidWorks插件</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2022/12/01/%E4%BD%BF%E7%94%A8%20Vue%20+%20Electron%20%E6%9E%84%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" title="使用 Vue + Electron 构建桌面应用">Next post: 使用 Vue + Electron 构建桌面应用&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

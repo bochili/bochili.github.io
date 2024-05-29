@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title> · 辣白菜的部落格</title><meta name="description" content="Promise 是一个构造函数
+Promise 可以用于封装一个异步操作，并可以获取执行的状态。
+Promise 支持链式调用，解决回调地狱。
+封装一个简单的 Promise 对象对于如下的抽奖代码，我们可以将其封装为 Promise 形式：
+setTimeout(() =&amp;gt; &amp;#123;
+ "><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a></a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2023-04-17</span></p><p class="post-abstract"><p>Promise 是一个构造函数</p>
+<p>Promise 可以用于封装一个异步操作，并可以获取执行的状态。</p>
+<p>Promise 支持链式调用，解决回调地狱。</p>
+<h2 id="封装一个简单的-Promise-对象"><a href="#封装一个简单的-Promise-对象" class="headerlink" title="封装一个简单的 Promise 对象"></a>封装一个简单的 Promise 对象</h2><p>对于如下的抽奖代码，我们可以将其封装为 Promise 形式：</p>
+<pre><code class="javascript">setTimeout(() =&gt; &#123;
+    let i = Math.floor(Math.random() * 100);
+    console.log(i);
+    if (i &lt;= 30) &#123;
+        console.log(&quot;抽中了&quot;)
+    &#125; else &#123;
+        console.log(&quot;没抽中&quot;)
+    &#125;
+&#125;, 1000)
+</code></pre>
+<pre><code class="javascript">const lottery = new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+        let i = Math.floor(Math.random() * 100);
+        console.log(i);
+        if (i &lt;= 30) &#123;
+            resolve(&quot;抽中了&quot;)
+        &#125; else &#123;
+            reject(&quot;没抽中&quot;)
+        &#125;
+    &#125;, 1000)
+&#125;)
+lottery.then(res =&gt; &#123;
+    console.log(res)
+&#125;, err =&gt; &#123;
+    console.error(err)
+&#125;)
+</code></pre>
+<p>创建 Promise 对象时要传入一个函数，其中有两个参数，分别是 resolve 和 reject，resolve 代表成功状态的回调函数，reject 则代表执行失败的回调函数，这两个函数的实现是由 js 引擎提供的。</p>
+<p>当我们需要执行这个方法时，只需 <code>object.then()</code> 即可。</p>
+<p><code>then()</code> 中需要传入两个函数，第一个是执行成功的回调函数，第二个是执行失败的回调函数，这两个函数的参数就是上面 resolve 和 reject 中传入的参数。</p>
+<h2 id="封装-fs-readFile"><a href="#封装-fs-readFile" class="headerlink" title="封装 fs.readFile()"></a>封装 fs.readFile()</h2><p>下面是一个将 <code>fs.readFile()</code> 方法 Promise 化的示例：</p>
+<pre><code class="javascript">原本调用：
+const fs = require(&#39;fs&#39;)
+fs.readFile(&quot;./1.py&quot;, (err, res) =&gt; &#123;
+    if (err) throw err
+    console.log(res.toString());
+&#125;)
+
+Promise化：
+const fs = require(&#39;fs&#39;)
+const fsPromise = new Promise((resolve, reject) =&gt; &#123;
+    fs.readFile(&quot;./0.py&quot;, (err, res) =&gt; &#123;
+        if (err) reject(err)
+        resolve(res)
+    &#125;)
+&#125;)
+fsPromise.then(res =&gt; &#123;
+    console.log(res)
+&#125;, err =&gt; &#123;
+    console.error(err)
+&#125;)
+</code></pre>
+<h2 id="蓝桥杯模拟题：封装-Promisefy-函数"><a href="#蓝桥杯模拟题：封装-Promisefy-函数" class="headerlink" title="蓝桥杯模拟题：封装 Promisefy 函数"></a>蓝桥杯模拟题：封装 Promisefy 函数</h2><h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>我们知道在浏览器中 JavaScript 是单线程运行的，而回调函数曾经是 JavaScript 中实现异步函数的主要方式，面对这样的嵌套回调，处理错误也会变得非常困难：你必须在“金字塔”的每一级处理错误，而不是在最高一级一次完成错误处理，所以大多数现代异步 API 采用的都是 Promise 的形式。</p>
+<p>下面就请你以 Node.js 中常用的读取文件操作为例，封装一个 Promisefy 函数，将回调形式调用的读取文件方法转换成一个 Promise 的版本。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><pre><code class="javascript">const fs = require(&#39;fs&#39;)
+const path = require(&#39;path&#39;)
+const textPath = path.join(__dirname, &#39;/test.md&#39;)
+// 读取示例文件
+fs.readFile(textPath, &#39;utf8&#39;, (err, contrast) =&gt; &#123;
+  // 通过promisefy转化为链式调用
+  const readFileSync = promisefy(fs.readFile)
+
+  readFileSync(textPath, &#39;utf8&#39;)
+    .then((res) =&gt; &#123;
+      console.log(res === contrast) // 此处结果预期：true，即promise返回内容与前面读取内容一致
+    &#125;)
+    .catch((err) =&gt; &#123;&#125;)
+&#125;)
+const promisefy = (fn) =&gt; &#123;
+  // TODO 此处完成该函数的封装
+    return (...args)=&gt;&#123;
+      return new Promise((resolve,reject)=&gt;&#123;
+        fn(...args,(err,res)=&gt;&#123;
+          if(err) reject(err)
+          resolve(res)
+        &#125;)
+      &#125;)
+    &#125;
+&#125;
+module.exports = promisefy // 请勿删除该行代码
+</code></pre>
+</p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

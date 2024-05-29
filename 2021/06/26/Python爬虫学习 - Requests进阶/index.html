@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Python爬虫学习 - Requests进阶 · 辣白菜的部落格</title><meta name="description" content="Session 概念session 为会话的意思，普通的requests.get请求方式只适用于单次请求，而无法多次来回请求数据。
+用法介绍如下，是一个用于登录的例子
+session = requests.session() # 设置一个会话
+resp = session.post(url, dat"><meta name="og:description" content="Session 概念session 为会话的意思，普通的requests.get请求方式只适用于单次请求，而无法多次来回请求数据。
+用法介绍如下，是一个用于登录的例子
+session = requests.session() # 设置一个会话
+resp = session.post(url, dat"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="Python爬虫学习 - Requests进阶"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Python爬虫学习 - Requests进阶</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-06-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/学习笔记/" title="学习笔记">学习笔记</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/Python/" title="Python">Python</a><span>&nbsp;</span></span></p><p class="post-abstract"><h2 id="Session-概念"><a href="#Session-概念" class="headerlink" title="Session 概念"></a>Session 概念</h2><p>session 为会话的意思，普通的<code>requests.get</code>请求方式只适用于单次请求，而无法多次来回请求数据。</p>
+<h3 id="用法介绍"><a href="#用法介绍" class="headerlink" title="用法介绍"></a>用法介绍</h3><p>如下，是一个用于登录的例子</p>
+<pre><code class="python">session = requests.session() # 设置一个会话
+resp = session.post(url, data=data) #通过这个会话来发送post请求，包含一个数据
+print(resp.cookie) # 打印得到的Cookie数据
+print(resp.text) # 打印请求到的代码数据
+</code></pre>
+<h2 id="Cookie-登录-17K-小说网"><a href="#Cookie-登录-17K-小说网" class="headerlink" title="Cookie 登录 17K 小说网"></a>Cookie 登录 17K 小说网</h2><pre><code class="python">import requests
+url = &quot;https://passport.17k.com/ck/user/login&quot; #发送Post请求登录的url
+bookshelf = &quot;https://user.17k.com/ck/author/shelf?page=1&amp;appKey=2406394919&quot; #目标数据地址，实为书架数据
+session = requests.session() #打开一个会话
+data = &#123;
+    &quot;loginName&quot;: &quot;13473197850&quot;,
+    &quot;password&quot;: &quot;dong0305&quot;  #设置用户名密码
+&#125;
+#方法一：通过上面data里面的用户名和密码发送请求，然后再通过这个会话去请求书架的地址
+#resp = session.post(url, data=data) #实现登录
+#resp_books = session.get(bookshelf)
+#print(resp_books.json()) #以json形式输出
+
+#方法二：直接通过headers设置cookie实现获取该用户的数据，省去了登录过程但是需要Cookie
+resp_books = session.get(bookshelf, headers=&#123;
+    &quot;Cookie&quot;: &quot;GUID=f6d369f7-5e48-4028-ad42-85afcda4bafd; c_referer_17k=https://www.google.com/; Hm_lvt_9793f42b498361373512340937deb2a0=1624549433; c_channel=0; c_csc=web; accessToken=avatarUrl%3Dhttps%253A%252F%252Fcdn.static.17k.com%252Fuser%252Favatar%252F02%252F62%252F96%252F77819662.jpg-88x88%253Fv%253D1624549512000%26id%3D77819662%26nickname%3D%25E8%25BE%25A3%25E7%2599%25BD%25E8%258F%259CLee%26e%3D1640103111%26s%3D498c6b1ec235472a; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2277819662%22%2C%22%24device_id%22%3A%2217a3eb0cf5f7a6-0bfbff5fe7e464-34647600-2073600-17a3eb0cf60b28%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22https%3A%2F%2Fwww.google.com%2F%22%2C%22%24latest_referrer_host%22%3A%22www.google.com%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC%22%7D%2C%22first_id%22%3A%22f6d369f7-5e48-4028-ad42-85afcda4bafd%22%7D; Hm_lpvt_9793f42b498361373512340937deb2a0=1624551118&quot;
+&#125;)
+print(resp_books.json())
+</code></pre>
+<h2 id="抓取梨视频，解决防盗链问题"><a href="#抓取梨视频，解决防盗链问题" class="headerlink" title="抓取梨视频，解决防盗链问题"></a>抓取梨视频，解决防盗链问题</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>防盗链包含在页面的请求头中，关键字为 <code>Referer</code></p>
+<p>原理是溯源，即校验此页面的上一个页面是否为预设值。</p>
+<p>处理时只需要将 <code>&quot;Referer&quot;: url</code> 放入 headers 即可。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>本例子为抓取梨视频的视频文件，比较复杂，视频播放页源代码中未直接包含视频 url，用到了二次请求，视频文件的 url 也与通过网页获取到的视频文件 url 不符，需要做一些处理，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/QQ20210626-realurl.png" alt="Real Url"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/fontscdn2/20210626fakeurl.png" alt="Fake Url"></p>
+<pre><code class="python">from os import write
+import requests
+url = &quot;https://www.pearvideo.com/video_1733239&quot; #视频播放页面
+contid = url.split(&quot;_&quot;)[1] #取到视频的contId
+videoState = f&quot;https://www.pearvideo.com/videoStatus.jsp?contId=&#123;contid&#125;&amp;mrd=0.791747833440223&quot; #将contId插入到二次请求的url地址中
+headers = &#123;
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36&quot;,
+    &quot;Referer&quot;: url #防盗链处理
+&#125;
+resp = requests.get(videoState, headers=headers) #请求二次请求的url
+dic = resp.json() #设置一个字典
+srcurl = dic[&#39;videoInfo&#39;][&#39;videos&#39;][&#39;srcUrl&#39;] #这个是假的视频url
+systemtime = dic[&#39;systemTime&#39;] #另外一个校验的参数
+srcurl = srcurl.replace(systemtime, f&quot;cont-&#123;contid&#125;&quot;) #将contId替换掉假的url中假的部分，得到真正的url
+with open(f&quot;&#123;contid&#125;.mp4&quot;, mode=&quot;wb&quot;) as f: #保存文件
+    f.write(requests.get(srcurl).content)
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2021/06/26/Python爬虫学习 - Requests进阶/%20辣白菜的部落格%20Python爬虫学习 - Requests进阶"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2021/07/01/OpenCV%E5%85%A5%E9%97%A8/" title="Python - OpenCV入门"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Python - OpenCV入门</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2021/06/23/Python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%20-%20Xpath/" title="Python爬虫学习 - Xpath">Next post: Python爬虫学习 - Xpath&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

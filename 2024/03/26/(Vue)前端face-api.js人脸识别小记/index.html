@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>(Vue)前端face-api.js人脸识别小记 · 辣白菜的部落格</title><meta name="description" content="实现过程，借鉴了：
+https://github.com/TsMask/face-api-demo-vue
+https://blog.csdn.net/xingfei_work/article/details/76166391
+模型下载请到 https://github.com/TsMask/fac"><meta name="og:description" content="实现过程，借鉴了：
+https://github.com/TsMask/face-api-demo-vue
+https://blog.csdn.net/xingfei_work/article/details/76166391
+模型下载请到 https://github.com/TsMask/fac"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="(Vue)前端face-api.js人脸识别小记"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>(Vue)前端face-api.js人脸识别小记</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-03-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/Coding/" title="Coding">Coding</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/前端/" title="前端">前端</a><span>&nbsp;</span><a class="a-tag" href="/tags/目标检测/" title="目标检测">目标检测</a><span>&nbsp;</span><a class="a-tag" href="/tags/Vue/" title="Vue">Vue</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>实现过程，借鉴了：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TsMask/face-api-demo-vue">https://github.com/TsMask/face-api-demo-vue</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xingfei_work/article/details/76166391">https://blog.csdn.net/xingfei_work/article/details/76166391</a></p>
+<p>模型下载请到 <a target="_blank" rel="noopener" href="https://github.com/TsMask/face-api-demo-vue">https://github.com/TsMask/face-api-demo-vue</a></p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><pre><code class="shell">npm i face-api.js
+
+import * as faceapi from &quot;face-api.js&quot;;
+</code></pre>
+<p>然后需要将模型文件夹 <code>model/</code> 拷贝到项目的 <code>public</code> 目录下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403261838952.png" alt="image-20240326183810905"></p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h2><pre><code class="html">&lt;el-dialog
+  title=&quot;Face Recognition&quot;
+  :visible.sync=&quot;dialogVisible&quot;
+  width=&quot;50%&quot;
+&gt;
+  &lt;div style=&quot;display: flex;position: relative;height: 400px&quot;&gt;
+    &lt;video ref=&quot;video&quot; style=&quot;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)&quot; width=&quot;400&quot; height=&quot;300&quot; autoplay&gt;&lt;/video&gt;
+    &lt;!-- canvas浮于video之上，用来显示识别框 --&gt;
+    &lt;canvas style=&quot;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)&quot;
+      ref=&quot;canvas&quot;
+      width=&quot;300&quot;
+      height=&quot;300&quot;
+    &gt;&lt;/canvas&gt;
+  &lt;/div&gt;
+  &lt;span slot=&quot;footer&quot; class=&quot;dialog-footer&quot;&gt;
+    &lt;el-button @click=&quot;dialogVisible = false&quot;&gt;Cancel&lt;/el-button&gt;
+  &lt;/span&gt;
+&lt;/el-dialog&gt;
+</code></pre>
+<h2 id="数据定义"><a href="#数据定义" class="headerlink" title="数据定义"></a>数据定义</h2><pre><code class="js"> state: &#123;
+    /**初始化模型加载 */
+    netsLoadModel: true,
+    /**算法模型 */
+    netsType: &quot;ssdMobilenetv1&quot;,
+    /**模型参数 */
+    netsOptions: &#123;
+      ssdMobilenetv1: undefined,
+      tinyFaceDetector: undefined,
+      mtcnn: undefined,
+    &#125;,
+    /**目标图片数据匹配对象 */
+    faceMatcher: &#123;&#125;,
+    /**目标图片元素 */
+    /**识别视频元素 */
+    discernVideoEl: null,
+    /**识别画布图层元素 */
+    discernCanvasEl: null,
+    /**绘制定时器 */
+    timer: 0,
+  &#125;,
+  dialogVisible: false,
+  targetImg: &quot;&quot;,
+  recogFlag: false,
+</code></pre>
+<h2 id="模型加载"><a href="#模型加载" class="headerlink" title="模型加载"></a>模型加载</h2><pre><code class="js">/**初始化模型加载 */
+async fnLoadModel() &#123;
+  // 面部轮廓模型
+  await faceapi.loadFaceLandmarkModel(&quot;/models&quot;);
+  // 面部识别模型
+  await faceapi.loadFaceRecognitionModel(&quot;/models&quot;);
+
+  // 模型参数-ssdMobilenetv1
+  await faceapi.nets.ssdMobilenetv1.loadFromUri(&quot;/models&quot;);
+  this.state.netsOptions.ssdMobilenetv1 = new faceapi.SsdMobilenetv1Options(
+    &#123;
+      minConfidence: 0.3, // 0.1 ~ 0.9
+    &#125;
+  );
+  // 模型参数-tinyFaceDetector
+  await faceapi.nets.tinyFaceDetector.loadFromUri(&quot;/models&quot;);
+  this.state.netsOptions.tinyFaceDetector =
+    new faceapi.TinyFaceDetectorOptions(&#123;
+      inputSize: 224, // 160 224 320 416 512 608
+      scoreThreshold: 0.5, // 0.1 ~ 0.9
+    &#125;);
+  // 模型参数-mtcnn 已弃用，将很快被删除
+  await faceapi.nets.mtcnn.loadFromUri(&quot;/models&quot;);
+  this.state.netsOptions.mtcnn = new faceapi.MtcnnOptions(&#123;
+    minFaceSize: 20, // 1 ~ 50
+    scaleFactor: 0.56, // 0.1 ~ 0.9
+  &#125;);
+
+  this.state.discernVideoEl = this.$refs[&quot;video&quot;];
+  this.state.discernCanvasEl = this.$refs[&quot;canvas&quot;];
+
+  // 关闭模型加载
+  this.state.netsLoadModel = false;
+  if (this.targetImg) &#123;
+    // 拿到需要对比的图片路径，创建成DOM
+    const targetFaceDOM = document.createElement(&quot;img&quot;);
+    targetFaceDOM.src = this.targetImg;
+    targetFaceDOM.crossOrigin = &quot;anonymous&quot;;
+    const detect = await faceapi
+      .detectAllFaces(
+        targetFaceDOM,
+        this.state.netsOptions[this.state.netsType]
+      )
+      // 需引入面部轮廓模型
+      .withFaceLandmarks()
+      // 需引入面部识别模型
+      .withFaceDescriptors();
+    console.log(&quot;detect:&quot;, detect);
+    if (!detect.length) &#123;
+      this.state.faceMatcher = null;
+      return;
+    &#125;
+    // 原图人脸矩阵结果
+    this.state.faceMatcher = new faceapi.FaceMatcher(detect);
+    console.log(this.state.faceMatcher);
+  &#125;
+  setTimeout(() =&gt; this.fnRedrawDiscern(), 300);
+&#125;,
+</code></pre>
+<h2 id="获取摄像头视频流"><a href="#获取摄像头视频流" class="headerlink" title="获取摄像头视频流"></a>获取摄像头视频流</h2><pre><code class="js">callCamera() &#123;
+  let videoObj = &#123; video: true &#125;;
+  var errBack = function (error) &#123;
+    console.log(&quot;Video capture error: &quot;, error.code);
+  &#125;;
+  // 这个是最新版浏览器获取视频流的方法
+  // 如果不需要兼容旧浏览器只写这一个方法即可
+  if (navigator.mediaDevices.getUserMedia) &#123;
+    // Standard
+    navigator.mediaDevices.getUserMedia(videoObj).then((stream) =&gt; &#123;
+      this.$refs[&quot;video&quot;].srcObject = stream;
+      this.$refs[&quot;video&quot;].play();
+      // 视频流获取成功后加载模型，并在模型加载完成后开始进行检测
+      this.fnLoadModel().then(() =&gt; this.fnRedrawDiscern()); 
+      console.log(&quot;摄像头开启&quot;);
+    &#125;);
+  &#125; else if (navigator.getUserMedia) &#123;
+    // WebKit-prefixed
+    navigator.webkitGetUserMedia(
+      videoObj,
+      function (stream) &#123;
+        this.$refs[&quot;video&quot;].src = window.URL.createObjectURL(stream);
+        this.$refs[&quot;video&quot;].play();
+        this.fnLoadModel().then(() =&gt; this.fnRedrawDiscern());
+      &#125;,
+      errBack
+    );
+  &#125; else if (navigator.webkitGetUserMedia) &#123;
+    // WebKit-prefixed
+    navigator.webkitGetUserMedia(
+      videoObj,
+      function (stream) &#123;
+        this.$refs[&quot;video&quot;].src = window.URL.createObjectURL(stream);
+        this.$refs[&quot;video&quot;].play();
+        this.fnLoadModel().then(() =&gt; this.fnRedrawDiscern());
+      &#125;,
+      errBack
+    );
+  &#125; else if (navigator.mozGetUserMedia) &#123;
+    // Firefox-prefixed
+    navigator.mozGetUserMedia(
+      videoObj,
+      function (stream) &#123;
+        this.$refs[&quot;video&quot;].mozSrcObject = stream;
+        this.$refs[&quot;video&quot;].play();
+        this.fnLoadModel().then(() =&gt; this.fnRedrawDiscern());
+      &#125;,
+      errBack
+    );
+  &#125;
+&#125;,
+</code></pre>
+<h2 id="关闭摄像头"><a href="#关闭摄像头" class="headerlink" title="关闭摄像头"></a>关闭摄像头</h2><pre><code class="js">this.$refs[&quot;video&quot;].srcObject.getTracks()[0].stop();
+</code></pre>
+<h2 id="执行检测"><a href="#执行检测" class="headerlink" title="执行检测"></a>执行检测</h2><pre><code class="js"> /**根据模型参数识别绘制 */
+async fnRedrawDiscern() &#123;
+  if (!this.state.faceMatcher) return;
+  console.log(&quot;Run Redraw Discern&quot;);
+
+  // 暂停视频时清除定时
+  if (this.state.discernVideoEl.paused) &#123;
+    clearTimeout(this.state.timer);
+    this.state.timer = 0;
+    return;
+  &#125;
+
+  // 识别绘制人脸信息
+  const detect = await faceapi
+    .detectAllFaces(
+      this.state.discernVideoEl,
+      this.state.netsOptions[this.state.netsType]
+    )
+    // 需引入面部轮廓模型
+    .withFaceLandmarks()
+    // 需引入面部识别模型
+    .withFaceDescriptors();
+
+  // 无识别数据时，清除定时重新再次识别
+  if (!detect) &#123;
+    clearTimeout(this.state.timer);
+    this.state.timer = 0;
+    this.fnRedrawDiscern();
+    return;
+  &#125;
+
+  // 匹配元素大小
+  const dims = faceapi.matchDimensions(
+    this.state.discernCanvasEl,
+    this.state.discernVideoEl,
+    true
+  );
+  const result = faceapi.resizeResults(detect, dims);
+  result.forEach((&#123; detection, descriptor &#125;) =&gt; &#123;
+    // 最佳匹配 distance越小越匹配
+    const best = this.state.faceMatcher.findBestMatch(descriptor);
+    // 识别图绘制框
+    const label = best.toString();
+    // 对比出来的结果，如果匹配则为person 1，如果不匹配则为Unknown
+    if (label.includes(&quot;person 1&quot;)) &#123;
+      this.$message.success(&quot;Recognition successful!&quot;);
+      this.recogFlag = 1; // 识别成功标志位，下次不再启动识别
+      setTimeout(() =&gt; &#123;
+        this.$refs[&quot;video&quot;].srcObject.getTracks()[0].stop(); // 关闭摄像头
+        this.$router.push(&quot;/home&quot;);  // 执行跳转
+      &#125;, 1000); // 延时一秒
+    &#125; else &#123;
+    &#125;
+    new faceapi.draw.DrawBox(detection.box, &#123;label&#125;).draw(
+        this.state.discernCanvasEl
+    );
+  &#125;);
+  // 定时器句柄
+  // 如果还没有识别成功就继续识别
+  if (!this.recogFlag)
+    this.state.timer = setTimeout(() =&gt; this.fnRedrawDiscern(), 100); // 检测间隔 100MS
+&#125;,
+</code></pre>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/03/26/(Vue)前端face-api.js人脸识别小记/%20辣白菜的部落格%20(Vue)前端face-api.js人脸识别小记"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/04/10/%E8%AE%B0SRS%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8F%8A%E6%8E%A8%E6%B5%81+%E6%92%AD%E6%94%BE/" title="记录SRS直播服务器搭建(Docker)及推流+播放"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 记录SRS直播服务器搭建(Docker)及推流+播放</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/03/16/(C)LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" title="(C)LeetCode刷题记录">Next post: (C)LeetCode刷题记录&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

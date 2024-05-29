@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title> · 辣白菜的部落格</title><meta name="description" content="Docker 简单原理Client - Server 结构，dockerd 是守护进程，与 client 通过 Socket 通信
+Docker 有比 VM 更少的抽象层
+Docker 利用的是宿主机内核，VM 需要 Guest OS
+新建一个容器的时候，docker 不需要像 VM 一样重新加载一"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a></a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2023-04-17</span></p><p class="post-abstract"><h2 id="Docker-简单原理"><a href="#Docker-简单原理" class="headerlink" title="Docker 简单原理"></a>Docker 简单原理</h2><p>Client - Server 结构，dockerd 是守护进程，与 client 通过 Socket 通信</p>
+<p>Docker 有比 VM 更少的抽象层</p>
+<p>Docker 利用的是宿主机内核，VM 需要 Guest OS</p>
+<p>新建一个容器的时候，docker 不需要像 VM 一样重新加载一个操作系统内核，避免引导。</p>
+<h2 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h2><h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><pre><code>docker version               # docker版本
+docker info                  # docker系统信息
+docker [COMMAND] --help      # 帮助信息，可以指定命令
+</code></pre>
+<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><pre><code>docker images  # 查看本地镜像   -a 查看所有   -q 只显示镜像id
+docker search [NAME]  # 搜索镜像   --filter=STARTS=3000 可以筛选出STAR大于等于3000的
+docker pull [NAME][:TAG]    # 拉取镜像  不写tag默认latest
+docker rmi -f [id]     # 删除指定镜像
+docker rmi -f $(docker images -aq)  # 递归删除所有镜像
+</code></pre>
+<p>Docker 采用联合文件系统，即使是两个不同的镜像，如果他们有部分相同，那么就会复用相同部分</p>
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><pre><code>docker run [...] id
+--name=&quot;Name&quot; 容器名字，用于区分
+-d            后台方式运行
+-it 使用交互方式运行，进入容器
+-p 指定容器端口：-p 8080:8080  前面是容器外的真实端口，后面是容器内的端口
+-P 随机指定端口
+--rm 退出即删除
+-e XXXX=&quot;xxxx&quot;  设置环境变量
+
+
+docker ps [COMMAND]
+列出当前运行容器
+-a 列出当前正在运行的容器和历史运行过的容器
+-q 只显示容器编号
+-n=?  显示最近创建的容器
+
+exit 退出console
+Ctrl+P 退出console
+
+docker rm ID   删除指定容器
+docker rm -f $(docker ps -aq)   强制删除所有容器
+docker ps -a -q | xargs docker rm  删除所有容器
+
+docker start id   启动容器
+docker restart id  重启容器
+docker stop id   停止容器
+docker kill id   强制停止容器
+
+当docker run -d xxx ，使容器后台运行时，必须有一个前台进程，否则就会停止运行。
+
+docker logs -tf --tail NUMBER  ID   查看指定容器日志，NUMBER代表显示的行数
+
+查看容器中的进程：docker top ID
+
+查看容器元数据：docker inspect ID
+
+进入当前正在运行的容器：
+docker exec -it ID /bin/bash   # 开启一个新的console
+docker attach ID               # 进入正在执行的终端，不开新窗口
+
+docker cp ID:容器内路径 容器外路径   # 将容器内的文件拷贝到外面
+
+docker stats  查看当前各个容器的状态
+</code></pre>
+<h3 id="Docker-运行-NGINX"><a href="#Docker-运行-NGINX" class="headerlink" title="Docker 运行 NGINX"></a>Docker 运行 NGINX</h3><pre><code>docker pull nginx
+docker run -d --name nginxtest -p 3030:80 nginx
+docker exec -it nginxtest /bin/bash
+</code></pre>
+<h2 id="Docker-镜像"><a href="#Docker-镜像" class="headerlink" title="Docker 镜像"></a>Docker 镜像</h2><h3 id="UnionFS-联合文件系统"><a href="#UnionFS-联合文件系统" class="headerlink" title="UnionFS 联合文件系统"></a>UnionFS 联合文件系统</h3><p>一种分层、轻量级并且高性能的文件系统，拉取镜像时看到的一层一层的进度就是这个。它支持对文件系统的修改做为一次提交，来一层层叠加，同时可以将不同目录挂载到同一个虚拟文件系统下。镜像可以通过分层来继承，基于没有父镜像的基础镜像可以制作各种具体的应用镜像。</p>
+<h3 id="Docker-镜像加载原理"><a href="#Docker-镜像加载原理" class="headerlink" title="Docker 镜像加载原理"></a>Docker 镜像加载原理</h3><p>bootfs 主要包含 bootloader 和 kernel，bl 主要为了引导加载 kernel。Linux 刚启动时会加载 bootfs，在 Docker 镜像的最底层是 bootfs。这一层与传统 Linux&#x2F;Unix 是一样的，包含 boot 加载器和内核。当 boot 加载完成之后整个内核就加载到内存中了，此时内存的使用权由 bootfs 转交给内核，系统也会卸载 bootfs。</p>
+<p>rootfs 在 bootfs 之上，就是我们的基础镜像，包含的是传统 Linux 系统中的 &#x2F;dev &#x2F;proc &#x2F;bin &#x2F;etc 等。rootfs 就是各种不同操作系统的发行版，如 Ubuntu CentOS 等（高度精简，很多命令都没有。这是因为底层使用的是宿主机的 Kernel，它自身只需提供 rootfs 。对于不同的 Linux 发行版，bootfs 基本上是一致的，rootfs 会有所差别，所以不同的 Linux 发行版可以共用一个 bootfs。</p>
+<p>![[Pasted image 20221214221309.png]]</p>
+<h3 id="镜像的-Commit"><a href="#镜像的-Commit" class="headerlink" title="镜像的 Commit"></a>镜像的 Commit</h3><p>使用 <code>docker commit</code> 可以把一个容器打包成一个镜像：</p>
+<pre><code>docker commit -m=&quot;Description&quot; -a=&quot;Author&quot; ContainerID IMAGENAME:[TAG]
+</code></pre>
+<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><p>将容器内的目录挂载到宿主机上，容器间也可以共享数据</p>
+<h3 id="使用命令挂载-v"><a href="#使用命令挂载-v" class="headerlink" title="使用命令挂载 ( -v )"></a>使用命令挂载 ( -v )</h3><pre><code>docker run -it -v 主机目录:容器内目录 test
+启动后，使用 docker inspect 可以查看到挂载的相关信息
+</code></pre>
+<h3 id="部署-MySQL"><a href="#部署-MySQL" class="headerlink" title="部署 MySQL"></a>部署 MySQL</h3><pre><code>docker pull mysql
+docker run -d -p 3307:3306 -v C:\Users\lee\Desktop\mysqlDocker\conf:/etc/mysql/conf.d -v C:/Users/lee/Desktop/mysqlDocker/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=dong0305 --name=&quot;mysqlTest&quot; mysql
+</code></pre>
+<h3 id="具名和匿名挂载"><a href="#具名和匿名挂载" class="headerlink" title="具名和匿名挂载"></a>具名和匿名挂载</h3><p>如果在挂载数据卷的时候，没有指定宿主机的路径，Docker 会指定一个路径作为宿主机存储的路径，称之为匿名挂载。</p>
+<pre><code>docker run -d -p 3030:80 -v /etc/nginx --name=&quot;NGINXTEST&quot; nginx
+docker volume ls
+
+DRIVER    VOLUME NAME
+local     a52f06b8da053018fe877d56fe61d6f2d0ae57ce0b1c0d6e7dc80e01eae46a14
+</code></pre>
+<p>具名挂载则是在挂载数据卷时将原本宿主机路径的填写位置设为一个名字：</p>
+<pre><code>docker run -d -p 3030:80 -v nginx-test:/etc/nginx --name=&quot;NGINXTEST&quot; nginx
+docker volume ls
+DRIVER    VOLUME NAME
+local     nginx-config
+</code></pre>
+<p>我们可以使用 <code>docker inspect ID</code> 来查看指定容器挂载数据卷时，实际挂载到宿主机的位置：</p>
+<pre><code>docker inspect NGINXTEST
+
+        ...
+        &quot;Mounts&quot;: [
+            &#123;
+                &quot;Type&quot;: &quot;volume&quot;,
+                &quot;Name&quot;: &quot;nginx-config&quot;,
+                &quot;Source&quot;: &quot;/var/lib/docker/volumes/nginx-config/_data&quot;,
+                &quot;Destination&quot;: &quot;/etc/nginx&quot;,
+                &quot;Driver&quot;: &quot;local&quot;,
+                &quot;Mode&quot;: &quot;z&quot;,
+                &quot;RW&quot;: true,
+                &quot;Propagation&quot;: &quot;&quot;
+            &#125;
+        ],
+        ...
+</code></pre>
+<p>也可以使用 <code>docker volume inspect NAME</code> 来查看我们之前设定的具名挂载的卷：</p>
+<pre><code>docker volume inspect nginx-test
+
+[
+    &#123;
+        &quot;CreatedAt&quot;: &quot;2022-12-15T02:53:14Z&quot;,
+        &quot;Driver&quot;: &quot;local&quot;,
+        &quot;Labels&quot;: null,
+        &quot;Mountpoint&quot;: &quot;/var/lib/docker/volumes/nginx-test/_data&quot;,
+        &quot;Name&quot;: &quot;nginx-test&quot;,
+        &quot;Options&quot;: null,
+        &quot;Scope&quot;: &quot;local&quot;
+    &#125;
+]
+</code></pre>
+<h3 id="读写权限"><a href="#读写权限" class="headerlink" title="读写权限"></a>读写权限</h3><p>在使用容器卷挂载时，可以设定读写权限：</p>
+<pre><code>docker run -d -p 3030:80 -v nginx-config:/etc/nginx:ro --name=&quot;NGINX_TEST&quot; NGINX
+</code></pre>
+<p><code>ro</code> 表示 Read Only，这个路径只能通过宿主机进行写操作；<code>rw</code> 表示 Read and Write</p>
+<h3 id="多个容器同步挂载"><a href="#多个容器同步挂载" class="headerlink" title="多个容器同步挂载"></a>多个容器同步挂载</h3><p>使用 <code>--volumes-from ContainerID</code> :</p>
+<pre><code>docker run -d -p 3306:3306 -v /etc/mysql/conf.d -v /var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql1 mysql   # 启动容器1，挂载了两处
+docker run -d -p 3307:3306 --volumes-from mysql1 -e MYSQL_ROOT_PASSWORD=123456 --name mysql1 mysql   # 启动容器2，使用容器1的挂载配置
+</code></pre>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p>每个保留关键字必须是大写字母；</p>
+<p>从上到下顺序执行</p>
+<p># 表示注释</p>
+<pre><code class="dockerfile">FROM   # 基础镜像
+MAINTAINER  # 镜像是谁写的 姓名+邮箱
+RUN    # 镜像构建时要运行的命令
+ADD    # 添加内容
+WORKDIR  # 镜像工作目录
+VOLUME   # 设置挂载目录
+EXPOSE   # 指定对外端口
+CMD      # 指定容器启动时运行的命令；只有最后一个会生效，可被替代
+ENTRYPOINT  # 指定容器启动时运行的命令，可以追加命令
+ONBUILD  # 后面跟其他指令，当这个镜像是被继承的时候会运行
+COPY     # 类似 ADD，将文件拷贝到镜像中
+ENV      # 构建的时候设置环境变量
+</code></pre>
+<h4 id="使用-Dockerfile-构建-CentOS"><a href="#使用-Dockerfile-构建-CentOS" class="headerlink" title="使用 Dockerfile 构建 CentOS"></a>使用 Dockerfile 构建 CentOS</h4><pre><code class="Dockerfile">FROM centos   # 基础镜像为centos
+MAINTAINER lee&lt;1175161483@qq.com&gt;  # 设置维护人员信息
+ENV myPath /usr/local    # 设置环境变量
+WORKDIR $myPath          # 设置进入容器时所在的工作目录
+RUN cd /etc/yum.repos.d/ # 切换到yum本地仓库，下面是设置更新源
+RUN sed -i &#39;s/mirrorlist/#mirrorlist/g&#39; /etc/yum.repos.d/CentOS-*
+RUN sed -i &#39;s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g&#39; /etc/yum.repos.d/CentOS-*
+RUN yum -y install net-tools   # 安装net-tools
+RUN yum -y install vim         # 安装vim
+EXPOSE 80                      # 暴露80端口
+CMD echo $myPath               # 打印之前设置的变量
+CMD echo &quot;----end----&quot;         # 打印结束提示
+CMD /bin/bash                  # 进入bash
+
+
+docker build -f dockerfile -t my-centos:0.0.1 .
+</code></pre>
+<h4 id="CMD-和-ENTRYPOINT"><a href="#CMD-和-ENTRYPOINT" class="headerlink" title="CMD 和 ENTRYPOINT"></a>CMD 和 ENTRYPOINT</h4><pre><code class="Dockerfile">FROM centos
+CMD [&quot;ls&quot;,&quot;-a&quot;]
+
+docker build -f dockerfile -t test-centos .
+
+docker run xxxx    # 会发现，ls -a命令被执行
+docker run xxxx -l # 报错，原因是使用run时后面跟的命令会将CMD覆盖，所以无法执行-l指令
+
+
+FROM centos
+ENTRYPOINT [&quot;ls&quot;,&quot;-a&quot;]
+
+docker build -f dockerfile -t test-centos .
+
+docker run xxxx    # 同样正常输出ls -a的内容
+docker run xxxx -l # 正常输出 ls -a -l 的内容
+</code></pre>
+<h4 id="使用-Dockerfile-构建-Tomcat"><a href="#使用-Dockerfile-构建-Tomcat" class="headerlink" title="使用 Dockerfile 构建 Tomcat"></a>使用 Dockerfile 构建 Tomcat</h4><h2 id="镜像发布"><a href="#镜像发布" class="headerlink" title="镜像发布"></a>镜像发布</h2><h3 id="镜像发布到-Dockerhub"><a href="#镜像发布到-Dockerhub" class="headerlink" title="镜像发布到 Dockerhub"></a>镜像发布到 Dockerhub</h3><p>在 <a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a> 中注册。</p>
+<p>然后回到命令行，使用 <code>docker login -u USERNAME</code>  进行登录：</p>
+<pre><code class="bash">➜  ~ docker login -u USERNAME
+Password:
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+
+➜  ~ 
+</code></pre>
+<p>登录完毕后就可以提交镜像了，使用 <code>docker push</code>  命令：</p>
+<pre><code>docker push USERNAME/imageName:tag
+例如：
+docker push thomaslee/test-centos:0.0.1
+</code></pre>
+<p>但是如果本地镜像使用的并不是我们希望上传的 tag ，就需要重新指定一下：</p>
+<pre><code class="bash">docker tag IMAGEID thomaslee/test-centos:0.0.1
+</code></pre>
+<h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2><h3 id="Docker0-网络"><a href="#Docker0-网络" class="headerlink" title="Docker0 网络"></a>Docker0 网络</h3><h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

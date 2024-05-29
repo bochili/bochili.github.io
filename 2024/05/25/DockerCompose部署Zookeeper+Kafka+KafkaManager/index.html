@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>DockerCompose部署Zookeeper+Kafka+KafkaManager · 辣白菜的部落格</title><meta name="description" content="docker-compose.ymlversion: &amp;#39;3.5&amp;#39;
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper   ## 镜像
+    container_name: zookeeper
+    ports:
+   "><meta name="og:description" content="docker-compose.ymlversion: &amp;#39;3.5&amp;#39;
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper   ## 镜像
+    container_name: zookeeper
+    ports:
+   "><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="DockerCompose部署Zookeeper+Kafka+KafkaManager"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>DockerCompose部署Zookeeper+Kafka+KafkaManager</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-05-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/瞎折腾/" title="瞎折腾">瞎折腾</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/运维/" title="运维">运维</a><span>&nbsp;</span><a class="a-tag" href="/tags/Docker/" title="Docker">Docker</a><span>&nbsp;</span></span></p><p class="post-abstract"><h1 id="docker-compose-yml"><a href="#docker-compose-yml" class="headerlink" title="docker-compose.yml"></a>docker-compose.yml</h1><pre><code class="yml">version: &#39;3.5&#39;
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper   ## 镜像
+    container_name: zookeeper
+    ports:
+      - &quot;2181:2181&quot;                 ## 对外暴露的端口号
+  kafka:
+    image: wurstmeister/kafka       ## 镜像
+    container_name: kafka
+    volumes:
+        - /etc/localtime:/etc/localtime ## 挂载位置（kafka镜像和宿主机器之间时间保持一直）
+    ports:
+      - &quot;9092:9092&quot;
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.1.5         ## 修改:宿主机IP
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181       ## 卡夫卡运行是基于zookeeper的
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_LOG_RETENTION_HOURS: 120
+      KAFKA_MESSAGE_MAX_BYTES: 10000000
+      KAFKA_REPLICA_FETCH_MAX_BYTES: 10000000
+      KAFKA_GROUP_MAX_SESSION_TIMEOUT_MS: 60000
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_DELETE_RETENTION_MS: 1000
+  kafka-manager:
+    image: sheepkiller/kafka-manager                ## 镜像：开源的web管理kafka集群的界面
+    container_name: kafka-manager
+    environment:
+        ZK_HOSTS: 192.168.1.5                         ## 修改:宿主机IP
+    ports:
+      - &quot;9009:9000&quot;                                 ## 暴露端口 9000这个端口冲突太多
+</code></pre>
+<p>注：宿主机IP根据实际填写，如果不需要外部连接，填写127.0.0.1即可，此处我是在桥接网络的Ubuntu虚拟机上部署，为了在Windows上使用Kafka所以使用虚拟机的IP地址</p>
+<h1 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h1><pre><code class="sh">sudo docker-compose up -d --build
+</code></pre>
+<h1 id="桌面GUI工具"><a href="#桌面GUI工具" class="headerlink" title="桌面GUI工具"></a>桌面GUI工具</h1><p>Offset Explorer</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/05/25/DockerCompose部署Zookeeper+Kafka+KafkaManager/%20辣白菜的部落格%20DockerCompose部署Zookeeper+Kafka+KafkaManager"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/05/25/FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" title="FRP内网穿透服务端、客户端基本使用方法"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: FRP内网穿透服务端、客户端基本使用方法</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/04/24/Python%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" title="记录Python的一些服务、文件操作">Next post: 记录Python的一些服务、文件操作&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

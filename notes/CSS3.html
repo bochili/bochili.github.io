@@ -1,0 +1,505 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title> · 辣白菜的部落格</title><meta name="description" content="css中引入其他css样式文件： @import url(&amp;#39;../123.css&amp;#39;)
+* 选择器选择全部
+text-decoration:none  取消下划线
+只对main下的所有article标签中子标签为h2的标签应用，孙级别元素不应用：
+main article&amp;gt;h2&amp;"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a></a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2023-04-19</span></p><p class="post-abstract"><p>css中引入其他css样式文件： <code>@import url(&#39;../123.css&#39;)</code></p>
+<p><code>*</code> 选择器选择全部</p>
+<p><code>text-decoration:none</code>  取消下划线</p>
+<p>只对main下的所有article标签中子标签为h2的标签应用，孙级别元素不应用：</p>
+<pre><code class="css">main article&gt;h2&#123;&#125;  
+</code></pre>
+<p>兄弟关系：</p>
+<pre><code class="css">article h1~h2&#123;&#125;  /* 在article标签中，位于h1标签后面的所有同级别h2*/
+article h1+h2&#123;&#125;  /* 在article标签中，紧挨着h1标签后面的一个h2，中间不能有其他标签 */
+</code></pre>
+<p>属性选择器：</p>
+<pre><code class="css">h1[title=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;test&quot;&gt;123&lt;/h1&gt;
+</code></pre>
+<pre><code class="css">h1[title^=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;test123123&quot;&gt;123&lt;/h1&gt;  同样可以应用， ^=是匹配开头带有test的属性
+</code></pre>
+<pre><code class="css">h1[title$=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;123test&quot;&gt;123&lt;/h1&gt;  $=匹配以test结尾的属性
+</code></pre>
+<pre><code class="css">h1[title*=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;123test123&quot;&gt;123&lt;/h1&gt;  通配符，任意位置包含test就可以
+</code></pre>
+<pre><code class="css">h1[title~=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;www test com&quot;&gt;123&lt;/h1&gt;  ~= test必须是一个独立的单词 空格分隔出来
+</code></pre>
+<pre><code class="css">h1[title|=&quot;test&quot;]&#123; 
+    color:red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;h1 title=&quot;test-com&quot;&gt;123&lt;/h1&gt;   |= 匹配用-连接的
+</code></pre>
+<h2 id="伪类："><a href="#伪类：" class="headerlink" title="伪类："></a>伪类：</h2><pre><code class="css">:hover   鼠标悬浮
+:active  鼠标点击
+:visited 链接被浏览过
+:link    超链接
+:focus   input焦点聚焦
+:disabled  标签加disabled属性时应用
+:enabled   标签没有disabled属性时应用
+:required  input必填项的样式
+input:valid  input表单验证有效时应用
+input:invalid input表单验证无效时应用
+
+:target  锚点链接被点击后，跳转到目标位置后，该目标位置的样式
+
+:root  根元素选择器
+:empty  空元素选择器，标签里没有内容时应用
+
+article&gt;:first-child  选择article标签中的第一个子标签
+article h1:first-of-type 选择article标签中的第一个h1标签，article孙级元素中的第一个h1也被选择
+article&gt;:last-child   选择article标签中的最后一个子标签
+article&gt;h1:last-of-type  选择article标签中的最后一个h1
+</code></pre>
+<pre><code class="css">article span:only-child&#123;
+    color:red;
+&#125;
+
+&lt;article&gt;
+    &lt;span&gt;Hello!&lt;/span&gt;    该元素不被选择，因为存在与之同级的元素
+    &lt;aside&gt;
+        &lt;span&gt;Hello!&lt;/span&gt;    该元素被选择
+    &lt;/aside&gt;
+&lt;/article&gt;
+</code></pre>
+<pre><code class="css">article&gt;:nth-child(1)&#123;
+    color:red;    /*选择article下子级的第一个元素*/
+&#125;
+ul li:nth-child(2n)  选择ul中处于偶数位的li元素
+ul li:nth-child(2n-1)  选择ul中处于奇数位的li元素
+ul li:nth-child(odd) 选择奇数
+ul li:nth-child(even) 选择偶数
+
+ul li:nth-child(n+2) 选择除了第一个li，其他的li
+ul li:nth-child(-n+2) 选择前两个li
+
+ul li:nth-last-child() 从后往前数
+ul li:nth-last-child(-n+2) 选择倒数两个li
+
+ul li:nth-child(-n+3):not(:nth-child(2)):not(:nth-child(1))  选择前三个li，但是排除第二个和第一个
+</code></pre>
+<p>Input单选框，把选中的项目的label设为红色</p>
+<pre><code class="css">input:checked+label&#123;
+    color: red;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;male&quot; /&gt;
+&lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;female&quot; /&gt;
+&lt;label for=&quot;female&quot;&gt;女&lt;/label&gt;
+</code></pre>
+<h2 id="文本伪类"><a href="#文本伪类" class="headerlink" title="文本伪类"></a>文本伪类</h2><pre><code class="css">p::first-letter   针对p标签中的第一个字符
+p::first-line     针对p标签的第一行
+span::after&#123;      在span标签后面添加内容
+    content:&quot;Hello&quot;;
+    color:red;
+    position:relative;
+    top:30px;
+    left:30px;
+&#125;
+span::before      在span标签前面添加内容
+</code></pre>
+<h2 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>class，属性名</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>标签，伪元素</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>*</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+</tbody></table>
+<p>继承是没有权重的。</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><h3 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h3><pre><code class="css">@font-face&#123;
+    font-family: &quot;test&quot;;
+    src: url(&quot;xxx.otf&quot;) format(&quot;opentype&quot;),
+         url(&quot;xx2.otf&quot;) format(&quot;opentype&quot;);   可以定义多个备用
+&#125;
+</code></pre>
+<h3 id="字号的单位"><a href="#字号的单位" class="headerlink" title="字号的单位"></a>字号的单位</h3><pre><code class="css">font-size: 300%;  该元素相对于父级元素设定的字号的百分比为300%，如父级元素为14px，它就是14 * 300% px。
+font-size: 3em;   等同于300%
+</code></pre>
+<h3 id="文本样式组合编写"><a href="#文本样式组合编写" class="headerlink" title="文本样式组合编写"></a>文本样式组合编写</h3><pre><code class="css">font: bold italic 45px/1.5em &#39;SF Pro&#39;;  其中，45px代表文本大小，1.5em代表1.5倍行高
+</code></pre>
+<h3 id="控制大小写"><a href="#控制大小写" class="headerlink" title="控制大小写"></a>控制大小写</h3><pre><code class="css">font-variant: small-caps;    改为小型大写
+text-transform: lowercase;   改为小写
+text-transform: uppercase;   改为大写
+text-transform: capitalize;  单词首字母大写 如：Www.Baidu.Com
+</code></pre>
+<h3 id="文本线条"><a href="#文本线条" class="headerlink" title="文本线条"></a>文本线条</h3><pre><code class="css">text-decoration: underline 下划线 | overline 上划线 | line-through 删除线 | none ...
+</code></pre>
+<h3 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h3><pre><code class="css">text-shadow: #ddd 5px(偏移) 5px(偏移) 1px(模糊);
+</code></pre>
+<h3 id="空格和文本溢出"><a href="#空格和文本溢出" class="headerlink" title="空格和文本溢出"></a>空格和文本溢出</h3><pre><code class="css">white-space: pre-wrap;  保留代码中的空格和换行
+white-space: nowrap;    不换行
+overflow: hidden;       对溢出的内容进行隐藏
+text-overflow: ellipsis;溢出内容显示成省略号...
+</code></pre>
+<h3 id="文本缩进和对齐"><a href="#文本缩进和对齐" class="headerlink" title="文本缩进和对齐"></a>文本缩进和对齐</h3><pre><code class="css">text-indent: 2em;  首行缩进2个字符宽度
+text-align: center | right | left
+img&#123;
+    vertical-align: middle | baseline | top | bottom  图片在文字中的垂直对齐方式
+&#125;
+</code></pre>
+<h3 id="文本间隔"><a href="#文本间隔" class="headerlink" title="文本间隔"></a>文本间隔</h3><pre><code class="css">letter-spacing: 20px;   字符间隔
+word-spacing: 20px;  单词间隔
+</code></pre>
+<h3 id="排版方向"><a href="#排版方向" class="headerlink" title="排版方向"></a>排版方向</h3><pre><code class="css">writing-mode: verticle-rl;   竖向文本，从右往左布局
+writing-mode: verticle-lr;   竖向文本，从左往右布局
+writing-mode: horizontal-tb; 横向文本，从上到下布局
+</code></pre>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><h3 id="内外边距"><a href="#内外边距" class="headerlink" title="内外边距"></a>内外边距</h3><pre><code class="css">margin: 30px;  上下左右外边距均为30px
+margin: 30px 60px;  上下30px，左右60px
+margin: 30px 20px 35px 10px   上 右 下 左
+margin: 0 auto; 上下0，左右居中】
+
+padding: 30px; 内边距，与上面同理
+</code></pre>
+<h3 id="盒子定义"><a href="#盒子定义" class="headerlink" title="盒子定义"></a>盒子定义</h3><p>在使用 padding 设置内边距时，会出现盒子被padding撑大的效果，为了避免这种现象，我们将该盒子进行定义：</p>
+<pre><code class="css">box-sizing: border-box;
+</code></pre>
+<p>一般在开发时，直接为 * 选择器添加该样式：</p>
+<pre><code class="css">* &#123;
+    box-sizing: border-box;
+&#125;
+</code></pre>
+<h3 id="内框线"><a href="#内框线" class="headerlink" title="内框线"></a>内框线</h3><pre><code class="css">border-style: solid | groove | double | ...  设置边框样式
+border-top-style: solid   单独为盒子顶部设置边框
+border-width: 20px;    设置边框宽度
+border-top-width: 10px;  单独为盒子顶部设置边框宽度
+border-color: red;   设置边框颜色
+border-top-color: green;  单独为盒子顶部设置边框颜色
+
+border-top: double 10px red;  为盒子顶部设置边框
+
+border: solid 10px blue;    为盒子设置边框
+</code></pre>
+<h3 id="圆角"><a href="#圆角" class="headerlink" title="圆角"></a>圆角</h3><pre><code class="css">border-radius: 20px;
+border-radius: 20px 10px 20px 30px;   上 右 下 左
+border-top-left-radius: 20px; 
+
+border-bottom: 2px solid red;
+border-bottom-radius: 50%;     给一个盒子的底部绘制一个圆弧
+</code></pre>
+<h3 id="外框线"><a href="#外框线" class="headerlink" title="外框线"></a>外框线</h3><pre><code class="css">outline: solid 20px red;
+</code></pre>
+<p>外框线不占用空间</p>
+<h3 id="元素显示控制"><a href="#元素显示控制" class="headerlink" title="元素显示控制"></a>元素显示控制</h3><pre><code class="css">display:none; 隐藏元素，不保留空间
+display:inline;   转换为行元素，类似于span、em等
+display:inline-block;  转换为块级行元素
+
+visibility: hidden;   隐藏元素，但是保留空间
+opacity: 0;   透明度设为0，也保留空间，其值为0~1之间的数
+</code></pre>
+<h3 id="自动撑满可用空间"><a href="#自动撑满可用空间" class="headerlink" title="自动撑满可用空间"></a>自动撑满可用空间</h3><pre><code class="css">height: -webkit-fill-available;
+widht: -webkit-fill-available;
+</code></pre>
+<p>使用该属性不会占用 padding 空间</p>
+<h3 id="自适应内容宽度"><a href="#自适应内容宽度" class="headerlink" title="自适应内容宽度"></a>自适应内容宽度</h3><pre><code class="css">width: fit-content; 文本占多宽，它就是多宽
+width: max-content; 以最长的文本宽度为宽
+width: min-content; 元素内容里最长的那个单词的宽度
+</code></pre>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="背景的覆盖区域"><a href="#背景的覆盖区域" class="headerlink" title="背景的覆盖区域"></a>背景的覆盖区域</h3><pre><code class="css">background-color: pink;
+padding:10px;
+background-clip: content-box;  背景只覆盖内容区域
+background-clip: padding-box;  背景覆盖到padding的范围之内,不含边框
+background-clip: border-box;   背景覆盖到border范围之内，包含边框
+</code></pre>
+<h3 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h3><h4 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h4><pre><code class="css">background-image: url(xxx.jpg);
+background-repeat: no-repeat | repeat-x | repeat-y | space  不重复、水平重复、垂直重复、平均分配(正好占满空间)
+background-attachment: fixed | scroll;  固定背景图，也就是当滚动页面时背景图不动 | 跟随滚动条滚动
+background-position: center | top right | 100px 100px ...   居中 | 右上角 | 上边100px 左边100px
+background-size: 100% 100%;  宽 100%，高 100%   但是会拉伸
+background-size: 100% auto;  宽 100%，高度根据宽度自适应
+background-size: cover;    图片同比缩放，占满容器宽度
+background-size: contain;  图片同比缩放，至图片能完全显示出来
+</code></pre>
+<h4 id="多个背景图"><a href="#多个背景图" class="headerlink" title="多个背景图"></a>多个背景图</h4><p>使用逗号分隔</p>
+<pre><code class="css">background-image: url(xx.jpg),url(xx1.jpg);
+background-position: top right, top left;
+background-repeat: no-repeat, repeat;
+</code></pre>
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><h4 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h4><pre><code class="css">background: linear-gradient(180deg,red,green,blue);  
+</code></pre>
+<h4 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h4><pre><code class="css">background: radial-gradient(red,green,blue);   从中心向外发散，圆形
+background: radial-gradient(100px,100px, red,green,blue);   从中心向外发散，圆形 中心宽高为100px
+background: radial-gradient(at 0% 50%,red,green,blue); 中心的起始位置-结束位置
+</code></pre>
+<h4 id="渐变标志位"><a href="#渐变标志位" class="headerlink" title="渐变标志位"></a>渐变标志位</h4><p>与 Photoshop 中的渐变标志位一样。</p>
+<pre><code class="css">background: linear-gradient(45deg,red 50%,0%,green 90%); 颜色的位置
+background: linear-gradient(45deg, red, 20%, green);  中间点
+</code></pre>
+<h4 id="重复渐变"><a href="#重复渐变" class="headerlink" title="重复渐变"></a>重复渐变</h4><pre><code class="css">background: repeating-linear-gradient(45deg,blue,25px,yellow 25px,25px,red 50px); 给元素添加一个背景渐变，重复蓝黄红渐变，宽度为50px，填满宽度
+
+background: repeating-radial-gradient(100px 100px,red yellow 25px);  径向渐变，与上面同理
+</code></pre>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code class="css">&lt;table border=&quot;1&quot;&gt;
+    &lt;thead&gt;
+         &lt;caption&gt;
+            Title
+          &lt;/caption&gt;
+          &lt;tr&gt;
+            &lt;td&gt;ID&lt;/td&gt;
+            &lt;td&gt;description&lt;/td&gt;
+          &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;test&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;test&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<pre><code class="css">table tbody tr:nth-child(odd)&#123;  奇数行设置背景色
+    background:red;
+    color:white;
+&#125;
+table &#123;
+    border-spacing: 0px;         相邻单元格边框间的距离设为0
+    border-collapse: collapse;   将表格的边框合并成一个边框
+    empty-cells: hide;           隐藏空的单元格
+&#125;
+</code></pre>
+<h3 id="无外框表格设计"><a href="#无外框表格设计" class="headerlink" title="无外框表格设计"></a>无外框表格设计</h3><pre><code class="css">table &#123;
+  border: none;                去除表格的外边框
+  border-collapse: collapse;   合并单元格的边框
+&#125;
+table td &#123;
+  border: none;
+  padding: 10px;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+&#125;
+table td:last-child &#123;
+  border-right: none;          表格右边框
+&#125;
+table thead tr &#123;
+  border-top: 1px solid #ddd;
+&#125;
+</code></pre>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre><code class="css">ul &#123;
+    list-style-type: decimal;  设置为数字序号
+    list-style-image: url(xxx.jpg); 列表序号设置为图片
+&#125;
+
+li添加背景图的方式也可以实现序号图片：
+ul li &#123;
+    background-image: url(xxx.jpg);
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: 0px 5px;
+    text-indent: 20px;
+&#125;
+</code></pre>
+<h2 id="CSS里获取标签上的属性"><a href="#CSS里获取标签上的属性" class="headerlink" title="CSS里获取标签上的属性"></a>CSS里获取标签上的属性</h2><pre><code class="css">h1::before&#123;
+    content: attr(title);
+    color: green;
+&#125;
+
+&lt;h1 title=&quot;test&quot;&gt;&lt;/h1&gt;   
+这样就实现了动态获取属性。
+
+还可以利用:hover实现鼠标悬浮上去，显示指定的内容：
+h1:hover::before&#123;&#125;
+</code></pre>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><pre><code class="css">.div1&#123;
+    float:left;   当元素float后，将会脱离文档流，所以div1将不再占有空间
+    width: 100px;
+    height: 100px;
+&#125;
+.div2&#123;
+  如果给div2也加上float:left，这俩元素将会并排排列
+  width: 100px;
+  height: 100px;
+&#125;
+
+&lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>行级元素，如 span ，在浮动后将会自动转换为块级元素，允许设置宽高等属性。</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>下面这个例子，两个方块分别左右浮动，其父级元素就无法感知它们的宽高，我们需要一个元素把父级元素撑起来。</p>
+<pre><code class="css">&lt;div class=&quot;main&quot;&gt;
+    &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>![[Pasted image 20221129181653.png]]</p>
+<h4 id="clear-属性"><a href="#clear-属性" class="headerlink" title="clear 属性"></a>clear 属性</h4><pre><code class="css">div&#123;
+    width:200px;
+    height:200px;
+&#125;
+div.red&#123;
+    background:red;
+    float:left;
+&#125;
+div.green&#123;
+    background:green;
+    float:right;
+&#125;
+div.blue&#123;
+    background:blue;
+    clear: both | left | right;  
+    通过清除浮动，可以消除上面浮动元素对该元素空间位置的影响，也就是说blue这个div的位置不会动
+&#125;
+</code></pre>
+<h4 id="方法一：定义-clearfix-类"><a href="#方法一：定义-clearfix-类" class="headerlink" title="方法一：定义 clearfix 类"></a>方法一：定义 clearfix 类</h4><p>上面介绍了 <code>clear</code> 方法，那么我们可以在这俩子级div下面添加一个元素，令其清除上方的浮动，就可以把 main 盒子撑起来了：</p>
+<pre><code class="html">&lt;div class=&quot;main&quot;&gt;
+      &lt;div class=&quot;div1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;div2&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.clearfix &#123;
+  clear: both;
+&#125;
+</code></pre>
+<p>![[Pasted image 20221129182249.png]]</p>
+<h4 id="方法二：使用after伪类清除浮动"><a href="#方法二：使用after伪类清除浮动" class="headerlink" title="方法二：使用after伪类清除浮动"></a>方法二：使用after伪类清除浮动</h4><p>借鉴上面的方法，我们可以给盒子添加一个after 伪类，让这个伪类去清除浮动：</p>
+<pre><code class="css">.div2::after&#123;
+    content:&quot;&quot;;
+    clear: both;
+    display:block;  注意伪类本身不是块级元素，需要将其转换为块级元素
+&#125;
+</code></pre>
+<h4 id="方法三：CSS的BFC机制"><a href="#方法三：CSS的BFC机制" class="headerlink" title="方法三：CSS的BFC机制"></a>方法三：CSS的BFC机制</h4><pre><code class="css">可以给.main 类添加一个overflow属性，就会触发BFC机制，就可以直接将其撑起来：
+.main&#123;
+  width: 240px;
+  padding: 10px;
+  border: 2px solid #000;
+  overflow: auto;
+&#125;
+</code></pre>
+<h3 id="文字环绕"><a href="#文字环绕" class="headerlink" title="文字环绕"></a>文字环绕</h3><pre><code class="html">&lt;p&gt;
+      &lt;span class=&quot;shape&quot;&gt;&lt;/span&gt;
+      上面介绍了 `clear`
+      方法，那么我们可以在这俩子级div下面添加一个元素，令其清除上方的浮动，就可以把
+      main 盒子撑起来了：
+&lt;/p&gt;
+</code></pre>
+<pre><code class="css">p &#123;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+&#125;
+
+span.shape &#123;
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 30px;
+  border: 5px solid red;
+  margin: 0;
+  shape-outside: border-box | margin-box | padding-box | content-box; 设置环绕方式
+&#125;
+</code></pre>
+<p>![[Pasted image 20221129201906.png]]</p>
+<h3 id="形状及文字环绕形状"><a href="#形状及文字环绕形状" class="headerlink" title="形状及文字环绕形状"></a>形状及文字环绕形状</h3><pre><code class="css">span.shape &#123;
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 30px;
+  border: 5px solid red;
+  margin: 10px;
+  clip-path:circle(50%);   // 修改成大小为50%的圆形
+  clip-path: circle(50% at top right);  // 圆心位于右上角
+  clip-path: ellipse(50% 30%);   // 椭圆形
+  clip-path: polygon(50% 0,100% 100%,0 100%); // 绘制多边形，参数是坐标点位置x y
+  shape-outside: polygon(50% 0,100% 100%,0 100%);  令shape-outside与clip-path相同，文字就可以沿着形状进行环绕了
+&#125;
+</code></pre>
+<h3 id="文字环绕图片"><a href="#文字环绕图片" class="headerlink" title="文字环绕图片"></a>文字环绕图片</h3><pre><code class="css">p img&#123;
+    width:100px;
+    height:100px;
+    float:left;
+    margin: 0;
+    shape-outside: url(xxx.png);   这样文字就可以围绕图片了，但是必须是带透明度的png图片
+&#125;
+
+&lt;p&gt;
+    &lt;img src=&quot;xxx.png&quot; /&gt;
+    文字蚊子蚊子
+&lt;/p&gt;
+</code></pre>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><pre><code class="css">相对定位：相对于元素当前的位置进行移动，保留其原有的位置
+position:relative;
+
+绝对定位：不保留原有位置，参考上级最近的非static定位（但要有定位）的元素
+position: absolute;
+</code></pre>
+<h3 id="通过定位设置尺寸"><a href="#通过定位设置尺寸" class="headerlink" title="通过定位设置尺寸"></a>通过定位设置尺寸</h3><pre><code class="css">article&#123;
+  background: #000;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  right: -100px;
+  bottom: 100px;
+  border-radius: 50%;
+&#125;
+div &#123;
+    background: #000;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    right: -100px;
+    bottom: 100px;
+    border-radius: 50%;
+&#125;
+
+&lt;article&gt;&lt;div&gt;&lt;/div&gt;&lt;/article&gt;
+</code></pre>
+<p>![[Pasted image 20221201153040.png]]</p>
+</p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

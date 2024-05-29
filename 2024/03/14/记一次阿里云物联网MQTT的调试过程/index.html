@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>记一次阿里云物联网MQTT的调试过程 · 辣白菜的部落格</title><meta name="description" content="阿里云平台配置设备Topic和消息流转客户不想再搭建服务器来接收设备端消息和下发数据，只要在小程序端时刻接收；而小程序端和设备端都属于“设备”，他们之间是不能互通消息的，所以需要把设备端上报的数据流转到小程序端，小程序端从后端拉取数据需要流转到设备端。
+首先需要配置设备的自定义主题，用于发布 (pu"><meta name="og:description" content="阿里云平台配置设备Topic和消息流转客户不想再搭建服务器来接收设备端消息和下发数据，只要在小程序端时刻接收；而小程序端和设备端都属于“设备”，他们之间是不能互通消息的，所以需要把设备端上报的数据流转到小程序端，小程序端从后端拉取数据需要流转到设备端。
+首先需要配置设备的自定义主题，用于发布 (pu"><meta name="twitter:site" content="辣白菜的部落格"><meta name="twitter:title" content="记一次阿里云物联网MQTT的调试过程"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/11.9.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/11.9.0/highlight.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>hljs.highlightAll();</script><script>MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});</script><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><img class="side-avatar" src="https://i.miji.bid/2024/02/09/6db6eb9d4d727027cafbfb2fb9dc1132.jpeg"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">生命是一张悬而未决的网</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">Lee</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">主页</a></li><li><a href="/archives">归档</a></li><li><a href="/categories">分类</a></li><li><a href="/tags">标签</a></li><li class="soc"><a href="https://github.com/bochili" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/longtengyun" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>记一次阿里云物联网MQTT的调试过程</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-03-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a class="a-tag" href="/categories/Coding/" title="Coding">Coding</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/物联网/" title="物联网">物联网</a><span>&nbsp;</span><a class="a-tag" href="/tags/微信小程序/" title="微信小程序">微信小程序</a><span>&nbsp;</span><a class="a-tag" href="/tags/MQTT/" title="MQTT">MQTT</a><span>&nbsp;</span></span></p><p class="post-abstract"><h1 id="阿里云平台配置设备Topic和消息流转"><a href="#阿里云平台配置设备Topic和消息流转" class="headerlink" title="阿里云平台配置设备Topic和消息流转"></a>阿里云平台配置设备Topic和消息流转</h1><p>客户不想再搭建服务器来接收设备端消息和下发数据，只要在小程序端时刻接收；而小程序端和设备端都属于“设备”，他们之间是不能互通消息的，所以需要把设备端上报的数据流转到小程序端，小程序端从后端拉取数据需要流转到设备端。</p>
+<p>首先需要配置设备的自定义主题，用于发布 (<code>publihs</code>) 和接收 ( <code>receive</code> ) 消息：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141334372.png" alt="image-20240314133410333"></p>
+<p>再配置设备之间的消息流转：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141338276.png" alt="小程序到设备端的消息流转"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141339214.png" alt="image-20240314133952180"></p>
+<p>在添加完成规则之后，记得在管理界面启动规则。</p>
+<h1 id="小程序端配置"><a href="#小程序端配置" class="headerlink" title="小程序端配置"></a>小程序端配置</h1><p>阿里云在 Github 开源了专为 Web端、小程序端开发的 JS SDK，在 <a target="_blank" rel="noopener" href="https://github.com/aliyun/alibabacloud-iot-device-sdk">https://github.com/aliyun/alibabacloud-iot-device-sdk</a> ，从 <code>dist/</code></p>
+<p>下载 <code>alibabacloud-iot-device-sdk.min.js</code> ，导入到小程序中便可以使用了。</p>
+<h2 id="配置全局MQTT"><a href="#配置全局MQTT" class="headerlink" title="配置全局MQTT"></a>配置全局MQTT</h2><p>因为设备端上报数据是不定时的，所以小程序需要一直开着并连接到阿里云的MQTT服务器。而且在所有页面中都要保持连接状态，可以在 <code>app.js</code> 中配置MQTT连接。</p>
+<pre><code class="js">const iot = require(&#39;/utils/alibabacloud-iot-device-sdk.min.js&#39;);
+App(&#123;
+  onLaunch() &#123;
+    let args = wx.getStorageSync(&quot;args&quot;)
+    let openid
+    if (args) &#123;
+      openid = args[&quot;openid&quot;]
+      console.log(openid)
+    &#125;
+    const device = iot.device(&#123;
+      productKey: &#39;XXXXX&#39;,
+      deviceName: &#39;wechat&#39;,
+      deviceSecret: &#39;XXXXXXXXX&#39;,
+      protocol: &#39;wxs://&#39;,
+    &#125;);
+    device.subscribe(&#39;/XXX/wechat/user/receive&#39;); // 订阅设备端报过来的数据
+    device.on(&#39;connect&#39;, () =&gt; &#123;
+      console.log(&#39;connect successfully!&#39;);
+    &#125;);
+    device.on(&#39;message&#39;, (topic, payload) =&gt; &#123;
+      let data = JSON.parse(payload.toString())
+      console.log(topic, data)
+      // 流转来的消息都会到此处判断。
+    &#125;);
+  &#125;,
+&#125;)
+</code></pre>
+<h1 id="MQTT-fx模拟设备端连接云平台"><a href="#MQTT-fx模拟设备端连接云平台" class="headerlink" title="MQTT.fx模拟设备端连接云平台"></a>MQTT.fx模拟设备端连接云平台</h1><p>经我测试，MQTTX无法连接云平台，不知道是配置原因还是限制原因，官方推荐使用MQTT.fx连接。</p>
+<p>首先在云平台查看设备端的MQTT连接参数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141342319.png" alt="image-20240314134238272"></p>
+<p>在 MQTT.fx 中添加一条 Profile，按连接参数填入对应信息即可，需要注意的是 SSL&#x2F;TLS 下的配置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141347482.png" alt="image-20240314134730437"></p>
+<p>连接成功后便可以向设备端的 <code>publish</code> 主题 发布消息：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141348437.png" alt="image-20240314134858415"></p>
+<p>在小程序端编写好上传下发数据的逻辑代码后，便可以订阅 <code>receive</code> 主题来测试消息流转能力：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bochili/cdn3/202403141351851.png" alt="image-20240314135101808"></p>
+<p>另外需要注意的是密码和ClientID是动态变化的，如果只是测试用途每连接一次则会变化一次，实际设备场景中，密码是需要加密算法生成的。</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.bochi.ink/2024/03/14/记一次阿里云物联网MQTT的调试过程/%20辣白菜的部落格%20记一次阿里云物联网MQTT的调试过程"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/03/16/(C)LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" title="(C)LeetCode刷题记录"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: (C)LeetCode刷题记录</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/03/09/NodeJS+%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%85%A5%E6%94%AF%E4%BB%98%E5%AE%9D%E6%A8%A1%E6%8B%9F%E6%94%AF%E4%BB%98%E6%B2%99%E7%AE%B1/" title="(JS)NodeJS+微信小程序接入支付宝支付沙箱">Next post: (JS)NodeJS+微信小程序接入支付宝支付沙箱&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p><span id="busuanzi_container_site_uv"> 站点访客数&nbsp;<span id="busuanzi_value_site_uv"> </span>&nbsp;人</span></p><p><span id="busuanzi_container_site_pv"> 站点浏览量&nbsp;<span id="busuanzi_value_site_pv"> </span>&nbsp;次</span></p><p><span id="busuanzi_container_page_pv"> 本页浏览量&nbsp;<span id="busuanzi_value_page_pv"> </span>&nbsp;次</span></p><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://blog.bochi.ink" rel="noopener noreferrer">辣辣辣白菜</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
