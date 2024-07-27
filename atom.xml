@@ -6,7 +6,7 @@
   <link href="https://blog.bochi.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.bochi.ink/"/>
-  <updated>2024-07-26T08:42:52.022Z</updated>
+  <updated>2024-07-27T12:39:22.374Z</updated>
   <id>https://blog.bochi.ink/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.bochi.ink/2024/07/26/Java%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8JSerialComm%E8%BF%9B%E8%A1%8C%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
     <id>https://blog.bochi.ink/2024/07/26/Java%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8JSerialComm%E8%BF%9B%E8%A1%8C%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</id>
     <published>2024-07-25T16:00:00.000Z</published>
-    <updated>2024-07-26T08:42:52.022Z</updated>
+    <updated>2024-07-27T12:39:22.374Z</updated>
     
     
     <summary type="html">使用JSerialComm在Java项目中和串口设备通信，包括数据接收和发送</summary>
@@ -31,7 +31,9 @@
     <category term="Coding" scheme="https://blog.bochi.ink/categories/Coding/"/>
     
     
-    <category term="Java,开发" scheme="https://blog.bochi.ink/tags/Java-%E5%BC%80%E5%8F%91/"/>
+    <category term="开发" scheme="https://blog.bochi.ink/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Java" scheme="https://blog.bochi.ink/tags/Java/"/>
     
   </entry>
   
